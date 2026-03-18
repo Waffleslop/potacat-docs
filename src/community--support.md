@@ -2,7 +2,7 @@
 
 **Website:** [potacat.com](https://potacat.com)
 
-**Discord:** Join the community at [discord.gg/JjdKSshej](https://discord.gg/JjdKSshej) — get help, share your setup, request features, and chat with other POTACAT users.
+**Discord:** Join the community at [discord.gg/cuNQpES38C](https://discord.gg/cuNQpES38C) — get help, share your setup, request features, and chat with other POTACAT users.
 
 **Support development:** If POTACAT helps you chase parks, consider supporting the project at [buymeacoffee.com/potacat](https://buymeacoffee.com/potacat).
 
