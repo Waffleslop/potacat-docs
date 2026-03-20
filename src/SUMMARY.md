@@ -23,13 +23,6 @@
     - [FreeDV / PSKReporter](nested/freedv--pskreporter.md)
     - [WSJT-X](nested/wsjt-x.md)
     - [DX Expeditions](nested/dx-expeditions.md)
-# Filters
-    - [Band & Mode](nested/band--mode.md)
-    - [Region](nested/region.md)
-    - [Hide Worked Parks](nested/hide-worked-parks.md)
-    - [Hide Out-of-Privilege](nested/hide-out-of-privilege.md)
-    - [Watchlist](nested/watchlist.md)
-    - [Max Spot Age](nested/max-spot-age.md)
 - [Radio Setup](radio-setup.md)
     - [FlexRadio (SmartSDR)](nested/flexradio-smartsdr.md)
     - [IP Radio (TCP CAT)](nested/ip-radio-tcp-cat.md)
@@ -41,6 +34,14 @@
     - [Tested Radios](nested/tested-radios.md)
     - [SmartSDR Panadapter Spots](nested/smartsdr-panadapter-spots.md)
     - [TCI Panadapter Spots](nested/tci-panadapter-spots.md)
+- [ECHOCAT - Remote Radio](echocat.md)
+# Filters
+    - [Band & Mode](nested/band--mode.md)
+    - [Region](nested/region.md)
+    - [Hide Worked Parks](nested/hide-worked-parks.md)
+    - [Hide Out-of-Privilege](nested/hide-out-of-privilege.md)
+    - [Watchlist](nested/watchlist.md)
+    - [Max Spot Age](nested/max-spot-age.md)
 # QSO Logging
     - [Log Dialog](nested/log-dialog.md)
     - [Quick Log](nested/quick-log.md)

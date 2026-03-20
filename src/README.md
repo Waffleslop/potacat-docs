@@ -36,7 +36,7 @@ No cloud services. No subscriptions. No vendor lock-in. Just your radio, your co
 
 POTACAT is in active development. New features ship weekly. We build what the community asks for.
 
-- **Discord** -- Join us at [discord.gg/cuNQpES38C](https://discord.gg/cuNQpES38C) to report bugs, request features, get help, and chat with fellow operators
+- **Discord** -- Join us at [potacat.com/discord](https://potacat.com/discord) to report bugs, request features, get help, and chat with fellow operators
 - **GitHub** -- Source code, issues, and pull requests at [github.com/Waffleslop/POTACAT](https://github.com/Waffleslop/POTACAT)
 - **Support the project** -- Keep POTACAT alive and growing by becoming a supporting member at [buymeacoffee.com/potacat](https://buymeacoffee.com/potacat)
 
