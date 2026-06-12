@@ -34,6 +34,7 @@
     - [Tested Radios](nested/tested-radios.md)
     - [SmartSDR Panadapter Spots](nested/smartsdr-panadapter-spots.md)
     - [TCI Panadapter Spots](nested/tci-panadapter-spots.md)
+    - [AI Noise Reduction (RM Noise)](nested/ai-noise-reduction-rm-noise.md)
 - [ECHOCAT - Remote Radio](echocat.md)
 # Filters
     - [Band & Mode](nested/band--mode.md)
