@@ -1,12 +1,21 @@
 # ECHOCAT — Remote Phone Control
 
-ECHOCAT turns your phone into a wireless remote for your POTACAT-connected radio. Tune spots, transmit, stream audio, send CW, log QSOs, and even run POTA activations — all from a mobile browser over a secure connection.
+ECHOCAT turns your phone or tablet into a wireless remote for your POTACAT-connected radio. Tune spots, transmit, stream audio, send CW, log QSOs, and even run POTA activations — all over a secure connection.
+
+ECHOCAT comes in two flavors:
+
+- **ECHOCAT for iOS and Android** — native apps, available on the App Store and Google Play for a one-time `$9.99` purchase. The apps add features a browser can't do: keep listening with the screen locked, QR-code pairing, automatic switching between connection paths, and Bluetooth accessories like BLE PTT buttons.
+- **ECHOCAT Web** — free, built into POTACAT, and runs in any modern mobile browser. Nothing to install.
+
+Both work at the same time — pairing the app doesn't disable browser access.
+
+> **Note:** The app is a remote control for POTACAT Desktop — the desktop does the heavy lifting. When something misbehaves, **update POTACAT Desktop first**; most app-side problems are fixed there.
 
 ## What You Need
 
 - **POTACAT** running on your shack PC, connected to your radio
-- **A phone or tablet** with a modern browser (Safari on iOS, Chrome on Android)
-- **Network connectivity** between the two — either your home Wi-Fi (for local use) or **Tailscale** (for remote access away from the shack)
+- **A phone or tablet** with the ECHOCAT app — or a modern browser (Safari on iOS, Chrome on Android) for ECHOCAT Web
+- **A connection path** between the two: your home Wi-Fi, **Tailscale**, or the **POTACAT Cloud** tunnel (see [Connection Paths](#connection-paths))
 
 ## Quick Start
 
@@ -17,19 +26,35 @@ Open POTACAT and click the **gear icon** in the top bar to open Quick Settings. 
 - A URL (e.g., `https://192.168.1.50:7300`)
 - A 6-character token (e.g., `A1B2C3`)
 
-If you have Tailscale installed, the Tailscale IP is shown with a green label — use that IP for remote access.
+If you have Tailscale installed, the Tailscale address is shown with a green label — use that green `https://` URL for remote access (the hostname, not the `100.x.x.x` IP).
 
 You can also configure ECHOCAT from **Settings > ECHOCAT**, where you can change the port (default 7300), regenerate the token, set the PTT safety timeout, and select audio devices.
 
-### 2. Open ECHOCAT on Your Phone
+### 2. Pair the App (iOS/Android)
+
+Pairing links the app to your desktop with a QR code — no typing IP addresses.
+
+1. In POTACAT, open **Settings > ECHOCAT** and click **Open pairing QR** (requires desktop v1.9.2 or later)
+2. In the ECHOCAT app, scan the QR code — or scan it with your phone's camera app and open the link
+3. A pairing-approval popup appears front and center on the desktop — click **Approve**
+
+On the same network, the app can also discover your desktop automatically ("tap to pair") — tap the discovered rig and approve the request on the desktop.
+
+> **Tip:** If the in-app scanner won't cooperate, generate the pairing URL on the desktop and open it directly in your phone's browser. For anything else that goes wrong, see the [Connectivity & Pairing guide](nested/echocat-connectivity.md).
+
+Once paired, the app shows which path it's using — **LAN**, **TAIL**, or **CLOUD** — with the current latency in milliseconds at the top of the screen.
+
+### 3. Or Open ECHOCAT Web in a Browser
+
+No app? Use the free browser interface:
 
 1. Open your phone's browser and navigate to the URL shown in POTACAT
-2. You'll see a certificate warning (ECHOCAT uses a self-signed TLS certificate) — tap **Advanced** > **Proceed** to accept it
-3. Enter the 6-character token and tap **Connect**
+2. You'll see a certificate warning (ECHOCAT uses a self-signed TLS certificate on the LAN) — tap **Advanced** > **Proceed** to accept it
+3. If token authentication is enabled, enter the 6-character token and tap **Connect**
 
 That's it — you're connected. You'll see the spot list, a frequency display, and the mode badge at the top.
 
-### 3. Select Audio Devices
+### 4. Select Audio Devices
 
 In **Settings > Radio** (on the rig's configuration), set the **ECHOCAT Audio Input** and **ECHOCAT Audio Output** devices. These control which sound devices carry RX audio from the radio to your phone and TX audio from your phone to the radio.
 
@@ -60,7 +85,7 @@ Tap the **Audio** button to start streaming. Your phone will ask for microphone 
 - **TX audio** streams from your phone microphone to the radio when PTT is held
 - Tap **Vol** to cycle through gain levels (1x, 2x, 3x) if RX audio is too quiet
 
-> **iOS note:** Keep ECHOCAT in the foreground or use the Audio button to maintain the connection. iOS aggressively suspends background WebSocket connections.
+> **iOS note:** In ECHOCAT Web, keep the browser in the foreground or use the Audio button to maintain the connection — iOS aggressively suspends background WebSocket connections. The native app doesn't have this problem: it keeps streaming with the screen locked.
 
 ### Scanning
 
@@ -88,6 +113,16 @@ Tap the **rig controls** button to reveal additional controls:
 - **VFO A/B** — switch VFOs or swap A⇄B
 - **RF Gain** slider (0–100%)
 - **TX Power** slider (0–100%)
+
+In the native app, these rig controls (including custom CAT commands) live behind the **CAT** button at the top of the screen — easy to miss if you're looking for a settings menu.
+
+### Remote Rig Power On/Off
+
+If your radio supports power control over CAT, you can power it on and off from your phone. In the app, the power controls are in the **VFO** tab.
+
+> **Tip:** On Icom rigs, if power-*off* works but power-*on* doesn't, set the radio's **CI-V Baud Rate** to `AUTO` — CAT power-on requires a wake-up preamble that's sensitive to the baud setting.
+
+To go fully remote, the **POTACAT Launcher** — a small companion daemon on port `7301` — lets the app start or restart POTACAT Desktop itself. It runs in the system tray and requires the installed POTACAT (not a source build).
 
 ### Rotor Control
 
@@ -179,28 +214,59 @@ For multi-operator club stations, ECHOCAT supports authenticated access with lic
 - The OPERATOR field in logged QSOs is set to the individual member's callsign
 - All actions (logins, tunes, PTT, rig switches) are written to an audit log
 
-## Network & Security
+## Connection Paths
 
-### Local Network
+There are three ways for your phone to reach POTACAT. The app checks all of them at connect time and uses the fastest — walk into the house mid-QSO and it hands off from Cloud or Tailscale to LAN automatically. The indicator at the top of the app shows the active path (**LAN**, **TAIL**, or **CLOUD**) and the latency.
 
-On your home Wi-Fi, your phone can reach POTACAT directly at its LAN IP address. No special setup needed beyond enabling ECHOCAT.
+| Path | Best for | What you need |
+|------|----------|---------------|
+| **Same LAN** | Operating at home | Phone and PC on the same network — nothing else |
+| **Tailscale** | Remote access, free forever | Tailscale on both devices, plus two admin settings |
+| **POTACAT Cloud** | The "easy button" for remote access; required for rig sharing | A POTACAT Cloud account — no Tailscale, no port forwarding |
 
-### Remote Access with Tailscale
+> **Tip:** Stuck at any point? The [ECHOCAT Connectivity & Pairing guide](nested/echocat-connectivity.md) walks through each path in plain English, including the two Tailscale settings that cause most failures.
 
-For operating away from the shack:
+### Same Network (LAN)
 
-1. Install **Tailscale** (free) on both your shack PC and your phone
-2. Sign in on both devices with the same account
-3. Use the **Tailscale IP** shown in POTACAT's ECHOCAT panel (highlighted in green)
-4. No port forwarding or firewall changes needed — Tailscale creates an encrypted tunnel
+On your home Wi-Fi, your phone reaches POTACAT directly at its LAN IP address. No special setup needed beyond enabling ECHOCAT.
 
-### Certificate Warning
+### Tailscale
 
-ECHOCAT generates a self-signed TLS certificate that includes all your local and Tailscale IP addresses. Your browser will warn you the first time — accept the certificate and it will be remembered for future sessions. The certificate regenerates once per year.
+Tailscale is a free VPN that connects your phone and shack PC wherever they are — and it will keep working as a supported path indefinitely:
+
+1. Install **Tailscale** (free) on both your shack PC and your phone, signed in to the same account
+2. In the Tailscale admin console at `login.tailscale.com/admin/dns`, enable **MagicDNS** and **HTTPS Certificates** — pairing fails without both
+3. Connect using the **MagicDNS hostname** shown in POTACAT's ECHOCAT panel (highlighted in green) with `https://` — the Tailscale `100.x.x.x` IP will not work, because the TLS certificate is issued only for the hostname
+4. No port forwarding or firewall changes needed
+
+See the [Connectivity & Pairing guide](nested/echocat-connectivity.md) for the full walkthrough, including the device-key expiry gotcha that makes Tailscale setups stop working after a couple of months.
+
+### POTACAT Cloud Tunnel
+
+The Cloud tunnel is the simplest remote path: your desktop opens an **outbound-only** tunnel to POTACAT Cloud and gets a personal address like `yourcallsign.potacat.com`. Because the connection is outbound from the shack, there is nothing to forward, no VPN to install, and no inbound firewall hole — it even works behind CGNAT (Starlink and many cellular ISPs), where port forwarding is impossible.
+
+Security is layered: the tunnel accepts no inbound connections, pairing tokens are one-time-use, and requests are rate limited.
+
+## Share Your Rig
+
+With POTACAT Cloud you can grant another operator timed access to your radio — a friend without HF at home, a club member, or a licensed guest anywhere in the world.
+
+- You issue a **guest pass**: a four-word code (like `prague-plankton-potato-idaho`) that expires after a set number of hours
+- You can cap **TX power**, and band privileges are enforced based on the guest's license class
+- The guest needs a **free POTACAT Cloud account** — this provides the audit trail of who operated your station
+- Rig sharing requires the Cloud tunnel; Tailscale covers your own devices, but sharing means Cloud (or adding the guest to your Tailnet yourself)
+
+> **Note:** The remote guest is the control operator and operates under **their own callsign**, per the usual remote-operation rules. Check the regulations that apply in your country.
+
+## Security
+
+### Certificate Warning (ECHOCAT Web)
+
+On the LAN, ECHOCAT uses a self-signed TLS certificate. Your browser will warn you the first time — accept the certificate and it will be remembered for future sessions. Over Tailscale, ECHOCAT uses a real certificate issued for your MagicDNS hostname, so there's no warning — but that's also why you must connect by hostname, not IP.
 
 ### Token Authentication
 
-The 6-character hex token prevents unauthorized access. You can regenerate it at any time from the desktop settings. Share it only with people you want to grant radio access.
+The 6-character hex token adds an extra layer of access control for browser connections. It's optional — enable it if other people can reach your network. You can regenerate it at any time from the desktop settings.
 
 ## Settings Reference
 
@@ -208,7 +274,7 @@ The 6-character hex token prevents unauthorized access. You can regenerate it at
 |---------|---------|-------------|
 | Enable ECHOCAT | Off | Start the ECHOCAT server |
 | Port | 7300 | HTTPS/WebSocket server port |
-| Require Token | On | Require token authentication |
+| Require Token | On | Require token authentication for browser access (optional extra security) |
 | Token | Auto-generated | 6-character hex authentication token |
 | PTT Safety Timeout | 180s | Auto-drop PTT after this many seconds |
 | Enable CW Keyer | Off | Allow CW keying from phone |
@@ -218,10 +284,13 @@ The 6-character hex token prevents unauthorized access. You can regenerate it at
 
 ## Troubleshooting
 
+> **Note:** For pairing failures, Tailscale problems, "it worked for weeks and then stopped," and audio issues, see the dedicated [ECHOCAT Connectivity & Pairing guide](nested/echocat-connectivity.md).
+
 **Can't reach the ECHOCAT URL:**
 - Make sure ECHOCAT is enabled (green indicator in POTACAT's connection bar)
-- Verify your phone is on the same network as the PC (or both are on Tailscale)
+- Verify your phone is on the same network as the PC (or both are on Tailscale, with **MagicDNS** and **HTTPS Certificates** enabled)
 - Check that the port (default 7300) isn't blocked by your firewall
+- If the URL shows a `169.254.x.x` address, Tailscale isn't actually running on the PC
 
 **Certificate error won't go away:**
 - On iOS Safari, you may need to tap "Show Details" then "visit this website"
@@ -246,3 +315,4 @@ The 6-character hex token prevents unauthorized access. You can regenerate it at
 - On iOS, keep the browser in the foreground while operating
 - The audio session helps keep the connection alive, so start audio before locking the screen
 - On Android, disable battery optimization for your browser
+- The native iOS/Android app keeps streaming with the screen locked — worth the upgrade if you operate this way often

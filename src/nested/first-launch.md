@@ -14,6 +14,8 @@ On first launch, POTACAT shows a **Welcome Screen** to get you up and running:
 
 Click **Get Started** when you're done. You can return to this screen anytime with **F11**.
 
+**Having trouble?** If POTACAT won't start, crashes on launch, or your antivirus objects, see [Installation Issues](installation-issues.md).
+
 ---
 
 
