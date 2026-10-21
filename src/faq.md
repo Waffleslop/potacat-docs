@@ -62,6 +62,14 @@ Press `F1` for the full hotkey list, or see [Keyboard Shortcuts](keyboard-shortc
 
 Yes. Click the **Rig** button at the top of the Table view and open the **Custom** tab to create your own CAT command buttons — notch filter, split, anything your radio's protocol supports. The buttons you define also appear in ECHOCAT, so they work from your phone too. If CAT control itself is misbehaving, see [CAT Control Issues](nested/cat-control-issues.md).
 
+#### How do I drop to 60 W automatically for FT8?
+
+Use a rig preset (POTACAT 1.13.0 and later). Click **Rig > Presets**, make a preset named `FT8` with TX power 60 (and AF gain 0 if you want the speaker quiet), and assign it to **Digital** under "Apply by itself when the mode changes to". Make a second preset for SSB at your usual power. The radio then switches levels by itself whenever the mode changes, including when an FT8 session starts. See [Rig Presets](radio-setup.md#rig-presets).
+
+#### Can I run my shack from a laptop running POTACAT?
+
+Yes, from 1.13.0. Pair the laptop with the shack PC under **More ▾ > Remote Radios…** and it drives the radio like the phone app does: VFO, HOLD TO TALK, FT8, JS8, SSTV, CW and voice macros. See [Run Your Shack from Another POTACAT](nested/remote-desktop.md).
+
 #### Can I hide a spot I don't want to see?
 
 Right-click it. You can hide the spot for 1 hour, 2 hours, 1 UTC day, or forever. Hiding applies to that callsign and frequency — not to every spot from that call — and there's a hidden-spots list where you can review and undo your choices.

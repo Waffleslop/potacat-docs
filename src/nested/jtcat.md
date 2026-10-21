@@ -64,6 +64,13 @@ Click a decode (or a highlighted POTA activator) to reply. JTCAT runs the exchan
 
 > **Tip:** Keep the TX Power slider low — around 10–20% typically produces clean audio with little or no ALC action.
 
+## JTTY
+
+JTTY (the WSJT-X 3.2 keyboard mode: 4-GFSK, 127 Hz wide, no timed sequences) has its own pane in the JTCAT window. From POTACAT 1.13.0:
+
+- **Chats.** The tab strip above the decodes holds all traffic plus one tab per station. Double-click a line to open a chat with that station and see the exchange as a conversation; the composer has the pair of callsigns filled in. A station calling you opens a tab without switching you away from the one you are in. Right-click a tab for **Log** (log the QSO) and **Close**. Chats work with **Style** set to **FT8**.
+- **CQ on a clear spot.** When you call CQ, JTCAT first moves to the quietest spot near your offset, measured over the last 30 seconds of the passband, so a fresh session no longer calls on 1500 Hz with everyone else. **Clear spot** does the same on demand. Turn on **Hold** (Hold TX frequency) to stay where you are. The move is made on the shack, so a CQ from the phone or a [paired laptop](remote-desktop.md) gets it too.
+
 ## Auto-Logging
 
 JTCAT logs each QSO automatically when the report exchange completes and forwards it to any logbooks you've configured — see [Logbook Forwarding](logbook-forwarding.md). There's nothing to click.

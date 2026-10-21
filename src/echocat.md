@@ -9,6 +9,8 @@ ECHOCAT comes in two flavors:
 
 Both work at the same time — pairing the app doesn't disable browser access.
 
+> **Using a laptop or a second PC?** See [Run Your Shack from Another POTACAT](nested/remote-desktop.md).
+
 > **Note:** For radio control, the app is a remote for POTACAT Desktop — the desktop does the heavy lifting. When something misbehaves while connected to your shack, **update POTACAT Desktop first**; most of those problems are fixed there. The app's **ACT** tab also logs activations on its own; see [Activating without a desktop](#activating-without-a-desktop).
 
 ## What You Need
@@ -275,6 +277,12 @@ With POTACAT Cloud you can grant another operator timed access to your radio —
 
 > **Note:** The remote guest is the control operator and operates under **their own callsign**, per the usual remote-operation rules. Check the regulations that apply in your country.
 
+## More Than One of Your Devices (Beta)
+
+By default, the newest device to connect takes over the shack: connecting your laptop disconnects your phone, and the phone is told another device took over.
+
+From POTACAT 1.13.0 you can keep several of your own devices on the shack at once. On the desktop, open **Settings > ECHOCAT > Advanced ECHOCAT settings** and turn on **Allow more than one of my devices at a time (beta)**. It is off by default. With it on, whoever keyed owns PTT until they let go, the shack's audio follows the device that asked for it last, and a Guest Pass is never shared.
+
 ## Security
 
 ### Certificate Warning (ECHOCAT Web)
@@ -298,6 +306,7 @@ The 6-character hex token adds an extra layer of access control for browser conn
 | CW Key Port | None | COM port for hardware DTR keying |
 | Audio Input | None | RX audio device (radio → phone) |
 | Audio Output | None | TX audio device (phone → radio) |
+| Allow more than one of my devices at a time (beta) | Off | Under **Advanced ECHOCAT settings**. Lets several of your own devices share the shack (1.13.0+) |
 
 ## Troubleshooting
 

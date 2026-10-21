@@ -2,6 +2,15 @@
 
 This page summarizes major POTACAT and ECHOCAT releases — it is not an exhaustive list of every patch.
 
+### v1.13.0 "The KM4ACK Ham Fam Jam Release" — October 2026
+
+- **Run your shack from another POTACAT.** Pair a laptop with the shack PC and drive the radio: VFO window, HOLD TO TALK, FT8/FT4 and the other JTCAT modes, JS8, SSTV, CW, voice macros and the band scope. See [Run Your Shack from Another POTACAT](nested/remote-desktop.md).
+- **More than one of your devices at a time** (beta, off by default) — phone and laptop can share the shack. See [ECHOCAT](echocat.md#more-than-one-of-your-devices-beta).
+- **Rig presets** — named TX power / RF gain / AF gain sets, applied by a tap or automatically on a mode change. AF gain is a new rig control. See [Rig Presets](radio-setup.md#rig-presets).
+- **JTTY chats** — a tab per station in the JTCAT window, and CQ goes out on the clearest spot near your offset. See [JTCAT](nested/jtcat.md#jtty).
+- **IC-7300 and family:** a spot click no longer leaves the radio in plain USB when the DATA frame is lost on a shared CAT port.
+- Linux shacks on a tailnet can now be paired from away even when POTACAT can't run the `tailscale` command (snap installs).
+
 ### v1.9.4 — July 2026
 
 - **13 Colonies** fixes across desktop and mobile, plus a 13 Colonies tracking list with notifications in the mobile `CNTSTS` tab.
