@@ -57,6 +57,7 @@
     - [Quick Log](nested/quick-log.md)
     - [ADIF File](nested/adif-file.md)
     - [Logbook Forwarding](nested/logbook-forwarding.md)
+    - [LoTW Upload](nested/lotw-upload.md)
     - [Pop-out QSO Logbook](nested/pop-out-qso-logbook.md)
 # Tracking & Enrichment
     - [Parks Worked](nested/parks-worked.md)

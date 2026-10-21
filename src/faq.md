@@ -17,7 +17,9 @@ They're a family, and most of them live inside one app:
 
 Yes. **ECHOCAT** has native apps on the Apple App Store and Google Play for a one-time $9.99 purchase — a single lifetime fee that includes all updates. If you'd rather not pay, **ECHOCAT Web** (the browser version) stays free.
 
-Either way, the app is a remote control: you still run POTACAT on a Windows, Mac, or Linux computer connected to the radio, and the phone connects to it. For the ways to connect — same Wi-Fi, Tailscale, or POTACAT Cloud — see [ECHOCAT Connectivity](nested/echocat-connectivity.md).
+Mostly, the app is a remote control: you run POTACAT on a Windows, Mac, or Linux computer connected to the radio, and the phone connects to it. For the ways to connect — same Wi-Fi, Tailscale, or POTACAT Cloud — see [ECHOCAT Connectivity](nested/echocat-connectivity.md).
+
+The mobile app's **ACT** tab also works on its own in the field, with no desktop running: start an activation and log QSOs on the phone. See [Activating without a desktop](echocat.md#activating-without-a-desktop).
 
 #### Is POTACAT really free? What costs money?
 
@@ -138,4 +140,4 @@ It's deliberate, to protect you from wiping a log by accident. The log is a plai
 
 #### Does POTACAT upload to LoTW?
 
-Not yet — LoTW integration is in progress but hasn't shipped. In the meantime, you can export an ADIF from the logbook (with filters, if you like) and upload it yourself.
+Yes. POTACAT signs and uploads your log through your own TrustedQSL (TQSL) install, so you need TQSL set up with your callsign certificate and a Station Location. Turn it on in **Settings > Logging** and press **Upload to LoTW**. Each activation is signed with the grid and state of its park, not your home location. The same section downloads your LoTW confirmations back into the log. See [LoTW Upload](nested/lotw-upload.md).

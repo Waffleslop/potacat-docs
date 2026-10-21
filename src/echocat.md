@@ -9,7 +9,7 @@ ECHOCAT comes in two flavors:
 
 Both work at the same time — pairing the app doesn't disable browser access.
 
-> **Note:** The app is a remote control for POTACAT Desktop — the desktop does the heavy lifting. When something misbehaves, **update POTACAT Desktop first**; most app-side problems are fixed there.
+> **Note:** For radio control, the app is a remote for POTACAT Desktop — the desktop does the heavy lifting. When something misbehaves while connected to your shack, **update POTACAT Desktop first**; most of those problems are fixed there. The app's **ACT** tab also logs activations on its own; see [Activating without a desktop](#activating-without-a-desktop).
 
 ## What You Need
 
@@ -196,6 +196,23 @@ When you log a QSO during an activation, ECHOCAT can automatically re-spot you o
 ### Export
 
 Tap **Export ADIF** to generate an ADIF file of your activation contacts. Past activations are saved and viewable with individual map views showing your QSO locations.
+
+### Activating without a desktop
+
+The mobile app's **ACT** tab doesn't need POTACAT Desktop. Out in the field with no shack connection, it switches to a local session ("Local session — QSOs save on this phone and sync to the cloud").
+
+**Works on the phone alone:**
+
+- Starting an activation and logging QSOs
+- Finding parks near you with the phone's GPS, offline
+- Spotting yourself on POTA over mobile data
+- Viewing and exporting the logbook
+
+**Needs something else:**
+
+- **Getting the QSOs to your desktop and other devices** goes through POTACAT Cloud sync, which is the paid Cloud plan. Without it, export the ADIF from the phone.
+- **The automatic re-spot when you log a QSO** needs the desktop.
+- **Logging for another operator** ("Log as") needs the desktop.
 
 ## Club Station Mode
 
