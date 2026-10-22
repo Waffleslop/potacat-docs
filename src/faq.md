@@ -100,6 +100,16 @@ That callsign is on your [watchlist](nested/watchlist.md).
 
 That's how Skip works: it's per-frequency, kept in memory only, and resets when the app restarts. It's designed for Scan mode — it also won't follow an activator who moves to a new frequency. If you want a spot gone for longer, use right-click hide instead.
 
+#### My iPhone pairs at home but won't connect over Tailscale. My shack runs Linux.
+
+On Linux, Tailscale gives certificates only to its operator user, so POTACAT can't get the Tailscale certificate the ECHOCAT app needs away from home. The tell is that ECHOCAT Web in a browser opens at the Tailscale address (after a certificate warning) but the app won't connect there. Run this once on the shack PC:
+
+```
+sudo tailscale set --operator=$USER
+```
+
+Then restart POTACAT and scan a new pairing QR once on your home network. See [Connectivity & Pairing](nested/echocat-connectivity.md#linux-only-let-potacat-ask-for-the-certificate).
+
 #### When does a worked activator show up again?
 
 A worked station stays hidden until the next UTC day, or sooner if the activator moves to a new park.

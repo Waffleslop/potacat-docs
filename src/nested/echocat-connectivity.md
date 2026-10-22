@@ -54,6 +54,18 @@ If pairing fails with **"Pairing request failed: Network request failed"**, it i
 
 > **Tip:** Tailscale's own guide to these settings: `https://tailscale.com/docs/how-to/set-up-https-certificates`
 
+### Linux only: let POTACAT ask for the certificate
+
+On Linux, Tailscale hands out certificates only to its **operator** user. Unless your desktop user is the operator, POTACAT's request for the Tailscale certificate is refused. POTACAT then falls back to its own self-signed certificate, and the ECHOCAT app won't accept that over Tailscale. The tell: the app pairs at home but never connects away from home, while ECHOCAT Web in a browser *does* open at the Tailscale address, after a certificate warning.
+
+Run this once in a terminal on the shack PC:
+
+```
+sudo tailscale set --operator=$USER
+```
+
+Then quit and restart POTACAT, open a new pairing QR, and scan it once on your home network. Windows and macOS don't need this step.
+
 ### Step 3: Use the hostname, not the IP
 
 Always connect using the **green MagicDNS URL** shown in POTACAT's ECHOCAT panel, with `https://` — something like `https://shack-pc.tailXXXX.ts.net:7300`.
@@ -75,6 +87,7 @@ Prevent it: in the Tailscale admin console, open each device's **⋯** menu and 
 | POTACAT shows a `169.254.x.x` URL | Tailscale isn't actually running on the PC — even if Task Manager says otherwise. Restart Tailscale. |
 | "Pairing request failed: Network request failed" | **MagicDNS** or **HTTPS Certificates** not enabled (Step 2). Also update the desktop and regenerate the QR. |
 | "A server with the specified hostname could not be found" | Tailscale isn't connected on the *phone*, or the QR is stale — regenerate the QR after any network change. |
+| Linux shack: app pairs at home but never connects over Tailscale (ECHOCAT Web works) | Your user isn't Tailscale's operator, so POTACAT can't get the certificate. Run `sudo tailscale set --operator=$USER`, restart POTACAT and re-pair once at home ([details](#linux-only-let-potacat-ask-for-the-certificate)). |
 | Worked for weeks, suddenly stopped | Device key expiry (Step 4), or Tailscale disconnected on one end. |
 | Pairing only works when Tailscale is *off* | MagicDNS can occasionally interfere with pairing on some networks. Temporarily disable Tailscale to pair, or switch to the Cloud path. |
 | Higher latency than expected | Tailscale may be routing through its relay servers. Some users report that enabling a direct connection shaved 35–55 ms off the ping. |

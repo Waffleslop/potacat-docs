@@ -255,6 +255,7 @@ Tailscale is a free VPN that connects your phone and shack PC wherever they are 
 
 1. Install **Tailscale** (free) on both your shack PC and your phone, signed in to the same account
 2. In the Tailscale admin console at `login.tailscale.com/admin/dns`, enable **MagicDNS** and **HTTPS Certificates** — pairing fails without both
+   - **Linux only:** run `sudo tailscale set --operator=$USER` once on the shack PC, then restart POTACAT and re-pair once at home. Without it, POTACAT can't get the Tailscale certificate, and the app connects at home but not away ([details](nested/echocat-connectivity.md#linux-only-let-potacat-ask-for-the-certificate))
 3. Connect using the **MagicDNS hostname** shown in POTACAT's ECHOCAT panel (highlighted in green) with `https://` — the Tailscale `100.x.x.x` IP will not work, because the TLS certificate is issued only for the hostname
 4. No port forwarding or firewall changes needed
 
