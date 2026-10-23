@@ -10,10 +10,15 @@ Open it from **More ▾ > Winlink Mail**. It is always in the menu, with nothing
 
 ## Your Winlink Account
 
-Open **Settings > Station > Winlink (email over radio)**.
+You don't need to visit winlink.org. If your callsign has no Winlink account, POTACAT creates it. (Winlink accounts are created by a client program's first registration, not on the website, and POTACAT is that client.)
 
-- **New to Winlink?** Click **Check my account**. It tells you whether your callsign already has a Winlink account. If it doesn't, choose a password (6 to 12 characters) and, if you like, a recovery email, then click **Create my Winlink account**.
-- **Already have an account?** Type its password into **Winlink password** and save.
+1. Open **Settings > Station > Winlink (email over radio)**.
+2. Click **Check my account**. It tells you whether your callsign already has a Winlink account.
+3. If it doesn't, choose a password (6 to 12 characters) and, if you like, a recovery email, then click **Create my Winlink account**.
+
+**Already have an account?** Type its password into **Winlink password** and save.
+
+From the next desktop update, the Winlink Mail window and ECHOCAT Web's **Mail** tab also open with **Set up your Winlink account** when no password is saved.
 
 ## Sending and Receiving
 
