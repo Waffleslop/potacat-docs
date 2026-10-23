@@ -43,6 +43,10 @@ POTACAT handles the radio for the whole session:
 
 Pick **Packet (VHF/UHF radio)** in **Send via** to reach a packet gateway through the Dire Wolf modem built into POTACAT. Choose the band and gateway the same way as for ARDOP. **Packet speed** (1200 or 9600) is set in Settings.
 
+### Mercury (experimental)
+
+**Send via** also lists **Mercury (radio, experimental)**. It stays greyed out until Mercury is turned on in **Settings > Station**, and few gateways run it yet. Use ARDOP for HF.
+
 ## Audio for Radio Sessions
 
 - **FlexRadio on Flex Direct, or an Icom over the network:** ARDOP needs no sound card and no DAX. The modem's audio travels over POTACAT's own link to the radio.
