@@ -4,7 +4,7 @@ This page summarizes major POTACAT and ECHOCAT releases — it is not an exhaust
 
 ### v1.13.1 — October 2026
 
-- **Winlink email.** More ▾ > Winlink Mail sends and receives mail over the internet (Windows, Linux, Mac) and over the radio with ARDOP or packet (Windows and Linux). Nothing to install. See [Winlink Email](nested/winlink.md).
+- **Winlink email.** More ▾ > Winlink Mail sends and receives mail over the internet (Windows, Linux, Mac) and over the radio with ARDOP (Windows and Linux). Nothing to install. See [Winlink Email](nested/winlink.md).
 - **N1MM+ (or another logger) can control the radio** through POTACAT as a TS-2000 over TCP, including a remote shack you are driving. See [Radio Setup](radio-setup.md#let-n1mm-or-another-logger-control-the-radio).
 - **Sound-card PTT** for radios with no CAT (Digirig Lite, CM108/CM119). See [Radio Setup](radio-setup.md#sound-card-ptt-for-radios-with-no-cat).
 - **Yaesu SWR** now reads the SWR meter instead of ALC; Yaesu and Icom SWR are scaled like Hamlib and WSJT-X.

@@ -2,7 +2,7 @@
 
 > **New in POTACAT 1.13.1.**
 
-POTACAT sends and receives Winlink email from your shack: over the internet on Windows, Linux and Mac, and over the radio with ARDOP (HF) or packet (VHF/UHF) on Windows and Linux. There is nothing else to install. POTACAT runs [Pat](https://getpat.io/), the open-source Winlink client, in the background, and starts it the first time you use mail.
+POTACAT sends and receives Winlink email from your shack: over the internet on Windows, Linux and Mac, and over the radio with ARDOP (HF) on Windows and Linux. There is nothing else to install. POTACAT runs [Pat](https://getpat.io/), the open-source Winlink client, in the background, and starts it the first time you use mail.
 
 Open it from **More ▾ > Winlink Mail**. It is always in the menu, with nothing to turn on. The mail window has **Inbox**, **Outbox**, **Sent** and **Archive**, a composer with attachments, and a position report.
 
@@ -18,6 +18,8 @@ Open **Settings > Station > Winlink (email over radio)**.
 ## Sending and Receiving
 
 Messages you write wait in the **Outbox** until the next **Send / Receive**. Choose how they go in **Send via**.
+
+> **ARDOP and Internet are the two modes to use right now.** On macOS, use Internet only.
 
 ### Over the internet
 
@@ -39,19 +41,14 @@ POTACAT handles the radio for the whole session:
 - The SWR guard stops a session that is transmitting into a bad match.
 - A session ends after the time limit you set (**End a radio session after … minutes** in Settings). A stuck session also ends after 3 minutes with no progress, and the transmitter is released if it stays keyed for 30 seconds.
 
-### Packet (VHF/UHF, Windows and Linux)
+### Also listed, not recommended yet
 
-Pick **Packet (VHF/UHF radio)** in **Send via** to reach a packet gateway through the Dire Wolf modem built into POTACAT. Choose the band and gateway the same way as for ARDOP. **Packet speed** (1200 or 9600) is set in Settings.
-
-### Mercury (experimental)
-
-**Send via** also lists **Mercury (radio, experimental)**. It stays greyed out until Mercury is turned on in **Settings > Station**, and few gateways run it yet. Use ARDOP for HF.
+**Send via** also lists **Packet (VHF/UHF radio)**, which uses the Dire Wolf modem built into POTACAT, and **Mercury (radio, experimental)**, which stays greyed out until Mercury is turned on in **Settings > Station**. Neither is recommended yet. Use ARDOP or Internet.
 
 ## Audio for Radio Sessions
 
 - **FlexRadio on Flex Direct, or an Icom over the network:** ARDOP needs no sound card and no DAX. The modem's audio travels over POTACAT's own link to the radio.
 - **A radio with a USB sound card:** POTACAT uses the same capture and playback devices as your FT8, and asks only when it can't tell. To change them, use **Find the radio's sound devices** in the Winlink settings. They are saved per radio.
-- **Packet** needs a sound device: the radio's USB sound card, or DAX on a Flex that isn't on Flex Direct.
 
 Radio sessions need a radio with CAT control, because POTACAT tunes and keys it. They aren't available on macOS yet.
 
