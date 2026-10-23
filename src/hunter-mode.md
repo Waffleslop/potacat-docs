@@ -9,6 +9,7 @@ Hunter mode is the default view. It shows live spots from all your enabled sourc
 | Indicator | Meaning |
 |-----------|---------|
 | ✅ | You've worked this station before — the call is in your POTACAT log. |
+| Dim ✓ | Not worked on this band and mode, but worked **today** on another (1.13.1+). Hover to see which band and mode. Another band is another contact. |
 | Greyed-out row | You've worked this station **this UTC day** on the same band and mode. |
 | Yellow star | The callsign matches your watchlist. |
 | `NEW` badge | The park isn't on your worked-parks list yet. |

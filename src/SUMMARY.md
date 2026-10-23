@@ -46,6 +46,7 @@
     - [Connectivity & Pairing](nested/echocat-connectivity.md)
     - [Run Your Shack from Another POTACAT](nested/remote-desktop.md)
 - [JTCAT - FT8 & Digital Modes](nested/jtcat.md)
+- [Winlink Email](nested/winlink.md)
 # Filters
     - [Band & Mode](nested/band--mode.md)
     - [Region](nested/region.md)

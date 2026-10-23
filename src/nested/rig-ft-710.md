@@ -48,5 +48,5 @@ Without a **CW Key Port** configured, POTACAT falls back to the `KY` command —
 ## Known quirks
 
 - **ATU:** remote tune via CAT is not supported by Yaesu's firmware on this radio — no CAT command starts a tune cycle. Use the front-panel **TUNE** button.
-- **SWR bar:** POTACAT's SWR bar over-reads on Yaesu rigs — trust the radio's own meter.
+- **SWR bar:** before 1.13.1, POTACAT read the ALC meter as SWR on Yaesu rigs, so a perfect match could show 3:1. From 1.13.1 it reads the real SWR meter, scaled the way Hamlib and WSJT-X scale it.
 - Some users report that a few panel controls (ATT, preamp, COMP, NR, ANF, VOX) don't respond from POTACAT even though the power slider, VFO knob, and power on/off work fine.

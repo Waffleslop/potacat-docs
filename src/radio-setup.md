@@ -2,6 +2,35 @@
 
 POTACAT supports five connection methods. Open Settings and click **Add Rig** to configure your radio.
 
+## Let N1MM+ (or Another Logger) Control the Radio
+
+> **New in POTACAT 1.13.1.**
+
+POTACAT can pretend to be a Kenwood TS-2000 on this PC and pass everything N1MM+ sends on to the radio it controls, so you don't have to fight over the CAT port.
+
+1. In POTACAT, turn on **Settings > Tuning > Let N1MM+ (or another logger) control the radio**. Note the **Port** (4535 by default).
+2. In N1MM+, open **Config > Configure Ports** and set **Port** to **TCP**, **Radio** to **TS-2000**, the address to `127.0.0.1` and the port to the one from step 1.
+
+Frequency, band changes, mode, PTT and CW (sent as CAT text) all go through POTACAT. That includes a [remote shack you are driving](nested/remote-desktop.md) from this PC, so N1MM+ on a laptop works the shack's radio.
+
+> **Note:** N1MM's own voice keyer plays through this PC's sound card, not the shack's. For remote SSB, use POTACAT's voice macros instead.
+
+Other loggers that can talk to a TS-2000 over TCP can use the same setting.
+
+## Sound-Card PTT for Radios with No CAT
+
+> **New in POTACAT 1.13.1.**
+
+A radio with no computer control, such as a Baofeng on a Digirig Lite or a CM108/CM119 cable, can still be keyed from POTACAT:
+
+1. Add the radio with **No CAT control (VOX)** as its connection type.
+2. Under **Transmit (PTT)**, choose **The USB sound card keys it (Digirig Lite, CM108 / CM119 PTT)**.
+3. Leave **PTT pin** on **GPIO 3** (right for the Digirig Lite and most cables) unless your interface says otherwise, then click **Find the sound card**.
+
+PTT then keys from any surface: this PC, ECHOCAT on your phone, or FT8.
+
+> **Linux:** your user needs read/write access to the sound card's `hidraw` device. Add the udev rule Dire Wolf documents for CM108 PTT.
+
 ## Rig Presets
 
 > **New in POTACAT 1.13.0.**

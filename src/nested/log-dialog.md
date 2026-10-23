@@ -13,6 +13,10 @@ Click the **Log** button on any spot row, map popup, or use **Ctrl+L** for an un
 
 Press **Enter** to save.
 
+**Ctrl+L** with a spot tuned opens the dialog as POTA (or SOTA, WWFF) with the reference filled in, just like the **Log** button. Change the callsign and POTACAT looks up that operator instead, so the second op at a multi-op activation gets their own name from QRZ.
+
+**Move it out of the way:** drag the dialog by its title bar so it doesn't cover the callsigns you are logging. It opens where you left it next time. Double-click the title bar to centre it again.
+
 ## Multiple Operators and Parks
 
 - **Pass-the-mic activations:** enter every operator's callsign comma-separated in the callsign field (e.g. `K1ABC, W2DEF`) — POTACAT logs a separate entry for each operator.

@@ -12,7 +12,7 @@ Press **F1** to see this list in the app.
 | **Space** | Pause / resume scan (resumes from the highlighted spot, not the top) |
 | **↑ / ↓** | Move the spot selection up / down |
 | **← / →** | Step the frequency ±1 kHz |
-| **Ctrl+L** | Log a QSO + auto re-spot — also logs unspotted stations, and typing a call shows your past QSOs with it |
+| **Ctrl+L** | Log a QSO + auto re-spot — fills in the tuned spot's program and park, also logs unspotted stations, and typing a call shows your past QSOs with it |
 | **Ctrl+R** | Re-spot the selected spot (no log entry) |
 | **Ctrl+M** | Multi-park dialog (activator mode) |
 | **Alt+R** | Reload last contact (activator mode) |

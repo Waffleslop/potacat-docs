@@ -34,6 +34,14 @@ Windows, macOS, and Linux (including arm64), with installers for all three at [p
 
 ## Features you might have missed
 
+#### Can POTACAT send Winlink email?
+
+Yes, from 1.13.1. Open **More ▾ > Winlink Mail**. It works over the internet on Windows, Linux and Mac, and over the radio with ARDOP or packet on Windows and Linux, with nothing else to install. See [Winlink Email](nested/winlink.md).
+
+#### Can N1MM+ control my radio through POTACAT?
+
+Yes, from 1.13.1. Turn on **Settings > Tuning > Let N1MM+ (or another logger) control the radio**, then point N1MM+ at POTACAT as a Kenwood TS-2000 over TCP. It works even when this PC is driving a remote shack. See [Let N1MM+ control the radio](radio-setup.md#let-n1mm-or-another-logger-control-the-radio).
+
 #### Can I look up my previous QSOs with a callsign?
 
 Yes. Press `Ctrl+L` and type the callsign — the logger shows your past QSOs with that station, whether or not they're currently spotted. The pop-out logger has a Past QSOs panel that does the same thing.
@@ -90,7 +98,7 @@ Yes — use the `K-TEST` park reference, a practice park for testing your activa
 
 #### What do the checkmarks next to callsigns mean?
 
-A green ✅ means the station is in your log — you've worked them before at some point. A grey checkmark means you've already worked them on the current UTC day on that band, which is why the spot is muted. See [Hunter Mode](hunter-mode.md) for the full spot-table legend.
+A green ✅ means the station is in your log — you've worked them before at some point. A grey checkmark means you've already worked them on the current UTC day on that band, which is why the spot is muted. A **dim** checkmark (1.13.1 and later) means you haven't worked the station on this band and mode, but did work them today on another one. Hover it to see which. The spot is a new contact. See [Hunter Mode](hunter-mode.md) for the full spot-table legend.
 
 #### What does the yellow star mean?
 
@@ -139,10 +147,6 @@ They aren't SNR. JTCAT's per-decode figures are its own decoder confidence score
 #### Will POTACAT add leaderboards, profiles, or social features?
 
 No — POTACAT is staying in its lane as a hunting and activating tool, not a social platform. Related privacy note: your QSO logs are never exposed to anyone; cloud-stored logs are only reachable through widgets you choose to embed yourself.
-
-#### Will POTACAT support WinLink or VARA?
-
-There are no plans for either. WinLink would be difficult to integrate, and VARA's licensing stands in the way.
 
 #### Can the mobile app do FT8 directly to a radio (via a digirig) without a computer?
 

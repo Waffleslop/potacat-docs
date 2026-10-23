@@ -26,11 +26,10 @@ Both work at the same time — pairing the app doesn't disable browser access.
 Open POTACAT and click the **gear icon** in the top bar to open Quick Settings. Toggle **ECHOCAT** on. You'll see:
 
 - A URL (e.g., `https://192.168.1.50:7300`)
-- A 6-character token (e.g., `A1B2C3`)
 
 If you have Tailscale installed, the Tailscale address is shown with a green label — use that green `https://` URL for remote access (the hostname, not the `100.x.x.x` IP).
 
-You can also configure ECHOCAT from **Settings > ECHOCAT**, where you can change the port (default 7300), regenerate the token, set the PTT safety timeout, and select audio devices.
+You can also configure ECHOCAT from **Settings > ECHOCAT**, where you can change the port (default 7300), set a password (see [Password-protect your rig](#password-protect-your-rig)), set the PTT safety timeout, and select audio devices.
 
 ### 2. Pair the App (iOS/Android)
 
@@ -52,7 +51,7 @@ No app? Use the free browser interface:
 
 1. Open your phone's browser and navigate to the URL shown in POTACAT
 2. You'll see a certificate warning (ECHOCAT uses a self-signed TLS certificate on the LAN) — tap **Advanced** > **Proceed** to accept it
-3. If token authentication is enabled, enter the 6-character token and tap **Connect**
+3. If you have set a password, enter it and tap **Connect**
 
 That's it — you're connected. You'll see the spot list, a frequency display, and the mode badge at the top.
 
@@ -290,9 +289,15 @@ From POTACAT 1.13.0 you can keep several of your own devices on the shack at onc
 
 On the LAN, ECHOCAT uses a self-signed TLS certificate. Your browser will warn you the first time — accept the certificate and it will be remembered for future sessions. Over Tailscale, ECHOCAT uses a real certificate issued for your MagicDNS hostname, so there's no warning — but that's also why you must connect by hostname, not IP.
 
-### Token Authentication
+### Password-protect your rig
 
-The 6-character hex token adds an extra layer of access control for browser connections. It's optional — enable it if other people can reach your network. You can regenerate it at any time from the desktop settings.
+Anyone who can open your ECHOCAT address (this PC on your network or Tailscale, port 7300) can see and control your radio. To require a password, open **Settings > ECHOCAT** and, directly under the ECHOCAT addresses, turn on **Password-protect your rig** (**Require a password to reach my ECHOCAT address**). Type a password or click **Random**. It is off when POTACAT is installed.
+
+- **ECHOCAT Web** asks for the password before it shows the radio.
+- **The ECHOCAT app** never asks you to type it. It receives the password inside the QR code, tap-to-pair or link you pair with.
+- **The POTACAT Cloud tunnel** has its own sign-in.
+
+Older app versions call this password the *access token*.
 
 ## Settings Reference
 
@@ -300,8 +305,7 @@ The 6-character hex token adds an extra layer of access control for browser conn
 |---------|---------|-------------|
 | Enable ECHOCAT | Off | Start the ECHOCAT server |
 | Port | 7300 | HTTPS/WebSocket server port |
-| Require Token | On | Require token authentication for browser access (optional extra security) |
-| Token | Auto-generated | 6-character hex authentication token |
+| Password-protect your rig | Off | Require a password to reach the ECHOCAT address. The web page asks for it; the app gets it when pairing |
 | PTT Safety Timeout | 180s | Auto-drop PTT after this many seconds |
 | Enable CW Keyer | Off | Allow CW keying from phone |
 | CW Key Port | None | COM port for hardware DTR keying |

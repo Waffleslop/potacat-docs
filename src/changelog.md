@@ -2,6 +2,17 @@
 
 This page summarizes major POTACAT and ECHOCAT releases — it is not an exhaustive list of every patch.
 
+### v1.13.1 — October 2026
+
+- **Winlink email.** More ▾ > Winlink Mail sends and receives mail over the internet (Windows, Linux, Mac) and over the radio with ARDOP or packet (Windows and Linux). Nothing to install. See [Winlink Email](nested/winlink.md).
+- **N1MM+ (or another logger) can control the radio** through POTACAT as a TS-2000 over TCP, including a remote shack you are driving. See [Radio Setup](radio-setup.md#let-n1mm-or-another-logger-control-the-radio).
+- **Sound-card PTT** for radios with no CAT (Digirig Lite, CM108/CM119). See [Radio Setup](radio-setup.md#sound-card-ptt-for-radios-with-no-cat).
+- **Yaesu SWR** now reads the SWR meter instead of ALC; Yaesu and Icom SWR are scaled like Hamlib and WSJT-X.
+- **ECHOCAT:** the radio's audio is never taken from the PC's microphone; one **Password-protect your rig** setting replaces the access token.
+- **Spots and logging:** a dim checkmark for "worked today on another band/mode"; the Log QSO form drags by its title bar; Ctrl+L brings the tuned spot's park.
+- **SSTV:** a **Keep** button saves a picture decoded from a weak signal to Received.
+- FT-817/818, FT-857 and FT-897 now use Yaesu's own CAT; IC-9700 network audio fixes; FT-710 rig preset **Use current** reads RF and AF gain.
+
 ### v1.13.0 "The KM4ACK Ham Fam Jam Release" — October 2026
 
 - **Run your shack from another POTACAT.** Pair a laptop with the shack PC and drive the radio: VFO window, HOLD TO TALK, FT8/FT4 and the other JTCAT modes, JS8, SSTV, CW, voice macros and the band scope. See [Run Your Shack from Another POTACAT](nested/remote-desktop.md).
