@@ -18,6 +18,8 @@ You don't need to visit winlink.org. If your callsign has no Winlink account, PO
 
 **Already have an account?** Type its password into **Winlink password** and save.
 
+**On your phone:** the ECHOCAT app has its own account setup under **Settings > Winlink**, so you can check or create the account from the phone instead.
+
 From the next desktop update, the Winlink Mail window and ECHOCAT Web's **Mail** tab also open with **Set up your Winlink account** when no password is saved.
 
 ## Sending and Receiving
@@ -59,9 +61,7 @@ Radio sessions need a radio with CAT control, because POTACAT tunes and keys it.
 
 ## From Your Phone or a Browser
 
-ECHOCAT Web has a **Mail** tab with the same folders, composer, gateway list, waterfall and **Send / Receive**. The shack PC holds the mailbox and keys the radio. See [ECHOCAT](../echocat.md).
-
-The ECHOCAT app's Mail tab is coming in an app update.
+The ECHOCAT app and ECHOCAT Web both have a **Mail** tab with the same folders, composer, gateway list, waterfall and **Send / Receive**. The shack PC holds the mailbox and keys the radio, so the desktop must be on POTACAT 1.13.1 or later. Winlink is for the station owner only: the shack refuses mail from a Guest Pass. See [ECHOCAT](../echocat.md).
 
 > **Note:** A desktop that is [driving a remote shack](remote-desktop.md) can't start a radio session. Start radio sessions on the shack PC.
 
