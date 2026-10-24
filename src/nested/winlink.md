@@ -96,9 +96,11 @@ With no internet in the park, you can still spot yourself on POTA through Winlin
 
    `!W7RTA POTA US-0786 14.0675 CW CQ POTA`
 
-3. Click **Send / Receive**, over ARDOP or VARA from the field.
+3. Click **Put in Outbox**, then **Send / Receive**, over ARDOP or VARA from the field.
 
-The spot shows on POTA as coming from the activator. **To respot**, for example after you change band, send another message with the new frequency. Winlink can take a few minutes to deliver, so allow time for the spot to appear. To try it without a real spot, use **K-TEST** as the park.
+The spot shows on POTA as coming from the activator. **To respot**, for example after you change band, send another message with the new frequency. **QRT** as the comment marks you QRT. The service reads one line per message, so for an n-fer send one message per park. Winlink can take a few minutes to deliver, so allow time for the spot to appear.
+
+To test it, use **K-TEST** as the park, for example `!W7RTA POTA K-TEST 14.000 CW TEST SPOT`. A real park posts a real public spot.
 
 > **Note:** POTA Spotter isn't run by POTACAT. Questions about the service go to the address on [its page](https://potaspot.tdod.org/).
 
