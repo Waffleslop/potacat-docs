@@ -87,6 +87,21 @@ From 1.13.2, ARDOP and packet take their audio over POTACAT's own link to the ra
 
 With no internet in the park, you can still spot yourself on POTA through Winlink. [POTA Spotter](https://potaspot.tdod.org/) is a free service that turns an email into a POTA self-spot. Thanks to Charlie, W7RTA, who found that it works from POTACAT.
 
+### The spot buttons
+
+> **New in POTACAT 1.13.3.**
+
+POTACAT fills in the spot for you:
+
+- **In an activation**, click **Spot by Winlink**, beside **Spot**. The button appears once you have accepted the Winlink reminder in Winlink Mail. Winlink Mail opens with the spot filled in: your callsign, every POTA park of the activation, and the frequency and mode that **Spot** uses.
+- **In Winlink Mail**, click **POTA spot**, beside **Position report**. It fills the spot from your activation and the radio's frequency and mode.
+
+Check the line, add a comment after the mode if you like, then click **Put in Outbox** and **Send / Receive**. Nothing goes out by itself. For an n-fer, POTACAT sends one message per park.
+
+If POTACAT doesn't know the park or the frequency yet, the line shows **PARK** or **FREQ**, with a note saying what to fill in. **Put in Outbox** refuses the line until you do. USB and LSB are sent as SSB, and data modes as FT8, or as the mode JTCAT is running.
+
+### By hand
+
 1. In the Winlink Mail window, write a new message to **spot@pota.tdod.org**. The subject can be anything.
 2. In the body, put one line in this form:
 

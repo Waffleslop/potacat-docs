@@ -18,6 +18,8 @@ The mobile app's Activator Mode can pick nearby parks by GPS and stores offline 
 
 You can self-spot straight from Activator mode — the equivalent of pota.app's **Add Spot** (a live spot). POTACAT does not declare your activation on the POTA website: announcing future plans (pota.app's **Add Activation**) and the final log upload are things you do on pota.app yourself.
 
+No internet at the park? On the desktop, click **Spot by Winlink**, beside **Spot**, to spot yourself by Winlink email. See [Spot Yourself on POTA by Winlink](nested/winlink.md#spot-yourself-on-pota-by-winlink).
+
 ## Logging during an activation
 
 Any logging that occurs while an activation is open is added to the activation automatically. That includes QSOs you log from the spot table while hunting park-to-park — they count toward your activation's QSO total and keep the activation fields, so your `MY_SIG_INFO` stays intact when you flip between hunting and activating.
