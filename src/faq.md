@@ -28,6 +28,10 @@ POTACAT desktop and ECHOCAT Web are free and open source, and always will be. Tw
 - **ECHOCAT mobile apps** (iOS/Android): $9.99, one time.
 - **POTACAT Cloud**: an optional subscription at $5/month or $50/year, with a free trial when you activate it inside POTACAT. Cloud adds conveniences like cloud log backup and multi-device logging, parks-worked sync, a tunnel that connects your phone to your shack without a VPN, and rig sharing with other operators.
 
+#### I made my Cloud account with Sign in with Apple. How do I sign in on the desktop?
+
+From 1.13.2, **Settings > Cloud** takes **Email or callsign**. Accounts made with Sign in with Apple and Hide My Email don't have an address you know, so sign in with your callsign and the account's password.
+
 #### Which platforms does the desktop app support?
 
 Windows, macOS, and Linux (including arm64), with installers for all three at [potacat.com](https://potacat.com). Users have also run it successfully on a Raspberry Pi 5. Chromebooks are not a supported platform.
@@ -72,7 +76,7 @@ Yes. Click the **Rig** button at the top of the Table view and open the **Custom
 
 #### How do I drop to 60 W automatically for FT8?
 
-Use a rig preset (POTACAT 1.13.0 and later). Click **Rig > Presets**, make a preset named `FT8` with TX power 60 (and AF gain 0 if you want the speaker quiet), and assign it to **Digital** under "Apply by itself when the mode changes to". Make a second preset for SSB at your usual power. The radio then switches levels by itself whenever the mode changes, including when an FT8 session starts. See [Rig Presets](radio-setup.md#rig-presets).
+Use a rig profile (POTACAT 1.13.0 and later). Open **Settings > Profiles** (or **Rig > Presets**), make a profile named `FT8` with TX power 60 (and AF gain 0 if you want the speaker quiet), and assign it to **Digital** under "Apply by itself when the mode changes to". Make a second profile for SSB at your usual power. The radio then switches levels by itself whenever the mode changes, including when an FT8 session starts. See [Rig Profiles](radio-setup.md#rig-profiles).
 
 #### Can I run my shack from a laptop running POTACAT?
 

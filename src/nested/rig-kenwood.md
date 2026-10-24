@@ -35,6 +35,7 @@ If you operate with the radio's own mic in hand, uncheck **SSB-over-DATA** in Se
 
 ## TS-2000
 
+- **Direct serial needs RTS/CTS** (POTACAT 1.13.2 and later sets it): like the TS-590, the TS-2000 only replies on a direct serial connection with RTS/CTS handshake. On older versions it connected but never answered.
 - **No SWR over CAT**: the TS-2000 doesn't expose an SWR reading via CAT, so POTACAT's SWR bar stays dashed out. That's normal, not a fault.
 - **Set the Radio Model to `TS-2000`**: with a generic or empty model selected, POTACAT polls commands the radio doesn't support, each one triggers the radio's `?;` error response — and the radio **beeps continuously**. Older Kenwoods (e.g. TS-850S) beep for the same reason; always pick the closest model.
 - **Radio jumping into split when tuning?** Check POTACAT's **Enable Split Mode** setting first — when it's on, POTACAT deliberately sets up split on every QSY. This applies to all Kenwood-protocol rigs.

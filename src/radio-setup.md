@@ -31,31 +31,30 @@ PTT then keys from any surface: this PC, ECHOCAT on your phone, or FT8.
 
 > **Linux:** your user needs read/write access to the sound card's `hidraw` device. Add the udev rule Dire Wolf documents for CM108 PTT.
 
-## Rig Presets
+## Rig Profiles
 
-> **New in POTACAT 1.13.0.**
+> **New in POTACAT 1.13.0** as rig presets; **expanded in 1.13.2** into rig profiles.
 
-A rig preset is a named set of **TX power**, **RF gain** and **AF gain** — AF gain is the radio's speaker level, so 0 silences the shack, which is handy for FT8. Apply one with a single tap instead of setting three levels by hand.
+A rig profile is a named set of radio settings for the active rig. It can set any of these: **TX power**, **RF gain**, **AF gain** (the radio's speaker level, so 0 silences the shack for FT8), the **RX filter**, **noise blanker**, **noise reduction**, **auto-notch**, **compressor**, **VOX**, **preamp**, **attenuator** and **AGC**. Tick only what the profile should set; everything else on the radio is left as it is.
 
-### Make a preset
+### Make a profile
 
-1. Click **Rig** in the top bar and open the **Presets** tab.
+1. Open **Settings > Profiles**, or click **Rig** in the top bar and open the **Presets** tab.
 2. Click **+ New preset** and give it a name, such as `FT8`.
-3. Enter the levels, or click **Use current** to fill them from the radio's present settings. A blank field leaves that level alone.
+3. Tick the settings it should include and enter their values, or set the radio the way you want it and click **Use current** to fill every field from the radio.
 4. Click **Save**.
 
-Presets are saved per radio, so each rig in [My Rigs](nested/my-rigs.md) keeps its own set.
+Profiles are saved per radio, so each rig in [My Rigs](nested/my-rigs.md) keeps its own set. Settings your radio can't change over CAT show as **Not available on this radio**.
 
-### Apply a preset
+### Apply a profile
 
-Tap a preset in the **Presets** tab. They are also listed in the VFO window, in ECHOCAT Web, and — when the app update lands — in the ECHOCAT app. A [second POTACAT driving your shack](nested/remote-desktop.md) can apply them too.
+Tap a profile in **Settings > Profiles** or the Rig menu's **Presets** tab. Profiles are also listed in the VFO window and in ECHOCAT (the app and ECHOCAT Web). A [second POTACAT driving your shack](nested/remote-desktop.md) can apply them too.
 
-### Let the mode apply it
+### Let the mode and band apply it
 
-Under **Apply by itself when the mode changes to**, assign a preset to **SSB**, **CW**, **Digital**, **FM** or **AM**. The shack applies it the moment the radio moves into that mode family, whatever caused the change: a spot click, the radio's knob, the phone, or an FT8 session starting.
+- **By mode:** under **Apply by itself when the mode changes to**, assign one profile to each mode family: **SSB**, **CW**, **Digital**, **FM** or **AM**. All SSB can use one profile and all digital another. Starting FT8 applies the Digital one.
+- **By band:** for finer control, add **Band rules** with **+ Add rule**, such as "20 m SSB uses this, 40 m SSB uses that". A rule can name a band, a mode, or both; no band picked means any band. Rules are checked first, top to bottom, and the first match wins. The mode list is the fallback.
 
-A preset goes on before the first transmission and is never applied while the radio is keyed.
+The shack applies a profile the moment the radio moves into a matching mode or band, whatever caused the change: a spot click, the radio's knob, the phone, or an FT8 session starting. A profile goes on before the first transmission and is never applied while the radio is keyed.
 
-> **Example:** hunting POTA on SSB at 100 W, then switching to FT8 at 60 W with the speaker off. Make an `SSB` preset (TX power 100) and an `FT8` preset (TX power 60, AF gain 0), assign them to SSB and Digital, and the radio follows the mode.
-
-Fields your radio can't set over CAT are hidden, with a note saying why.
+> **Example:** hunting POTA on SSB at 100 W, then switching to FT8 at 60 W with the speaker off. Make an `SSB` profile (TX power 100) and an `FT8` profile (TX power 60, AF gain 0), assign them to SSB and Digital, and the radio follows the mode.

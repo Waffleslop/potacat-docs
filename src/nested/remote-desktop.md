@@ -29,7 +29,7 @@ Then click **Connect**. The status bar shows the shack's name, its radio, the co
 - Tuning from spots and the map, and the **VFO window**
 - Mode and filter
 - The rig controls: NB, ATU, preamp and attenuator, DSP, power, split, VFO A/B and lock
-- [Rig presets](../radio-setup.md#rig-presets) and custom CAT buttons
+- [Rig profiles](../radio-setup.md#rig-profiles) and custom CAT buttons
 - Switching between the shack's radios — click the **RMT** pill in the status bar
 
 ### Audio

@@ -7,6 +7,9 @@ Press **F1** to see this list in the app.
 | **F1** | Show keyboard shortcuts |
 | **F2** | Open/focus QSO logbook |
 | **F5** | Check for updates |
+| **F6** | Tint worked states on the map ([Worked All States](nested/worked-all-states.md)) |
+| **F7** | Tint worked countries on the map |
+| **F8** | Change the band and mode the map tints follow |
 | **F11** | Show welcome/setup screen |
 | **F12** | Open the DevTools console (troubleshooting) |
 | **Space** | Pause / resume scan (resumes from the highlighted spot, not the top) |

@@ -2,6 +2,16 @@
 
 This page summarizes major POTACAT and ECHOCAT releases — it is not an exhaustive list of every patch.
 
+### v1.13.2 — October 2026
+
+- **Winlink with your own VARA HF and VARA FM** (Windows), set up in one click with **Set up VARA for me**. See [Winlink Email](nested/winlink.md#over-the-radio-with-vara-windows-your-own-copy).
+- **ARDOP and packet on macOS**, using POTACAT's own audio link to the radio.
+- **Worked All States**: worked and confirmed states and countries by band and mode, tinted on every map (F6 / F7 / F8), LoTW and QRZ fill-in, and **Hunt: Wanted states** in FT8. See [Worked All States](nested/worked-all-states.md).
+- **Rig profiles**: Settings > Profiles can set TX power, gains, filter, NB, NR, notch, compressor, VOX, preamp, attenuator and AGC, by mode and by band. See [Rig Profiles](radio-setup.md#rig-profiles).
+- **Guest Pass:** a guest can listen to any spot; transmit is checked against their license and the pass.
+- **Radios:** Ten-Tec Jupiter and Argonaut V, Kenwood TS-2000 direct serial, a missing COM port is waited for, Yaesu FTM-510D and Icom IC-7410 in the picker, PTT on ECHOCAT Web for sound-card-keyed radios.
+- **Sign in to Cloud with your callsign**, for Sign in with Apple / Hide My Email accounts.
+
 ### v1.13.1 — October 2026
 
 - **Winlink email.** More ▾ > Winlink Mail sends and receives mail over the internet (Windows, Linux, Mac) and over the radio with ARDOP (Windows and Linux). Nothing to install. See [Winlink Email](nested/winlink.md).
@@ -17,7 +27,7 @@ This page summarizes major POTACAT and ECHOCAT releases — it is not an exhaust
 
 - **Run your shack from another POTACAT.** Pair a laptop with the shack PC and drive the radio: VFO window, HOLD TO TALK, FT8/FT4 and the other JTCAT modes, JS8, SSTV, CW, voice macros and the band scope. See [Run Your Shack from Another POTACAT](nested/remote-desktop.md).
 - **More than one of your devices at a time** (beta, off by default) — phone and laptop can share the shack. See [ECHOCAT](echocat.md#more-than-one-of-your-devices-beta).
-- **Rig presets** — named TX power / RF gain / AF gain sets, applied by a tap or automatically on a mode change. AF gain is a new rig control. See [Rig Presets](radio-setup.md#rig-presets).
+- **Rig presets** — named TX power / RF gain / AF gain sets, applied by a tap or automatically on a mode change. AF gain is a new rig control. See [Rig Presets](radio-setup.md#rig-profiles).
 - **JTTY chats** — a tab per station in the JTCAT window, and CQ goes out on the clearest spot near your offset. See [JTCAT](nested/jtcat.md#jtty).
 - **IC-7300 and family:** a spot click no longer leaves the radio in plain USB when the DATA frame is lost on a shared CAT port.
 - Linux shacks on a tailnet can now be paired from away even when POTACAT can't run the `tailscale` command (snap installs).

@@ -272,6 +272,7 @@ With POTACAT Cloud you can grant another operator timed access to your radio —
 
 - You issue a **guest pass**: a four-word code (like `prague-plankton-potato-idaho`) that expires after a set number of hours
 - You can cap **TX power**, and band privileges are enforced based on the guest's license class
+- From 1.13.2, a guest can **tune to and listen to any spot**: a Technician can click a 20 m phone spot and listen. Transmit is what gets checked, against the guest's license class and the modes the pass allows. A refused key-down tells the guest why
 - The guest needs a **free POTACAT Cloud account** — this provides the audit trail of who operated your station
 - Rig sharing requires the Cloud tunnel; Tailscale covers your own devices, but sharing means Cloud (or adding the guest to your Tailnet yourself)
 
