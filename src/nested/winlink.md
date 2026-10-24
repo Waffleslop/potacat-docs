@@ -83,6 +83,25 @@ Radio sessions need a radio with CAT control, because POTACAT tunes and keys it.
 
 From 1.13.2, ARDOP and packet take their audio over POTACAT's own link to the radio on every system, so there are no sound devices to pick by hand. VARA has its own audio setup (see [above](#over-the-radio-with-vara-windows-your-own-copy)).
 
+## Spot Yourself on POTA by Winlink
+
+With no internet in the park, you can still spot yourself on POTA through Winlink. [POTA Spotter](https://potaspot.tdod.org/) is a free service that turns an email into a POTA self-spot. Thanks to Charlie, W7RTA, who found that it works from POTACAT.
+
+1. In the Winlink Mail window, write a new message to **spot@pota.tdod.org**. The subject can be anything.
+2. In the body, put one line in this form:
+
+   `!CALLSIGN POTA PARK FREQUENCY MODE COMMENTS`
+
+   The frequency is in MHz, and the comments are optional. For example:
+
+   `!W7RTA POTA US-0786 14.0675 CW CQ POTA`
+
+3. Click **Send / Receive**, over ARDOP or VARA from the field.
+
+The spot shows on POTA as coming from the activator. **To respot**, for example after you change band, send another message with the new frequency. Winlink can take a few minutes to deliver, so allow time for the spot to appear. To try it without a real spot, use **K-TEST** as the park.
+
+> **Note:** POTA Spotter isn't run by POTACAT. Questions about the service go to the address on [its page](https://potaspot.tdod.org/).
+
 ## From Your Phone or a Browser
 
 The ECHOCAT app and ECHOCAT Web both have a **Mail** tab with the same folders, composer, gateway list, waterfall and **Send / Receive**. The shack PC holds the mailbox and keys the radio, so the desktop must be on POTACAT 1.13.1 or later. Winlink is for the station owner only: the shack refuses mail from a Guest Pass. A VARA session started from the phone shows "Starting VARA HF on the shack PC" while VARA comes up, and a failure says what is wrong on the shack PC. See [ECHOCAT](../echocat.md).
