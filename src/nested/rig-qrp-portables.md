@@ -36,7 +36,7 @@ Remote CW on the QMX requires **firmware 1.03 (`1_003_0`) or later** for DTR key
 
 Other QMX notes:
 
-- Linux: if saving the rig fails with "Cannot lock port", you can hand-edit `~/.config/potacat/settings.json` — give the rig `type: serial-cat`, `port: /dev/ttyACM0`, `baudRate: 38400`, `disableDtrRts: true`.
+- Linux: if saving the rig fails with "Cannot lock port", you can hand-edit `~/.config/POTACAT/settings.json` — give the rig `type: serial-cat`, `port: /dev/ttyACM0`, `baudRate: 38400`, `disableDtrRts: true`.
 - Very faint phone audio through ECHOCAT is usually the radio-side output level — turn it up on the QMX.
 
 ## (tru)SDX

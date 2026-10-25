@@ -76,7 +76,7 @@ POTACAT's settings are stored outside the app, so they survive updates — and u
 | Platform | Location |
 |----------|----------|
 | Windows | `C:\Users\<you>\AppData\Roaming\POTACAT` |
-| Linux | `~/.config/potacat` |
+| Linux | `~/.config/POTACAT` |
 
 > **Warning:** Deleting this folder wipes all settings, rig configurations, and cached data. Use the settings **export** option in Settings first if you want a backup to restore from.
 
