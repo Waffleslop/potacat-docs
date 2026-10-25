@@ -60,6 +60,7 @@ Click a decode (or a highlighted POTA activator) to reply. JTCAT runs the exchan
 - **Late-join TX** — you don't have to wait for the top of a cycle. Click partway into a TX window and JTCAT starts a shortened reply immediately, matching WSJT-X's late transmit start.
 - **AP decoding** — a-priori decoding is supported, which helps pull out weak replies directed at you.
 - **Hold TX** — this checkbox is the equivalent of WSJT-X's "Hold Tx Freq": your transmit frequency stays pinned to the value in the TX Freq box while RX follows the other station. The setting persists between sessions.
+- **TX slot lock** (from 1.13.3) — the **Slot** menu offers **Auto**, **1st (even)** or **2nd (odd)**, for FT8, FT4 and FT2. Locked, every CQ and reply stays in that slot, and JTCAT won't call a station transmitting in your slot; clicking one offers **Unlock and call**. Hound mode ignores the lock. On **Auto**, your CQ stays in the slot you last transmitted in for 30 minutes. ECHOCAT Web has the same **Slot** button.
 - **dB numbers are confidence scores** — JTCAT's per-decode signal figures are the decoder's own confidence score, **not** calibrated SNR. Don't expect them to match WSJT-X's dB readings.
 
 > **Tip:** Keep the TX Power slider low — around 10–20% typically produces clean audio with little or no ALC action.
@@ -71,9 +72,15 @@ JTTY (the WSJT-X 3.2 keyboard mode: 4-GFSK, 127 Hz wide, no timed sequences) has
 - **Chats.** The tab strip above the decodes holds all traffic plus one tab per station. Double-click a line to open a chat with that station and see the exchange as a conversation; the composer has the pair of callsigns filled in. A station calling you opens a tab without switching you away from the one you are in. Right-click a tab for **Log** (log the QSO) and **Close**. Chats work with **Style** set to **FT8**.
 - **CQ on a clear spot.** When you call CQ, JTCAT first moves to the quietest spot near your offset, measured over the last 30 seconds of the passband, so a fresh session no longer calls on 1500 Hz with everyone else. **Clear spot** does the same on demand. Turn on **Hold** (Hold TX frequency) to stay where you are. The move is made on the shack, so a CQ from the phone or a [paired laptop](remote-desktop.md) gets it too.
 
+## WSPR Map
+
+From 1.13.3, the WSPR map in the JTCAT window has a legend for its colours: **green** for -10 dB or better, **amber** for -11 to -20 dB, **red** below -20 dB, and **grey** for no report.
+
 ## Auto-Logging
 
 JTCAT logs each QSO automatically when the report exchange completes and forwards it to any logbooks you've configured — see [Logbook Forwarding](logbook-forwarding.md). There's nothing to click.
+
+From 1.13.3, a contact made with no frequency from the radio (CAT not connected) is logged on the band's FT8 dial frequency, so Wavelog and other logbooks don't refuse it as 0 kHz.
 
 That includes interrupted endings: if you click a new station while the previous QSO is still in its 73/courtesy phase, the completed QSO is logged **before** the new one replaces it.
 

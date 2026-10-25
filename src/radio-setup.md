@@ -33,9 +33,9 @@ PTT then keys from any surface: this PC, ECHOCAT on your phone, or FT8.
 
 ## Rig Profiles
 
-> **New in POTACAT 1.13.0** as rig presets; **expanded in 1.13.2** into rig profiles.
+> **New in POTACAT 1.13.0** as rig presets; **expanded in 1.13.2** into rig profiles. **Monitor** added in 1.13.3.
 
-A rig profile is a named set of radio settings for the active rig. It can set any of these: **TX power**, **RF gain**, **AF gain** (the radio's speaker level, so 0 silences the shack for FT8), the **RX filter**, **noise blanker**, **noise reduction**, **auto-notch**, **compressor**, **VOX**, **preamp**, **attenuator** and **AGC**. Tick only what the profile should set; everything else on the radio is left as it is.
+A rig profile is a named set of radio settings for the active rig. It can set any of these: **TX power**, **RF gain**, **AF gain** (the radio's speaker level, so 0 silences the shack for FT8), the **RX filter**, **noise blanker**, **noise reduction**, **auto-notch**, **compressor**, **VOX**, **Monitor (MON)** and **Monitor level** (hear your own signal on SSB, silence it for FT8), **preamp**, **attenuator** and **AGC**. Tick only what the profile should set; everything else on the radio is left as it is.
 
 ### Make a profile
 

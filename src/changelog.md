@@ -2,6 +2,16 @@
 
 This page summarizes major POTACAT and ECHOCAT releases — it is not an exhaustive list of every patch.
 
+### v1.13.3 "The Right Band, Right Slot Release" — October 2026
+
+- **Each radio shows only its own bands**, everywhere in POTACAT; tick extra bands for a transverter or a 4 m export model. See [Your Radio's Bands](nested/my-rigs.md#your-radios-bands).
+- **FT8, FT4 and FT2 slot lock:** **Slot** > **Auto**, **1st (even)** or **2nd (odd)**. See [JTCAT](nested/jtcat.md#making-qsos).
+- **Spot yourself on POTA by Winlink** with **Spot by Winlink** or **POTA spot**. Thanks W7RTA. See [Winlink Email](nested/winlink.md#spot-yourself-on-pota-by-winlink).
+- **Logging:** GridTracker now accepts POTACAT's QSOs; frequencies are read in MHz, kHz or Hz, and older contacts saved with MHz as kHz are repaired (with a backup kept); an FT8 contact with no CAT is logged on the FT8 dial.
+- **Rig profiles** can set **Monitor (MON)** and **Monitor level**. Thanks K8IKO.
+- **WSPR map legend** for its SNR colours.
+- **Fixes:** a second VARA session in a row works; the gateway list error "invalid character ':'" is gone; a COM port Windows lists is never called missing; Yaesu voice macros stay in USB/LSB under SSB over DATA; ECHOCAT no longer restarts audio for a squelched FM or no-CAT radio.
+
 ### v1.13.2 — October 2026
 
 - **Winlink with your own VARA HF and VARA FM** (Windows), set up in one click with **Set up VARA for me**. See [Winlink Email](nested/winlink.md#over-the-radio-with-vara-windows-your-own-copy).

@@ -62,7 +62,7 @@ VARA is EA5HVK's modem. You install and license it yourself; POTACAT doesn't ins
 **Then, in Settings > Station > Winlink (email over radio) > VARA (your own copy, Windows):**
 
 1. Tick **Use VARA HF** or **Use VARA FM**.
-2. Click **Set up VARA HF for me** (or **Set up VARA FM for me**). POTACAT configures VARA for the active radio, including its sound card or the cables, PTT and the port. It then starts VARA and checks that VARA opened the devices. VARA is configured again whenever a session starts it or you switch radios.
+2. Click **Set up VARA HF for me** (or **Set up VARA FM for me**). POTACAT configures VARA for the active radio, including its sound card or the cables, PTT (set to VOX) and the port. It then starts VARA and checks that VARA opened the devices. VARA is configured again whenever a session starts it or you switch radios.
 3. Leave **Start VARA for me when a session needs it** ticked. VARA starts once and stays open between sessions; POTACAT never closes it.
 
 If you run both, set VARA FM to port **8310** in VARA FM's own settings, because both programs ship on 8300.

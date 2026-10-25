@@ -14,7 +14,7 @@ POTACAT spawns a `rigctld` process, connects via TCP, and translates commands to
 
 ## Radio Unplugged or Switched Off
 
-From 1.13.2, if the radio's COM port disappears, POTACAT says the port is not there and waits for it, then connects by itself when it comes back. Older versions repeated "link restored, link lost".
+From 1.13.2, if the radio's COM port disappears, POTACAT says the port is not there and waits for it, then connects by itself when it comes back. Older versions repeated "link restored, link lost". From 1.13.3, a COM port that Windows lists is never called missing; 1.13.2 could wrongly report "COMn is not there" for virtual ports, port sharers and some older USB serial drivers.
 
 POTACAT also no longer offers a Hamlib model that is a bridge to another program (FLRig, TCI, NET rigctl) for a radio on a COM port, and corrects one already set to your radio's own model.
 

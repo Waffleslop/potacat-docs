@@ -130,6 +130,14 @@ A worked station stays hidden until the next UTC day, or sooner if the activator
 
 Logging is behind a setting. Open Settings, search for "log", and check **Enable QSO Logging** — the Log button and the Logbook appear once it's on.
 
+#### A band I use has disappeared since 1.13.3. Where did it go?
+
+From 1.13.3, POTACAT shows only the bands your radio's model covers. If you reach a band the standard model doesn't list (4 m on a European radio, or a transverter band), tick it in **Settings > My Rigs** under **Check all bands you can use with this radio**. See [Your Radio's Bands](nested/my-rigs.md#your-radios-bands).
+
+#### Some old contacts were logged at a frequency like 14.074 kHz. Can POTACAT fix them?
+
+From 1.13.3 it does so by itself. At the first start, POTACAT repairs contacts saved with MHz typed into the kHz box, and keeps a backup of the log beside it (a `.pre-freq-repair-….bak` file) before changing anything. The repaired records sync to POTACAT Cloud. New entries are read correctly whether you type MHz, kHz or Hz; a frequency in no amateur band is logged blank rather than wrong.
+
 #### Can I change where my log file is stored?
 
 You can, but be careful: changing the ADIF log path starts a **new, empty log** at the new location. Your old file isn't deleted — it stays where it was — but POTACAT won't move it for you, and new QSOs land in the new file.

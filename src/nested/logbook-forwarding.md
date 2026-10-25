@@ -72,6 +72,12 @@ MacLoggerDX only accepts the WSJT-X binary protocol — POTACAT forwards to it i
 
 POTACAT sends the park reference in `POTA_REF`, `SIG_INFO`, and `SIG=POTA` over the WSJT-X UDP protocol, but HAMRS writes it only into the Comments field — HAMRS's "Their Park" field stays empty. This is a limitation on the HAMRS side (a feature request has been filed with HAMRS).
 
+### GridTracker
+
+Turn on **Also broadcast each QSO to an extra UDP port** in the logging settings, choose **WSJT-X binary (GridTracker, JTAlert, HamRS)**, and point it at the host and port GridTracker listens on (default `2237`). It runs alongside your main logbook.
+
+Before 1.13.3, GridTracker ignored the QSOs POTACAT sent, because it waits for a WSJT-X status message that POTACAT didn't send. From 1.13.3 it does, so logged contacts show up in GridTracker.
+
 ### QRZ Logbook
 
 Some users report that a QRZ password containing a `%` character breaks the QRZ login from POTACAT — and from QRZ's own site. This is an issue on QRZ's side; if your login fails, try a password without `%`.
