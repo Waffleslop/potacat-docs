@@ -4,6 +4,8 @@ Setup notes for the small rigs the community runs POTACAT with in the field — 
 
 ## Xiegu G90
 
+Full remote setup guide (Hamlib at 19200, Digirig audio, the voice-SSB cable detail): [Xiegu G90 remote control](https://potacat.com/remote/xiegu-g90/).
+
 - **Baud rate is the classic G90 failure.** The G90's factory CAT baud is **`19200`**; if POTACAT is left at the default `9600`, the radio just silently ignores everything. Set `19200` in the rig settings.
 - Connect as **Other Rig (Hamlib)** at `19200`. If the G90 profile won't read the frequency, some users have success selecting the **X5105** (or IC-718) model instead.
 - **ATU**: the G90's CAT protocol has no working remote-tune command — use the front-panel tuner button. This is a radio limitation, not a POTACAT one.
