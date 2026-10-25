@@ -82,6 +82,12 @@ Use a rig profile (POTACAT 1.13.0 and later). Open **Settings > Profiles** (or *
 
 Yes, from 1.13.0. Pair the laptop with the shack PC under **More ▾ > Remote Radios…** and it drives the radio like the phone app does: VFO, HOLD TO TALK, FT8, JS8, SSTV, CW and voice macros. See [Run Your Shack from Another POTACAT](nested/remote-desktop.md).
 
+#### Can I run POTACAT headless on a Raspberry Pi and use it from a browser?
+
+Yes. Start POTACAT with `--headless` (for example `POTACAT --headless`, or `npm start -- --headless` from source) and it runs with no window: CAT, spots, FT8, the CW keyer and ECHOCAT all work. Then open ECHOCAT Web in a browser on your network or over Tailscale, or use the ECHOCAT app. See [ECHOCAT](echocat.md).
+
+With no window there is no **Report a Bug** button. To send us a log, see [Getting a log without the window](nested/installation-issues.md#getting-a-log-without-the-window-headless--raspberry-pi).
+
 #### Can I hide a spot I don't want to see?
 
 Right-click it. You can hide the spot for 1 hour, 2 hours, 1 UTC day, or forever. Hiding applies to that callsign and frequency — not to every spot from that call — and there's a hidden-spots list where you can review and undo your choices.
@@ -163,10 +169,6 @@ No — POTACAT is staying in its lane as a hunting and activating tool, not a so
 #### Can the mobile app do FT8 directly to a radio (via a digirig) without a computer?
 
 No, and it's not on the roadmap — other apps already serve that use case well. ECHOCAT mobile does run FT8, but through your POTACAT desktop.
-
-#### Can I run POTACAT headless on a Raspberry Pi and use it from a browser?
-
-No. The desktop app depends on things a web app can't do — serial ports, TCP connections, subprocesses, file I/O — so a browser-only mode isn't feasible. Run the full desktop app on the Pi or shack computer and connect remotely with [ECHOCAT](echocat.md) instead.
 
 #### Why is there no "delete all" button in the logbook?
 

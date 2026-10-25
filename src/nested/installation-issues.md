@@ -107,13 +107,44 @@ POTACAT stores its settings outside the install folder, so they **survive uninst
 | Platform | Settings folder |
 |----------|-----------------|
 | Windows | `%APPDATA%\POTACAT` (i.e. `C:\Users\<you>\AppData\Roaming\POTACAT`) |
-| Linux | `~/.config/potacat` |
+| macOS | `~/Library/Application Support/POTACAT` |
+| Linux / Raspberry Pi | `~/.config/POTACAT` (`/root/.config/POTACAT` when run as root) |
 
 If POTACAT misbehaves even after a reinstall, a corrupt settings file is the likely cause. Deleting this folder resets POTACAT to a true first-run state.
 
 > **Warning:** Deleting the settings folder erases all settings, rig configurations, and cached data — you'll set everything up again from scratch. Note where your ADIF log file lives (Settings → Logging) before deleting anything.
 
 Advanced users can hand-edit `settings.json` inside this folder (for example, the rigs array). Never paste your raw `settings.json` into a bug report or Discord — it contains credentials. Use the **Report a Bug** button in Settings instead, which generates a safe, formatted report.
+
+## Getting a log without the window (headless / Raspberry Pi)
+
+When POTACAT runs headless (no window, for example on a Raspberry Pi), there's no **Report a Bug** button. Send us its log file instead:
+
+1. Restart POTACAT so the log starts clean.
+2. Reproduce the problem: key up and talk, tap a spot, whatever isn't working.
+3. On the Pi, copy the log somewhere easy to reach:
+
+   ```
+   cp ~/.config/POTACAT/session.log ~/potacat-log.txt
+   ```
+
+   If POTACAT runs as a system service under root, the log is at `/root/.config/POTACAT/session.log` instead; use `sudo cp /root/.config/POTACAT/session.log ~/potacat-log.txt`. If you can't find it, this searches for it:
+
+   ```
+   cp "$(find / -path '*POTACAT/session.log' 2>/dev/null | head -1)" ~/potacat-log.txt
+   ```
+
+4. Copy it to your computer. In PowerShell, Command Prompt or Terminal there:
+
+   ```
+   scp <user>@<pi-address>:~/potacat-log.txt .
+   ```
+
+5. Attach `potacat-log.txt` in Discord or on a GitHub issue.
+
+> **Note:** Unlike **Report a Bug**, the raw log isn't tidied up: it shows your callsign and folder paths. Settings and passwords are never written to it, but read it over first if that matters to you.
+
+The previous run's log is kept as `session.log.old` in the same folder, in case the problem happened before your last restart. The same files exist on every system, in the settings folder (see [above](#where-settings-live-and-factory-reset)): `%APPDATA%\POTACAT\` on Windows and `~/Library/Application Support/POTACAT/` on macOS.
 
 ## Running from source
 
