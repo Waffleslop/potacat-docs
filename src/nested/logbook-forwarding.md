@@ -78,6 +78,8 @@ Turn on **Also broadcast each QSO to an extra UDP port** in the logging settings
 
 Before 1.13.3, GridTracker ignored the QSOs POTACAT sent, because it waits for a WSJT-X status message that POTACAT didn't send. From 1.13.3 it does, so logged contacts show up in GridTracker.
 
+From 1.13.6, the same setting can also send JTCAT's FT8/FT4 decodes to GridTracker and answer the station you double-click there. See [JTCAT: Use GridTracker with JTCAT](jtcat.md#use-gridtracker-with-jtcat).
+
 ### QRZ Logbook
 
 Some users report that a QRZ password containing a `%` character breaks the QRZ login from POTACAT — and from QRZ's own site. This is an issue on QRZ's side; if your login fails, try a password without `%`.

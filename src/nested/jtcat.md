@@ -63,7 +63,41 @@ Click a decode (or a highlighted POTA activator) to reply. JTCAT runs the exchan
 - **TX slot lock** (from 1.13.3) — the **Slot** menu offers **Auto**, **1st (even)** or **2nd (odd)**, for FT8, FT4 and FT2. Locked, every CQ and reply stays in that slot, and JTCAT won't call a station transmitting in your slot; clicking one offers **Unlock and call**. Hound mode ignores the lock. On **Auto**, your CQ stays in the slot you last transmitted in for 30 minutes. ECHOCAT Web has the same **Slot** button.
 - **dB numbers are confidence scores** — JTCAT's per-decode signal figures are the decoder's own confidence score, **not** calibrated SNR. Don't expect them to match WSJT-X's dB readings.
 
-> **Tip:** Keep the TX Power slider low — around 10–20% typically produces clean audio with little or no ALC action.
+### Send your own message
+
+To transmit something other than the next step of the exchange, **click the TX message readout** (the line showing the message that will be transmitted) and type. Press **Enter** to accept it or **Esc** to cancel.
+
+- You can type a standard message (for example `K1ABC W9XYZ R-12`) or **free text of up to 13 characters**, using `A-Z`, `0-9`, space and `+ - . / ?`. POTACAT checks it before accepting it.
+- Typing a message doesn't start transmitting; enable TX as usual.
+- It's sent once in place of the current step. When the QSO moves on, the next step replaces it.
+- You can also click the highlighted step in the QSO tracker to edit it.
+
+On the phone, a directed CQ such as `CQ POTA` is set with **FT8 → Target → Custom** in ECHOCAT (see [below](#ft8-on-your-phone-echocat)).
+
+## Transmit Level: TX Pwr, Drive and ALC
+
+The audio bar in the JTCAT window has two transmit controls that do different jobs:
+
+- **TX Pwr** sets the radio's **RF output power**, in watts, over CAT.
+- **Drive** sets the **audio level** POTACAT sends into the radio. It controls modulation, not power. The scale is logarithmic, so you get fine control at the low end. (On a Flex connected with Flex Direct, audio goes at full scale and Drive is dimmed.)
+
+**ALC** is the radio's automatic level control. It moves when the audio going in is more than the transmitter needs. For FT8 and the other digital modes you want clean audio, so set Drive (and the radio's USB or data MOD level) so the ALC shows **little or no movement** while the radio still reaches the power set by TX Pwr. Lots of ALC means the signal is being compressed and splatters. No ALC at all is fine on some radios (Elecraft, for example) as long as the power comes up.
+
+Where to see ALC: the radio's own meter, the **ALC·TX** meter in POTACAT's rig panel, the meters in the VFO window, or ECHOCAT Web. The radio reports ALC only while transmitting. The JTCAT window shows S, PWR and SWR, not ALC.
+
+To set it up: key a transmission into a dummy load or a clear frequency, start with Drive low, and raise it until the power reaches TX Pwr; back off if ALC climbs. If power stays near zero whatever Drive says, the radio isn't taking audio from USB. See [Radio transmits but nothing shows on PSKReporter](#radio-transmits-but-nothing-shows-on-pskreporter).
+
+> **Tip:** The [SSTV](sstv.md) window has its own **Drive** slider, set separately from JTCAT's.
+
+## Use GridTracker with JTCAT
+
+GridTracker can show JTCAT's decodes and start QSOs in JTCAT, as it does with WSJT-X. From POTACAT 1.13.6:
+
+1. Open **Settings > Logging** and turn on **Also broadcast each QSO to an extra UDP port**.
+2. Set the host to `127.0.0.1` (GridTracker on the same PC), the port to GridTracker's, normally **2237**, and the format to **WSJT-X binary (GridTracker, JTAlert, HamRS)**.
+3. Leave **Send FT8/FT4 decodes too, and answer the station I double-click in GridTracker** ticked (it is on by default).
+
+GridTracker's call roster then fills from the JTCAT window, a double-click on a station in GridTracker answers it in JTCAT, just like a double-click in the decode list, and each logged QSO is sent to GridTracker. See also [Logbook Forwarding: GridTracker](logbook-forwarding.md#gridtracker).
 
 ## JTTY
 
@@ -88,6 +122,8 @@ That includes interrupted endings: if you click a new station while the previous
 
 ## Troubleshooting
 
+If nothing here fixes it, see [Report a Bug](../community--support.md#report-a-bug).
+
 ### Nothing decodes
 
 Work through these in order:
@@ -104,7 +140,7 @@ The five-step checklist:
 1. **Watch the ALC meter during TX.** Zero deflection means audio isn't reaching the modulator at all.
 2. **IC-7300:** set **MENU → SET → Connectors → USB MOD Level** to about 50%.
 3. **DATA MOD = USB** — some rigs default data-mode audio to the ACC jack.
-4. **TX gain slider** in JTCAT/ECHOCAT is not at 0.
+4. **Drive** in the JTCAT window (or ECHOCAT) is not at 0. See [Transmit Level](#transmit-level-tx-pwr-drive-and-alc).
 5. **Cross-check with WSJT-X** on the same audio devices to separate an app problem from a radio configuration problem.
 
 ### Waterfall quirks

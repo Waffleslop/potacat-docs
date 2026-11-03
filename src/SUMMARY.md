@@ -42,10 +42,13 @@
     - [SmartSDR Panadapter Spots](nested/smartsdr-panadapter-spots.md)
     - [TCI Panadapter Spots](nested/tci-panadapter-spots.md)
     - [AI Noise Reduction (RM Noise)](nested/ai-noise-reduction-rm-noise.md)
+    - [WebSDR, KiwiSDR & RTL-SDR Receive](nested/websdr.md)
 - [ECHOCAT - Remote Radio](echocat.md)
     - [Connectivity & Pairing](nested/echocat-connectivity.md)
     - [Run Your Shack from Another POTACAT](nested/remote-desktop.md)
+    - [Running Headless (Draft)](nested/headless.md)
 - [JTCAT - FT8 & Digital Modes](nested/jtcat.md)
+- [SSTV](nested/sstv.md)
 - [Winlink Email](nested/winlink.md)
 # Filters
 - [Band & Mode](nested/band--mode.md)

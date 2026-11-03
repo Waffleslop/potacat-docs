@@ -9,7 +9,7 @@ ECHOCAT comes in two flavors:
 
 Both work at the same time — pairing the app doesn't disable browser access.
 
-> **Using a laptop or a second PC?** See [Run Your Shack from Another POTACAT](nested/remote-desktop.md).
+> **Using a laptop or a second PC?** See [Run Your Shack from Another POTACAT](nested/remote-desktop.md). Running the shack computer with no monitor? See [Running Headless](nested/headless.md) (draft).
 
 > **Note:** For radio control, the app is a remote for POTACAT Desktop — the desktop does the heavy lifting. When something misbehaves while connected to your shack, **update POTACAT Desktop first**; most of those problems are fixed there. The app's **ACT** tab also logs activations on its own; see [Activating without a desktop](#activating-without-a-desktop).
 
@@ -316,7 +316,7 @@ Older app versions call this password the *access token*.
 
 ## Troubleshooting
 
-> **Note:** For pairing failures, Tailscale problems, "it worked for weeks and then stopped," and audio issues, see the dedicated [ECHOCAT Connectivity & Pairing guide](nested/echocat-connectivity.md).
+> **Note:** For pairing failures, Tailscale problems, "it worked for weeks and then stopped," and audio issues, see the dedicated [ECHOCAT Connectivity & Pairing guide](nested/echocat-connectivity.md). Still stuck? Update POTACAT on the shack PC, then [report a bug](community--support.md#report-a-bug) from POTACAT.
 
 **Can't reach the ECHOCAT URL:**
 - Make sure ECHOCAT is enabled (green indicator in POTACAT's connection bar)

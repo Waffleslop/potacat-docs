@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-The questions that come up most often, with settled answers. If you don't find yours here, try the search box at the top of the page — and if the docs still let you down, ask in the Discord.
+The questions that come up most often, with settled answers. If you don't find yours here, try the search box at the top of the page — and if the docs still let you down, ask in the Discord. To report something broken, see [Report a Bug](community--support.md#report-a-bug).
 
 ## Apps and pricing
 
@@ -34,7 +34,7 @@ From 1.13.2, **Settings > Cloud** takes **Email or callsign**. Accounts made wit
 
 #### Which platforms does the desktop app support?
 
-Windows, macOS, and Linux (including arm64), with installers for all three at [potacat.com](https://potacat.com). Users have also run it successfully on a Raspberry Pi 5. Chromebooks are not a supported platform.
+Windows, macOS, and Linux (including arm64), with installers for all three at [potacat.com](https://potacat.com). On a Raspberry Pi, use a Pi 4 or 5 with 64-bit Raspberry Pi OS and the `arm64` files; see [Installation: Linux](nested/installation.md#linux). Chromebooks are not a supported platform.
 
 ## Features you might have missed
 
@@ -74,6 +74,18 @@ Press `F1` for the full hotkey list, or see [Keyboard Shortcuts](keyboard-shortc
 
 Yes. Click the **Rig** button at the top of the Table view and open the **Custom** tab to create your own CAT command buttons — notch filter, split, anything your radio's protocol supports. The buttons you define also appear in ECHOCAT, so they work from your phone too. If CAT control itself is misbehaving, see [CAT Control Issues](nested/cat-control-issues.md).
 
+#### Is there an equalizer for receive audio?
+
+No. POTACAT has no receive EQ. The EQ it has is for **transmit**: **TX EQ + Compression** in **Settings > ECHOCAT** shapes your microphone audio from ECHOCAT, and the VFO window's **Transmit audio** panel has a transmit **EQ** too (presets Ragchew, Pileup, DX and Custom). To shape what you hear, use the radio's own filters and DSP (the **Rig** controls in POTACAT reach many of them), or [AI noise reduction](nested/ai-noise-reduction-rm-noise.md).
+
+#### Can I listen through a WebSDR or KiwiSDR?
+
+Yes. Add the receiver in **Settings > Station > WebSDR**, then turn on **Enable WebSDR receive** in the VFO window's settings. POTACAT follows your radio's dial on the SDR while you transmit on your own rig. An RTL-SDR on your network works too. See [WebSDR, KiwiSDR and RTL-SDR Receive](nested/websdr.md).
+
+#### Can I send my own FT8 message?
+
+Yes. In the JTCAT window, click the TX message readout and type a standard message or up to 13 characters of free text, then press Enter. See [Send your own message](nested/jtcat.md#send-your-own-message).
+
 #### How do I drop to 60 W automatically for FT8?
 
 Use a rig profile (POTACAT 1.13.0 and later). Open **Settings > Profiles** (or **Rig > Presets**), make a profile named `FT8` with TX power 60 (and AF gain 0 if you want the speaker quiet), and assign it to **Digital** under "Apply by itself when the mode changes to". Make a second profile for SSB at your usual power. The radio then switches levels by itself whenever the mode changes, including when an FT8 session starts. See [Rig Profiles](radio-setup.md#rig-profiles).
@@ -84,9 +96,9 @@ Yes, from 1.13.0. Pair the laptop with the shack PC under **More ▾ > Remote Ra
 
 #### Can I run POTACAT headless on a Raspberry Pi and use it from a browser?
 
-Yes. Start POTACAT with `--headless` (for example `POTACAT --headless`, or `npm start -- --headless` from source) and it runs with no window: CAT, spots, FT8, the CW keyer and ECHOCAT all work. Then open ECHOCAT Web in a browser on your network or over Tailscale, or use the ECHOCAT app. See [ECHOCAT](echocat.md).
+Yes, with a desktop still running on the Pi. Starting POTACAT with `--headless` runs the full app with its window hidden, so CAT, spots, FT8, the CW keyer and ECHOCAT all work, and you operate from ECHOCAT Web in a browser or the ECHOCAT app. It is not a server mode: the Pi must boot to its desktop, and the first setup (callsign, radio, pairing your phone) needs a monitor or remote desktop. See [Running Headless](nested/headless.md), which is still a draft.
 
-With no window there is no **Report a Bug** button. To send us a log, see [Getting a log without the window](nested/installation-issues.md#getting-a-log-without-the-window-headless--raspberry-pi).
+With no window there is no **Report a Bug** button. To send us a log, see [Getting a log without the window](nested/installation-issues.md#getting-a-log-without-the-window-headless--raspberry-pi), and [Report a Bug](community--support.md#report-a-bug) for where to post it.
 
 #### Can I hide a spot I don't want to see?
 

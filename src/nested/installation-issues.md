@@ -1,6 +1,6 @@
 # Installation Issues
 
-POTACAT is an open-source app distributed without a commercial code-signing certificate, so Windows, macOS, and some antivirus products treat it with suspicion the first time you run it. This page collects the platform-by-platform fixes for install, update, and first-start problems.
+POTACAT is an open-source app distributed without a commercial code-signing certificate, so Windows, macOS, and some antivirus products treat it with suspicion the first time you run it. This page collects the platform-by-platform fixes for install, update, and first-start problems. If none of them helps, see [Report a Bug](../community--support.md#report-a-bug).
 
 ## Windows
 
@@ -59,7 +59,7 @@ If POTACAT launches and exits with no window, run the binary directly from Termi
 /Applications/POTACAT.app/Contents/MacOS/POTACAT
 ```
 
-Startup crashes are often caused by something on your Mac conflicting with POTACAT (for example, another program already holding a network port). Copy the Terminal output into a bug report — it usually identifies the culprit immediately.
+Startup crashes are often caused by something on your Mac conflicting with POTACAT (for example, another program already holding a network port). Copy the Terminal output into a bug report (see [Report a Bug](../community--support.md#report-a-bug)) — it usually identifies the culprit immediately.
 
 ### Microphone permission
 
@@ -75,30 +75,65 @@ Your user needs to be in the `dialout` group to open serial ports:
 sudo usermod -aG dialout $USER
 ```
 
-Log out and back in for the change to take effect. On some distributions the `tty` group is needed as well.
+The command prints nothing when it works; that is normal. Log out and back in (or restart) for the change to take effect. On some distributions the `tty` group is needed as well. To check, run `groups`: `dialout` should be in the list.
+
+### Wrong file for the computer
+
+A file for the wrong processor won't install or won't start. A PC or laptop needs the **amd64** (x86_64) file; a Raspberry Pi needs the **arm64** file, on a 64-bit operating system. `uname -m` tells you which you have. See [Installation: Which file?](installation.md#which-file).
+
+### "How do I start it?"
+
+A `.deb` or `.rpm` install adds POTACAT to your applications menu. An AppImage isn't installed: run it from the folder it is in. See [Installation: Start it](installation.md#start-it).
 
 ### AppImage won't start
 
-The AppImage needs `libfuse2` (`sudo apt install libfuse2` on Debian/Ubuntu-based distros).
+- **Nothing happens when you double-click it.** It isn't executable yet. Run `chmod +x POTACAT-*.AppImage` once, then start it from a terminal with `./POTACAT-*.AppImage` so you can see any error.
+- **An error about FUSE or `libfuse.so.2`.** The AppImage needs `libfuse2`: `sudo apt install libfuse2` on Debian, Mint and older Ubuntu. On Ubuntu 24.04 and later the package is called `libfuse2t64`.
 
-Some users on certain distributions hit a sandbox error like:
+Older builds could stop with a sandbox error like this:
 
 ```
 The SUID sandbox helper binary was found, but is not configured correctly...
 chrome-sandbox is owned by root and has mode 4755
 ```
 
-The usual workaround for this Electron/Chromium sandbox issue is to launch the AppImage with the sandbox disabled:
+Current builds handle this by themselves when they start. If you still see it, launch with the sandbox turned off and [report it](../community--support.md#report-a-bug):
 
 ```bash
 ./POTACAT-*.AppImage --no-sandbox
 ```
 
+### Crashes at start on Wayland (Raspberry Pi OS Trixie and others)
+
+Some Wayland desktops, including Raspberry Pi OS Trixie, crash POTACAT at start with a segmentation fault. Users report that starting the AppImage with the X11 back end gets past it:
+
+```bash
+./POTACAT-*.AppImage --ozone-platform=x11
+```
+
+### No transmit audio, or the radio's sound card isn't listed
+
+- On Linux the radio's sound card often appears under its chip name, such as **PCM2901** or **PCM2903B**, rather than **USB Audio CODEC**. Pick that entry for the rig's audio input and output.
+- If you see only the computer's built-in devices, check that the radio is plugged in and switched on, then restart POTACAT. The sound system (PipeWire or PulseAudio) has to see the device before POTACAT can.
+- If the radio keys but puts out little or no power on FT8, SSTV or voice from ECHOCAT, raise the device's **output** level in your desktop's sound settings, then fine-tune with POTACAT's own level.
+
+### Notes by distribution
+
+These come from what users have reported, not from a test lab.
+
+- **Linux Mint** — the most reports of POTACAT working. Use the `amd64.deb`.
+- **Fedora** — use the `.rpm` or the AppImage. Users got it working, often after setting the radio's sound card output level in Fedora's sound settings.
+- **Arch and Arch-based** — the AppImage works. A community package exists in the AUR; it can lag behind the newest release.
+- **Ubuntu** — installs and runs; audio device setup is the step most likely to need attention (see above).
+- **Raspberry Pi OS** — 64-bit only, with the `arm64` files. See [Small computers](#small-computers-and-chromebooks) and [Running Headless](headless.md).
+
 ### Small computers and Chromebooks
 
-- **Raspberry Pi 5** — works. If you're new to POTACAT, get it running on a Windows/Mac/Linux desktop first, then move to the Pi; it makes troubleshooting much easier.
+- **Raspberry Pi 4 and 5** — work with 64-bit Raspberry Pi OS and the `arm64` files. Users also report older boards (Pi 3B and 3B+) running it, more slowly. If you're new to POTACAT, get it running on a Windows/Mac/Linux desktop first, then move to the Pi; it makes troubleshooting much easier.
 - **Pi Zero 2 and similar low-power boards** — marginal; expect sluggish performance.
 - **Chromebooks** — effectively unsupported. The AppImage doesn't run usefully, and ChromeOS's Linux container can't pass through USB serial devices, so CAT control won't work.
+
+To run a Pi with no monitor attached, see [Running Headless](headless.md).
 
 ## Where settings live (and factory reset)
 
@@ -114,7 +149,7 @@ If POTACAT misbehaves even after a reinstall, a corrupt settings file is the lik
 
 > **Warning:** Deleting the settings folder erases all settings, rig configurations, and cached data — you'll set everything up again from scratch. Note where your ADIF log file lives (Settings → Logging) before deleting anything.
 
-Advanced users can hand-edit `settings.json` inside this folder (for example, the rigs array). Never paste your raw `settings.json` into a bug report or Discord — it contains credentials. Use the **Report a Bug** button in Settings instead, which generates a safe, formatted report.
+Advanced users can hand-edit `settings.json` inside this folder (for example, the rigs array). Never paste your raw `settings.json` into a bug report or Discord — it contains credentials. Use the **Report a Bug** button in Settings instead, which generates a safe, formatted report; see [Report a Bug](../community--support.md#report-a-bug).
 
 ## Getting a log without the window (headless / Raspberry Pi)
 
@@ -140,7 +175,7 @@ When POTACAT runs headless (no window, for example on a Raspberry Pi), there's n
    scp <user>@<pi-address>:~/potacat-log.txt .
    ```
 
-5. Attach `potacat-log.txt` in Discord or on a GitHub issue.
+5. Attach `potacat-log.txt` in Discord's **#bug-report** channel or on a GitHub issue, as described in [Report a Bug](../community--support.md#report-a-bug).
 
 > **Note:** Unlike **Report a Bug**, the raw log isn't tidied up: it shows your callsign and folder paths. Settings and passwords are never written to it, but read it over first if that matters to you.
 

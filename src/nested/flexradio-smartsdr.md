@@ -45,6 +45,16 @@ There's also a setting to pin your TX to a chosen **DAX channel**, so transmit a
 
 JTCAT talks to the SmartSDR API host on TCP port **4992**. Make sure POTACAT has the Flex's IP address configured — it's the same address used for [SmartSDR panadapter spots](smartsdr-panadapter-spots.md) — and that your firewall allows **POTACAT** to reach the radio. A firewall rule that only allows SmartSDR.exe isn't enough.
 
+## Tuner Memories (internal ATU)
+
+From POTACAT 1.13.9, **More ▾ > Tuner Memories** fills your Flex's own antenna tuner memories for every band and mode you use. POTACAT tunes to each point, lets the radio's tuner find a match and stores it in the radio, so a later band change recalls the match instead of running a tune cycle.
+
+- It appears in the **More ▾** menu only when the radio is connected with **Flex Direct** and has an internal ATU.
+- The window walks you through it: check that the antenna is connected and no amplifier is inline (or it's in standby); tick your **Bands and modes**; set the **Tune power** (25 W at most), the **SWR that counts as matched**, and what to do **If a frequency is busy**; add **Your own frequencies** if you like; then **Review the plan** and run it.
+- The radio transmits a low-power carrier for about a second at each point, and listens first. The plan stays 3 kHz inside the edges of the license class set in Settings and never transmits outside it.
+- **STOP** ends a run at any time. **Results** shows each point; **Run verification pass** re-checks them and **Export CSV** saves them.
+- Bands where no match was found are hidden in the rig editor, with a note saying the last Tuner Memories run hid them.
+
 ## Connection troubleshooting
 
 If POTACAT suddenly can't connect (often after an upgrade), test from PowerShell:

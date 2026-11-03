@@ -85,3 +85,7 @@ POTACAT's settings are stored outside the app, so they survive updates — and u
 - Press **F5** inside POTACAT to fetch the latest update.
 - If **Restart to Update** hangs or loops, open Task Manager and kill the **POTACAT Launcher** process, then retry the update.
 - To roll back a bad release, every GitHub release includes a **portable .exe** in its assets ([github.com/Waffleslop/POTACAT/releases](https://github.com/Waffleslop/POTACAT/releases)). It runs standalone — no uninstall needed — and picks up your existing settings.
+
+## Still not working?
+
+Use **🐞 Report a Bug** in Settings while you reproduce the problem, and post the report. See [Report a Bug](../community--support.md#report-a-bug).
