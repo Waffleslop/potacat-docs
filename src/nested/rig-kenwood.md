@@ -45,6 +45,10 @@ If you operate with the radio's own mic in hand, uncheck **SSB-over-DATA** in Se
 
 If the S-meter and power readings look far too low and SWR shows blank in ECHOCAT, update POTACAT — early builds converted TS-480 meter values with FlexRadio scaling by mistake.
 
+## Transmit power through Hamlib
+
+From the next release, a Kenwood connected through **Other Rig (Hamlib)** keeps its transmit power setting when POTACAT connects.
+
 ## Other radios that speak Kenwood
 
 The **FX4CR** (F5BUD firmware) presents itself to CAT software as a TS-590S — set it up exactly like a TS-590S over Serial CAT (Kenwood).

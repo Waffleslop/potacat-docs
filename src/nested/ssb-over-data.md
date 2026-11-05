@@ -10,6 +10,8 @@ When you press PTT from [ECHOCAT](../echocat.md), POTACAT switches the radio fro
 [PTT] USB -> DIGU (SSB-over-DATA: mic disabled)
 ```
 
+From the next release, POTACAT keys the radio only after the radio confirms it's in DATA mode, and puts the voice mode back after you release.
+
 The setting applies to non-Flex radios and only kicks in when audio is actually streaming through the USB codec — an ECHOCAT session, voice macros, or FreeDV.
 
 ## Why it exists

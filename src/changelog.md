@@ -2,6 +2,17 @@
 
 This page summarizes major POTACAT and ECHOCAT releases — it is not an exhaustive list of every patch.
 
+### Next release (after 1.13.11)
+
+- **A time limit on every transmission POTACAT starts**, from 30 s for FT8 to 10 min for voice. See [Transmit Time Limits](radio-setup.md#transmit-time-limits).
+- **Kenwood radios through Hamlib keep their transmit power** when POTACAT connects.
+- **SSB over Data** keys only after the radio confirms DATA mode, and puts the voice mode back after release.
+- **No frequency reads while transmitting**, which fixes repeater-offset confusion.
+- **Filter width:** a spot click leaves your width alone between voice and CW; widths picked on the rig panel are no longer saved.
+- **SSTV:** Scottie, PD and Robot 72 decode MMSSTV pictures correctly.
+- **VFO window:** typing 432100 or 1296100 (kHz) tunes 70 cm or 23 cm.
+- **Meters:** SWR and ALC return to rest after transmit.
+
 ### v1.13.11 — November 2026
 
 - **FT8, FT4 and FT2 spots tune the dial.** A spot near a mode's dial frequency tunes the dial (7074, not the 7075 the spot names), so the whole FT8 band is in the passband.

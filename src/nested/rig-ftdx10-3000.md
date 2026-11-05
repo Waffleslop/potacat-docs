@@ -66,7 +66,7 @@ With **CAT RTS = ENABLE**, leave **Disable DTR/RTS on connect** *unchecked* in P
 - **2.4 kHz DATA filter limit (FTDX3000/FTDX5000):** DATA-U/PKT modes max out at 2.4 kHz IF bandwidth — too narrow for FreeDV and marginal for FT8, while plain USB allows 4 kHz. POTACAT's JTCAT uses plain USB on these rigs; for FreeDV, set **Settings → Spots → FreeDV sideband** to `Always upper` and leave **Switch radio to DATA mode** unchecked.
 - **SWR/ALC meters are transmit-only** — during RX the bars stay at `—` by design. Key into a dummy load to verify them.
 
-> **Tip:** If your filter width snaps back to the app default (2300 Hz) on every QSY, set your per-mode default filters in **Settings → Tuning** — they persist after that.
+> **Tip:** From the next release, a spot click leaves your filter width alone between voice and CW; switching into FT8 or another digital mode still asks for 3 kHz. Widths you pick on the rig panel are no longer saved. Widths saved by earlier versions stay until you clear them in **Settings → Tuning** (**CW / SSB / Digital Filter Width**).
 
 ## FT-991A notes
 
