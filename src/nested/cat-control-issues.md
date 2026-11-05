@@ -16,6 +16,7 @@ Work down this checklist — it resolves the vast majority of failed tests:
 | Check | Details |
 |-------|---------|
 | **Baud rate** | The baud rate in POTACAT must exactly match the CAT rate set in your radio's menu. A mismatch usually looks like a silent timeout or `read ECONNRESET`. Some radios (Kenwood, for example) need a power cycle after you change the baud in the rig menu. |
+| **No COM port at all (Yaesu)** | The FT-991A, FT-891, FT-710 and FTDX10 need the **Silicon Labs CP210x USB-to-UART driver** on Windows. Without it, no COM port appears. Get it from the Files tab of the radio's page on Yaesu's website, or Silicon Labs' CP210x VCP driver page. |
 | **Which COM port?** | Many radios — especially Yaesu with the Silicon Labs CP210x driver — expose **two COM ports** over one USB cable. Use the **Enhanced** port for CAT. If the first port fails, test the other one. Check **Device Manager > Ports (COM & LPT)** to see both. |
 | **VFO A selected** | Make sure the radio is sitting on **VFO A** before you test. Some rigs misbehave when CAT commands arrive while VFO B is active. |
 | **Virtual COM ports** | Ports created by virtual serial port software don't appear in the dropdown — **type the port name manually**, e.g. `COM15`. Typing the bare port name (e.g. `COM7`) instead of accepting the auto-detected dropdown entry has also fixed "test passes but nothing tunes" cases. |
@@ -28,6 +29,7 @@ Work down this checklist — it resolves the vast majority of failed tests:
 - Turn off CAT/rig control in your logger (N3FJP, Ham Radio Deluxe, Log4OM, and similar) and let POTACAT own the port.
 - Close WSJT-X, FLRig, and any other CAT software before testing.
 - If you want other apps to share the radio, point them at POTACAT's rigctld instead of the COM port — for example, configure WSJT-X to use **Hamlib NET rigctl** at `127.0.0.1:4532`, and open POTACAT first.
+- Running Win4Yaesu, or a program that must keep the radio? Give POTACAT a **virtual** COM port and point it there, not at the radio's own port. See [Sharing Your Radio with Other Programs](sharing-your-radio.md).
 
 ## The WSJT-X Mode trap
 
@@ -67,7 +69,7 @@ POTACAT can use FLRig as its CAT layer, which is handy for radios that behave be
 
 ## Win4Yaesu / Win4Icom middleware
 
-Some users report that CAT routed through a Win4Yaesu or Win4Icom virtual COM-port chain **silently drops after transmitting** — the CAT indicator stays green, but the radio stops following spot clicks until the rig is re-selected. If you don't need the middleware, **connect POTACAT directly to the radio's COM port**. If you do need to share the radio with Win4Yaesu, see [Win4Yaesu Setup](win4yaesu-setup.md).
+Some users report that CAT routed through a Win4Yaesu or Win4Icom virtual COM-port chain **silently drops after transmitting** — the CAT indicator stays green, but the radio stops following spot clicks until the rig is re-selected. If you don't need the middleware, **connect POTACAT directly to the radio's COM port**. If you do need to share the radio with Win4Yaesu, see [Sharing Your Radio with Other Programs](sharing-your-radio.md).
 
 ## Where settings live (and factory reset)
 

@@ -12,6 +12,32 @@ While it runs, JTCAT:
 
 > **Note:** JTCAT takes over radio control while it is running — POTACAT's normal CAT connection is suspended until you stop it.
 
+## The FT8 Window
+
+> **Rebuilt in POTACAT 1.13.10.**
+
+- **One button for band and mode.** The toolbar has one button, for example **20m FT8**. Click it for a picker: mode chips (FT8, FT4, FT2 and the other modes) over a grid of the bands your radio has.
+- **The buttons are the actions.** Two rows: **Call CQ**, **Hunt** with its target, **HALT**, **Tune**, **ATU**, **Logbook** and **Options**. What CQ will send is shown beside it. **Tune** sends a steady carrier; **ATU** runs the radio's antenna tuner.
+- **Double-click a station** to answer it, as before.
+- If a voice or CW spot, or **Stop** on your phone, stopped the engine, the window says so and restarts it, instead of showing a band with nothing running.
+
+### Hunt
+
+**Call CQ** calls CQ and works whoever answers. **Hunt** answers other stations' CQs for you, one contact at a time, and logs each one. Pick what to hunt beside it:
+
+| Target | Answers |
+|---|---|
+| **Hunt: All CQs** | Any CQ |
+| **Hunt: POTA** / **Hunt: SOTA** | Activators calling CQ |
+| **Hunt: Wanted states** | States you still need ([Worked All States](worked-all-states.md)) |
+| **Hunt: New countries** | Countries you still need, with the same scope as the map's Worked box (1.13.10) |
+| **Hunt: DX only** | Stations on another continent (1.13.10) |
+| **Hunt: Same as Call** | Whoever the **Call** dropdown names; with Call set to everyone, anyone (1.13.10) |
+| **Hunt: Watchlist** | Calls on your [Watchlist](watchlist.md) (1.13.10) |
+| **Hunt: Off** | Nothing |
+
+Hunt answers what the badges and highlights already show you, and it only ever answers a CQ.
+
 ## JTCAT vs. WSJT-X vs. ECHOCAT
 
 These three names get mixed up constantly. Here's the map:
@@ -83,6 +109,14 @@ The audio bar in the JTCAT window has two transmit controls that do different jo
 
 **ALC** is the radio's automatic level control. It moves when the audio going in is more than the transmitter needs. For FT8 and the other digital modes you want clean audio, so set Drive (and the radio's USB or data MOD level) so the ALC shows **little or no movement** while the radio still reaches the power set by TX Pwr. Lots of ALC means the signal is being compressed and splatters. No ALC at all is fine on some radios (Elecraft, for example) as long as the power comes up.
 
+**On the radio,** the USB input level menu sets how much of POTACAT's audio reaches the transmitter, before ALC. If Drive has to sit near the top (or bottom) to get clean power, adjust that menu instead:
+
+- **Icom IC-7300 and family:** **USB MOD Level** (about 50% to start).
+- **Yaesu FT-991A:** **DT GAIN** (the data input gain).
+- **Yaesu FTDX10 / FTDX101:** the rear-port gain, **RPORT GAIN**. Start low; a high setting distorts badly.
+
+> **Note:** TX Pwr is the radio's power setting. Drive and the radio's input level only decide how hard the audio drives the transmitter up to that power. Turning Drive up past the point where power stops rising only adds ALC and splatter.
+
 Where to see ALC: the radio's own meter, the **ALC·TX** meter in POTACAT's rig panel, the meters in the VFO window, or ECHOCAT Web. The radio reports ALC only while transmitting. The JTCAT window shows S, PWR and SWR, not ALC.
 
 To set it up: key a transmission into a dummy load or a clear frequency, start with Drive low, and raise it until the power reaches TX Pwr; back off if ALC climbs. If power stays near zero whatever Drive says, the radio isn't taking audio from USB. See [Radio transmits but nothing shows on PSKReporter](#radio-transmits-but-nothing-shows-on-pskreporter).
@@ -113,6 +147,22 @@ From 1.13.3, the WSPR map in the JTCAT window has a legend for its colours: **gr
 ## Auto-Logging
 
 JTCAT logs each QSO automatically when the report exchange completes and forwards it to any logbooks you've configured — see [Logbook Forwarding](logbook-forwarding.md). There's nothing to click.
+
+From 1.13.10, JTCAT's records carry the QSO's real start and end times, CQ and ITU zones, continent and, for contacts in your own country, the city. If a JTCAT log fails, it says so on screen.
+
+### Review a contact before it's saved
+
+> **New in POTACAT 1.13.10.**
+
+To check each contact before it's written, open the FT8 window's **Options** and tick **Open the Log QSO window before saving**. Each finished contact then opens in the [Log QSO window](log-dialog.md):
+
+- Nothing is written until you press **Save QSO**. **Don't log** discards it.
+- If several contacts finish while one is open, they wait their turn.
+- The heard grid, Field Day exchange and parks are kept.
+
+### The "JTCAT FT8" comment
+
+By default, JTCAT puts `JTCAT FT8` in the comment of each FT8/FT4 contact. To leave the comment empty, untick **"JTCAT FT8" in the comment of FT8/FT4 contacts** in **Settings > Logging** (1.13.10 and later).
 
 From 1.13.3, a contact made with no frequency from the radio (CAT not connected) is logged on the band's FT8 dial frequency, so Wavelog and other logbooks don't refuse it as 0 kHz.
 

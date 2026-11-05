@@ -6,10 +6,11 @@ The settings below are the community reference setup for the FT-891 with a Digir
 
 ## Connection settings
 
-1. Add a new rig → select **Serial CAT (Kenwood)** ([details](serial-cat-kenwood.md))
-2. Choose the CP210x COM port
-3. Set the baud rate to `38400` (matching **05-06 CAT RATE**)
-4. Click **Test Connection**, then Save
+1. **Windows:** install the **Silicon Labs CP210x USB-to-UART driver** first. Without it, no COM port appears. It's on the Files tab of the FT-891's page on Yaesu's website, or Silicon Labs' "CP210x USB to UART Bridge VCP Drivers" page.
+2. Add a new rig → select **Serial CAT (Kenwood / Yaesu)** ([details](serial-cat-kenwood.md))
+3. Choose the CP210x COM port
+4. Set the baud rate to `38400` (matching **05-06 CAT RATE**)
+5. Click **Test Connection**, then Save
 
 > **Tip:** If the test fails, toggle **Disable DTR/RTS on connect** — adapters differ, and this checkbox resolves connection failures in both directions.
 
@@ -47,6 +48,7 @@ For working remote CW, key the radio's DTR line instead of CAT:
 
 - The DATA menu settings above (08-01 through 08-12) route digital-mode TX audio through the rear port — required for JTCAT/FT8 through the Digirig.
 - **11-06 SSB OUT LEVEL** directly sets how loud ECHOCAT's RX audio is.
+- **The radio keys in and out while you talk (DR-891 cable):** the Digirig DR-891 cable has its own VOX circuit, which keys the radio from the audio on one channel. During voice it can make the radio cycle in and out of transmit. Mute the **right** audio channel, so only the left channel carries audio: in Windows, open the Digirig's playback device > **Properties** > **Levels** > **Balance**, and set the right channel to 0.
 - **11-05 SSB MIC SELECT** picks the SSB TX audio source: if it's set to `MIC`, the hand mic — not your remote audio — is what transmits when ECHOCAT keys the radio.
 
 ## Known quirks

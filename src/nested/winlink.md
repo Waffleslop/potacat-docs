@@ -67,6 +67,8 @@ VARA is EA5HVK's modem. You install and license it yourself; POTACAT doesn't ins
 
 If you run both, set VARA FM to port **8310** in VARA FM's own settings, because both programs ship on 8300.
 
+**The gateway list:** VARA HF's gateway list is ranked by propagation, which can take up to two minutes to arrive. Wait for it before picking a gateway (1.13.10 and later wait the full two minutes).
+
 **Sending:** pick **VARA HF (radio, your own VARA)** or **VARA FM (VHF/UHF radio, your own VARA FM)** in **Send via**, choose a gateway, and click **Send / Receive**. POTACAT levels the audio both ways. The radio audio VARA hears is trimmed before it reaches the red, and VARA's transmit audio is raised to full scale, so the power you set is the power that goes out. The Mail window shows both levels during a session (**to modem … · from modem …**).
 
 A session you stop stays stopped, and a new session waits for the last one to hang up.
@@ -74,6 +76,8 @@ A session you stop stays stopped, and a new session waits for the last one to ha
 ### Also listed, not recommended yet
 
 **Send via** also lists **Packet (VHF/UHF radio)**, which uses the Dire Wolf modem built into POTACAT, and **Mercury (radio, experimental)**, which stays greyed out until Mercury is turned on in **Settings > Station**. Neither is recommended yet. Use ARDOP or Internet.
+
+Packet talks to Dire Wolf on its **AGW port, 8010**, on this computer. If another program already uses port 8010 (a Dire Wolf you started yourself, for example), close it first. From 1.13.10, starting Dire Wolf no longer closes POTACAT.
 
 ## Audio for Radio Sessions
 

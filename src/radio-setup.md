@@ -1,6 +1,15 @@
 # Radio Setup
 
-POTACAT supports five connection methods. Open Settings and click **Add Rig** to configure your radio.
+POTACAT supports many connection methods, from a USB cable to a network radio or another program that already holds the radio. Open Settings and click **Add Rig** to configure your radio.
+
+Running a logger, Win4Yaesu or another CAT program on the same radio? See [Sharing Your Radio with Other Programs](nested/sharing-your-radio.md).
+
+## Transmit (PTT): How the Radio Is Keyed
+
+Most radios are keyed with a CAT command. In the rig editor, **Transmit (PTT)** offers other ways for **Serial CAT (Kenwood / Yaesu)** and **Icom (CI-V)** rigs (from 1.13.10):
+
+- **RTS on the CAT port** or **DTR on the CAT port:** for a radio with no transmit command, such as the IC-706MKIIG, when an interface on the CAT port keys the radio through that line. This is the same as WSJT-X's PTT method of RTS or DTR on the CAT port.
+- **The audio interface keys it (SignaLink, the radio's VOX):** CAT still tunes and changes mode, and a SignaLink or similar on the radio's data jack does the keying. Use it when a CAT transmit sends the front microphone instead of the interface's audio, as on a TS-2000 with a SignaLink on ACC2.
 
 ## Let N1MM+ (or Another Logger) Control the Radio
 

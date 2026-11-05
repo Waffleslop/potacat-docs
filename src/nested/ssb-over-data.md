@@ -25,6 +25,17 @@ If you operate mic-in-hand, you don't want this behavior — DATA mode disables 
 
 > **Tip:** On Yaesu rigs there's an alternative that keeps remote audio working *without* mode flips: leave SSB over Data off and set the radio's **SSB MOD SOURCE** to `REAR` and **REAR SELECT** to `USB`. Remote audio then flows through the rear USB input in regular SSB mode, and the hand mic still works normally — pressing the mic's own PTT re-selects the mic as the audio source.
 
+## Voice is silent, but FT8 works
+
+The radio keys, the wattmeter reads 0 W and ALC doesn't move, yet FT8 and other data modes transmit fine. Data modes and voice use different inputs on the radio, and voice is missing its audio source:
+
+| Radio | Set on the radio |
+|---|---|
+| **Yaesu** (FT-710, FTDX10, FTDX101 and others) | **SSB MOD SOURCE** = `REAR` and **REAR SELECT** = `USB` |
+| **Icom** (IC-7300, IC-7300 MK II and others with USB audio) | **MENU > SET > Connectors > MOD Input**: **DATA OFF MOD** = `USB` for voice in plain USB/LSB. With SSB over Data on, voice goes out in DATA mode, so set **DATA MOD** = `USB` as well. |
+
+Then, in **Settings > My Rigs**, edit the rig and pick the radio's own sound device (for example **USB Audio CODEC**) as the transmit audio, not the PC's speakers.
+
 ## Yaesu companion settings
 
 If you keep SSB over Data enabled on a Yaesu, set these radio menus or your transmissions can land off frequency:

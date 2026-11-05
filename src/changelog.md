@@ -2,6 +2,30 @@
 
 This page summarizes major POTACAT and ECHOCAT releases — it is not an exhaustive list of every patch.
 
+### ECHOCAT app updates — November 2026
+
+Over-the-air updates to the ECHOCAT app (every 1.5.x version). They arrive by themselves when the app starts.
+
+- **CW macros:** the phone's sidetone plays the same words the radio sends, and macro timing is even with sidetone on.
+- **Wired earbuds:** a press of the earbud button keys PTT at once. See [Transmitting](echocat.md#transmitting-ptt).
+- **SSTV:** the template browser has a **From desktop** section with your desktop's templates. See [SSTV](nested/sstv.md).
+
+### v1.13.10 "The Wednesday Special" — November 2026
+
+- **The FT8 window is rebuilt:** one button for band and mode, large action buttons (Call CQ, Hunt, HALT, Tune, ATU, Logbook, Options), and new Hunt targets: New countries, DX only, Same as Call and Watchlist. See [The FT8 Window](nested/jtcat.md#the-ft8-window).
+- **Review a contact before it's logged:** FT8 window **Options** > **Open the Log QSO window before saving**. Thanks AE5JE. See [Review a contact](nested/jtcat.md#review-a-contact-before-its-saved).
+- **"JTCAT FT8" in the comment** is now a setting in Settings > Logging.
+- **FT8 on 2 m and up is no longer refused** by the license check, which now covers 2 m and higher, all of 60 m, the CW-only band edges and US Advanced.
+- **Guest Pass** can operate the station and nothing else, and its power cap is set on the radio. See [Share Your Rig](echocat.md#share-your-rig).
+- **ECHOCAT can be Cloud only or Off:** Settings > ECHOCAT > Who can reach this computer. See [Who can reach this computer](echocat.md#who-can-reach-this-computer).
+- **One shack per Cloud address:** a second desktop asks before it takes the address. Thanks KQ5O.
+- **DXLab Commander** is a radio type. Contributed by David S. See [DXLab Commander](nested/dxlab-commander.md).
+- **PTT on the CAT port's RTS or DTR line**, for radios such as the IC-706MKIIG. See [Transmit (PTT)](radio-setup.md#transmit-ptt-how-the-radio-is-keyed).
+- **Test Connection names a port another program holds.** See [Sharing Your Radio with Other Programs](nested/sharing-your-radio.md).
+- **The scope pop-out** works like SmartSDR: spot labels in the trace, click to tune, drag the frequency scale to resize.
+- **Winlink:** the VARA HF gateway list gets two minutes; ARDOP no longer stops on a Mac; starting Dire Wolf no longer closes POTACAT.
+- **Two new themes:** Miami Nights and She's On Frequency.
+
 ### v1.13.3 "The Right Band, Right Slot Release" — October 2026
 
 - **Each radio shows only its own bands**, everywhere in POTACAT; tick extra bands for a transverter or a 4 m export model. See [Your Radio's Bands](nested/my-rigs.md#your-radios-bands).

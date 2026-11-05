@@ -6,7 +6,11 @@ These rigs share the same Yaesu CAT protocol and the same remote-audio menu fami
 
 ## Connection settings
 
-All of these radios work well as **Serial CAT (Kenwood)** ([details](serial-cat-kenwood.md)) at `38400` baud.
+All of these radios work well as **Serial CAT (Kenwood / Yaesu)** ([details](serial-cat-kenwood.md)) at `38400` baud.
+
+**Windows driver (FTDX10 and FT-991A):** install the **Silicon Labs CP210x USB-to-UART driver** before you plug in the radio. Without it, no COM port appears. Get it from the Files tab of the radio's page on Yaesu's website, or Silicon Labs' "CP210x USB to UART Bridge VCP Drivers" page.
+
+**Sharing the radio** with Win4Yaesu, a logger or a cluster program: see [Sharing Your Radio with Other Programs](sharing-your-radio.md). POTACAT runs alongside Win4Yaesu, Log4OM and HolyCluster on a virtual COM port, with no OmniRig changes.
 
 **FTDX3000** — if the frequency won't change, check these radio menus:
 
@@ -68,7 +72,7 @@ With **CAT RTS = ENABLE**, leave **Disable DTR/RTS on connect** *unchecked* in P
 
 - Set **MENU 109 SSB PORT SELECT** so SSB TX audio comes from the USB port (`USB`) — required for ECHOCAT voice.
 - Like the FT-710, change the radio's **DATA MODE** from `PSK` to `OTHERS` if you use SSB-over-DATA, or TX lands off frequency.
-- **Sharing the radio with Win4Yaesu:** Win4Yaesu holds the physical CAT port, so bridge POTACAT through a com0com virtual port pair with rig type **Serial CAT (Kenwood)** — see [Win4Yaesu Setup](win4yaesu-setup.md). Note that com0com does not work inside a Windows VM; VSP Manager (free for hams) is an alternative there.
+- **Sharing the radio with Win4Yaesu:** Win4Yaesu holds the physical CAT port, so give POTACAT a virtual port with rig type **Serial CAT (Kenwood / Yaesu)**. See [Sharing Your Radio with Other Programs](sharing-your-radio.md). Note that com0com does not work inside a Windows VM; VSP Manager (free for hams) is an alternative there.
 
 > **Warning:** The FT-991A's `KY` command has no free-text form, so **CW text macros key the transmitter but produce zero RF** — same known open limitation as the FT-891. Use a DTR keying adapter on the key jack for working remote CW.
 

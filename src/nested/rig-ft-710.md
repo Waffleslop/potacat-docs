@@ -6,8 +6,8 @@ The FT-710 exposes **two COM ports and a USB sound card** over one USB cable. Th
 
 ## Connection settings
 
-1. **Windows:** install Yaesu's FT-710 USB driver from their website (the plain USB driver — the separate "virtual sound driver" is not needed). **Linux:** no driver needed; the radio is plug-and-play.
-2. Add a new rig → select **Serial CAT (Kenwood)** ([details](serial-cat-kenwood.md)) — not Hamlib.
+1. **Windows:** install the **Silicon Labs CP210x USB-to-UART driver** before you plug in the radio. Without it, no COM port appears. It's on the Files tab of the FT-710's page on Yaesu's website, or Silicon Labs' "CP210x USB to UART Bridge VCP Drivers" page. (The separate "virtual sound driver" is not needed.) **Linux:** no driver needed; the radio is plug-and-play.
+2. Add a new rig → select **Serial CAT (Kenwood / Yaesu)** ([details](serial-cat-kenwood.md)) — not Hamlib.
 3. Choose the radio's **Enhanced** COM port.
 4. Set the baud rate to `38400` (matching the radio's CAT rate).
 5. Check **Disable DTR/RTS on connect**.
@@ -22,7 +22,8 @@ The FT-710 exposes **two COM ports and a USB sound card** over one USB cable. Th
 | Menu | Set to | Why |
 |------|--------|-----|
 | **OPERATION SETTING → GENERAL → CAT-1 TIME OUT TIMER** | `1000` ms | The factory default of 10 ms is too short for CAT round-trips and causes spurious `?;` command rejections |
-| **RADIO SETTING → MODE SSB → MOD SOURCE** | `AUTO` | Without this, remote PTT keys the radio but nothing is modulated |
+| **RADIO SETTING → MODE SSB → SSB MOD SOURCE** | `REAR` | Without this, remote voice keys the radio but nothing is modulated (0 W, no ALC), even though FT8 works |
+| **RADIO SETTING → MODE SSB → REAR SELECT** | `USB` | Takes the rear-port voice audio from the USB sound card |
 | **OPERATION SETTING → CAT/LINEAR/TUNER → USB KEYING (CW)** | `DTR` | Required for remote CW keying (see below) |
 | **FUNC → RADIO SETTING → CW → CW BK-IN** | `ON` (or `SEMI`) | Without break-in the radio queues CW text but never keys the transmitter |
 
@@ -44,6 +45,19 @@ The FT-710's CAT `KY` command is unreliable for CW text — it raises the carrie
 Without a **CW Key Port** configured, POTACAT falls back to the `KY` command — expect missed or garbled sending.
 
 > **Warning:** On Linux, some `cdc_acm` USB-serial drivers can't control the DTR pin (`Operation not supported` in the log). The pin sticks high and the radio can key continuously while POTACAT runs. POTACAT falls back to a Python/pyserial helper for CW text (install `python3` and `pyserial`), but that only handles word-at-a-time text — real-time paddle keying needs a cheap FTDI/CH340 USB-serial adapter wired to the rear **KEY** jack, set as the **CW Key Port**. If the rig gets stuck keyed, set **USB KEYING (CW)** = `OFF` on the radio.
+
+## Band scope (LibFT4222)
+
+On Windows, POTACAT reads the FT-710's band scope through FTDI's **LibFT4222** library. It's FTDI's own closed-source library, so POTACAT can't include it; you download it once from FTDI.
+
+1. Open **Settings > Station Setup**. The band scope step opens FTDI's download page for LibFT4222.
+2. Download and unzip it, then press **Find the file for me**. POTACAT copies the library into place. Pick the 64-bit file (`LibFT4222-64.dll` in the `amd64` folder); a 32-bit copy doesn't count as installed.
+3. Reopen the Band Scope.
+
+If the scope still says the library isn't installed, or that the FTDI driver couldn't be loaded:
+
+- In Windows **Device Manager**, find the FT4222 device, uninstall it (tick the box to delete its driver if offered), unplug and replug the radio, and let the driver install again.
+- If the message names the **D2XX** driver, install FTDI's D2XX driver from ftdichip.com and reopen the Band Scope.
 
 ## Known quirks
 

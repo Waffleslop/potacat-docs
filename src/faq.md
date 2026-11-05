@@ -34,7 +34,7 @@ From 1.13.2, **Settings > Cloud** takes **Email or callsign**. Accounts made wit
 
 #### Which platforms does the desktop app support?
 
-Windows, macOS, and Linux (including arm64), with installers for all three at [potacat.com](https://potacat.com). On a Raspberry Pi, use a Pi 4 or 5 with 64-bit Raspberry Pi OS and the `arm64` files; see [Installation: Linux](nested/installation.md#linux). Chromebooks are not a supported platform.
+Windows 10 and later, macOS 12 (Monterey) and later, and Linux (including arm64), with installers for all three at [potacat.com](https://potacat.com). On a Raspberry Pi, use a Pi 4 or 5 with 64-bit Raspberry Pi OS and the `arm64` files; see [Installation: Linux](nested/installation.md#linux). Chromebooks are not a supported platform.
 
 ## Features you might have missed
 
@@ -65,6 +65,18 @@ Yes — click a column header to sort, then `Shift`+click a second column for a 
 #### The text is too small (or too big).
 
 Use `Ctrl` `+` to zoom in, `Ctrl` `-` to zoom out, and `Ctrl` `0` to reset.
+
+#### Where do I report a bug?
+
+In POTACAT: open **Settings** and click **🐞 Report a Bug** at the bottom of the tab list on the left. It records a log while you reproduce the problem and builds a report to paste in the Discord **#bug-report** channel. The small **Report Bug** link at the bottom of the main window opens GitHub issues instead. See [Report a Bug](community--support.md#report-a-bug).
+
+#### Can POTACAT run alongside Win4Yaesu, Log4OM or another CAT program?
+
+Yes. Only one program can hold the radio's COM port, so give POTACAT a virtual COM port (Win4Yaesu can make one), or share through flrig or rigctld. POTACAT doesn't use OmniRig and needs no OmniRig changes. "Access denied" means another program holds the port POTACAT tried to open. See [Sharing Your Radio with Other Programs](nested/sharing-your-radio.md).
+
+#### What's the difference between TX Pwr, Drive and ALC?
+
+**TX Pwr** is the radio's RF power setting. **Drive** is how loud POTACAT's audio is going into the radio, together with the radio's own USB input level (USB MOD Level on an Icom, DT GAIN on an FT-991A, RPORT GAIN on an FTDX10 or FTDX101). **ALC** shows when that audio is more than the transmitter needs. Set Drive so the radio reaches TX Pwr with little or no ALC. See [Transmit Level](nested/jtcat.md#transmit-level-tx-pwr-drive-and-alc).
 
 #### Where's the list of keyboard shortcuts?
 

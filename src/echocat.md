@@ -78,6 +78,8 @@ Tap and **hold** the red **PTT** button at the bottom of the screen to transmit.
 
 The **STOP** button is an emergency kill switch that immediately drops PTT and halts any CW or digital transmission.
 
+**Wired earbuds (iPhone app):** a press of the earbud button keys PTT at once. Just after the audio route changes, such as when you plug the earbuds in, there's a short wait of about 1.5 seconds first. If a long press opens Siri, turn off **Press and Hold for Siri** in the iPhone's Settings.
+
 ### Audio
 
 Tap the **Audio** button to start streaming. Your phone will ask for microphone permission — this is needed for TX audio.
@@ -156,7 +158,7 @@ ECHOCAT supports three keying methods that can work simultaneously:
 
 3. **Hardware DTR keying** — A dedicated USB-to-serial adapter wired to your radio's key jack. Best for absolute timing precision. See the [Remote CW Setup Guide](/remote-cw-setup) for wiring details.
 
-> **Sidetone:** For paddle CW and DTR keying, your phone generates local sidetone via its speaker — the radio's sidetone is not used since TX/RX keying bypasses the radio's internal keyer.
+> **Sidetone:** For paddle CW and DTR keying, your phone generates local sidetone via its speaker — the radio's sidetone is not used since TX/RX keying bypasses the radio's internal keyer. For CW macros, the phone's sidetone plays the same words the radio sends, with your name and other macro fields filled in, at even timing.
 
 ## FT8 / Digital Modes (JTCAT)
 
@@ -253,7 +255,7 @@ On your home Wi-Fi, your phone reaches POTACAT directly at its LAN IP address. N
 Tailscale is a free VPN that connects your phone and shack PC wherever they are — and it will keep working as a supported path indefinitely:
 
 1. Install **Tailscale** (free) on both your shack PC and your phone, signed in to the same account
-2. In the Tailscale admin console at `login.tailscale.com/admin/dns`, enable **MagicDNS** and **HTTPS Certificates** — pairing fails without both
+2. In the Tailscale admin console at `login.tailscale.com/admin/dns`, enable **MagicDNS** and **HTTPS Certificates** — pairing fails without both, and the iPhone app can't connect over Tailscale without them
    - **Linux only:** run `sudo tailscale set --operator=$USER` once on the shack PC, then restart POTACAT and re-pair once at home. Without it, POTACAT can't get the Tailscale certificate, and the app connects at home but not away ([details](nested/echocat-connectivity.md#linux-only-let-potacat-ask-for-the-certificate))
 3. Connect using the **MagicDNS hostname** shown in POTACAT's ECHOCAT panel (highlighted in green) with `https://` — the Tailscale `100.x.x.x` IP will not work, because the TLS certificate is issued only for the hostname
 4. No port forwarding or firewall changes needed
@@ -266,6 +268,8 @@ The Cloud tunnel is the simplest remote path: your desktop opens an **outbound-o
 
 Security is layered: the tunnel accepts no inbound connections, pairing tokens are one-time-use, and requests are rate limited.
 
+**One shack per Cloud address** (1.13.10). A Cloud account has one address, and it belongs to one desktop at a time. If a second desktop on the same account turns on the Cloud Tunnel, it asks first: **Use this shack instead**, **Keep the other shack** or **Cancel**. Turning the Cloud Tunnel off on one desktop leaves the address with the other. (Before 1.13.10, two desktops shared the address and split your phone's connections between them without saying so.)
+
 ## Share Your Rig
 
 With POTACAT Cloud you can grant another operator timed access to your radio — a friend without HF at home, a club member, or a licensed guest anywhere in the world.
@@ -273,6 +277,9 @@ With POTACAT Cloud you can grant another operator timed access to your radio —
 - You issue a **guest pass**: a four-word code (like `prague-plankton-potato-idaho`) that expires after a set number of hours
 - You can cap **TX power**, and band privileges are enforced based on the guest's license class
 - From 1.13.2, a guest can **tune to and listen to any spot**: a Technician can click a 20 m phone spot and listen. Transmit is what gets checked, against the guest's license class and the modes the pass allows. A refused key-down tells the guest why
+- From 1.13.10, **a guest can operate the station and nothing else.** A guest can tune, transmit, change modes and levels, use the scope and log their own contacts. Anything else is refused with a message on their screen: raw CAT commands, your logbook, your Cloud account, your settings and Winlink mail
+- From 1.13.10, **the pass's power cap is set on the radio.** When the guest starts, the radio is set to the pass's power cap, and your own power setting is put back when the pass ends. A radio that doesn't report its TX power over CAT can't transmit during a Guest Pass. That includes a Flex used through its CAT ports without the SmartSDR link
+- With split on, a guest's transmission is checked against the frequency the radio will actually transmit on, not the dial
 - The guest needs a **free POTACAT Cloud account** — this provides the audit trail of who operated your station
 - Rig sharing requires the Cloud tunnel; Tailscale covers your own devices, but sharing means Cloud (or adding the guest to your Tailnet yourself)
 
@@ -285,6 +292,20 @@ By default, the newest device to connect takes over the shack: connecting your l
 From POTACAT 1.13.0 you can keep several of your own devices on the shack at once. On the desktop, open **Settings > ECHOCAT > Advanced ECHOCAT settings** and turn on **Allow more than one of my devices at a time (beta)**. It is off by default. With it on, whoever keyed owns PTT until they let go, the shack's audio follows the device that asked for it last, and a Guest Pass is never shared.
 
 ## Security
+
+### Who can reach this computer
+
+> **New in POTACAT 1.13.10.**
+
+**Settings > ECHOCAT > Who can reach this computer** sets where ECHOCAT listens. **Access** has three choices:
+
+| Access | Who can reach the shack |
+|---|---|
+| **Local network and Cloud** (default) | Your local network, Tailscale and your POTACAT Cloud address, as before |
+| **Cloud only** | Only your POTACAT Cloud address and Guest Passes. ECHOCAT is closed to your local network and Tailscale |
+| **Off** | Nobody. ECHOCAT is closed completely |
+
+Removing a device from the paired list closes all of its connections, including a second one when more than one device at a time is allowed.
 
 ### Certificate Warning (ECHOCAT Web)
 
@@ -305,6 +326,7 @@ Older app versions call this password the *access token*.
 | Setting | Default | Description |
 |---------|---------|-------------|
 | Enable ECHOCAT | Off | Start the ECHOCAT server |
+| Who can reach this computer | Local network and Cloud | **Local network and Cloud**, **Cloud only** or **Off** (1.13.10+). See [above](#who-can-reach-this-computer) |
 | Port | 7300 | HTTPS/WebSocket server port |
 | Password-protect your rig | Off | Require a password to reach the ECHOCAT address. The web page asks for it; the app gets it when pairing |
 | PTT Safety Timeout | 180s | Auto-drop PTT after this many seconds |

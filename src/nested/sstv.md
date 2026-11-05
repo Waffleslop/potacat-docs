@@ -6,7 +6,7 @@ POTACAT receives and sends slow-scan TV pictures with nothing else to install. O
 - **Send:** build a picture in the compose area (**Photo…** for a background, **+ Text** for text, or a template from the **Templates** tab), then press **TRANSMIT**. Double-click a received picture, or press **↩ Reply**, to answer it.
 - **How SSTV contacts work**, under the ⚙ gear, explains the usual exchange.
 
-SSTV also works from ECHOCAT and from [another POTACAT](remote-desktop.md#sstv).
+SSTV also works from ECHOCAT and from [another POTACAT](remote-desktop.md#sstv). In the ECHOCAT app, the template browser has a **From desktop** section with the templates saved on your computer. They're read-only on the phone, and their text uses the phone's fonts.
 
 ## Audio and Drive
 

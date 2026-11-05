@@ -43,6 +43,7 @@ If the radio locks into TX when you close the ECHOCAT browser session, check **S
 ## Digital modes: MOD input and levels
 
 - **SET > Connectors > MOD Input**: set **DATA MOD** to `USB` — some radios default data-mode audio to the ACC jack, which leaves JTCAT/FT8 transmitting dead air.
+- **Voice silent but FT8 works?** Voice in plain USB/LSB uses **DATA OFF MOD**, a separate menu. Set **SET > Connectors > MOD Input > DATA OFF MOD** to `USB` (on an IC-7300 MK II too). See [Voice is silent, but FT8 works](ssb-over-data.md#voice-is-silent-but-ft8-works).
 - **USB MOD Level** around 50% is a good starting point; watch the ALC meter during TX and back off if it's slamming.
 - The radio's USB audio output must carry **AF** (normal receive audio), not IF — check the USB AF output setting under **SET > Connectors**.
 - If ECHOCAT's RX meter shows clipping, lower the radio's USB AF output level — some users run it around 10%.
