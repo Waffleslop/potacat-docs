@@ -80,6 +80,8 @@ POTACAT's settings are stored outside the app, so they survive updates — and u
 | Windows | `C:\Users\<you>\AppData\Roaming\POTACAT` |
 | Linux | `~/.config/POTACAT` |
 
+From 1.13.11, POTACAT writes settings safely and keeps a backup. If the settings file is damaged (for example, POTACAT was closed in the middle of a save), it's restored from the backup at the next start, and the log says why. You shouldn't lose your settings to a crash or a forced quit any more.
+
 > **Warning:** Deleting this folder wipes all settings, rig configurations, and cached data. Use the settings **export** option in Settings first if you want a backup to restore from.
 
 ## When an update goes wrong

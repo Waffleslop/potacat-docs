@@ -36,6 +36,8 @@ The radio keys, the wattmeter reads 0 W and ALC doesn't move, yet FT8 and other 
 
 Then, in **Settings > My Rigs**, edit the rig and pick the radio's own sound device (for example **USB Audio CODEC**) as the transmit audio, not the PC's speakers.
 
+From 1.13.11, POTACAT notices this for you: when a voice transmission keys the radio with 0 W out and no ALC, it shows a hint naming the menu to change on your radio. **Station Setup** also has a voice transmit step, after the data transmit test.
+
 ## Yaesu companion settings
 
 If you keep SSB over Data enabled on a Yaesu, set these radio menus or your transmissions can land off frequency:

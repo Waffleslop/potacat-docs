@@ -2,6 +2,21 @@
 
 This page summarizes major POTACAT and ECHOCAT releases — it is not an exhaustive list of every patch.
 
+### v1.13.11 — November 2026
+
+- **FT8, FT4 and FT2 spots tune the dial.** A spot near a mode's dial frequency tunes the dial (7074, not the 7075 the spot names), so the whole FT8 band is in the passband.
+- **FT4 replies can start late in the slot**, up to 2.5 s in, as FT8 already did.
+- **A Yaesu no longer keys up as POTACAT opens its port.** Every Yaesu now drops DTR and RTS right after the port opens (RTS stays up with RTS/CTS flow control). Thanks G5HOW.
+- **"The audio interface keys it" on FLRig and rigctld Network**, for a TS-2000 with a SignaLink and similar. Thanks WX4MWA. See [Transmit (PTT)](radio-setup.md#transmit-ptt-how-the-radio-is-keyed).
+- **rigctld restarts itself** when it stops, up to three times in ten minutes. Thanks LA8JKA.
+- **Voice at 0 W names the radio menu that's missing the audio**, and **Station Setup checks voice transmit**. See [Voice is silent, but FT8 works](nested/ssb-over-data.md#voice-is-silent-but-ft8-works).
+- **Settings are written safely, with a backup**, so a POTACAT closed mid-save can no longer wipe them. Thanks KO4L and N8JMS.
+- **One Change Theme dropdown** lists every look, and the ECHOCAT app's waterfall colours are on every desktop waterfall.
+- **N3FJP confirmations** go to the right service; **GridTracker** logs and spots each contact once; portable calls such as W1AW/KL7 resolve to where they operate; the QRZ status line says what's wrong. Thanks K0DHW and IK4IDF.
+- **SSTV:** Robot 36 pictures from MMSSTV decode in colour.
+- **VARA never keeps POTACAT's COM ports.** Thanks N5XHI. See [Winlink Email](nested/winlink.md#over-the-radio-with-vara-windows-your-own-copy).
+- Setup notes name the Silicon Labs CP210x driver for the FT-991A, FT-891, FT-710 and FTDX10, and the FT-710 band scope names the SCU-LAN10 setting when that's what is off.
+
 ### ECHOCAT app updates — November 2026
 
 Over-the-air updates to the ECHOCAT app (every 1.5.x version). They arrive by themselves when the app starts.
