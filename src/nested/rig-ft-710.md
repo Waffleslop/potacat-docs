@@ -17,6 +17,8 @@ The FT-710 exposes **two COM ports and a USB sound card** over one USB cable. Th
 
 > **Tip:** Power the radio on before opening the rig settings screen — with the radio off, the audio device dropdowns stay empty.
 
+> **Over the network:** with a Yaesu SCU-LAN10, the FT-710 can connect without a USB cable (experimental, receive audio only). See [Yaesu SCU-LAN10](yaesu-scu-lan10.md).
+
 ## Radio menu settings
 
 | Menu | Set to | Why |

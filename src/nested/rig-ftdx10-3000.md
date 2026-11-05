@@ -10,6 +10,8 @@ All of these radios work well as **Serial CAT (Kenwood / Yaesu)** ([details](ser
 
 **Windows driver (FTDX10 and FT-991A):** install the **Silicon Labs CP210x USB-to-UART driver** before you plug in the radio. Without it, no COM port appears. Get it from the Files tab of the radio's page on Yaesu's website, or Silicon Labs' "CP210x USB to UART Bridge VCP Drivers" page.
 
+**Over the network:** with a Yaesu SCU-LAN10, the FTDX10 and FTDX101D/MP can connect without a USB cable (experimental, receive audio only). See [Yaesu SCU-LAN10](yaesu-scu-lan10.md).
+
 **Sharing the radio** with Win4Yaesu, a logger or a cluster program: see [Sharing Your Radio with Other Programs](sharing-your-radio.md). POTACAT runs alongside Win4Yaesu, Log4OM and HolyCluster on a virtual COM port, with no OmniRig changes.
 
 **FTDX3000** — if the frequency won't change, check these radio menus:
