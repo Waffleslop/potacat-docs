@@ -19,7 +19,7 @@ Over-the-air updates to the ECHOCAT app (every 1.5.x version). They arrive by th
 - **Guest Pass** can operate the station and nothing else, and its power cap is set on the radio. See [Share Your Rig](echocat.md#share-your-rig).
 - **ECHOCAT can be Cloud only or Off:** Settings > ECHOCAT > Who can reach this computer. See [Who can reach this computer](echocat.md#who-can-reach-this-computer).
 - **One shack per Cloud address:** a second desktop asks before it takes the address. Thanks KQ5O.
-- **DXLab Commander** is a radio type. Contributed by David S. See [DXLab Commander](nested/dxlab-commander.md).
+- **DXLab Commander** is a radio type. See [DXLab Commander](nested/dxlab-commander.md).
 - **PTT on the CAT port's RTS or DTR line**, for radios such as the IC-706MKIIG. See [Transmit (PTT)](radio-setup.md#transmit-ptt-how-the-radio-is-keyed).
 - **Test Connection names a port another program holds.** See [Sharing Your Radio with Other Programs](nested/sharing-your-radio.md).
 - **The scope pop-out** works like SmartSDR: spot labels in the trace, click to tune, drag the frequency scale to resize.

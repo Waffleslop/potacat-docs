@@ -1,6 +1,6 @@
 # DXLab Commander
 
-> **New in POTACAT 1.13.10.** Contributed by David S.
+> **New in POTACAT 1.13.10.**
 
 If you run DXLab Suite, POTACAT can control your radio through **DXLab Commander** instead of opening the radio's port itself. Commander keeps the radio, and DXKeeper, Spot Collector and POTACAT all follow it.
 
