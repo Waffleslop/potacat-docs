@@ -37,6 +37,7 @@
     - [Yaesu FT-710](nested/rig-ft-710.md)
     - [Yaesu FT-891](nested/rig-ft-891.md)
     - [Yaesu FTDX10 / FTDX3000 / FT-991A](nested/rig-ftdx10-3000.md)
+    - [Yaesu SCU-LAN10 (Experimental)](nested/yaesu-scu-lan10.md)
     - [Icom IC-7300 & Family](nested/rig-ic-7300.md)
     - [Kenwood Rigs](nested/rig-kenwood.md)
     - [Elecraft Rigs](nested/rig-elecraft.md)
