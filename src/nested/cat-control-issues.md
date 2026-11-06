@@ -31,6 +31,23 @@ Work down this checklist — it resolves the vast majority of failed tests:
 - If you want other apps to share the radio, point them at POTACAT's rigctld instead of the COM port — for example, configure WSJT-X to use **Hamlib NET rigctl** at `127.0.0.1:4532`, and open POTACAT first.
 - Running Win4Yaesu, or a program that must keep the radio? Give POTACAT a **virtual** COM port and point it there, not at the radio's own port. See [Sharing Your Radio with Other Programs](sharing-your-radio.md).
 
+## Yaesu: keys up on connect, or doesn't answer
+
+> **Changed in POTACAT 1.14.0.**
+
+Windows raises the DTR and RTS lines when a serial port opens. A Yaesu whose PTT or keying menu uses one of those lines used to go into transmit as POTACAT connected, or on **Test Connection**. Now every Yaesu drops both lines right after the port opens. With RTS/CTS flow control, RTS stays up and only DTR drops.
+
+- **A radio whose CAT RTS menu is on** then answers only with RTS up. After 6 seconds with no answer, POTACAT tries RTS/CTS flow control, and keeps it if the radio answers.
+- **If raising RTS keys the radio** (its PTT is on RTS), POTACAT drops RTS again, doesn't save RTS/CTS, and says: *The radio uses RTS both for CAT and as a PTT line: in the radio menu, move PTT (PTT SELECT / keying) off RTS, or turn the CAT RTS setting off.* Change one of those two radio menus, then connect again.
+
+A Kenwood that never answers is tried with RTS/CTS the same way.
+
+## Icom: the mode or power is never reported
+
+If an Icom shows its frequency but never its mode or power, PTT and HALT can be hidden and a Guest Pass can't transmit. From 1.14.0, POTACAT notices a radio that drops replies and sends it one command at a time. The log says *This radio drops replies to back-to-back CI-V commands*. See [CI-V pacing](rig-ic-7300.md#ci-v-pacing-mode-or-power-never-reported).
+
+If the log still says the radio **never reported its MODE**, the cause is the same as before: the wrong **Radio Model**, CI-V address or connection type.
+
 ## The WSJT-X Mode trap
 
 This is the single most common cause of "CAT suddenly stopped working."
@@ -80,7 +97,9 @@ POTACAT's settings are stored outside the app, so they survive updates — and u
 | Windows | `C:\Users\<you>\AppData\Roaming\POTACAT` |
 | Linux | `~/.config/POTACAT` |
 
-From 1.13.11, POTACAT writes settings safely and keeps a backup. If the settings file is damaged (for example, POTACAT was closed in the middle of a save), it's restored from the backup at the next start, and the log says why. You shouldn't lose your settings to a crash or a forced quit any more.
+From 1.14.0, POTACAT writes settings safely and keeps a backup. If the settings file is damaged (for example, POTACAT was closed in the middle of a save), it's restored from the backup at the next start, and the log says why. You shouldn't lose your settings to a crash or a forced quit any more.
+
+Because of that backup, **to reset POTACAT's settings, close POTACAT and delete both `settings.json` and `settings.json.bak`**. Deleting only `settings.json` brings it straight back from the backup.
 
 > **Warning:** Deleting this folder wipes all settings, rig configurations, and cached data. Use the settings **export** option in Settings first if you want a backup to restore from.
 

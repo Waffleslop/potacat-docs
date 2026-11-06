@@ -34,3 +34,5 @@ The map box has two buttons:
 ## Hunting Wanted States in FT8
 
 FT8 decodes show a state badge on a station in a state you still need on that band and mode. In the JTCAT window's **AUTO** menu, pick **Hunt: Wanted states** and POTACAT answers only those stations. See [JTCAT](jtcat.md).
+
+> **Note:** From 1.14.0, eQSL and ClubLog confirmations count as confirmed here, in the [DXCC Tracker](dxcc-tracker.md) and in confirmed-only exports.

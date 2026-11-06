@@ -75,6 +75,30 @@ CI-V serial drops commands that arrive nearly back-to-back; POTACAT compensates,
 2. In POTACAT, add the rig as **Other Rig (Hamlib)** with Rig Model **FLRig**, host `127.0.0.1`, port `12345`. FLRig owns the serial port — leave the COM/baud fields alone.
 3. Alternatively, run your own bridge with `rigctld -m 4 -r 127.0.0.1:12345` and use the **rigctld Network** rig type.
 
+## CI-V pacing: mode or power never reported
+
+> **New in POTACAT 1.14.0.**
+
+Some Icoms, the IC-7300 among them, drop a reply when POTACAT's next command arrives while they're still answering. On those radios the mode and RF power were never reported, which hid PTT and HALT and refused every Guest Pass transmission.
+
+POTACAT starts every Icom exactly as before. If the radio answers the frequency but not the mode within about 10 seconds (or not its power while a Guest Pass needs it), POTACAT switches that radio to one command at a time and logs:
+
+```
+[CAT] This radio drops replies to back-to-back CI-V commands (...); sending them one at a time from now on.
+```
+
+That's normal, and the mode and power come back. It's checked again at each connect.
+
+To set it yourself: **Settings > My Rigs**, edit the rig, **Advanced > CI-V pacing**:
+
+| Choice | What it does |
+|---|---|
+| **Auto** (default) | One command at a time only if the radio drops replies |
+| **Always one command at a time** | From the start of every connect |
+| **Never** | Always send at full speed |
+
+**Icom Network (RS-BA1)** connections are unchanged.
+
 ## Troubleshooting quick hits
 
 - **Spot clicks stopped QSYing and the CAT badge is red** — make sure the **WSJT-X Mode** checkbox is off unless WSJT-X is actually running and configured.

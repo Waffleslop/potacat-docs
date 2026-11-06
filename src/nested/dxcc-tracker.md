@@ -10,3 +10,5 @@ Features:
 - **"DXCC!"** badge when you reach 100+ entities
 
 
+
+> **Note:** From 1.14.0, eQSL and ClubLog confirmations count as confirmed, as LoTW and paper cards do.

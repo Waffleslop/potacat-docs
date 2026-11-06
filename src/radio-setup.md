@@ -6,16 +6,16 @@ Running a logger, Win4Yaesu or another CAT program on the same radio? See [Shari
 
 ## Transmit (PTT): How the Radio Is Keyed
 
-Most radios are keyed with a CAT command. In the rig editor, **Transmit (PTT)** offers other ways for **Serial CAT (Kenwood / Yaesu)** and **Icom (CI-V)** rigs (from 1.13.10). From 1.13.11, **FLRig (a shared radio)** and **rigctld Network** also offer **The audio interface keys it**:
+Most radios are keyed with a CAT command. In the rig editor, **Transmit (PTT)** offers other ways for **Serial CAT (Kenwood / Yaesu)** and **Icom (CI-V)** rigs (from 1.13.10). From 1.14.0, **FLRig (a shared radio)** and **rigctld Network** also offer **The audio interface keys it**:
 
 - **RTS on the CAT port** or **DTR on the CAT port:** for a radio with no transmit command, such as the IC-706MKIIG, when an interface on the CAT port keys the radio through that line. This is the same as WSJT-X's PTT method of RTS or DTR on the CAT port.
 - **The audio interface keys it (SignaLink, the radio's VOX):** CAT still tunes and changes mode, and a SignaLink or similar on the radio's data jack does the keying. Use it when a CAT transmit sends the front microphone instead of the interface's audio, as on a TS-2000 with a SignaLink on ACC2.
 
 ## Transmit Time Limits
 
-> **New in the next POTACAT release.**
+> **New in POTACAT 1.14.0.**
 
-Every transmission POTACAT starts has a time limit, after which POTACAT releases the transmitter. There's no setting:
+Every transmission POTACAT starts has a time limit. When it's reached, the audio stops, POTACAT unkeys the radio by every route it has, and a message on the main window, the VFO window and your phone says so. Before, a radio left keyed by a fault stayed keyed until POTACAT was closed. There's no setting:
 
 | Mode | Limit |
 |---|---|
@@ -24,10 +24,24 @@ Every transmission POTACAT starts has a time limit, after which POTACAT releases
 | PSK31 / JTTY | 3 min |
 | SSTV | 6 min |
 | Winlink | 2 min |
-| Tune / test | 2 min |
-| Voice | 10 min |
+| Tune and the Station Setup test | 2 min |
+| Voice (desktop, phone, voice macros, FreeDV) | 10 min |
 
-WSPR, the external tuner's carrier and CW text are exempt.
+WSPR, the external tuner's carrier and CW text aren't covered by this limit; each keeps its own timer.
+
+**A transmission POTACAT didn't start is never unkeyed,** because you may be on the hand mic. The log notes it once per session. If a CAT-port line POTACAT holds (DTR or RTS) is high during such an over, POTACAT warns on every over and names the line's state, because that line may be what keys the radio.
+
+## Filter Width
+
+> **Changed in POTACAT 1.14.0.**
+
+A spot click keeps your filter width:
+
+- **A width you pick on the rig panel** lasts until the next tune. It isn't saved.
+- **A mode change through rigctld** keeps the radio's own width. A change into PKTUSB or PKTLSB still asks for 3 kHz, because some radios bring up their data mode at 500 Hz, which loses most of the FT8 band.
+- **Settings > Tuning > CW, SSB and Digital Filter Width**, and rig presets, still set a width. On Kenwood radios and in VFO profiles, the width follows the mode you tune to.
+
+Earlier versions quietly saved a width picked on the rig panel as that mode's Filter Width setting, so one 500 Hz click in CW forced 500 Hz on every later CW spot. **Widths saved that way are kept**, because a deliberate one can't be told from an accidental one, and every tune that uses one names it in the log. To go back to the radio's own width, set that **Filter Width** to `0` in Settings > Tuning.
 
 ## Let N1MM+ (or Another Logger) Control the Radio
 

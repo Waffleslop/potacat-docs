@@ -8,6 +8,14 @@ POTACAT receives and sends slow-scan TV pictures with nothing else to install. O
 
 SSTV also works from ECHOCAT and from [another POTACAT](remote-desktop.md#sstv). In the ECHOCAT app, the template browser has a **From desktop** section with the templates saved on your computer. They're read-only on the phone, and their text uses the phone's fonts.
 
+## Modes and MMSSTV
+
+From 1.14.0, pictures from MMSSTV decode in all the common modes:
+
+- **Robot 36** uses the standard 150 ms line when sending and receiving, so its pictures decode in colour instead of green.
+- **Scottie 1 and 2, PD-90, PD-120, PD-180 and Robot 72** keep exact line timing. Each line used to come out 1 to 2 % long or short, so those pictures didn't decode.
+- SSTV starts its picture once the radio has really keyed, so a radio slow to confirm DATA mode no longer loses the start of the transmission.
+
 ## Audio and Drive
 
 - SSTV uses the radio's audio devices from **Settings > My Rigs**, the same ones as JTCAT. To use different devices for SSTV only, choose them under ⚙ > **Audio** > **Receive** and **Transmit**. If SSTV misbehaves and JTCAT doesn't, check these first: an old device chosen here overrides the radio's.

@@ -10,7 +10,7 @@ When you press PTT from [ECHOCAT](../echocat.md), POTACAT switches the radio fro
 [PTT] USB -> DIGU (SSB-over-DATA: mic disabled)
 ```
 
-From the next release, POTACAT keys the radio only after the radio confirms it's in DATA mode, and puts the voice mode back after you release.
+From 1.14.0, POTACAT sets the mode and frequency first and keys the radio only once the radio reports the DATA mode, so the start of each over isn't clipped. On release it unkeys first, then puts the voice mode back and checks that the radio took it. A radio that can't report its DATA mode isn't waited for: after the first over, it keys at once.
 
 The setting applies to non-Flex radios and only kicks in when audio is actually streaming through the USB codec — an ECHOCAT session, voice macros, or FreeDV.
 
@@ -38,7 +38,7 @@ The radio keys, the wattmeter reads 0 W and ALC doesn't move, yet FT8 and other 
 
 Then, in **Settings > My Rigs**, edit the rig and pick the radio's own sound device (for example **USB Audio CODEC**) as the transmit audio, not the PC's speakers.
 
-From 1.13.11, POTACAT notices this for you: when a voice transmission keys the radio with 0 W out and no ALC, it shows a hint naming the menu to change on your radio. **Station Setup** also has a voice transmit step, after the data transmit test.
+From 1.14.0, POTACAT notices this for you: when a voice transmission keys the radio with 0 W out and no ALC, it shows a hint naming the menu to change on your radio. It looks only at overs where POTACAT sends the audio, never at the hand mic. **Station Setup** also has a voice transmit step, after the data transmit test.
 
 ## Yaesu companion settings
 

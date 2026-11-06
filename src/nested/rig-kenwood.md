@@ -38,7 +38,7 @@ If you operate with the radio's own mic in hand, uncheck **SSB-over-DATA** in Se
 - **Direct serial needs RTS/CTS** (POTACAT 1.13.2 and later sets it): like the TS-590, the TS-2000 only replies on a direct serial connection with RTS/CTS handshake. On older versions it connected but never answered.
 - **No SWR over CAT**: the TS-2000 doesn't expose an SWR reading via CAT, so POTACAT's SWR bar stays dashed out. That's normal, not a fault.
 - **Set the Radio Model to `TS-2000`**: with a generic or empty model selected, POTACAT polls commands the radio doesn't support, each one triggers the radio's `?;` error response — and the radio **beeps continuously**. Older Kenwoods (e.g. TS-850S) beep for the same reason; always pick the closest model.
-- **SignaLink (or another interface) on ACC2:** when POTACAT keys a TS-2000 over CAT, the radio transmits its **front microphone**, not the audio on ACC2. Let the interface key the radio instead: in **Settings > My Rigs**, edit the rig and set **Transmit (PTT)** to **The audio interface keys it (SignaLink, the radio's VOX)**. CAT still tunes and changes mode. From 1.13.11 the same choice is on the **FLRig (a shared radio)** and **rigctld Network** connections. If you run the TS-2000 through flrig, there's no ALC reading.
+- **SignaLink (or another interface) on ACC2:** when POTACAT keys a TS-2000 over CAT, the radio transmits its **front microphone**, not the audio on ACC2. Let the interface key the radio instead: in **Settings > My Rigs**, edit the rig and set **Transmit (PTT)** to **The audio interface keys it (SignaLink, the radio's VOX)**. CAT still tunes and changes mode. From 1.14.0 the same choice is on the **FLRig (a shared radio)** and **rigctld Network** connections. If you run the TS-2000 through flrig, there's no ALC reading.
 - **Radio jumping into split when tuning?** Check POTACAT's **Enable Split Mode** setting first — when it's on, POTACAT deliberately sets up split on every QSY. This applies to all Kenwood-protocol rigs.
 
 ## TS-480
@@ -47,7 +47,9 @@ If the S-meter and power readings look far too low and SWR shows blank in ECHOCA
 
 ## Transmit power through Hamlib
 
-From the next release, a Kenwood connected through **Other Rig (Hamlib)** keeps its transmit power setting when POTACAT connects.
+From 1.14.0, a Kenwood connected through **Other Rig (Hamlib)** or **rigctld Network** keeps its transmit power when POTACAT connects. Hamlib's power reading on the TS-2000, TS-590S/SG and several others ends by setting the radio to its minimum, so these radios used to drop to 5 W at connect. POTACAT now reads and sets a Kenwood's power with the radio's own `PC` command.
+
+From 1.14.0, a Kenwood that never answers on a serial port is tried with RTS/CTS flow control, as a Yaesu already was, and keeps the setting if the radio then answers. The **TS-890S** is a 100 W radio on the power slider, rig presets and Guest Pass caps.
 
 ## Other radios that speak Kenwood
 

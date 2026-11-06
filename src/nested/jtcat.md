@@ -28,15 +28,38 @@ While it runs, JTCAT:
 | Target | Answers |
 |---|---|
 | **Hunt: All CQs** | Any CQ |
+| **Hunt: Custom** | Any of the targets ticked in **Filters** (1.14.0) |
 | **Hunt: POTA** / **Hunt: SOTA** | Activators calling CQ |
 | **Hunt: Wanted states** | States you still need ([Worked All States](worked-all-states.md)) |
 | **Hunt: New countries** | Countries you still need, with the same scope as the map's Worked box (1.13.10) |
+| **Hunt: New grids** | Grids you haven't worked on this band and mode (1.14.0) |
 | **Hunt: DX only** | Stations on another continent (1.13.10) |
 | **Hunt: Same as Call** | Whoever the **Call** dropdown names; with Call set to everyone, anyone (1.13.10) |
 | **Hunt: Watchlist** | Calls on your [Watchlist](watchlist.md) (1.13.10) |
 | **Hunt: Off** | Nothing |
 
-Hunt answers what the badges and highlights already show you, and it only ever answers a CQ.
+Hunt answers what the badges and highlights already show you, and it only ever answers a CQ. From 1.14.0 it never answers a **CQ DX** from your own continent, nor a **CQ NA** or **CQ EU** aimed at another continent. There's no setting for that.
+
+The **Wanted** view button cycles through Wanted, New DXCC, New grid and off.
+
+### Hunt filters
+
+> **New in POTACAT 1.14.0.**
+
+Click **Filters**, beside Hunt. A dot on the button shows that a filter isn't at its default.
+
+| Section | What it does |
+|---|---|
+| **Answer stations matching any of** | Tick targets, for example POTA, New countries and Watchlist. With **Hunt: Custom**, Hunt answers a CQ that matches any ticked target. |
+| **Don't answer below** | Hunt answers only a CQ at least this strong, in dB, on every band; **By band** sets a level per band, such as `20m -18, 6m -12`. Blank answers any signal. This moved here from Options. You can still double-click a weaker station. |
+| **Skip** | **Skip a call for 30 min after a QSO gives up**: when a contact gives up at the tries limit, Hunt doesn't call that station again on that band and mode for that long. On by default. |
+| **Never answer** | Type a call, or a prefix ending in `*` such as `VE3*`, and click **Add**; or right-click a decode. A prefix matches every call that starts with it. Hunt, Call CQ and **Answer stations that call me** pass these stations by. A double-click still calls anyone. |
+| **What you see** | **Hide decodes below N dB** changes only what you see. A station calling you is never hidden, and the Band Activity header says how many are hidden. |
+| **Who goes first** | **Strongest** (as before), **Farthest** (by grid), or **Needed first** (a new country, then a new grid). Event stations still go first. |
+
+**Why is Hunt quiet?** One line under the controls counts the CQs heard and how many were too weak, already worked, ignored, skipped or not calling you, for example *12 CQs heard, 6 below -15 dB, 2 worked, 1 ignored*. It names the station Hunt answers next, and during a contact the station it's working.
+
+Filters are also in ECHOCAT. See [FT8 on Your Phone](#ft8-on-your-phone-echocat).
 
 ## JTCAT vs. WSJT-X vs. ECHOCAT
 
@@ -131,7 +154,7 @@ GridTracker can show JTCAT's decodes and start QSOs in JTCAT, as it does with WS
 2. Set the host to `127.0.0.1` (GridTracker on the same PC), the port to GridTracker's, normally **2237**, and the format to **WSJT-X binary (GridTracker, JTAlert, HamRS)**.
 3. Leave **Send FT8/FT4 decodes too, and answer the station I double-click in GridTracker** ticked (it is on by default).
 
-GridTracker's call roster then fills from the JTCAT window, a double-click on a station in GridTracker answers it in JTCAT, just like a double-click in the decode list, and each logged QSO is sent to GridTracker. See also [Logbook Forwarding: GridTracker](logbook-forwarding.md#gridtracker).
+GridTracker's call roster then fills from the JTCAT window, a double-click on a station in GridTracker answers it in JTCAT, just like a double-click in the decode list, and each logged QSO is sent to GridTracker. From 1.14.0, POTACAT sends the logged-QSO messages in WSJT-X's order, so GridTracker 2 logs and spots each contact once instead of posting a second POTA spot. See also [Logbook Forwarding: GridTracker](logbook-forwarding.md#gridtracker).
 
 ## JTTY
 
@@ -139,6 +162,10 @@ JTTY (the WSJT-X 3.2 keyboard mode: 4-GFSK, 127 Hz wide, no timed sequences) has
 
 - **Chats.** The tab strip above the decodes holds all traffic plus one tab per station. Double-click a line to open a chat with that station and see the exchange as a conversation; the composer has the pair of callsigns filled in. A station calling you opens a tab without switching you away from the one you are in. Right-click a tab for **Log** (log the QSO) and **Close**. Chats work with **Style** set to **FT8**.
 - **CQ on a clear spot.** When you call CQ, JTCAT first moves to the quietest spot near your offset, measured over the last 30 seconds of the passband, so a fresh session no longer calls on 1500 Hz with everyone else. **Clear spot** does the same on demand. Turn on **Hold** (Hold TX frequency) to stay where you are. The move is made on the shack, so a CQ from the phone or a [paired laptop](remote-desktop.md) gets it too.
+
+## WSPR
+
+From 1.14.0, idle WSPR listens only on the bands your radio is used on (the ones ticked in **Settings > My Rigs**), and offers 2 m, tuning 144.489 MHz. If the saved band isn't one of them, it uses the first that is, and the log says so.
 
 ## WSPR Map
 

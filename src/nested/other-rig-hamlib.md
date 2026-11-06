@@ -24,3 +24,7 @@ These radios power their serial interface from the DTR and RTS lines. From 1.13.
 
 - **Model:** Ten-Tec TT-538 Jupiter (Hamlib 16002), at 57600 baud for the Jupiter.
 - Leave **Disable DTR/RTS on connect** off.
+
+## Custom CAT Buttons Through Hamlib
+
+From 1.14.0, a custom CAT command that starts with `+` or `\` goes to rigctld itself, as typed, for example `+V VFOB`. Anything else still goes to the radio.

@@ -158,7 +158,7 @@ ECHOCAT supports three keying methods that can work simultaneously:
 
 3. **Hardware DTR keying** — A dedicated USB-to-serial adapter wired to your radio's key jack. Best for absolute timing precision. See the [Remote CW Setup Guide](/remote-cw-setup) for wiring details.
 
-> **Sidetone:** For paddle CW and DTR keying, your phone generates local sidetone via its speaker — the radio's sidetone is not used since TX/RX keying bypasses the radio's internal keyer. For CW macros, the phone's sidetone plays the same words the radio sends, with your name and other macro fields filled in, at even timing.
+> **Sidetone:** For paddle CW and DTR keying, your phone generates local sidetone via its speaker — the radio's sidetone is not used since TX/RX keying bypasses the radio's internal keyer. For CW macros, the phone's sidetone plays the same words the radio sends, with your name and other macro fields filled in, at even timing. After a macro, receive audio comes back after a short tail sized to the connection: about 0.25 s on your home network, under 0.5 s over Cloud.
 
 ## FT8 / Digital Modes (JTCAT)
 
@@ -172,6 +172,8 @@ Tap the **FT8** tab on your phone to access:
 - **TX controls** — enable TX, call CQ, reply to stations
 - **Waterfall** — live spectrum display streamed from the desktop
 - **Auto QSO sequencing** — JTCAT handles the exchange sequence; you just pick who to call
+
+**Hunt filters** (POTACAT 1.14.0): ECHOCAT Web has the same **Filters** sheet and the same status line under Hunt as the desktop FT8 window. See [Hunt filters](nested/jtcat.md#hunt-filters). ECHOCAT Web shows the saved Custom list even with Hunt off. A Guest Pass gets no Filters button. The phone app gets the Filters sheet and status line with its next update; there, you long-press a decode for **Never answer**.
 
 ## Activator Mode
 
@@ -190,6 +192,7 @@ During an activation, tap the **Log** button next to any spot, or use the quick-
 
 - Enter callsign, RST sent/received, and optional notes
 - QSOs are numbered and timestamped automatically
+- A contact switched to **General** never carries the previous park. Before this fix, such a contact could be logged with the last park and count as a false park-to-park. Contacts already logged that way need the park removed by hand, and re-uploading if they were sent to POTA
 - Your contact list shows at the bottom of the activation view
 
 ### Re-spotting
@@ -280,6 +283,8 @@ With POTACAT Cloud you can grant another operator timed access to your radio —
 - From 1.13.10, **a guest can operate the station and nothing else.** A guest can tune, transmit, change modes and levels, use the scope and log their own contacts. Anything else is refused with a message on their screen: raw CAT commands, your logbook, your Cloud account, your settings and Winlink mail
 - From 1.13.10, **the pass's power cap is set on the radio.** When the guest starts, the radio is set to the pass's power cap, and your own power setting is put back when the pass ends. A radio that doesn't report its TX power over CAT can't transmit during a Guest Pass. That includes a Flex used through its CAT ports without the SmartSDR link
 - With split on, a guest's transmission is checked against the frequency the radio will actually transmit on, not the dial
+- From 1.14.0, **a guest is told why a transmission was refused**, in plain words, in their FT8 window, VFO window and log. When the refusal is because your radio isn't reporting its power, **you get a notice too**, *Guest Pass: your radio is not reporting its power, so the guest cannot transmit*, and the log says what to check: that **Settings > My Rigs** names the radio's exact model (and CI-V address on an Icom). On an Icom, see [CI-V pacing](nested/rig-ic-7300.md#ci-v-pacing-mode-or-power-never-reported)
+- From 1.14.0, right after setting the radio to the pass's power cap, POTACAT asks the radio to report it, so the first transmission doesn't wait. A cap above the radio's [full power](nested/my-rigs.md#full-power-w) gives the radio's full power
 - The guest needs a **free POTACAT Cloud account** — this provides the audit trail of who operated your station
 - Rig sharing requires the Cloud tunnel; Tailscale covers your own devices, but sharing means Cloud (or adding the guest to your Tailnet yourself)
 

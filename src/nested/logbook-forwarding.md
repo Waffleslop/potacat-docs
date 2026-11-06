@@ -44,6 +44,11 @@ Forwarding relies on N3FJP's TCP API. In N3FJP, open **Settings → Application 
 
 > **Note:** If you also run WSJT-X, launch order matters: start **WSJT-X** first, then **POTACAT**, then **N3FJP**.
 
+**Contacts you log in N3FJP itself:** tick **Also bring in contacts I log in N3FJP on its own** (Logbook = N3FJP). While N3FJP is open, POTACAT adds those contacts to your POTACAT log; contacts it already has are skipped. From 1.14.0:
+
+- A ClubLog, LoTW, eQSL or QRZ confirmation from N3FJP is recorded as that service, not as a paper card, and confirmations that arrive later reach contacts already brought in.
+- The whole N3FJP log is re-read once a day. That never removes a confirmation (one from **Update from LoTW**, or one you ticked in the Logbook), and never brings back a contact you deleted.
+
 POTACAT writes the park number and name into N3FJP's comments field. From v1.9.4 there is an option that controls whether POTACAT forwards comments, so you can turn this off if you prefer to keep your own comments.
 
 ### Log4OM 2

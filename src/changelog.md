@@ -2,31 +2,31 @@
 
 This page summarizes major POTACAT and ECHOCAT releases — it is not an exhaustive list of every patch.
 
-### Next release (after 1.13.11)
+### v1.14.0 "The Neptune square Mars, Neptune square Venus Release" — November 2026
 
+Hunt gets filters: answer several targets at once, choose who goes first, never answer a station you name, and see in one line why Hunt is quiet. POTACAT now unkeys any transmission that runs too long, a Yaesu no longer keys up as POTACAT opens its port, and a spot click no longer changes your filter width. Yaesu's SCU-LAN10 network adapter arrives as an experimental radio type.
+
+- **Hunt filters**, in the FT8 window and ECHOCAT Web: **Hunt: Custom** answers several targets at once, **Hunt: New grids**, **Who goes first** (Strongest, Farthest, Needed first), **Never answer** (a call or a prefix like VE3*), a 30-minute skip after a QSO gives up, and **Hide decodes below N dB**. A line under Hunt says why it's quiet. Hunt no longer answers a CQ DX from your own continent. See [Hunt filters](nested/jtcat.md#hunt-filters).
 - **A time limit on every transmission POTACAT starts**, from 30 s for FT8 to 10 min for voice. See [Transmit Time Limits](radio-setup.md#transmit-time-limits).
-- **Kenwood radios through Hamlib keep their transmit power** when POTACAT connects.
-- **SSB over Data** keys only after the radio confirms DATA mode, and puts the voice mode back after release.
-- **No frequency reads while transmitting**, which fixes repeater-offset confusion.
-- **Filter width:** a spot click leaves your width alone between voice and CW; widths picked on the rig panel are no longer saved.
-- **SSTV:** Scottie, PD and Robot 72 decode MMSSTV pictures correctly.
-- **VFO window:** typing 432100 or 1296100 (kHz) tunes 70 cm or 23 cm.
-- **Meters:** SWR and ALC return to rest after transmit.
-
-### v1.13.11 — November 2026
-
-- **FT8, FT4 and FT2 spots tune the dial.** A spot near a mode's dial frequency tunes the dial (7074, not the 7075 the spot names), so the whole FT8 band is in the passband.
-- **FT4 replies can start late in the slot**, up to 2.5 s in, as FT8 already did.
-- **A Yaesu no longer keys up as POTACAT opens its port.** Every Yaesu now drops DTR and RTS right after the port opens (RTS stays up with RTS/CTS flow control). Thanks G5HOW.
+- **A Yaesu no longer keys up as POTACAT opens its port.** A radio whose CAT RTS menu is on is tried with RTS/CTS after 6 s. Thanks G5HOW. See [Yaesu: keys up on connect](nested/cat-control-issues.md#yaesu-keys-up-on-connect-or-doesnt-answer).
+- **A spot click keeps your filter width.** See [Filter Width](radio-setup.md#filter-width).
+- **Yaesu SCU-LAN10 (experimental):** CAT, receive audio and the band scope over the network for the FTDX10, FT-710 and FTDX101D/MP. No transmit audio over the LAN yet. See [Yaesu SCU-LAN10](nested/yaesu-scu-lan10.md).
+- **Icom radios that drop replies are sent one command at a time** (Advanced > CI-V pacing). Thanks NA4DQ. See [CI-V pacing](nested/rig-ic-7300.md#ci-v-pacing-mode-or-power-never-reported).
+- **Full power (W)** in Settings > My Rigs, for a radio POTACAT reads as the wrong size, such as a 5 W Hermes Lite shown as a 100 W TS-2000. Thanks W5LEE. See [Full Power (W)](nested/my-rigs.md#full-power-w).
+- **Guest Pass:** a guest is told why a transmission was refused, and the owner what to fix. Thanks KF0WWL.
+- **Kenwood:** a Kenwood behind rigctld keeps its power at connect; a silent Kenwood is tried with RTS/CTS; the TS-890S is a 100 W radio.
+- **SSB over DATA** keys once the radio reports the DATA mode and sets the mode and frequency first, so overs aren't clipped or off frequency (GitHub #113).
+- **The external tuner's tune never sets 100 W** (GitHub #111). The first tune after connecting no longer cancels a split (GitHub #113).
 - **"The audio interface keys it" on FLRig and rigctld Network**, for a TS-2000 with a SignaLink and similar. Thanks WX4MWA. See [Transmit (PTT)](radio-setup.md#transmit-ptt-how-the-radio-is-keyed).
-- **rigctld restarts itself** when it stops, up to three times in ten minutes. Thanks LA8JKA.
-- **Voice at 0 W names the radio menu that's missing the audio**, and **Station Setup checks voice transmit**. See [Voice is silent, but FT8 works](nested/ssb-over-data.md#voice-is-silent-but-ft8-works).
-- **Settings are written safely, with a backup**, so a POTACAT closed mid-save can no longer wipe them. Thanks KO4L and N8JMS.
-- **One Change Theme dropdown** lists every look, and the ECHOCAT app's waterfall colours are on every desktop waterfall.
-- **N3FJP confirmations** go to the right service; **GridTracker** logs and spots each contact once; portable calls such as W1AW/KL7 resolve to where they operate; the QRZ status line says what's wrong. Thanks K0DHW and IK4IDF.
-- **SSTV:** Robot 36 pictures from MMSSTV decode in colour.
+- **rigctld restarts itself** when it stops. Thanks LA8JKA. Custom CAT buttons over Hamlib can send rigctld's own commands (`+V VFOB`).
+- **Voice at 0 W names the radio menu that's missing the audio**, and **Station Setup checks voice transmit**; its test transmit moves to a frequency your licence allows. Thanks KD9OUT, KD9WJY and KJ5CHK. See [Voice is silent, but FT8 works](nested/ssb-over-data.md#voice-is-silent-but-ft8-works).
+- **FT8, FT4 and FT2 spots tune the dial** (7074, not the 7075 the spot names); FT4 replies can start up to 2.5 s into the slot; 2 m WSPR tunes 144.489.
+- **SSTV:** Robot 36, Scottie, PD and Robot 72 pictures from MMSSTV decode. See [SSTV](nested/sstv.md#modes-and-mmsstv).
+- **Logging:** N3FJP confirmations go to the right service and a daily re-read never removes one; eQSL and ClubLog count as confirmed; GridTracker logs and spots each contact once; the Activator log never loses or doubles a contact; a General contact never picks up the last park; QRZ's county is used only for US stations. Thanks K0DHW and IK4IDF.
+- **Settings are written safely, with a backup.** Thanks N8JMS. To reset settings, delete both `settings.json` and `settings.json.bak`.
 - **VARA never keeps POTACAT's COM ports.** Thanks N5XHI. See [Winlink Email](nested/winlink.md#over-the-radio-with-vara-windows-your-own-copy).
-- Setup notes name the Silicon Labs CP210x driver for the FT-991A, FT-891, FT-710 and FTDX10, and the FT-710 band scope names the SCU-LAN10 setting when that's what is off.
+- **One Change Theme dropdown**, and the ECHOCAT app's waterfall colours on every desktop waterfall.
+- Setup notes name the Silicon Labs CP210x driver for the FT-991A, FT-891, FT-710 and FTDX10.
 
 ### ECHOCAT app updates — November 2026
 
@@ -35,6 +35,8 @@ Over-the-air updates to the ECHOCAT app (every 1.5.x version). They arrive by th
 - **CW macros:** the phone's sidetone plays the same words the radio sends, and macro timing is even with sidetone on.
 - **Wired earbuds:** a press of the earbud button keys PTT at once. See [Transmitting](echocat.md#transmitting-ptt).
 - **SSTV:** the template browser has a **From desktop** section with your desktop's templates. See [SSTV](nested/sstv.md).
+- **CW macros:** receive audio comes back sooner after a macro, about 0.25 s on your home network and under 0.5 s over Cloud.
+- **Activator log:** a General contact never carries the previous park. Contacts already logged that way need the park removed by hand, and re-uploading if they were sent to POTA.
 
 ### v1.13.10 "The Wednesday Special" — November 2026
 
