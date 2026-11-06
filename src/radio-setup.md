@@ -6,10 +6,28 @@ Running a logger, Win4Yaesu or another CAT program on the same radio? See [Shari
 
 ## Transmit (PTT): How the Radio Is Keyed
 
-Most radios are keyed with a CAT command. In the rig editor, **Transmit (PTT)** offers other ways for **Serial CAT (Kenwood / Yaesu)** and **Icom (CI-V)** rigs (from 1.13.10):
+Most radios are keyed with a CAT command. In the rig editor, **Transmit (PTT)** offers other ways for **Serial CAT (Kenwood / Yaesu)** and **Icom (CI-V)** rigs (from 1.13.10). From 1.13.11, **FLRig (a shared radio)** and **rigctld Network** also offer **The audio interface keys it**:
 
 - **RTS on the CAT port** or **DTR on the CAT port:** for a radio with no transmit command, such as the IC-706MKIIG, when an interface on the CAT port keys the radio through that line. This is the same as WSJT-X's PTT method of RTS or DTR on the CAT port.
 - **The audio interface keys it (SignaLink, the radio's VOX):** CAT still tunes and changes mode, and a SignaLink or similar on the radio's data jack does the keying. Use it when a CAT transmit sends the front microphone instead of the interface's audio, as on a TS-2000 with a SignaLink on ACC2.
+
+## Transmit Time Limits
+
+> **New in the next POTACAT release.**
+
+Every transmission POTACAT starts has a time limit, after which POTACAT releases the transmitter. There's no setting:
+
+| Mode | Limit |
+|---|---|
+| FT8 / FT4 / FT2 | 30 s |
+| JS8 | 60 s |
+| PSK31 / JTTY | 3 min |
+| SSTV | 6 min |
+| Winlink | 2 min |
+| Tune / test | 2 min |
+| Voice | 10 min |
+
+WSPR, the external tuner's carrier and CW text are exempt.
 
 ## Let N1MM+ (or Another Logger) Control the Radio
 

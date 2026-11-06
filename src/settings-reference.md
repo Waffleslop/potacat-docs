@@ -4,7 +4,8 @@ Open Settings from the toolbar dropdown → "Open Settings..." or from the welco
 
 ## Display
 
-- **Theme** (**Settings > Display > Theme**): from 1.13.10 the list includes **Miami Nights** and **She's On Frequency**, alongside POTACAT Light and the others.
+- **Change Theme:** from 1.13.11, one **Change Theme** dropdown, in the Settings sidebar, Settings > Display and the Welcome screen, lists every look, including **Miami Nights** and **She's On Frequency** (1.13.10). It replaces the light/dark switches.
+- **Waterfall colours:** from 1.13.11, the ECHOCAT app's waterfall palettes are on every desktop waterfall. Pick one in Settings > Display, the FT8 window's Options or the Band Scope. **Standard** keeps each window's own colours.
 
 ## Station Setup and Report a Bug
 
