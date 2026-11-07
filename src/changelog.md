@@ -2,6 +2,22 @@
 
 This page summarizes major POTACAT and ECHOCAT releases — it is not an exhaustive list of every patch.
 
+### v1.14.1 "The Saturday Sweep" — November 2026
+
+Eleven fixes from the first week of the public bug tracker, and WSJT-X's "Fake It" split for JTCAT.
+
+- **Split operation "Fake It"** keeps your FT8, FT4 or FT2 tone in the middle of the radio's filter. See [Fake It](nested/jtcat.md#keep-your-tone-in-the-radios-filter-split-fake-it).
+- **A Yaesu left keyed after a CW message is unkeyed.** POTACAT checks up to three times that the radio has dropped out of transmit after a CW message from ECHOCAT or the desktop.
+- **Xiegu G90 through rigctld:** the radio is left alone while it unkeys, so the bundled rigctld no longer crashes during FT8.
+- **RTS line: "Asserted, no flow control"**, for a CAT cable through a box such as an LDG YT-1200's PC port. A serial port stuck waiting for CTS can now be closed. See [The RTS line setting](nested/cat-control-issues.md#the-rts-line-setting).
+- **The FT-710 band scope restarts itself** when it stalls or the radio comes back; nothing is restarted while you transmit.
+- **SCU-LAN10 scope on the FTDX10 (experimental)** now draws instead of staying blank. Thanks VK4KTW.
+- **VARA FM's port settings are left alone**, so VARA no longer stops on a "port COM0 unable to open" dialog. Thanks N5XHI. See [Winlink Email](nested/winlink.md#over-the-radio-with-vara-windows-your-own-copy).
+- **A "Log as" contact goes to that operator's Club Log and Wavelog accounts**, and Club Log uploads go through an outbox.
+- **Guest Pass contacts no longer wait until a restart** to be sent.
+- **WebSDR:** a spot click no longer brings seconds of noise.
+- **Check for Updates always says what it found.** It's the link at the bottom of Settings, or press F5.
+
 ### v1.14.0 "The Neptune square Mars, Neptune square Venus Release" — November 2026
 
 Hunt gets filters: answer several targets at once, choose who goes first, never answer a station you name, and see in one line why Hunt is quiet. POTACAT now unkeys any transmission that runs too long, a Yaesu no longer keys up as POTACAT opens its port, and a spot click no longer changes your filter width. Yaesu's SCU-LAN10 network adapter arrives as an experimental radio type.

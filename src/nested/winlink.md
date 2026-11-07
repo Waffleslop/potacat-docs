@@ -65,7 +65,9 @@ VARA is EA5HVK's modem. You install and license it yourself; POTACAT doesn't ins
 2. Click **Set up VARA HF for me** (or **Set up VARA FM for me**). POTACAT configures VARA for the active radio, including its sound card or the cables, PTT (set to VOX) and the port. It then starts VARA and checks that VARA opened the devices. VARA is configured again whenever a session starts it or you switch radios.
 3. Leave **Start VARA for me when a session needs it** ticked. VARA starts once and stays open between sessions; POTACAT never closes it.
 
-From 1.14.0, VARA never uses POTACAT's own COM ports. Setup clears any VARA FM or VARA HF setting that names POTACAT's CAT, PTT or CW key port, and POTACAT won't start a VARA that still names one.
+VARA must never use POTACAT's own COM ports. If a VARA FM or VARA HF setting names POTACAT's CAT, PTT or CW key port, setup logs it, and POTACAT won't start that VARA until you change it (set VARA's PTT to VOX).
+
+From 1.14.1, POTACAT leaves VARA's port settings alone, and no longer sets VARA FM's PTT option. 1.14.0 could write COM0 into VARA's PTT port, and VARA FM then stopped at start with a **port COM0 unable to open** dialog that blocked unattended connects from a phone or tablet. If you see that dialog, the log names the setting to fix in VARA FM.
 
 If you run both, set VARA FM to port **8310** in VARA FM's own settings, because both programs ship on 8300.
 

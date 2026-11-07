@@ -123,6 +123,14 @@ To transmit something other than the next step of the exchange, **click the TX m
 
 On the phone, a directed CQ such as `CQ POTA` is set with **FT8 → Target → Custom** in ECHOCAT (see [below](#ft8-on-your-phone-echocat)).
 
+## Keep Your Tone in the Radio's Filter (Split, "Fake It")
+
+> **New in POTACAT 1.14.1.**
+
+In the FT8 window's **Options**, tick **Keep my transmit tone in the middle of the radio's filter (split, "Fake It")**. For each transmission POTACAT moves the radio's dial in 500 Hz steps so your tone goes out between 1500 and 2000 Hz, then puts the dial back. Your signal lands on the same frequency, and an offset near the edge of the passband (below 500 Hz or above 2500 Hz) is no longer cut by the radio's filter.
+
+It's the same as WSJT-X's Split Operation **Fake It**. It works for FT8, FT4 and FT2, and the radio needs CAT control.
+
 ## Transmit Level: TX Pwr, Drive and ALC
 
 The audio bar in the JTCAT window has two transmit controls that do different jobs:

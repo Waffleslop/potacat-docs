@@ -42,6 +42,19 @@ Windows raises the DTR and RTS lines when a serial port opens. A Yaesu whose PTT
 
 A Kenwood that never answers is tried with RTS/CTS the same way.
 
+### The RTS line setting
+
+For **Serial CAT (Kenwood / Yaesu)**, the rig editor's **RTS line** has four choices:
+
+| Choice | Use it when |
+|---|---|
+| **Auto (by radio model)** | Most radios. RTS/CTS flow control for the Kenwood TS-590, TS-990 and TS-2000; RTS held low for every other radio, with the RTS/CTS trial above. |
+| **Held low** | The radio transmits as soon as POTACAT connects. Some radios that copy the TS-590's commands (FX4CR) key PTT on RTS. |
+| **RTS/CTS flow control** | The radio needs the handshake. |
+| **Asserted, no flow control** (1.14.1) | The CAT cable runs through a box that passes data but not the handshake, such as an LDG YT-1200 tuner's PC port, and the radio's CAT RTS menu is on. RTS is held high and POTACAT sends without waiting for CTS. |
+
+From 1.14.1, when a radio never raises CTS under RTS/CTS flow control, the log says so. A port stuck that way could also not be closed, so every reopen said **Access denied** until POTACAT was restarted; now it closes.
+
 ## Icom: the mode or power is never reported
 
 If an Icom shows its frequency but never its mode or power, PTT and HALT can be hidden and a Guest Pass can't transmit. From 1.14.0, POTACAT notices a radio that drops replies and sends it one command at a time. The log says *This radio drops replies to back-to-back CI-V commands*. See [CI-V pacing](rig-ic-7300.md#ci-v-pacing-mode-or-power-never-reported).
@@ -104,6 +117,8 @@ Because of that backup, **to reset POTACAT's settings, close POTACAT and delete 
 > **Warning:** Deleting this folder wipes all settings, rig configurations, and cached data. Use the settings **export** option in Settings first if you want a backup to restore from.
 
 ## When an update goes wrong
+
+To check for an update, click **Check for Updates** at the bottom of Settings, or press **F5**. POTACAT has no application menu, so there's no Help menu to look in. From 1.14.1 it always says what it found: that POTACAT is up to date, that an update was found, or what went wrong.
 
 - Press **F5** inside POTACAT to fetch the latest update.
 - If **Restart to Update** hangs or loops, open Task Manager and kill the **POTACAT Launcher** process, then retry the update.

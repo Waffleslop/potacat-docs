@@ -59,6 +59,10 @@ If forwarded QSOs aren't showing up, check that Log4OM's inbound UDP connection 
 
 Log4OM treats plain ADIF UDP as a batch import and will **not** propagate those QSOs to QRZ or Club Log. To fix that, enable **Use WSJT-X binary protocol** in **Settings → Logging** — and in Log4OM, change the UDP Inbound entry's Type from "ADIF-MESSAGE" to "WSJT-X" (same port). Log4OM then treats forwarded QSOs like manually logged ones and uploads them normally.
 
+### Logging as another operator
+
+From 1.14.1, a contact the Log QSO window logs **as** another operator goes to that operator's Club Log and Wavelog accounts, not the active operator's. Club Log uploads go through an outbox, so a slow or failed upload doesn't hold up the save.
+
 ### Wavelog
 
 Enter your Wavelog server's base URL **without** `/index.php` on the end — including it causes a `404` and no QSOs arrive.
