@@ -34,7 +34,7 @@ The radio keys, the wattmeter reads 0 W and ALC doesn't move, yet FT8 and other 
 | Radio | Set on the radio |
 |---|---|
 | **Yaesu** (FT-710, FTDX10, FTDX101 and others) | **SSB MOD SOURCE** = `REAR` and **REAR SELECT** = `USB` |
-| **Icom** (IC-7300, IC-7300 MK II and others with USB audio) | **MENU > SET > Connectors > MOD Input**: **DATA OFF MOD** = `USB` for voice in plain USB/LSB. With SSB over Data on, voice goes out in DATA mode, so set **DATA MOD** = `USB` as well. |
+| **Icom** (IC-7300, IC-7300 MK II and others with USB audio) | **MENU > SET > Connectors > MOD Input**: **DATA OFF MOD** = `USB` for voice in plain USB/LSB. With SSB over Data on, voice goes out in DATA mode, so set **DATA MOD** = `USB` as well. `USB` is for a USB-cable connection; an IC-7300 MK II on the Icom Network connection needs **DATA MOD** = `LAN` (see [IC-7300 Mk II over the network](rig-ic-7300.md#ic-7300-mk-ii-over-the-network-lan)). |
 
 Then, in **Settings > My Rigs**, edit the rig and pick the radio's own sound device (for example **USB Audio CODEC**) as the transmit audio, not the PC's speakers.
 

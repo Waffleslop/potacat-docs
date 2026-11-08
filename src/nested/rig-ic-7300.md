@@ -42,7 +42,7 @@ If the radio locks into TX when you close the ECHOCAT browser session, check **S
 
 ## Digital modes: MOD input and levels
 
-- **SET > Connectors > MOD Input**: set **DATA MOD** to `USB` — some radios default data-mode audio to the ACC jack, which leaves JTCAT/FT8 transmitting dead air.
+- **SET > Connectors > MOD Input**: set **DATA MOD** to `USB` — some radios default data-mode audio to the ACC jack, which leaves JTCAT/FT8 transmitting dead air. `USB` is for a USB-cable connection. An IC-7300 MK II on the **Icom Network** connection needs **DATA MOD** = `LAN` instead; see [over the network](#ic-7300-mk-ii-over-the-network-lan).
 - **Voice silent but FT8 works?** Voice in plain USB/LSB uses **DATA OFF MOD**, a separate menu. Set **SET > Connectors > MOD Input > DATA OFF MOD** to `USB` (on an IC-7300 MK II too). See [Voice is silent, but FT8 works](ssb-over-data.md#voice-is-silent-but-ft8-works).
 - **USB MOD Level** around 50% is a good starting point; watch the ALC meter during TX and back off if it's slamming.
 - The radio's USB audio output must carry **AF** (normal receive audio), not IF — check the USB AF output setting under **SET > Connectors**.
@@ -120,6 +120,8 @@ Users have reported the Mk II working over Icom Network. It has had fewer report
 
 **On the radio:** turn on its network remote control in the radio's network settings and set up a network user name and password. Note the radio's IP address. See Icom's manual for the Mk II's network menu; we haven't documented its exact menu path here yet.
 
+**Set DATA MOD to LAN:** MENU → SET → Connectors → MOD Input → DATA MOD → LAN. Without it, the Mk II keys with 0 W on the Icom Network connection.
+
 **In POTACAT:** add or edit the rig in **Settings > My Rigs** and choose:
 
 | Field | Value |
@@ -134,7 +136,7 @@ Users have reported the Mk II working over Icom Network. It has had fewer report
 
 Click **Test Connection**. For JTCAT and SSTV over the network, set **Audio source for JTCAT / SSTV** in the rig editor to the Icom Network audio option. Transmit level over the network is set with JTCAT's **Drive** and **TX Pwr**, **Network TX gain**, and the radio's LAN MOD level; aim for clean output with little or no ALC (see [Transmit Level](jtcat.md#transmit-level-tx-pwr-drive-and-alc)).
 
-> **Tip:** At the radio's factory setting, audio from the network reaches the transmitter only in DATA mode, so POTACAT switches to USB-D for each voice transmission. If you set the radio's **DATA OFF MOD** menu to **LAN**, tick **Voice over the LAN stays in USB / LSB** in the rig editor: voice then goes out in plain USB or LSB, with the radio's speech compressor and SSB filter.
+> **Tip:** With **DATA MOD** on **LAN** and **DATA OFF MOD** left as it is, audio from the network reaches the transmitter only in DATA mode, so POTACAT switches to USB-D for each voice transmission. If you set the radio's **DATA OFF MOD** menu to **LAN**, tick **Voice over the LAN stays in USB / LSB** in the rig editor: voice then goes out in plain USB or LSB, with the radio's speech compressor and SSB filter.
 
 ## IC-7610
 
