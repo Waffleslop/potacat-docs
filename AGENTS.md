@@ -1,7 +1,6 @@
 # docs.potacat.com — agent instructions
 
-Read the workspace file first: `../AGENTS.md` (until the folder move it lives at
-`D:\Projects\potacat\AGENTS.md`). This is the POTACAT Users Guide, an mdBook (book.toml; pages in
+Read the workspace file first: `../AGENTS.md`. This is the POTACAT Users Guide, an mdBook (book.toml; pages in
 src/, navigation in src/SUMMARY.md). Public repo.
 
 ## Build and deploy
