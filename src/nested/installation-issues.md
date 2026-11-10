@@ -1,6 +1,6 @@
 # Installation Issues
 
-POTACAT is an open-source app distributed without a commercial code-signing certificate, so Windows, macOS, and some antivirus products treat it with suspicion the first time you run it. This page collects the platform-by-platform fixes for install, update, and first-start problems. If none of them helps, see [Report a Bug](../community--support.md#report-a-bug).
+POTACAT's Windows installer isn't signed with a commercial code-signing certificate, so Windows and some antivirus products treat it with suspicion the first time you run it. The Mac app is signed and notarized by Apple. This page collects the platform-by-platform fixes for install, update, and first-start problems. If none of them helps, see [Report a Bug](../community--support.md#report-a-bug).
 
 ## Windows
 
@@ -43,13 +43,23 @@ If **Restart to Update** crashes, hangs, or keeps re-offering the same version:
 
 ### "POTACAT is damaged and can't be opened"
 
-This is Gatekeeper reacting to an unsigned app, not actual file corruption — the macOS equivalent of the Windows SmartScreen warning. After installing from the `.dmg`, clear the quarantine flag in Terminal:
+You shouldn't see this any more. The Mac app is signed with an Apple Developer ID and notarized by Apple (checked on 1.14.2, released 2026-11-09), so macOS opens it without a Terminal command.
 
-```bash
-xattr -d com.apple.quarantine /Applications/POTACAT.app
-```
+Older instructions told Mac users to run an `xattr` command in Terminal to clear the quarantine flag. That was for the unsigned builds. It isn't needed now, so skip it.
 
-Then launch POTACAT normally.
+If the message appears anyway:
+
+1. Download the `.dmg` again from [potacat.com](https://potacat.com) or [GitHub Releases](https://github.com/Waffleslop/POTACAT/releases), in case the first download was incomplete or is an old version.
+2. Check that it's the file for your Mac: `POTACAT-<version>-arm64.dmg` for an Apple chip, `POTACAT-<version>.dmg` for Intel. See [Installation: macOS](installation.md#macos).
+3. Delete the old POTACAT from **Applications**, open the new `.dmg`, and drag POTACAT into **Applications**.
+
+If it still won't open, [report it](../community--support.md#report-a-bug) with your macOS version and the name of the file you downloaded.
+
+### Updates don't install
+
+Start POTACAT from the **Applications** folder. Run from the `.dmg` window or from **Downloads**, it can't replace itself with a newer version. Move POTACAT into **Applications**, start it from there, and updates work from then on.
+
+A very old unsigned copy can't update itself to a signed version. Install the current `.dmg` by hand once; after that it updates normally.
 
 ### The app opens and immediately quits
 

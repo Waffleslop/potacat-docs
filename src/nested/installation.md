@@ -1,13 +1,26 @@
 # Installation
 
 1. Download the latest installer from [potacat.com](https://potacat.com) or the [GitHub Releases](https://github.com/Waffleslop/POTACAT/releases) page
-2. Run the installer (`.exe` for Windows, `.dmg` for macOS; for Linux see [below](#linux))
+2. Run the installer (`.exe` for Windows; for macOS and Linux see [below](#macos))
 
    **System requirements:** Windows 10 or later; **macOS 12 (Monterey) or later**; 64-bit Linux on a PC or a Raspberry Pi 4 or 5.
 3. **Windows SmartScreen:** Since POTACAT is not code-signed by Microsoft, Windows may show a SmartScreen warning. Click **"More info"** then **"Run anyway"** to proceed
 4. A portable version (no install) is also available on the Releases page — it uses the same settings location as the installer version
 
 > **Tip:** If "More info" doesn't appear, right-click the downloaded file → Properties → check "Unblock" → OK, then try again.
+
+## macOS
+
+Every release has two Mac files, one for each kind of processor:
+
+| Your Mac | File |
+|---|---|
+| Apple chip (M1 or newer) | `POTACAT-<version>-arm64.dmg` |
+| Intel | `POTACAT-<version>.dmg` (the one without `arm64`) |
+
+Not sure? Open the Apple menu and choose **About This Mac**. It shows either **Chip** (Apple) or **Processor** (Intel).
+
+Open the `.dmg`, drag **POTACAT** into **Applications**, and start it from there. The app is signed and notarized by Apple, so it opens without a Terminal command. If macOS refuses to open it, see [Installation Issues](installation-issues.md#macos).
 
 ## Linux
 
