@@ -31,7 +31,7 @@ From 1.14.3, Channels has a **CB (Citizens Band)** group with all 40 channels by
 
 ### Recall the radio's own memory
 
-From 1.14.3, a channel can carry the number of one of the radio's memories. Edit the channel and fill in **Radio memory**. A click then recalls that memory on the radio, with its offset and tone, instead of tuning the frequency. Leave it blank to tune the frequency as before.
+From 1.14.3, a channel can carry the number of one of the radio's memories. Edit the channel and fill in **Radio memory**. A click then recalls that memory on the radio, with its offset and tone, instead of tuning the frequency. Leave it blank to tune the frequency as before. A channel with a memory number shows an **M** badge in the list, such as **M12**.
 
 This works over Icom CI-V and over rigctld.
 

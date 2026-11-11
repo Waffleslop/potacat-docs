@@ -71,7 +71,7 @@ From 1.14.1, POTACAT leaves VARA's port settings alone, and no longer sets VARA 
 
 If you run both, set VARA FM to port **8310** in VARA FM's own settings, because both programs ship on 8300.
 
-**The gateway list:** from 1.14.3 the gateway list loads at once, nearest first. In 1.13.10 to 1.14.2 it waited up to two minutes for a propagation ranking before it appeared.
+**The gateway list:** from 1.14.3 every gateway list, VARA HF's included, loads at once, nearest first (propagation ranking needs your own VOACAP install for now). The log and the gateway line say when the ranking service isn't available. The list also leaves out gateways outside the bands set for your radio, and says how many. In 1.13.10 to 1.14.2 the list could take a long time to appear.
 
 **Sending:** pick **VARA HF (radio, your own VARA)** or **VARA FM (VHF/UHF radio, your own VARA FM)** in **Send via**, choose a gateway, and click **Send / Receive**. POTACAT levels the audio both ways. The radio audio VARA hears is trimmed before it reaches the red, and VARA's transmit audio is raised to full scale, so the power you set is the power that goes out. The Mail window shows both levels during a session (**to modem … · from modem …**).
 
