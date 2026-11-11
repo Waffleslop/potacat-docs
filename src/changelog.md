@@ -2,6 +2,22 @@
 
 This page summarizes major POTACAT and ECHOCAT releases — it is not an exhaustive list of every patch.
 
+### v1.14.3 "The Spiced Apple Cider Release" — November 2026
+
+The VFO window comes in two sizes, Directory gets Favorites and the CB channels, and ARDOP and packet Winlink connect far more reliably.
+
+- **A Large VFO and a Small VFO.** The button beside the gear switches between the full window and a one-line Small VFO, and VFO settings has one list per size for what each shows. See [VFO Window](nested/vfo-window.md).
+- **Pick your CAT buttons** in VFO settings: NB, NR, ANF, APF, Preamp, Att, COMP, VOX, MON, RIT, Split, ATU, whichever your radio supports.
+- **Directory Favorites.** Star a Landmark or a Channel and it appears under Favorites in Directory, in the VFO window and on the band scope. See [Directory](nested/directory.md#favorites).
+- **The 40 CB channels** are in Directory > Channels, and **a channel can recall the radio's own memory**, offset and tone included, over Icom CI-V or rigctld.
+- **Tune from your phone through the SDR** when POTACAT can't move the radio.
+- **Winlink:** ARDOP frames keep their leader, a busy channel can be waited out or stopped, packet on an Icom sets FM data once per session, the gateway list loads at once and keeps to your bands, and VARA FM on VOX starts. Thanks deadeye007, NA4DQ, stroopeffect and N5XHI. See [Winlink Email](nested/winlink.md#troubleshooting-radio-sessions).
+- **SSTV text styles:** a typeface, outline, shadow and letter spacing for each text line. SSTV also leaves a VHF/UHF-only radio where it is. See [SSTV](nested/sstv.md#text-styles).
+- **Stop an event banner that runs all year** from the event's badge on the banner. See [The event banner](nested/dx-expedition-tracking.md#the-event-banner).
+- **CW text over FLRig no longer closes POTACAT.** Thanks djrev_11688.
+- **A remote shack's spots stop flickering**, and HOLD TO TALK stays on screen with a long shack name. Thanks electricfalcon and deadeye007.
+- **FT-710 band scope** starts when the radio is powered on after the scope was opened. Thanks ride1226.
+
 ### v1.14.1 "The Saturday Sweep" — November 2026
 
 Eleven fixes from the first week of the public bug tracker, and WSJT-X's "Fake It" split for JTCAT.

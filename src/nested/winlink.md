@@ -37,7 +37,7 @@ If you want mail fetched without asking, set **Check mail over the internet ever
 ### Over the radio with ARDOP
 
 1. Pick **ARDOP (radio)** in **Send via**.
-2. Choose a **Band**, then pick a gateway from the list. The list is sorted nearest first.
+2. Choose a **Band**, then pick a gateway from the list. The list is sorted nearest first. From 1.14.3 it keeps to the bands you set for your radio in [My Rigs](my-rigs.md), and says how many gateways it left out.
 3. The radio tunes to the gateway straight away, and a waterfall with a **Busy** / **Clear** badge shows whether someone is already using the frequency.
 4. When it reads **Clear**, click **Send / Receive**.
 
@@ -71,7 +71,7 @@ From 1.14.1, POTACAT leaves VARA's port settings alone, and no longer sets VARA 
 
 If you run both, set VARA FM to port **8310** in VARA FM's own settings, because both programs ship on 8300.
 
-**The gateway list:** VARA HF's gateway list is ranked by propagation, which can take up to two minutes to arrive. Wait for it before picking a gateway (1.13.10 and later wait the full two minutes).
+**The gateway list:** from 1.14.3 the gateway list loads at once, nearest first. In 1.13.10 to 1.14.2 it waited up to two minutes for a propagation ranking before it appeared.
 
 **Sending:** pick **VARA HF (radio, your own VARA)** or **VARA FM (VHF/UHF radio, your own VARA FM)** in **Send via**, choose a gateway, and click **Send / Receive**. POTACAT levels the audio both ways. The radio audio VARA hears is trimmed before it reaches the red, and VARA's transmit audio is raised to full scale, so the power you set is the power that goes out. The Mail window shows both levels during a session (**to modem … · from modem …**).
 
@@ -90,6 +90,15 @@ Packet talks to Dire Wolf on its **AGW port, 8010**, on this computer. If anothe
 Radio sessions need a radio with CAT control, because POTACAT tunes and keys it.
 
 From 1.13.2, ARDOP and packet take their audio over POTACAT's own link to the radio on every system, so there are no sound devices to pick by hand. VARA has its own audio setup (see [above](#over-the-radio-with-vara-windows-your-own-copy)).
+
+## Troubleshooting Radio Sessions
+
+These were fixed in 1.14.3. If you see one of them, update first.
+
+- **ARDOP: the gateway never answers.** Most ARDOP frames went out with their start cut off, so gateways couldn't hear the connect request. POTACAT now sends that first audio at key-down.
+- **The channel is busy.** The prompt offers **Keep waiting** and **Stop**. **Keep waiting** stays chosen and the prompt shows how long it has waited. **Stop** ends the wait cleanly. A session waiting for a clear channel is no longer ended as stalled.
+- **Packet on an Icom loses the start of each frame.** On an IC-7100 through rigctld, the radio was switched to FM data before every over and keyed late. It is now set once per session, before the first frame.
+- **VARA FM on VOX is refused.** A VARA FM set to VOX was refused when its settings still named POTACAT's radio port from an earlier choice. It now starts.
 
 ## Spot Yourself on POTA by Winlink
 

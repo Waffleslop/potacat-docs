@@ -12,7 +12,7 @@ Open **Settings > Station > WebSDR**. Each row has a **Label** (any short name) 
 
 ## Listen through it
 
-In the **VFO window**, open its ⚙ settings and, under **WebSDR**, turn on **Enable WebSDR receive** and choose the station. **Add or edit SDRs** takes you back to the list above. While you listen through an SDR, the VFO window shows an **SDR RX** badge.
+In the [VFO window](vfo-window.md), open its ⚙ settings and, under **WebSDR**, turn on **Enable WebSDR receive** and choose the station. **Add or edit SDRs** takes you back to the list above. While you listen through an SDR, the VFO window shows an **SDR RX** badge.
 
 ## KiwiSDR notes
 
@@ -26,3 +26,4 @@ From POTACAT 1.13.8, the same list takes an **rtl_tcp** server: an RTL-SDR runni
 - It sends about 4 Mbit/s, so use it on your own network, not over the internet.
 - If the same SDR is your band scope (**Settings > My Rigs** > edit the radio > **Band scope from an SDR**), listening uses that connection and its gain and direct sampling settings.
 - Tune outside your radio's range (NOAA weather, a 2 m repeater on an HF rig) and POTACAT tunes only the SDR and won't transmit; tune back into range and the radio is back.
+- From 1.14.3, a tune from ECHOCAT does the same: when POTACAT can't move the radio (no CAT link, or the frequency is out of its range), it listens through an SDR that covers the frequency, and connects a listed SDR first if needed.
