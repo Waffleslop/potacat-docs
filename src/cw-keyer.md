@@ -71,7 +71,7 @@ If the paddle is turned off on the main CAT port, your options are:
 
 ## CW Macros
 
-Five macro buttons send canned CW messages. Both the **label and the text** of each button are editable in **Settings** (search for "CW Macros"), and the buttons also appear in the VFO View and in ECHOCAT.
+Macro buttons send canned CW messages. You can have up to 25. Both the **label and the text** of each button are editable in **Settings** (search for "CW Macros"), and the buttons also appear in the VFO View and in ECHOCAT.
 
 These variables expand when the macro is sent:
 
@@ -80,6 +80,8 @@ These variables expand when the macro is sent:
 | `{call}` | The callsign of the spot you're working |
 | `{MYCALL}` | Your callsign |
 | `{op_firstname}` | The operator's first name from QRZ lookup (falls back to `OM` if QRZ has no name) |
+| `{state}` | The state |
+| `{greeting}` | GM, GA or GE, by their local time |
 
 For example, `{call} DE {MYCALL} GM {op_firstname} TU 73` might go out as `W1AW DE K3ABC GM BOB TU 73`.
 

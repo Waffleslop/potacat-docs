@@ -10,7 +10,7 @@ paddle/adapter → phone browser (keyboard or MIDI events) → WebSocket → des
 
 Your paddle adapter sends keyboard or MIDI events to the ECHOCAT page on your phone. ECHOCAT forwards dit/dah events over the WebSocket to desktop POTACAT, whose IambicKeyer state machine generates the element timing and keys the radio — via a CAT command or a DTR pin, depending on your rig. The sidetone is generated locally on the phone, so it fires the instant you press the paddle.
 
-You don't need a paddle at all to work CW remotely: the CW text box and the five macro buttons send CW via CAT on supported rigs.
+You don't need a paddle at all to work CW remotely: the CW text box and the macro buttons send CW via CAT on supported rigs.
 
 ## Enabling It
 
