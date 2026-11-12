@@ -14,6 +14,12 @@ POTACAT can forward QSOs in real-time to external logging software:
 | Wavelog | HTTP API (URL + API key) | — |
 | World Radio League | N1MM UDP protocol → WRL Cat Control | 12060 |
 
+RUMlogNG is in the **Logbook** list as well.
+
+A contact with several parks (a two-fer) makes one record per park in POTACAT's own log, and is forwarded to your logbook once.
+
+The same tab has separate uploads: **Upload to ARRL Logbook of the World (via TQSL)**, **Send QSOs to Club Log** and **Auto-upload SOTA chaser QSOs to SOTAdata**. QRZ Logbook upload is under **Settings > Station**; see [QRZ Lookup](qrz-lookup.md).
+
 Enable in **Settings → Logging → Send Data to Logbook**. Select your logger and configure the host/port — picking a logger pre-fills its default port and shows setup instructions for that logger's side.
 
 > **Note:** N1MM Logger+ itself is not a forwarding target — N1MM doesn't accept inbound QSOs this way. The "N1MM protocol" in the table is the transport WRL Cat Control listens with. To feed N1MM-centric workflows, forward to a logger that syncs with it.
@@ -49,7 +55,7 @@ Forwarding relies on N3FJP's TCP API. In N3FJP, open **Settings → Application 
 - A ClubLog, LoTW, eQSL or QRZ confirmation from N3FJP is recorded as that service, not as a paper card, and confirmations that arrive later reach contacts already brought in.
 - The whole N3FJP log is re-read once a day. That never removes a confirmation (one from **Update from LoTW**, or one you ticked in the Logbook), and never brings back a contact you deleted.
 
-POTACAT writes the park number and name into N3FJP's comments field. From v1.9.4 there is an option that controls whether POTACAT forwards comments, so you can turn this off if you prefer to keep your own comments.
+POTACAT writes the park number and name into N3FJP's comments field.
 
 ### Log4OM 2
 

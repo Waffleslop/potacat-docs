@@ -4,8 +4,10 @@ Click **Export ADIF** in the activator toolbar to save your activation log as an
 
 The activator toolbar also has buttons for:
 - **Map** — show your park location on a map
-- **Past activations** — view your previous activations at this park
-- **Spots** — toggle the hunter spot table below the activator view (split view)
+- **Hunt** — show or hide the hunter spot list below, to work park-to-park while activating
+- **Prop** — propagation: RBN and PSKReporter
+- **Past** — your past activations
+- **Spot** and **Spot by Winlink** — spot yourself
 - **Logbook** (F2) — open the pop-out QSO logbook
 
 ---

@@ -14,3 +14,13 @@ If you enter your QRZ credentials in Settings → Station, POTACAT enriches spot
 - **Portable calls resolve to where they operate:** W1AW/KL7 is Alaska, and KL7 and KH8 contacts take QRZ's DXCC entity instead of the mailing address.
 - **A slow QRZ answer still fills the contact.** When QRZ answers after the contact is saved, its name, state and grid are added to the saved contact. Anything you typed is kept.
 - **The QRZ status line says what's wrong:** signed in without an XML subscription, a wrong password, or no such account.
+
+## Settings
+
+QRZ is set up in **Settings > Station**, under **QRZ.com Callsign Lookup**:
+
+- **QRZ Username (callsign):** and **QRZ Password:**
+- **Show full name (first + last) instead of first name only**
+- **Recheck QRZ Subscription** checks your QRZ account again.
+- **Upload each QSO to QRZ Logbook automatically.** This checkbox can't be ticked until a QRZ subscription is found. It uses the **QRZ Logbook API Key:**, which you get from qrz.com under My Account > QRZ Logbook Settings.
+- **Download QRZ Logbook**

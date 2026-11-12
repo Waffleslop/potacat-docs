@@ -26,7 +26,7 @@ The mobile app's **ACT** tab also works on its own in the field, with no desktop
 POTACAT desktop and ECHOCAT Web are free and open source, and always will be. Two things are paid:
 
 - **ECHOCAT mobile apps** (iOS/Android): $9.99, one time.
-- **POTACAT Cloud**: an optional subscription at $5/month or $50/year, with a free trial when you activate it inside POTACAT. Cloud adds conveniences like cloud log backup and multi-device logging, parks-worked sync, a tunnel that connects your phone to your shack without a VPN, and rig sharing with other operators.
+- **POTACAT Cloud**: an optional subscription at $5/month or $50/year, with a free trial when you activate it inside POTACAT. Cloud adds conveniences like cloud log backup and multi-device logging, a tunnel that connects your phone to your shack without a VPN, and rig sharing with other operators.
 
 #### I made my Cloud account with Sign in with Apple. How do I sign in on the desktop?
 
@@ -56,7 +56,7 @@ No. When you log a POTA QSO with `Ctrl+L`, the activator is respotted automatica
 
 #### How do I get operator names to show on spots?
 
-Enter your QRZ credentials at **Settings > Station > QRZ Name Lookup**. A regular QRZ account is all you need — name lookup does not require a paid QRZ subscription.
+Enter your QRZ credentials at **Settings > Station**, under **QRZ.com Callsign Lookup**. A regular QRZ account is all you need — name lookup does not require a paid QRZ subscription.
 
 #### Can I sort the spot table by more than one column?
 
@@ -174,7 +174,7 @@ You can, but be careful: changing the ADIF log path starts a **new, empty log** 
 
 #### How does POTACAT know which parks I've already hunted?
 
-From your POTA account: download your hunted-parks CSV from pota.app (under My Stats) and import it in Settings. That's what powers the NEW-park badges and the Hide Worked Parks filter. See [Hide Worked Parks](nested/hide-worked-parks.md) and [Parks Worked](nested/parks-worked.md).
+From your POTA account: download your hunted-parks CSV from pota.app (under My Stats) and import it in **Settings > Spots**. Parks in your POTACAT log count too, with no CSV. That's what powers the NEW-park badges and the Hide Worked Parks filter. See [Hide Worked Parks](nested/hide-worked-parks.md) and [Parks Worked](nested/parks-worked.md).
 
 #### I tapped an FT8 callsign and nothing transmitted until the next cycle. Is that a bug?
 
