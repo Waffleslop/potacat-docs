@@ -1,6 +1,6 @@
 # Log Dialog
 
-> **Note:** The **Log** button only appears when **Enable QSO Logging** is checked in Settings. If you don't see it, turn that on first.
+> **Note:** Logging is always on. There is no setting to enable it.
 
 Click the **Log** button on any spot row, map popup, or use **Ctrl+L** for an unspotted QSO. The dialog pre-fills:
 

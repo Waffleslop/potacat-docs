@@ -158,7 +158,7 @@ A worked station stays hidden until the next UTC day, or sooner if the activator
 
 #### Why don't I have a Log button?
 
-Logging is behind a setting. Open Settings, search for "log", and check **Enable QSO Logging** — the Log button and the Logbook appear once it's on.
+Logging is always on, and there is no setting to enable it. The **Log** button and the Logbook are always there. If yours is missing, update POTACAT. The choice you make is whether your log syncs to POTACAT Cloud, on the **Cloud** tab in Settings.
 
 #### A band I use has disappeared since 1.13.3. Where did it go?
 
