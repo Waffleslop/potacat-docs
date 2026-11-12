@@ -21,11 +21,19 @@ Both work at the same time — pairing the app doesn't disable browser access.
 
 ## Quick Start
 
-### 1. Nothing to Switch On
+### 1. Find Your ECHOCAT Address
 
-ECHOCAT is always on in POTACAT. There is no setting to enable it. Its address is a URL such as `https://192.168.1.50:7300`.
+ECHOCAT is on from install, so there is nothing to switch on. Who can reach it is set by **Access** in **Settings > ECHOCAT**: **Local network and Cloud** (the default), **Cloud only** or **Off**. See [Who can reach this computer](#who-can-reach-this-computer).
 
-If you have Tailscale installed, the Tailscale address is shown with a green label — use that green `https://` URL for remote access (the hostname, not the `100.x.x.x` IP).
+The address is on the **ECHOCAT** card, at the top of **Settings > ECHOCAT** and on **Settings > Summary**, under **Open in a browser**. Each address has a **Copy** button:
+
+- **On your WiFi (home)**: an address such as `https://192.168.1.50:7300`. With no Tailscale and no Cloud it is the only address and has no label.
+- **Away from home (Tailscale)**: shown when Tailscale is present.
+- **Anywhere (POTACAT Cloud)**: shown when the Cloud Tunnel has an address. It also has an **Open** button.
+
+The address must start with `https://`. Accept the browser's warning the first time.
+
+If you have Tailscale installed, use the address in the **Away from home (Tailscale)** row for remote access. See [Connection Paths](#connection-paths).
 
 You can also configure ECHOCAT from **Settings > ECHOCAT**, where you can change the port (default 7300), set a password (see [Password-protect your rig](#password-protect-your-rig)), set the PTT safety timeout, and select audio devices.
 
@@ -33,7 +41,7 @@ You can also configure ECHOCAT from **Settings > ECHOCAT**, where you can change
 
 Pairing links the app to your desktop with a QR code — no typing IP addresses.
 
-1. In POTACAT, open **Settings > Summary**. On the **ECHOCAT** card, click **Pair my device…**. A dialog opens with a QR code and a link you can copy.
+1. In POTACAT, open **Settings > ECHOCAT** (or **Summary**). On the **ECHOCAT** card, click **Pair my device…**. A dialog opens with a QR code and a link you can copy.
 2. In the ECHOCAT app, scan the QR code — or scan it with your phone's camera app and open the link.
 
 Pairing by QR code or link needs no approval on the desktop. The code works once.
