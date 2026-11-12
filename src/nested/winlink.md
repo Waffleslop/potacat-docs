@@ -96,7 +96,7 @@ From 1.13.2, ARDOP and packet take their audio over POTACAT's own link to the ra
 These were fixed in 1.14.3. If you see one of them, update first.
 
 - **ARDOP: the gateway never answers.** Most ARDOP frames went out with their start cut off, so gateways couldn't hear the connect request. POTACAT now sends that first audio at key-down.
-- **The channel is busy.** The prompt offers **Keep waiting** and **Stop**. **Keep waiting** stays chosen and the prompt shows how long it has waited. **Stop** ends the wait cleanly. A session waiting for a clear channel is no longer ended as stalled.
+- **The channel is busy.** The prompt offers **Keep waiting**, **Call anyway** and **Give up**. **Keep waiting** stays chosen and the prompt shows how long it has waited. **Give up** ends the wait cleanly. Use **Call anyway** only when you have listened and the frequency is clear. A session waiting for a clear channel is no longer ended as stalled.
 - **Packet on an Icom loses the start of each frame.** On an IC-7100 through rigctld, the radio was switched to FM data before every over and keyed late. It is now set once per session, before the first frame.
 - **VARA FM on VOX is refused.** A VARA FM set to VOX was refused when its settings still named POTACAT's radio port from an earlier choice. It now starts.
 
