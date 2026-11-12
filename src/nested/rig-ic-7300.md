@@ -139,6 +139,7 @@ Click **Test Connection**. For JTCAT and SSTV over the network, set **Audio sour
 ## IC-7610
 
 - CI-V address is **`98h`**.
+- The USB 3.0 socket, **[USB 2]**, is the I/Q port. POTACAT does not use it; see [IC-7610: the I/Q Port and HDSDR](rig-ic-7610-iq.md).
 - **No TX audio from ECHOCAT/digital modes**: set **MENU > SET > Connectors > MOD INPUT > SSB MOD** to `USB1` (or `USB2`, whichever port your cable is on), and set **SSB-D MOD** to the same.
 - If **Test Connection** passes but the radio never QSYs, type the bare COM port name (e.g. `COM7`) into the manual COM field instead of accepting the auto-detected "Silicon Labs CP210x" dropdown entry.
 
