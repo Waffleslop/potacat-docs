@@ -7,7 +7,7 @@ The tracker shows a band × entity matrix of your worked DXCC entities. It reads
 Features:
 - Band and mode filter dropdowns
 - Entity count and DXCC Challenge score (total band-entity slots)
-- **"DXCC!"** badge when you reach 100+ entities
+- **"DXCC!"** badge when your log has 100 entities
 
 
 

@@ -3,14 +3,16 @@
 Live DX spots streamed via telnet from DX cluster nodes. POTACAT supports up to **3 simultaneous cluster connections**.
 
 **Setup:**
-1. Enable DX Cluster in Settings → Spot Sources
+1. Enable DX Cluster in **Settings > Spots**, under **Spot Sources**
 2. Enter your callsign (required for cluster login)
-3. Choose from 13 preset nodes (W3LPL, VE7CC, DXUSA, NC7J, K1TTT, and more) or add a custom node
+3. Choose from 15 preset nodes (W3LPL, VE7CC, DXUSA, NC7J, K1TTT, W6CUA, G6NHU, EA4RCH, EA2CW, DA0BCC, PI4CC, WA9PIE, W0MU, OH2AQ and S50CLX) or add a custom node. If you never choose one, POTACAT picks one at random. Use **Login as** if a node needs a different login
 4. Optionally add a second and third node for broader coverage
 
 DX Cluster spots appear with a purple left border in the table and purple markers on the map. Location is resolved from the callsign using the bundled cty.dat country database.
 
-**DX Command Bar:** When DX Cluster is enabled, a command bar appears below the table. Use it to self-spot or spot other stations on the cluster. Enter a callsign, frequency, and optional comment, then click Send.
+**DX Command Bar:** With DX Cluster enabled and **Show DX command bar below spot table** ticked, a command bar appears below the table. Use it to self-spot or spot other stations on the cluster. Enter a callsign, frequency, and optional comment, then click Send.
+
+**Other settings:** **Spotter origin filter**, and **DX Cluster Max Spot Age (minutes):**, which is 15 by default. Duplicate spots from several nodes are removed automatically.
 
 **Spotting on the cluster:** The Log dialog includes a "Spot on DX Cluster" checkbox for non-park contacts. Press **Ctrl+R** for quick re-spotting with template variables.
 
