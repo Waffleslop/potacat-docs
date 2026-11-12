@@ -154,7 +154,7 @@ ECHOCAT includes a full CW keyer that lets you send CW from your phone's touchsc
 - **WPM** — adjust sending speed (5–50 WPM)
 - **Keyer mode** — Iambic B, Iambic A, or Straight Key
 - **Sidetone** — adjustable frequency (400–900 Hz) and volume
-- **5 macro buttons** — programmable CW messages (default: CQ, 599, 73, AGN, TU). Customize the labels and text in POTACAT's desktop settings.
+- **Macro buttons** — programmable CW messages, up to 25. Customize the labels and text in POTACAT's desktop settings.
 - **Free text field** — type any text and send it as CW
 
 ### CW Keying Methods
