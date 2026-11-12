@@ -28,7 +28,8 @@ Then click **Connect**. The status bar shows the shack's name, its radio, the co
 
 - Tuning from spots and the map, and the **VFO window**
 - Mode and filter
-- The rig controls: NB, ATU, preamp and attenuator, DSP, power, split, VFO A/B and lock
+- The rig controls: NB, preamp and attenuator, DSP, power, split, VFO A/B and lock
+- **ATU** tune: the press is sent to the shack. The button shows only if the shack's radio has a tuner. (Tuner memories are a different thing; see below.)
 - [Rig profiles](../radio-setup.md#rig-profiles) and custom CAT buttons
 - Switching between the shack's radios — click the **RMT** pill in the status bar
 
@@ -88,9 +89,10 @@ These are greyed out with a one-line reason while you are connected to a shack:
 
 - **Station Setup** — run it on the shack PC.
 - **WSJT-X Mode**
-- **ATU memories**
+- **ATU memories** (**Tuner Memories**, FlexRadio only). Tuning with the **ATU** button still works.
 - **Mercury**
-- **Idle Mode** (idle receive) — it is the shack's own setting, so set it on the shack PC.
+
+**Idle Mode** (idle receive) is not greyed out, but it does nothing on the second computer. The shack's own Idle Mode setting is the one that applies, so set it on the shack PC.
 
 ## More Than One Device at a Time
 
