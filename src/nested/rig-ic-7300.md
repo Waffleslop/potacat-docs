@@ -54,14 +54,14 @@ If the radio locks into TX when you close the ECHOCAT browser session, check **S
 
 Remote CW on the IC-7300 works well, but only over a **direct CI-V serial connection** — not through rigctld/Hamlib:
 
-- On direct CI-V, POTACAT sends the radio's real CW key-down/key-up command (`0x1C 0x01`) for every paddle element.
+- On a direct connection, POTACAT keys every paddle element by switching a control line (RTS or DTR) on the radio's USB port. Typed and macro CW go as CI-V text.
 - Hamlib's rigctld protocol has no per-element CW command — it only exposes the mic PTT line. Keying a paddle through rigctld raises PTT while the radio sits in CW mode: transmitter on, key line untouched, **silent TX**.
 
 Setup:
 
 1. Connect the rig as a direct CI-V serial rig (not rigctld Network / Hamlib).
-2. On the radio, set **SET > Connectors > USB SEND/KEYING > USB Keying (CW)** to `USB(A) DTR`.
-3. Leave POTACAT's **CW Key Port** set to `(none)` — the 7300 is keyed through its existing CI-V connection.
+2. On the radio, set **MENU → SET → Connectors → USB SEND/Keying → USB Keying (CW)** to the line named in the rig editor's **Setup instructions**: **RTS** by default for the IC-7300 and IC-7300 MK II. If the radio is already set to DTR, set **CW keying line (USB CW over CAT port)** in **Settings > Radio** to **DTR** instead.
+3. Leave POTACAT's **CW Key Port** set to `(none)` — the 7300 is keyed through its existing USB connection.
 
 > **Warning:** **Linux users:** the kernel's `cdc-acm` driver can't control the DTR pin on the 7300's USB port (`Operation not supported` in the log). Worse, the stuck-high DTR line will key the radio continuously the moment it enters CW mode. On Linux, set **USB Keying (CW)** to `OFF` to stop the phantom keying. For real paddle keying, wire a cheap FTDI/CH340 USB-serial adapter to the radio's 3.5&nbsp;mm KEY jack (adapter DTR pin → tip, GND → sleeve) and select it as the **CW Key Port**. Note that common "CI-V data cables" are *not* keying cables — the DTR pin isn't broken out — and the CW Key Port must be a *different* COM port than your CAT port.
 

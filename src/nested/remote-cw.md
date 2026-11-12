@@ -15,8 +15,8 @@ You don't need a paddle at all to work CW remotely: the CW text box and the five
 ## Enabling It
 
 1. On the desktop, open **Settings > ECHOCAT** and check **Enable Remote CW Keyer**. This is the one that matters for phone keying — you do *not* need the desktop **Enable CW Keyer** checkbox (that's for local keying on the PC).
-2. Leave **CW Key Port** set to **(none)** unless you have an external USB-serial adapter plugged into your radio's key jack (see [when you need one](../cw-keyer.md#cw-key-port)). On rigs like the IC-7300, POTACAT keys the radio directly through the CI-V connection with no extra hardware.
-3. On your phone, the CW panel appears at the bottom when you're tuned to a CW frequency. If it says **CW unavailable**, the Remote CW Keyer setting isn't enabled on the desktop.
+2. Leave **CW Key Port** set to **(none)** unless you have an external USB-serial adapter plugged into your radio's key jack (see [when you need one](../cw-keyer.md#cw-key-port)). On rigs like the IC-7300, POTACAT keys the radio through a control line on the radio's own USB port, with no extra hardware.
+3. On your phone, the CW panel appears at the bottom when you're tuned to a CW frequency.
 
 > **Tip:** The first key event writes `[CW] Keying route: ...` to the verbose CAT log. If you see no `[CW]` lines at all, your paddle events aren't reaching the desktop — check the phone-to-desktop connection before suspecting the radio.
 
@@ -60,26 +60,29 @@ A known-good setup:
 1. POTACAT rig: **Serial CAT (Kenwood)** on the QMX's first USB port at `38400` baud, with **Disable DTR/RTS on connect** checked
 2. Audio in/out: the QMX Digital Audio Interface
 3. QMX menus: **System/GPS & Ser. Ports > Serial Ports** = `2`, and **CW/CW Keyer > Key from USB DTR** = `USB 2`
-4. **CW Key Port (DTR Keying)**: the QMX's *second* COM port
+4. **CW Key Port — optional (DTR/RTS keying):** the QMX's *second* COM port. The field is in **Settings > ECHOCAT**, under **Remote CW Keyer**
 
 ### Icom IC-7300 / IC-705 / IC-7610
 
-Set the rig menu **MENU > SET > Connectors > USB Keying (CW)** = `USB(A) DTR` (preferred), or **USB SEND** = `DTR`. POTACAT prints this menu path in the log when it routes keying via the main port's DTR line.
+On the radio, set **MENU → SET → Connectors → USB SEND/Keying → USB Keying (CW)** to the line POTACAT uses. The rig editor's **Setup instructions** name it for your radio. For the IC-7300 and IC-7300 MK II it is **RTS** by default.
 
-> **Warning:** Remote CW on Icom requires a **direct CI-V serial connection**, not rigctld/hamlib. On direct CI-V, POTACAT sends a CI-V "CW key down/up" command for each paddle element. Hamlib has no such command — it only exposes the mic PTT line — so paddle keying over rigctld puts the transmitter on with the CW key line untouched: a silent key-down.
+If the radio is already set to DTR, change POTACAT to match instead: **Settings > Radio**, **CW keying line (USB CW over CAT port)**, which offers **Auto (model default)**, **DTR** and **RTS**. The radio's menu and this setting must agree.
+
+> **Warning:** Paddle keying on an Icom needs a **direct CI-V serial connection**, not rigctld/hamlib. On a direct connection POTACAT keys each element by switching the control line on the radio's USB port; typed and macro CW go as CI-V text. Hamlib only exposes the PTT line, so a paddle press over rigctld would put the transmitter on without keying CW. POTACAT marks the paddle unavailable there.
 
 ### Yaesu
 
 Most Yaesu CAT ports only accept text CW (the `KY` command), not real-time paddle keying. To key a paddle on a Yaesu, set **CW Key Port** to a USB-serial adapter wired to the radio's key jack. Exceptions and specifics:
 
-- **FTDX101D**: real-time keying works over CAT (`TX1;`/`TX0;`) — no DTR adapter needed.
+- **FTDX101D/MP**: the phone's paddle needs a **CW Key Port**. Without one the paddle is marked unavailable, because over CAT a paddle press would only key the transmitter. Typed and macro CW are sent through the radio's keyer memory over CAT; turn **BK-IN** on. This path has not yet been confirmed on the air for this radio.
+- **FTX-1**: typed and macro CW are sent through the radio's keyer memory over CAT; turn **BK-IN** on. This path has not yet been confirmed on the air for this radio.
 - **FT-710**: even *text* CW over `KY` is unreliable on this rig. Set **CW Key Port** to the radio's **CAT-2** serial port (the second COM port, e.g. `COM<n+1>`), and on the radio set **OPERATION SETTING > CAT/LINEAR/TUNER > USB Keying (CW)** = `DTR`. Also set **CAT-1 TIME OUT TIMER** = `1000 ms` and turn **CW BK-IN** on.
 
 ## Known Limitations
 
 - **Yaesu FT-891 / FT-991A: text CW keys the transmitter but produces zero RF.** The 991A's `KY` command has no free-text form — the text is silently ignored while the TX light comes on — and the FT-891 shows the same symptom. This is a known open limitation of text/macro CW on these rigs.
 - **Break-in must be on.** If the radio keys and you hear sidetone but no RF goes out, check that break-in (**BK-IN**) is enabled — and note the FTDX10 remembers the break-in setting *per band*.
-- **Linux DTR limitation.** The `cdc_acm` kernel driver used by USB-CDC rigs (QMX, QDX, IC-7300 family) can't control the DTR pin, so paddle keying fails with `Operation not supported`. The fix is a ~$5 FTDI or CH340 USB-serial adapter wired to the rig's key jack, set as the **CW Key Port** — its driver handles DTR correctly. CW text macros still work over the main CAT port. Windows and macOS are unaffected. See [the CW Keyer page](../cw-keyer.md#linux-dtr-keying-limitation) for details.
+- **Linux and the `cdc_acm` driver.** On the main CAT port of a USB-CDC rig (an IC-7300 on Linux, for example), the driver can refuse control-line keying. POTACAT then turns the phone's paddle off and says so in the log; typed and macro CW still work. The fix is a ~$5 FTDI or CH340 USB-serial adapter wired to the rig's key jack, set as the **CW Key Port**. With a CW Key Port whose driver refuses the same way (a QMX's second USB port, for example), POTACAT on Linux and macOS switches to a helper that needs `python3` and pyserial, and the paddle keeps working. See [the CW Keyer page](../cw-keyer.md#linux-dtr-keying-limitation) for details.
 - Some users on Samsung Android phones report truncated sidetone and the radio not keying with TinyMIDI/VBand adapters in the browser; the native mobile apps are the recommended path there.
 
 ## Stopping a Transmission
