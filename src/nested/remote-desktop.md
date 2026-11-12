@@ -49,7 +49,7 @@ Then click **Connect**. The status bar shows the shack's name, its radio, the co
 
 - Typed CW, CW macros and live typing go to the shack.
 - A paddle plugged into this computer keys the shack's radio.
-- The shack must have **Settings > ECHOCAT > Remote CW Keyer** turned on. See [Remote CW Keying](remote-cw.md).
+- The shack must have **Enable Remote CW Keyer** ticked, in **Settings > ECHOCAT** under **Remote CW Keyer**. See [Remote CW Keying](remote-cw.md).
 
 ### JS8
 
@@ -65,10 +65,6 @@ The JS8 window runs the shack's JS8: conversations, band activity, heartbeat, me
 
 The buttons are the shack's recorded macros, played into the shack's radio.
 
-### Band scope
-
-The shack's band scope, from an FT-710 or a separate SDR.
-
 ### Activating
 
 Start an activation on this computer as usual. The shack learns the park, so FT8 contacts are logged with it.
@@ -77,13 +73,24 @@ Start an activation on this computer as usual. The shack learns the park, so FT8
 
 Spots, the map, the logbook, cloud sync, LoTW and QRZ uploads, and DXCC tracking all run natively on this computer.
 
+### Where contacts are logged
+
+Contacts you make from the second computer go into **this computer's** logbook, not the shack's.
+
 ## What Doesn't Work from the Second Computer
 
+As of 1.14.3, two things do not work through a remote shack yet:
+
+- **Winlink** — run Winlink on the shack PC itself.
+- **Band scope** — the shack's band scope is not shown on the second computer.
+
+These are greyed out with a one-line reason while you are connected to a shack:
+
 - **Station Setup** — run it on the shack PC.
+- **WSJT-X Mode**
+- **ATU memories**
 - **Mercury**
 - **Idle Mode** (idle receive) — it is the shack's own setting, so set it on the shack PC.
-
-Each of these is greyed out with a one-line reason while you are connected to a shack.
 
 ## More Than One Device at a Time
 
