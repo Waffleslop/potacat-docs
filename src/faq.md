@@ -86,6 +86,8 @@ Press `F1` for the full hotkey list, or see [Keyboard Shortcuts](keyboard-shortc
 
 Yes. Click the **Rig** button at the top of the Table view and open the **Custom** tab to create your own CAT command buttons — notch filter, split, anything your radio's protocol supports. The buttons you define also appear in ECHOCAT, so they work from your phone too. If CAT control itself is misbehaving, see [CAT Control Issues](nested/cat-control-issues.md).
 
+From 1.14.2, a custom toggle can show the radio's real state. Give it a **Read** command and an **ON when** rule (for example `IF;` and `33=1` for split on a TS-480). POTACAT reads it at connect, after each press and when the panel opens, never while transmitting. A toggle with nothing to read shows **?**.
+
 #### Is there an equalizer for receive audio?
 
 No. POTACAT has no receive EQ. The EQ it has is for **transmit**: **TX EQ + Compression** in **Settings > ECHOCAT** shapes your microphone audio from ECHOCAT, and the VFO window's **Transmit audio** panel has a transmit **EQ** too (presets Ragchew, Pileup, DX and Custom). To shape what you hear, use the radio's own filters and DSP (the **Rig** controls in POTACAT reach many of them), or [AI noise reduction](nested/ai-noise-reduction-rm-noise.md).

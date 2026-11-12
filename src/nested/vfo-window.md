@@ -39,6 +39,7 @@ Under **CAT buttons** in VFO settings, choose which of the radio's controls to s
 - **Power.** A **Power** row sits under the filter slider (from 1.14.2). It follows the main window's power control and uses the same limits, including **Full power (W)** and a Guest Pass cap.
 - **Profiles and presets.** Your rig profiles sit in a drop-down under the dial. See [Radio Setup](../radio-setup.md).
 - **Audio.** The speaker button reads **Audio on** or **Audio off**, so it says in words whether you can hear the radio. The volume knob also sets the SDR's audio when you listen through one.
+- **PTT.** From 1.14.2, the window shows a notice when the microphone it opened is the radio's own receive audio, is blocked, or is silent. Every PTT press logs the microphone, the output and the level.
 - **WebSDR.** In a new Large VFO the WebSDR block sits under the knob. See [WebSDR, KiwiSDR and RTL-SDR Receive](websdr.md).
 - **Favorites.** The Landmarks and Channels you starred in [Directory](directory.md#favorites).
 - **Radio.** At the bottom, **Power On** and **Power Off** for a radio that can be switched over CAT. **Power Off** asks for a second press.

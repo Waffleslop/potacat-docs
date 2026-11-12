@@ -78,6 +78,8 @@ Tap and **hold** the red **PTT** button at the bottom of the screen to transmit.
 
 The **STOP** button is an emergency kill switch that immediately drops PTT and halts any CW or digital transmission.
 
+From 1.14.2, ECHOCAT Web always shows its **HALT** button. Before, it was hidden in CW and RTTY and whenever the radio's mode had not arrived.
+
 **Wired earbuds (iPhone app):** a press of the earbud button keys PTT at once. Just after the audio route changes, such as when you plug the earbuds in, there's a short wait of about 1.5 seconds first. If a long press opens Siri, turn off **Press and Hold for Siri** in the iPhone's Settings.
 
 ### Audio
@@ -272,6 +274,8 @@ The Cloud tunnel is the simplest remote path: your desktop opens an **outbound-o
 Security is layered: the tunnel accepts no inbound connections, pairing tokens are one-time-use, and requests are rate limited.
 
 **One shack per Cloud address** (1.13.10). A Cloud account has one address, and it belongs to one desktop at a time. If a second desktop on the same account turns on the Cloud Tunnel, it asks first: **Use this shack instead**, **Keep the other shack** or **Cancel**. Turning the Cloud Tunnel off on one desktop leaves the address with the other. (Before 1.13.10, two desktops shared the address and split your phone's connections between them without saying so.)
+
+**A Cloud address for each shack** (1.14.2). Each shack can have its own POTACAT Cloud address, up to 3 per membership, so ECHOCAT can switch between shacks over Cloud. Name the shack in **Settings > Cloud**.
 
 ## Share Your Rig
 

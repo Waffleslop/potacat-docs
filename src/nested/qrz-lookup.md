@@ -14,3 +14,7 @@ If you enter your QRZ credentials in Settings → Station, POTACAT enriches spot
 - **Portable calls resolve to where they operate:** W1AW/KL7 is Alaska, and KL7 and KH8 contacts take QRZ's DXCC entity instead of the mailing address.
 - **A slow QRZ answer still fills the contact.** When QRZ answers after the contact is saved, its name, state and grid are added to the saved contact. Anything you typed is kept.
 - **The QRZ status line says what's wrong:** signed in without an XML subscription, a wrong password, or no such account.
+
+## QRZ Logbook Upload
+
+QRZ logbook upload is set under **Settings > Station**, with your QRZ login. It needs a QRZ XML subscription. From 1.14.2, the Logging tab points to it: **Go to QRZ upload** takes you there.

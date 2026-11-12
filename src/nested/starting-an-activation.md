@@ -16,3 +16,9 @@ From 1.14.0, the Activator log never loses or doubles a contact. POTACAT waits a
 A contact switched to **General** never picks up the last park, here, in the Bottom Banner Logger or in ECHOCAT Web's Log sheet. Before, it could count as a false park-to-park. Contacts already logged that way need the park removed by hand, and re-uploading if they were sent to POTA.
 
 WWFF and SOTA references are no longer flagged **Not in parks DB**: POTACAT has only POTA's park lists, so it checks POTA references only.
+
+## A Forgotten Activation Ends by Itself
+
+> **New in POTACAT 1.14.2.**
+
+If you leave an activation running, it ends at the UTC day change, or after 6 hours with no contacts, whichever comes first. POTACAT tells you when it does. Contacts after that are logged as home contacts. Contacts already logged are never touched.
