@@ -31,3 +31,7 @@ The grid and state come from the QSO records, or from the parks database when th
 2. Press **Download confirmations**.
 
 Confirmed QSOs get the L✓ mark in the QSO log window and count as confirmed in the [DXCC Tracker](dxcc-tracker.md). The first download pulls your full history; later ones fetch only new confirmations.
+
+From 1.14.5, **Download all confirmations again** in **Settings > Logging** fetches your whole LoTW history once. Use it if you pressed **Download confirmations** before your full log was imported. Download confirmations also no longer moves past a confirmation that matched nothing in your log.
+
+From 1.14.5, **Settings > Logging > Import Log** adds a record's QSL and LoTW confirmations to the matching QSO already in your log, so importing LoTW's confirmations file after your log now adds the confirmations. Before, a record that matched an existing QSO was skipped.

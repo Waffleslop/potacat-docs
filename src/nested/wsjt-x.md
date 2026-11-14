@@ -10,9 +10,18 @@ POTACAT listens for WSJT-X UDP messages (default port 2237) and cross-references
 - Click-to-tune sends the frequency to your FlexRadio via SmartSDR TCP (no CAT conflict with WSJT-X)
 - Auto-log: QSOs completed in WSJT-X can be automatically logged in POTACAT and forwarded to your external logbooks
 
-Turn on **WSJT-X Integration** in **Settings > Spots**, under **Spot Sources**, and set **UDP Port** to match WSJT-X. The same section has **Highlight POTA activators in WSJT-X** and **Auto-log WSJT-X QSOs to POTACAT**.
+Turn on **WSJT-X Mode** in **Settings > Spots**, and set **UDP Port** to match WSJT-X. The same section has **Highlight POTA activators in WSJT-X** and **Auto-log WSJT-X QSOs to POTACAT**. Before 1.14.5 this box was called **WSJT-X Integration**; it is the same setting.
 
-> **Warning:** **WSJT-X Integration** and **WSJT-X Mode** (under the **CAT** pill) are one setting. Turning either on asks first, *Turn on WSJT-X Mode?*, because POTACAT then gives up its own CAT control of the radio. There is no way to listen to WSJT-X's UDP messages and keep POTACAT's own CAT.
+> **Warning:** With **WSJT-X Mode** on, POTACAT leaves the radio to WSJT-X and gives up its own CAT control. It asks before turning on. There is no way to listen to WSJT-X's UDP messages and keep POTACAT's own CAT.
+
+### How to tell it is on, and how to turn it off
+
+> **New in POTACAT 1.14.5.**
+
+- An amber **WSJT-X Mode** chip leads the top bar, and **CAT** shows **off**. (Before 1.14.5 the CAT light could still show green.)
+- Click either one for what the mode does, whether WSJT-X is heard, and a one-click **Turn off WSJT-X Mode**.
+- If the mode is on and WSJT-X isn't heard 30 seconds after start, POTACAT says so.
+- Station Setup and Report a Bug say when it is on, and ECHOCAT Web shows the same chip.
 
 ## Who Controls the Radio?
 
@@ -20,13 +29,13 @@ Two applications can't both run CAT control of the same radio. If WSJT-X and POT
 
 ### Option A — WSJT-X Mode (simplest)
 
-Turn on **WSJT-X Mode** under the **CAT** pill (the same switch as **WSJT-X Integration** in Settings). In this mode:
+Turn on **WSJT-X Mode**, in **Settings > Spots**. In this mode:
 
 - **POTACAT's own CAT control is disabled.** POTACAT disconnects from the radio, and WSJT-X controls the rig through its own CAT connection. POTACAT listens to WSJT-X's UDP messages for highlights, decodes and auto-log.
 - Clicking a spot in POTACAT doesn't move the radio, and nothing is sent to WSJT-X. The exception is a FlexRadio (see below).
 - Because POTACAT isn't holding the serial port, there is no COM-port conflict.
 
-> **Warning:** While WSJT-X Mode is enabled, POTACAT features that need direct rig control — including [JTCAT](jtcat.md) — are unavailable. Uncheck it when you return to normal operation. If clicking a spot suddenly "does nothing," a leftover WSJT-X Mode checkbox is a prime suspect.
+> **Warning:** While WSJT-X Mode is enabled, POTACAT features that need direct rig control — including [JTCAT](jtcat.md) — are unavailable. Turn it off when you return to normal operation. If clicking a spot suddenly "does nothing," look for the amber **WSJT-X Mode** chip in the top bar.
 
 FlexRadio owners get a bonus: click-to-tune goes through the SmartSDR TCP API, which works even while WSJT-X owns CAT.
 
@@ -40,7 +49,7 @@ Run a networked `rigctld` yourself and point both applications at it:
 
 Both apps keep full rig control, and CAT survives either application closing.
 
-Option B can't be combined with **WSJT-X Integration**. Turning that on disconnects POTACAT's CAT, so Option B ends. With Option B you get shared rig control, but no WSJT-X highlights, decodes or auto-log in POTACAT.
+Option B can't be combined with **WSJT-X Mode**. Turning that on disconnects POTACAT's CAT, so Option B ends. With Option B you get shared rig control, but no WSJT-X highlights, decodes or auto-log in POTACAT.
 
 > **Warning:** Don't use POTACAT's **Other (Hamlib)** connection type for this — it spawns its own internal rigctld, which would conflict with yours and shuts down when POTACAT exits, orphaning WSJT-X. Run a standalone rigctld instead.
 

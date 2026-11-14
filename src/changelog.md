@@ -2,6 +2,40 @@
 
 This page summarizes major POTACAT and ECHOCAT releases — it is not an exhaustive list of every patch.
 
+### v1.14.5 "The FAA Can't Ground WinLink Release" — November 2026
+
+Winlink Mail gets Archive, a Deleted folder you can restore from, and Reply all, and every sent message says how it went out. Packet closes its link cleanly, Winlink gets its own TX level, and a Mac says plainly when macOS is keeping POTACAT from hearing the radio.
+
+- **Where Winlink works today.** Internet mail works on Windows, Linux and Mac. ARDOP and packet over the radio run on Windows and Linux. No packet transfer has yet been confirmed on the air. See [Winlink Email](nested/winlink.md).
+- **Winlink mail:** Archive; a Deleted folder with Restore and Delete for good, emptied after 7, 30 or 90 days, or Never; Reply all; and a line on each sent message saying when and how it went out. ECHOCAT Web's Mail tab has the same actions; the ECHOCAT app does not yet. Thanks NJ2DX.
+- **Packet closes its link cleanly**, so the gateway no longer turns away calls for up to 15 minutes, and a gateway still holding the last link is not called again. Thanks NA4DQ and N5XHI.
+- **Winlink has its own TX level** slider next to Power (modulation, not RF power), and the session summary shows the audio levels.
+- **Mac microphone access.** POTACAT says when macOS will not let it hear the radio, and where to fix it. See [Installation Issues](nested/installation-issues.md#microphone-permission).
+- **WSJT-X Mode is impossible to miss.** An amber WSJT-X Mode chip leads the top bar, CAT shows "off", and one click turns the mode off. The setting has one name everywhere: Settings > Spots, "WSJT-X Mode". See [WSJT-X](nested/wsjt-x.md).
+- **Guest Pass:** a valid pass is never shown as cancelled, and a pass that cannot be used says why in a sentence.
+- **Activations:** a new callsign clears the other station's park, the park-to-park field takes six parks, QSOs from the log window and ECHOCAT join the activation, and a corrected park reaches POTA.app. See [Logging Contacts](nested/logging-contacts.md).
+- **Logging:** no guessed 100 W; Import Log adds confirmations to QSOs you already have; "Download all confirmations again"; the DXCC Tracker says worked on an ADIF log; KG4 calls with a one- or three-letter suffix are United States.
+- **FT8 / JTCAT:** changing mode stops transmitting and starts clean; your own transmissions show their offset; replies to a hashed call go out (thanks VK4KTW); the WSPR beacon no longer sends frames back to back, keeps your power, and reports the power it runs at (thanks NA4DQ).
+- **Radios:** a Flex LSB slice hears the lower sideband; the FT8 view on a Flex lines up with the pan; the band scope keeps running for every device; power on the radio's real scale over network Kenwood CAT (thanks W5LEE); the FTX-1 shows Power Off only; data-mode audio settings named for six radios; a TS-480 sends FT8 with data send; custom CAT sliders stay where you drag them; a KiwiSDR on HTTPS connects.
+- **CW:** the radio no longer keys itself after a remote session ends, and CW from ECHOCAT no longer drops the Xiegu X5105's CAT link (thanks N6UGP); the stuck-transmit check covers the whole message; {op_firstname} names the station you are sending to.
+- **SSTV:** sending a picture from your phone no longer closes POTACAT (thanks NA4DQ); the radio is on the SSTV frequency before the picture keys; the frequency box takes what you type.
+- **More fixes:** switching operator keeps each profile's own settings; the rig list survives a settings file POTACAT could not read; startup says why it did not connect to the radio; a net reminder names its net.
+
+### v1.14.4 "The Ionosphere Appreciation Day Release" — November 2026
+
+Winlink is steadier and easier to diagnose, the Elecraft K4 and Kenwood TS-890S get band scopes, the FT-710 band scope works on a Mac, and POTACAT and ECHOCAT share the same six themes.
+
+- **Winlink:** a dropped link says what happened (thanks AE5JE) and is tried once more by itself; the ARDOP link timeout can be set, 120 seconds by default; Connect works after Abort; Report a Bug carries the modem's side (thanks NA4DQ); packet mode on the radio can be set per rig (thanks N5XHI and NA4DQ); VARA can run on another computer or under Wine; Mercury is no longer offered for Winlink.
+- **Winlink Mail:** favourite gateways and History (thanks NJ2DX), Templates, an address book, and Position report and POTA spot as forms.
+- **ECHOCAT Web's Mail tab** is made for a phone, and puts the radio back when you leave it.
+- **FT8 / JTCAT:** every park of a two-fer is logged, an option re-spots the activator after a hunted contact, and QSO logged is a card. Thanks to ituri (DA2PK) on GitHub.
+- **Band scope and radios:** Elecraft K4 panadapter; Kenwood TS-890S band scope; FT-710 band scope on a Mac; the FTX-1 hears GMRS; a KX3 with the 2 m module tunes 144.2 MHz; FTX-1 CW text plays.
+- **VFO and frequencies:** frequencies read the VFO way (14.074.00 MHz); band buttons and typed frequencies pick the sideband; the Small VFO can use two lines; Small and Large keep their own places; Power On and Power Off show in the VFO window.
+- **Six themes, the same as ECHOCAT:** POTACAT Light, She's On Frequency, POTACAT Dark, Midnight, Acid Burn and Miami Nights. Choose them in Settings > Display.
+- **Logging and POTA:** Tab after the RST jump no longer skips a field; an activation keeps its grid; the QRZ state fill names the contacts left.
+- **Privacy:** Report a Bug masks addresses, and no tokens or Guest Pass codes are written to the log.
+- **Linux and Mac:** Tailscale on a Mac is found more reliably; the Small VFO clears the Mac window buttons; start at login works with a Linux distribution's package (thanks mdeltito).
+
 ### v1.14.3 "The Spiced Apple Cider Release" — November 2026
 
 The VFO window comes in two sizes, Directory gets Favorites and the CB channels, and ARDOP and packet Winlink connect far more reliably.

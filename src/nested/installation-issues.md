@@ -73,7 +73,9 @@ Startup crashes are often caused by something on your Mac conflicting with POTAC
 
 ### Microphone permission
 
-The first time POTACAT needs audio input (digital modes, voice features), macOS asks for microphone access. If you denied it, decoding won't work — re-enable it under **System Settings → Privacy & Security → Microphone**.
+The first time POTACAT needs audio input (digital modes, voice features), macOS asks for microphone access. If macOS refuses POTACAT the microphone, every audio input is pure silence, and decoding won't work.
+
+From 1.14.5, POTACAT says so. When access is refused, or a capture has heard nothing but digital silence since it started, a message tells you to open **System Settings > Privacy & Security > Microphone**, turn on **POTACAT**, then restart POTACAT. The message shows in the main window, in Station Setup's **Hearing the radio** step, and in the JTCAT and SSTV windows, and it covers Winlink's modem audio too. An FM radio with its squelch closed is left alone.
 
 ## Linux
 

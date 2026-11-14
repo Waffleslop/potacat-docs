@@ -7,7 +7,7 @@ Click the **Log** button on any spot row, map popup, or use **Ctrl+L** for an un
 - Callsign, frequency, mode, band (from the spot)
 - Operator name (from QRZ lookup)
 - RST Sent and Received (split-digit boxes with auto-advance)
-- TX Power (from your default in Settings)
+- TX Power. From 1.14.5 this is the power the radio reports or the power POTACAT set, else the **Default TX Power (W)** you typed in **Settings > Logging**, else nothing. That box is empty until you fill it. Before 1.14.5, a contact was logged at 100 W when POTACAT could not read the radio's power
 - Park/summit reference
 - "Spot on DX Cluster" checkbox (for non-park contacts)
 

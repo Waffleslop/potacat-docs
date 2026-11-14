@@ -45,6 +45,8 @@ If you operate with the radio's own mic in hand, uncheck **SSB-over-DATA** in Se
 
 If the S-meter and power readings look far too low and SWR shows blank in ECHOCAT, update POTACAT — early builds converted TS-480 meter values with FlexRadio scaling by mistake.
 
+From 1.14.5, POTACAT keys the TS-480 with data send, as it already did for the TS-590, TS-890 and TS-990, whether the radio is on a Kenwood serial link or through Hamlib. Before, it used the command for the front microphone, so FT8 over the ACC cable went out silent while the mic was live. This has not yet been tried on a TS-480.
+
 ## Transmit power through Hamlib
 
 From 1.14.0, a Kenwood connected through **Other Rig (Hamlib)** or **rigctld Network** keeps its transmit power when POTACAT connects. Hamlib's power reading on the TS-2000, TS-590S/SG and several others ends by setting the radio to its minimum, so these radios used to drop to 5 W at connect. POTACAT now reads and sets a Kenwood's power with the radio's own `PC` command.

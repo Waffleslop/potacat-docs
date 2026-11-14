@@ -65,11 +65,13 @@ If the log still says the radio **never reported its MODE**, the cause is the sa
 
 This is the single most common cause of "CAT suddenly stopped working."
 
-Clicking the **CAT** pill in the top bar reveals a **WSJT-X Mode** checkbox. When it's on, **POTACAT no longer controls your radio at all**. Instead, it sends frequency changes to WSJT-X over UDP, and WSJT-X does the CAT work. That's why the CAT pill turns red (or reads "WSJT-X"), the CAT log is empty, and spot clicks and PTT do nothing — even though nothing is "broken."
+When **WSJT-X Mode** is on, **POTACAT no longer controls your radio at all**: it leaves the radio to WSJT-X. Spot clicks and PTT do nothing, even though nothing is "broken."
+
+From 1.14.5 it is hard to miss: an amber **WSJT-X Mode** chip leads the top bar and **CAT** shows **off**. Click either for what the mode does, whether WSJT-X is heard, and a one-click **Turn off WSJT-X Mode**. The setting itself is **WSJT-X Mode** in **Settings > Spots** (called **WSJT-X Integration** before 1.14.5). When POTACAT does not connect to the radio at start, it now says why.
 
 If you enabled WSJT-X Mode without WSJT-X actually running, you've handed rig control to a program that isn't there.
 
-- **Option A — direct control (recommended for most hunting):** uncheck **WSJT-X Mode**. POTACAT tunes the radio itself. This is the right choice for SSB/CW POTA hunting.
+- **Option A — direct control (recommended for most hunting):** turn off **WSJT-X Mode**. POTACAT tunes the radio itself. This is the right choice for SSB/CW POTA hunting.
 - **Option B — keep WSJT-X Mode:** make sure WSJT-X is actually running and listening on UDP port `2237`, with its rig configured as **Hamlib NET rigctl** at `127.0.0.1:4532`. Open POTACAT first, then WSJT-X, then your logger — this order avoids the CAT fight.
 
 > **Note:** For FT8 inside POTACAT, use JTCAT with WSJT-X Mode **off**. Don't run JTCAT and WSJT-X against the radio at the same time.

@@ -16,6 +16,7 @@ In the [VFO window](vfo-window.md), open its ⚙ settings and, under **WebSDR**,
 
 ## KiwiSDR notes
 
+- From POTACAT 1.14.5, a KiwiSDR served over HTTPS connects: use an `https://` address, or port 443. Before, it failed with "socket hang up".
 - From POTACAT 1.13.8, KiwiSDR receivers on firmware 1.902 work again. Earlier versions went silent on them.
 - Some KiwiSDR owners allow listening only on the receiver's own web page. POTACAT says so when you connect to one, instead of going quiet.
 

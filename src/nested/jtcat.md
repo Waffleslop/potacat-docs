@@ -70,7 +70,7 @@ These three names get mixed up constantly. Here's the map:
 | **WSJT-X** | A separate application; POTACAT can interoperate with it over UDP | You prefer WSJT-X for decoding/TX and want POTACAT to highlight POTA activators and log |
 | **ECHOCAT** | POTACAT's phone/tablet remote control; its FT8 screen is a remote view of the JTCAT engine on your desktop | You want to work FT8 from the couch or away from the shack |
 
-> **Warning:** To use JTCAT, the **WSJT-X** mode checkbox under the **CAT** pill must be **unchecked**. WSJT-X Mode hands rig control to an external WSJT-X and disables POTACAT's own CAT — JTCAT cannot run in that state. See the [WSJT-X](wsjt-x.md) page for how that mode works.
+> **Warning:** To use JTCAT, **WSJT-X Mode** must be off. From 1.14.5 an amber **WSJT-X Mode** chip in the top bar shows when it is on. WSJT-X Mode hands rig control to an external WSJT-X and disables POTACAT's own CAT — JTCAT cannot run in that state. See the [WSJT-X](wsjt-x.md) page for how that mode works.
 
 ## Audio Setup
 
@@ -118,6 +118,8 @@ Click a decode (or a highlighted POTA activator) to reply. JTCAT runs the exchan
 - **AP decoding** — a-priori decoding is supported, which helps pull out weak replies directed at you.
 - **Hold TX** — this checkbox is the equivalent of WSJT-X's "Hold Tx Freq": your transmit frequency stays pinned to the value in the TX Freq box while RX follows the other station. The setting persists between sessions.
 - **TX slot lock** (from 1.13.3) — the **Slot** menu offers **Auto**, **1st (even)** or **2nd (odd)**, for FT8, FT4 and FT2. Locked, every CQ and reply stays in that slot, and JTCAT won't call a station transmitting in your slot; clicking one offers **Unlock and call**. Hound mode ignores the lock. On **Auto**, your CQ stays in the slot you last transmitted in for 30 minutes. ECHOCAT Web has the same **Slot** button.
+- **Changing mode** (from 1.14.5) — switching between FT8, FT4 and FT2 yourself stops transmitting, ends the QSO, Run and Hunt, and clears the decodes and the stations calling you. This applies in the JTCAT window and ECHOCAT Web. A spot you click on another mode still starts its hunt, and automatic mode hops carry on as before.
+- **Your own transmissions** (from 1.14.5) show the audio offset each one went out on in the Activity lists, where they used to show "--".
 - **HOUND chip** (from 1.14.2) — the chip is always shown in the JTCAT window, dimmed when Hound mode is off. One click turns Hound on or off.
 - **dB numbers are confidence scores** — JTCAT's per-decode signal figures are the decoder's own confidence score, **not** calibrated SNR. Don't expect them to match WSJT-X's dB readings.
 

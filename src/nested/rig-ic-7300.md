@@ -101,7 +101,7 @@ To set it yourself: **Settings > My Rigs**, edit the rig, **Advanced > CI-V paci
 
 ## Troubleshooting quick hits
 
-- **Spot clicks stopped QSYing and the CAT badge is red** — make sure the **WSJT-X Mode** checkbox is off unless WSJT-X is actually running and configured.
+- **Spot clicks stopped QSYing and the CAT badge is red** — make sure **WSJT-X Mode** is off unless WSJT-X is actually running and configured.
 - **Echo on ECHOCAT** — both the audio input *and* output must be the radio's `USB Audio CODEC`, never the PC's default mic/speakers.
 - **Mode flips to USB-D on phone PTT** — that's the SSB-over-DATA feature. If you're operating with the radio's own mic, uncheck **SSB-over-DATA** in Settings.
 - **No FT8 decodes** — CI-V baud at `19200` on both sides, and check the JTCAT RX slider.
