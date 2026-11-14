@@ -8,6 +8,21 @@ POTACAT receives and sends slow-scan TV pictures with nothing else to install. O
 
 SSTV also works from ECHOCAT and from [another POTACAT](remote-desktop.md#sstv). In the ECHOCAT app, the template browser has a **From desktop** section with the templates saved on your computer. They're read-only on the phone, and their text uses the phone's fonts.
 
+## Text styles
+
+From 1.14.3, each text line on a picture has its own style:
+
+- **Typeface**
+- **Outline (O)**, which keeps the words readable after transmission
+- **Shadow (S)**
+- **Space**, the letter spacing
+
+ECHOCAT Web has the same controls.
+
+## A VHF/UHF-only radio
+
+SSTV is on HF. From 1.14.3, opening SSTV (or Idle Mode starting it) no longer tunes a radio that can't use 20 m or 40 m. The radio is left where it is, and the window's status line says why. A radio with only one of 20 m and 40 m gets that band.
+
 ## Modes and MMSSTV
 
 From 1.14.0, pictures from MMSSTV decode in all the common modes:
