@@ -103,6 +103,82 @@ Over-the-air updates to the ECHOCAT app (every 1.5.x version). They arrive by th
 - **Winlink:** the VARA HF gateway list gets two minutes; ARDOP no longer stops on a Mac; starting Dire Wolf no longer closes POTACAT.
 - **Two new themes:** Miami Nights and She's On Frequency.
 
+### v1.13.9 "El Día de los Bichos Muertos" — November 2026
+
+A release of bug fixes, most of them reported by users. JTCAT stops logging contacts that never finished, Halt TX stops a transmission everywhere at once, and the band follows your radio when you turn the dial to another band's FT8 frequency.
+
+- **FT8 / JTCAT:** no log for a contact that never finished; **Halt TX** stops the transmission on every screen, the phone included; the FT8 window follows the radio to another band's FT8, FT4 or FT2 frequency; new grid, new call and new DXCC badges clear once logged; a six-minute transmit limit when nothing progresses; DXpeditions that announced an FT8 or FT4 frequency appear in the band menu; the signal-floor boxes save; GridTracker keeps its map and roster.
+- **Logging:** the country is where the station is operating (6W/IK2HKT is no longer logged as Italy); the Log QSO window, the log pop-out and ECHOCAT Web's log forms show the bands and modes you have already worked with a call; the Log QSO form follows your radio.
+- **POTACAT refuses a transmission outside your license class**, using the License Class in Settings > Operator.
+- **Radios:** Yaesu FT-710 CAT corrections from an owner; Kenwood TS-590S/SG and TS-890S filter width; Elecraft K3, K3S, KX2 and KX3 go into DATA A for FT8 and WSPR; Icom split and VFO B are read; Wideband FM on the IC-7100 and IC-705; a Xiegu G90 with a Digirig no longer transmits as POTACAT connects; TX power through Hamlib uses Hamlib's own scale; an external tuner gets its power back after a tune; a renumbered COM port can be picked; an FTX-1 can tune NOAA weather and marine channels.
+- **Flex:** More > Tuner Memories fills the radio's own antenna tuner memories.
+- **Maps and spots:** DXCC prefix labels (tick **Prefixes** in a map's legend, or press F9); FT8, FT4 and FT2 are separate mode filters again; the spot table no longer goes blank when a POTA fetch fails; park lists outside the US work.
+- **Also:** paste a frequency into the VFO window; voice macros record properly; a Winlink error no longer closes POTACAT; `potacat` starts from a terminal on Linux.
+
+### v1.13.8 "The Halloween Special" — October 2026
+
+An RTL-SDR on your network becomes a second receiver, and the Directory gains Landmarks and Channels.
+
+- **Listen through an RTL-SDR on your network** (rtl_tcp, or an SDRplay running rsp_tcp). The SDR takes over where your radio can't go, such as NOAA weather, and hands back when you tune where the radio can. The VFO window's volume knob sets the SDR's audio too, and the dongle is shared with the band scope. See [WebSDR, KiwiSDR and RTL-SDR Receive](nested/websdr.md).
+- **Directory: Landmarks and Channels.** Landmarks are signals worth dialling into at any time, each explained. Channels is a frequency chart that is yours to edit: FRS, GMRS, MURS, marine and more.
+- **Band scope:** on Flex Direct the FT8 window shows the radio's own waterfall; the Band Activity strip under the map is off by default again.
+- **Radios:** KiwiSDR listening works on the new firmware; an Icom in DATA mode keeps its FT8 preset; a PTT port keys on RTS by default, as a Digirig needs.
+- **Winlink:** radio sessions run on a "No CAT control" radio, such as an HT with a Digirig.
+- **WSPR:** the beacon runs as long as you set; the 30-minute limit is gone.
+- **Logging and activations:** N3FJP fills in the DXCC for US contacts; clicking a hunted activator at a two-fer fills every park; the activation toolbar wraps at large text sizes.
+- **Installing:** upgrades no longer stop at "POTACAT cannot be closed".
+
+### v1.13.7 "The Brits Put Beans on Toast Release" — October 2026
+
+Modern Icoms show their own band scope live in POTACAT, on your phone and behind the spots. Yaesu CW macros send Morse again.
+
+- **The Icom's own scope, live,** on an IC-7300, IC-7300 MK II, IC-705, IC-9700, IC-905, IC-7610, IC-7851 or IC-7760. An Icom with no scope over CI-V, such as the IC-7410, is told so.
+- **Band Scope window:** frequency and level scales, a cursor readout, Top and Bottom levels, the passband, split TX frequency and band edges drawn on the scope, and tuning with the mouse. Bandspread draws the radio's scope as a faint trace behind the spots.
+- **Yaesu CW macros send Morse, not a carrier,** on the FTX-1, FT-710 and other recent Yaesus.
+- **Radios:** FTX-1 preamp steps (IPO, AMP1, AMP2); **Voice over the LAN stays in USB / LSB** for an Icom on Icom Network whose DATA OFF MOD is LAN; a receive level for your phone or browser; Flex Direct on a PC with no microphone starts the audio bridge.
+- **WSPR:** on a radio connected through rigctld, the beacon's power cap no longer means full power.
+- **Presets:** NB and DNR levels show the radio's real range, and a preset holds a preamp step.
+- **Logging:** a contact is never logged without a mode; your grid goes to N3FJP and other loggers as MY_GRIDSQUARE; QLog logs that name the park only as POTA_REF import with the park.
+- **Themes:** the ECHOCAT themes on the desktop, under Settings > Display > Theme.
+- **Also:** CW on a Mac stays even when POTACAT is in the background; ECHOCAT Web's Cloud sign-in asks for email or callsign.
+
+### v1.13.6 "Flex and Icom Bandscope and Rig Swap Improvements Release" — October 2026
+
+On Flex Direct, POTACAT shows the radio's own panadapter as its band scope. Sharing your rig becomes a proper loan: a guest operates under their own callsign.
+
+- **The Flex's own panadapter** in More > Band Scope, under the FT8 waterfall and on your phone, with readings in dBm. The FT-710's scope reaches the phone's Pan tab. Guests may zoom and centre the scope; your settings come back afterwards.
+- **Share my Rig:** a guest signed in to POTACAT Cloud transmits under their own callsign; friends can take turns during a pass; the Guest Pass banner has **Take over** and **Give it back**; when a pass ends, every transmission stops and the guest is disconnected; guests bring their own voice macros, which are never stored.
+- **Radios:** the Flex reports its real settings; rig presets set NB and NR levels in the radio's own steps; the SWR guard clears when a bad match is fixed outside POTACAT.
+- **FT8 / JTCAT:** GridTracker as your call roster; **Hunt: don't call below** a signal level; Hunt honours Skip Grid.
+- **Logging:** your own state and county on every contact (Home state and Home county in Settings > Station); a park in several states takes the activator's state from their spot; a reminder when your log is not backed up to POTACAT Cloud.
+- **ECHOCAT and the VFO window:** the VFO window's profiles sit in a drop-down under the dial; a voice macro renamed or recorded elsewhere shows straight away.
+- **Also:** the SFI, K and A numbers have left the top bar for the Conditions window; a theme change reaches the VFO, Log, pairing and Band Scope windows; the Winlink recovery email can be seen and changed in Settings.
+
+### v1.13.5 "The Monday Peanutbutter Sandwich Release" — October 2026
+
+POTACAT decides what counts as DX the way you do: another country by default, or farther than a distance you set, with a DX tag and a "DX only" filter on the spot list.
+
+- **What counts as DX.** A station in a different country (DXCC entity) from yours is DX, with no setup. The DX Cluster source is now labelled **Cluster**.
+- **The SWL/HF Net Directory is always on,** with no setting, and phones on ECHOCAT receive it.
+- **External tuners get a real carrier** with External ATU type set to **LDG / MFJ (RF-sense auto-tuner)**.
+- **Power On and Power Off** in a Radio row at the bottom of the VFO window.
+- **Radios:** a Yaesu tuned on VFO B stays on VFO B; Icoms on direct CI-V show forward power while transmitting; **Transmit (PTT)** in the Serial CAT rig editor for a radio keyed by its audio interface; FT-450 Test Connection no longer reports a false failure.
+- **Audio devices are found again by name** when Windows or macOS gives the radio's sound card a new ID. Bug reports say whether settings are being saved.
+- **FT8 / JTCAT:** the WSPR beacon's first slot transmits; the FT8 decoder is no longer restarted while there is no audio; the JTCAT map pop-out draws the QSO arcs.
+- **Activations:** a park-to-park with a 2-fer: type the other activator's parks into the park box.
+- **Windows:** no window can be shrunk past its own controls; the Conditions window remembers its size and position; the Worked All States table scrolls. Thanks N0KAH.
+
+### v1.13.4 "The Shared Radio Release" — October 2026
+
+POTACAT can share a radio with your logger or fldigi through flrig. Radios whose data port is silent in USB and LSB, such as the Xiegu G90, can carry voice over ECHOCAT. Contacts logged in N3FJP on its own can come into your POTACAT log.
+
+- **New connection type: FLRig (a shared radio)** in Settings > My Rigs. Tuning, mode, PTT, meters, RF power, VFO A/B, split and the tuner start work through flrig; filter width, the noise blanker, CW keying over the CAT port and Custom CAT commands stay in flrig. Thanks KM4CFT.
+- **Voice in DATA mode (USB-D / LSB-D)**, a checkbox in the rig editor, for the Xiegu G90 and radios like it. Contacts are still logged as SSB.
+- **Radios:** the Xiegu G90 is set up through Hamlib when picked as the Radio Model; a rigctld server that cannot key the radio is named in the log and in a notice; Linux `/dev/serial/by-id` ports are no longer reported as missing.
+- **Bring in contacts from N3FJP:** Settings > Logging > Send Data to Logbook.
+- **Activation panel:** a frequency typed in kHz into the MHz box, such as 7182, is read as MHz.
+- **ECHOCAT:** a voice macro recorded on the phone is confirmed by the shack, and every connected device sees it.
+
 ### v1.13.3 "The Right Band, Right Slot Release" — October 2026
 
 - **Each radio shows only its own bands**, everywhere in POTACAT; tick extra bands for a transverter or a 4 m export model. See [Your Radio's Bands](nested/my-rigs.md#your-radios-bands).
