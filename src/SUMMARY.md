@@ -41,6 +41,7 @@
     - [Yaesu FTDX10 / FTDX3000 / FT-991A](nested/rig-ftdx10-3000.md)
     - [Yaesu SCU-LAN10 (Experimental)](nested/yaesu-scu-lan10.md)
     - [Icom IC-7300 & Family](nested/rig-ic-7300.md)
+    - [IC-7610: the I/Q Port and HDSDR](nested/rig-ic-7610-iq.md)
     - [Kenwood Rigs](nested/rig-kenwood.md)
     - [Elecraft Rigs](nested/rig-elecraft.md)
     - [QRP & Portable Rigs](nested/rig-qrp-portables.md)
