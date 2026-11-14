@@ -7,18 +7,23 @@ The main table shows one row per spot with these columns (right-click any column
 | Log | Click to open the log dialog for this contact |
 | Callsign | Activator's callsign (click to open QRZ page, hover for operator name) |
 | Operator | Operator's name (from QRZ lookup) |
-| Freq (kHz) | Frequency — click the row to tune your radio here |
+| Freq | Frequency — click the row to tune your radio here |
 | Mode | CW, SSB, FT8, FT4, FM, RTTY, FreeDV |
-| Source | POTA, SOTA, WWFF, LLOTA, DXC, RBN, PSKR, WSJT, DXP |
+| WPM | CW speed |
+| Source | A badge: POTA, SOTA, WWFF, LLOTA, WWBOTA, Cluster, CW, RBN, FreeDV, Tiles, GMA, PARC or NET |
 | Ref | Park or summit reference (e.g. K-1234, W6/CT-001) |
 | Name | Park or summit name |
 | State | US state or DX entity |
 | Grid | Maidenhead grid square |
+| CQ | CQ zone |
+| ITU | ITU zone |
 | Dist | Distance from your QTH in miles or km |
 | Heading | Beam heading from your QTH in degrees |
 | Age | Time since the spot was posted (e.g. "5m", "1h 30m") |
+| Spotter | Who posted the spot |
 | Comments | Spot comment text |
 | Skip | Toggle to skip this spot during scan |
+| Hide | Hide this spot |
 
 **Column widths** are resizable — drag the border between column headers. Widths are saved automatically.
 

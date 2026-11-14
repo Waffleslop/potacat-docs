@@ -1,5 +1,5 @@
 # Spot Sources
 
-Toggle sources on and off from the **Spots dropdown** in the toolbar (the funnel icon) or in Settings → Spot Sources.
+Toggle sources on and off from the **Spots ▾** button in the toolbar, or in **Settings > Spots**, under **Spot Sources**.
 
 

@@ -21,10 +21,10 @@ Radio RX audio (USB CODEC / DAX RX) → RM Noise → VB-CABLE → POTACAT audio 
 
 AI noise reduction is for **your ears, not for decoders**. It destroys the signal structure FT8/FT4, SSTV, and CW decoding depend on.
 
-- In **JTCAT**, keep the audio source on the rig's raw device (`DAX Audio RX 1`, `USB Audio CODEC`, or SmartSDR Direct) — **not** the VB-CABLE device.
-- Same for SSTV decoding.
+- **A radio with one USB sound card has one receive input.** The rig's **RX audio in (from radio)** and the audio picker under **Summary > Quick settings > ECHOCAT web access** are the same setting. If you route that input through RM Noise, ECHOCAT's audio is cleaned, but JTCAT and SSTV are fed the processed audio too, and decoding suffers. JTCAT has no audio picker of its own.
+- **Only a radio with a second audio source keeps the decoders on raw audio** while you listen through RM Noise: a Flex (DAX or SmartSDR Direct) or an Icom on Icom Network. Pick that source in **Audio source for JTCAT / SSTV:** in the rig editor.
 
-Voice listening cleaned, digital decoding raw — best of both.
+On a radio with a second source: voice listening cleaned, digital decoding raw.
 
 ## Notes
 
