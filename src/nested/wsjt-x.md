@@ -10,7 +10,7 @@ POTACAT listens for WSJT-X UDP messages (default port 2237) and cross-references
 - Click-to-tune sends the frequency to your FlexRadio via SmartSDR TCP (no CAT conflict with WSJT-X)
 - Auto-log: QSOs completed in WSJT-X can be automatically logged in POTACAT and forwarded to your external logbooks
 
-Turn on **WSJT-X Mode** in **Settings > Spots**, and set **UDP Port** to match WSJT-X. The same section has **Highlight POTA activators in WSJT-X** and **Auto-log WSJT-X QSOs to POTACAT**. Before 1.14.5 this box was called **WSJT-X Integration**; it is the same setting.
+Turn on **WSJT-X Mode** in **Settings > Spots**, and set **UDP Port** to match WSJT-X. The same section has **Highlight POTA activators in WSJT-X** and **Auto-log WSJT-X QSOs to POTACAT**. Before 1.14.5 this box was called **WSJT-X Integration**; it is the same setting. The same check box is in the CAT menu: click **CAT** in the top bar.
 
 > **Warning:** With **WSJT-X Mode** on, POTACAT leaves the radio to WSJT-X and gives up its own CAT control. It asks before turning on. There is no way to listen to WSJT-X's UDP messages and keep POTACAT's own CAT.
 
@@ -19,7 +19,7 @@ Turn on **WSJT-X Mode** in **Settings > Spots**, and set **UDP Port** to match W
 > **New in POTACAT 1.14.5.**
 
 - An amber **WSJT-X Mode** chip leads the top bar, and **CAT** shows **off**. (Before 1.14.5 the CAT light could still show green.)
-- Click either one for what the mode does, whether WSJT-X is heard, and a one-click **Turn off WSJT-X Mode**.
+- Click either one for a panel at the top of the CAT menu: what the mode does, whether WSJT-X is heard, and a one-click **Turn off WSJT-X Mode**. You can also click **CAT** in the top bar and untick **WSJT-X Mode**.
 - If the mode is on and WSJT-X isn't heard 30 seconds after start, POTACAT says so.
 - Station Setup and Report a Bug say when it is on, and ECHOCAT Web shows the same chip.
 
@@ -29,7 +29,7 @@ Two applications can't both run CAT control of the same radio. If WSJT-X and POT
 
 ### Option A — WSJT-X Mode (simplest)
 
-Turn on **WSJT-X Mode**, in **Settings > Spots**. In this mode:
+Turn on **WSJT-X Mode**, in **Settings > Spots** or in the CAT menu (click **CAT** in the top bar). In this mode:
 
 - **POTACAT's own CAT control is disabled.** POTACAT disconnects from the radio, and WSJT-X controls the rig through its own CAT connection. POTACAT listens to WSJT-X's UDP messages for highlights, decodes and auto-log.
 - Clicking a spot in POTACAT doesn't move the radio, and nothing is sent to WSJT-X. The exception is a FlexRadio (see below).

@@ -70,7 +70,7 @@ These three names get mixed up constantly. Here's the map:
 | **WSJT-X** | A separate application; POTACAT can interoperate with it over UDP | You prefer WSJT-X for decoding/TX and want POTACAT to highlight POTA activators and log |
 | **ECHOCAT** | POTACAT's phone/tablet remote control; its FT8 screen is a remote view of the JTCAT engine on your desktop | You want to work FT8 from the couch or away from the shack |
 
-> **Warning:** To use JTCAT, **WSJT-X Mode** must be off. From 1.14.5 an amber **WSJT-X Mode** chip in the top bar shows when it is on. WSJT-X Mode hands rig control to an external WSJT-X and disables POTACAT's own CAT — JTCAT cannot run in that state. See the [WSJT-X](wsjt-x.md) page for how that mode works.
+> **Warning:** To use JTCAT, **WSJT-X Mode** must be off: click **CAT** in the top bar and untick it. From 1.14.5 an amber **WSJT-X Mode** chip in the top bar shows when it is on. WSJT-X Mode hands rig control to an external WSJT-X and disables POTACAT's own CAT — JTCAT cannot run in that state. See the [WSJT-X](wsjt-x.md) page for how that mode works.
 
 ## Audio Setup
 

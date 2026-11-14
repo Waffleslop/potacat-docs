@@ -2,7 +2,7 @@
 
 > **New in POTACAT 1.13.1.**
 
-POTACAT sends and receives Winlink email from your shack: over the internet on Windows, Linux and Mac, over the radio with ARDOP (HF) and packet on Windows and Linux, and with your own copy of VARA HF or VARA FM. There is nothing else to install. POTACAT runs [Pat](https://getpat.io/), the open-source Winlink client, in the background, and starts it the first time you use mail.
+POTACAT sends and receives Winlink email from your shack: over the internet on Windows, Linux and Mac, over the radio with ARDOP (HF) and packet, and with your own copy of VARA HF or VARA FM. There is nothing else to install. POTACAT runs [Pat](https://getpat.io/), the open-source Winlink client, in the background, and starts it the first time you use mail.
 
 Open it from **More ▾ > Winlink Mail**. It is always in the menu, with nothing to turn on. The mail window has **Inbox**, **Outbox**, **Sent**, **Archive** and, from 1.14.5, **Deleted**, a composer with attachments, and a position report.
 
@@ -36,7 +36,7 @@ From 1.13.2, the Winlink Mail window and ECHOCAT Web's **Mail** tab also open wi
 
 Messages you write wait in the **Outbox** until the next **Send / Receive**. Choose how they go in **Send via**.
 
-> **Where Winlink works, as of 1.14.5.** Internet mail works on Windows, Linux and Mac. ARDOP and packet over the radio run on Windows and Linux. No packet transfer has yet been confirmed on the air. VARA HF and VARA FM are your own copy of VARA.
+> **Where Winlink works, as of 1.14.5.** Internet mail works on Windows, Linux and Mac. ARDOP and packet over the radio are built in on Windows, Linux and Mac; on a Mac they have not yet been confirmed with a gateway. No packet transfer has yet been confirmed on the air on any system. VARA HF and VARA FM are your own copy of VARA.
 
 ### Over the internet
 

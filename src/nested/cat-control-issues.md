@@ -71,7 +71,7 @@ From 1.14.5 it is hard to miss: an amber **WSJT-X Mode** chip leads the top bar 
 
 If you enabled WSJT-X Mode without WSJT-X actually running, you've handed rig control to a program that isn't there.
 
-- **Option A — direct control (recommended for most hunting):** turn off **WSJT-X Mode**. POTACAT tunes the radio itself. This is the right choice for SSB/CW POTA hunting.
+- **Option A — direct control (recommended for most hunting):** click **CAT** in the top bar and untick **WSJT-X Mode**. POTACAT tunes the radio itself. This is the right choice for SSB/CW POTA hunting.
 - **Option B — keep WSJT-X Mode:** make sure WSJT-X is actually running and listening on UDP port `2237`, with its rig configured as **Hamlib NET rigctl** at `127.0.0.1:4532`. Open POTACAT first, then WSJT-X, then your logger — this order avoids the CAT fight.
 
 > **Note:** For FT8 inside POTACAT, use JTCAT with WSJT-X Mode **off**. Don't run JTCAT and WSJT-X against the radio at the same time.

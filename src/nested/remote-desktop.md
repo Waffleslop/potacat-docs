@@ -67,6 +67,10 @@ The JS8 window runs the shack's JS8: conversations, band activity, heartbeat, me
 
 The buttons are the shack's recorded macros, played into the shack's radio.
 
+### Band scope
+
+The shack's band scope shows on this computer. From 1.14.5 it keeps running when a phone or ECHOCAT Web is watching the scope too.
+
 ### Activating
 
 Start an activation on this computer as usual. The shack learns the park, so FT8 contacts are logged with it.
@@ -81,10 +85,7 @@ Contacts you make from the second computer go into **this computer's** logbook, 
 
 ## What Doesn't Work from the Second Computer
 
-As of 1.14.3, two things do not work through a remote shack yet:
-
-- **Winlink** — run Winlink on the shack PC itself.
-- **Band scope** — the shack's band scope is not shown on the second computer.
+As of 1.14.5, **Winlink radio sessions** do not work through a remote shack. Starting ARDOP or packet from the second computer is refused with *Radio sessions key the shack's radio — start them on the shack PC*. Internet mail is not blocked.
 
 These are greyed out with a one-line reason while you are connected to a shack:
 
