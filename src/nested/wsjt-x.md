@@ -2,7 +2,7 @@
 
 POTACAT listens for WSJT-X UDP messages (default port 2237) and cross-references decoded callsigns against active POTA spots.
 
-> **Note:** You don't need WSJT-X to work FT8 in POTACAT — [JTCAT](jtcat.md) is POTACAT's built-in FT8/FT4 engine. This page is for operators who prefer to run the separate WSJT-X application and have POTACAT work alongside it. If you're using JTCAT, leave the **WSJT-X** mode checkbox unchecked.
+> **Note:** You don't need WSJT-X to work FT8 in POTACAT — [JTCAT](jtcat.md) is POTACAT's built-in FT8/FT4 engine. This page is for operators who prefer to run the separate WSJT-X application and have POTACAT work alongside it. If you're using JTCAT, leave **WSJT-X Mode** off.
 
 **Features:**
 - POTA activators in the WSJT-X decode list are highlighted green
@@ -10,18 +10,20 @@ POTACAT listens for WSJT-X UDP messages (default port 2237) and cross-references
 - Click-to-tune sends the frequency to your FlexRadio via SmartSDR TCP (no CAT conflict with WSJT-X)
 - Auto-log: QSOs completed in WSJT-X can be automatically logged in POTACAT and forwarded to your external logbooks
 
-Enable WSJT-X in **Settings → Spot Sources**. Set the UDP port to match your WSJT-X configuration.
+Turn on **WSJT-X Integration** in **Settings > Spots**, under **Spot Sources**, and set **UDP Port** to match WSJT-X. The same section has **Highlight POTA activators in WSJT-X** and **Auto-log WSJT-X QSOs to POTACAT**.
+
+> **Warning:** **WSJT-X Integration** and **WSJT-X Mode** (under the **CAT** pill) are one setting. Turning either on asks first, *Turn on WSJT-X Mode?*, because POTACAT then gives up its own CAT control of the radio. There is no way to listen to WSJT-X's UDP messages and keep POTACAT's own CAT.
 
 ## Who Controls the Radio?
 
-Two applications can't both run CAT control of the same radio. If WSJT-X and POTACAT need the same rig, you have two options.
+Two applications can't both run CAT control of the same radio. If WSJT-X and POTACAT need the same rig, you have three options.
 
 ### Option A — WSJT-X Mode (simplest)
 
-Check the **WSJT-X** mode checkbox under the **CAT** pill. In this mode:
+Turn on **WSJT-X Mode** under the **CAT** pill (the same switch as **WSJT-X Integration** in Settings). In this mode:
 
-- **POTACAT's own CAT control is disabled.** Instead of talking to the radio directly, POTACAT sends UDP packets to WSJT-X, and WSJT-X controls the rig through its own CAT connection.
-- Clicking a spot in POTACAT asks WSJT-X to QSY the radio.
+- **POTACAT's own CAT control is disabled.** POTACAT disconnects from the radio, and WSJT-X controls the rig through its own CAT connection. POTACAT listens to WSJT-X's UDP messages for highlights, decodes and auto-log.
+- Clicking a spot in POTACAT doesn't move the radio, and nothing is sent to WSJT-X. The exception is a FlexRadio (see below).
 - Because POTACAT isn't holding the serial port, there is no COM-port conflict.
 
 > **Warning:** While WSJT-X Mode is enabled, POTACAT features that need direct rig control — including [JTCAT](jtcat.md) — are unavailable. Uncheck it when you return to normal operation. If clicking a spot suddenly "does nothing," a leftover WSJT-X Mode checkbox is a prime suspect.
@@ -38,7 +40,13 @@ Run a networked `rigctld` yourself and point both applications at it:
 
 Both apps keep full rig control, and CAT survives either application closing.
 
+Option B can't be combined with **WSJT-X Integration**. Turning that on disconnects POTACAT's CAT, so Option B ends. With Option B you get shared rig control, but no WSJT-X highlights, decodes or auto-log in POTACAT.
+
 > **Warning:** Don't use POTACAT's **Other (Hamlib)** connection type for this — it spawns its own internal rigctld, which would conflict with yours and shuts down when POTACAT exits, orphaning WSJT-X. Run a standalone rigctld instead.
+
+### Option C — Share the rig through flrig
+
+POTACAT has a connection type **FLRig (a shared radio)**: flrig holds the radio and POTACAT is one of its clients, beside your logger or fldigi. WSJT-X can be another client of the same flrig. How to point WSJT-X at flrig is in WSJT-X's own manual; it hasn't been checked for this guide.
 
 ## UDP Port 2237 Basics
 
@@ -60,4 +68,4 @@ When you click **OK** on the WSJT-X log window, POTACAT auto-logs the QSO, match
 
 ## FT4 and FT2 in ADIF Exports
 
-POTACAT exports FT4 and FT2 QSOs as `MODE=MFSK` with `SUBMODE=FT4` (or `SUBMODE=FT2`), as the ADIF specification requires — files with a plain `MODE=FT4` are rejected by the POTA uploader. Keep this in mind if you hand-edit exported logs.
+As of 1.14.3, POTACAT writes FT4 contacts as `MODE=FT4` and FT2 contacts as `MODE=FT2`, with no `SUBMODE`.

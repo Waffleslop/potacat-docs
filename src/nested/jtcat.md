@@ -1,6 +1,6 @@
 # JTCAT (Built-in FT8 & FT4)
 
-JTCAT is POTACAT's built-in digital-modes engine. It decodes and transmits FT8, FT4, and FT2 entirely on its own — **you do not need WSJT-X installed**. JTCAT runs as a pop-out window on the desktop, and the same engine powers the FT8 screen in ECHOCAT on your phone.
+JTCAT is POTACAT's built-in digital-modes engine. It decodes and transmits FT8, FT4, FT2, WSPR, PSK (PSK31) and JTTY entirely on its own — **you do not need WSJT-X installed**. JTCAT runs as a pop-out window on the desktop, and the same engine powers the FT8 screen in ECHOCAT on your phone.
 
 While it runs, JTCAT:
 
@@ -10,7 +10,6 @@ While it runs, JTCAT:
 - Auto-logs completed QSOs and forwards them to your configured logbooks
 - Reports decodes to PSKReporter
 
-> **Note:** JTCAT takes over radio control while it is running — POTACAT's normal CAT connection is suspended until you stop it.
 
 ## The FT8 Window
 
