@@ -43,7 +43,8 @@ If you want mail fetched without asking, set **Check mail over the internet ever
 
 POTACAT handles the radio for the whole session:
 
-- It moves the radio to data mode, keys it, and puts the dial back where it was when the session ends.
+- It moves the radio to data mode, keys it, and puts the dial back where it was. From 1.14.2 the radio stays put between attempts and goes back once, when you close the mail window or stop Winlink. The log says where it is going.
+- From 1.14.2, an Icom stays in DATA mode for the whole session. Before, it was switched from USB to USB-D and back on every ARDOP frame.
 - **Power**, **PWR** and **SWR** sit on the session line while you transmit.
 - The SWR guard stops a session that is transmitting into a bad match.
 - A session ends after the time limit you set (**End a radio session after … minutes** in Settings). A stuck session also ends after 3 minutes with no progress, and the transmitter is released if it stays keyed for 30 seconds.
@@ -82,6 +83,8 @@ A session you stop stays stopped, and a new session waits for the last one to ha
 **Send via** also lists **Packet (VHF/UHF radio)**, which uses the Dire Wolf modem built into POTACAT, and **Mercury (radio, experimental)**, which stays greyed out until Mercury is turned on in **Settings > Station**. Neither is recommended yet. Use ARDOP or Internet.
 
 Packet talks to Dire Wolf on its **AGW port, 8010**, on this computer. If another program already uses port 8010 (a Dire Wolf you started yourself, for example), close it first. From 1.13.10, starting Dire Wolf no longer closes POTACAT.
+
+From 1.14.2, packet's **TX delay** and **tail** can be set in **Settings > Station > Winlink**, next to **Packet speed**. The defaults are 500 ms and 200 ms. The old fixed delay of 300 ms was too short for a radio keyed over CAT, so gateways missed the start of each frame. A packet session longer than five minutes is no longer cut off.
 
 ## Audio for Radio Sessions
 

@@ -31,6 +31,7 @@ Then click **Connect**. The status bar shows the shack's name, its radio, the co
 - The rig controls: NB, ATU, preamp and attenuator, DSP, power, split, VFO A/B and lock
 - [Rig profiles](../radio-setup.md#rig-profiles) and custom CAT buttons
 - Switching between the shack's radios — click the **RMT** pill in the status bar
+- Switching the shack's radio on and off (from 1.14.2). The CAT chip's popover shows whether the radio is on, and has **Power On** and **Power Off** buttons. **Power Off** asks once more, and is refused while the radio is transmitting. **Power On** tells you if the shack can't reach the radio's port. This needs a radio POTACAT can already switch on and off
 
 ### Audio
 

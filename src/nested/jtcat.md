@@ -88,6 +88,15 @@ Platform and rig specifics:
 - **FlexRadio** — use the **Flex Direct (VITA-49)** audio source; no DAX program is needed. PTT requires the **SmartSDR API host (port 4992)** configured in the rig settings — this is separate from the SmartCAT connection.
 - **Rigs without built-in USB audio** (for example the Xiegu G90) — use an external USB sound-card interface.
 
+### Decode from a WebSDR
+
+> **New in POTACAT 1.14.2.**
+
+JTCAT has a **Receive audio** choice: **Radio (sound card)** or **WebSDR**. With **WebSDR**, the SDR follows JTCAT's band, and its audio feeds the decoder and the waterfall.
+
+JTCAT won't transmit while the WebSDR is the receive source, because a WebSDR can't hear your own signal. To add a receiver, see [WebSDR, KiwiSDR and RTL-SDR Receive](websdr.md).
+
+
 ## Radio Mode (DATA) Setup
 
 The rig must be in its data mode — USB-D on Icom, DATA-USB on Yaesu, DIGU on Kenwood, DATA A on Elecraft. JTCAT sets and enforces this automatically (the log shows `post-reconnect mode enforcement: FT8`), but a few radios need extra attention:
@@ -110,6 +119,7 @@ Click a decode (or a highlighted POTA activator) to reply. JTCAT runs the exchan
 - **AP decoding** — a-priori decoding is supported, which helps pull out weak replies directed at you.
 - **Hold TX** — this checkbox is the equivalent of WSJT-X's "Hold Tx Freq": your transmit frequency stays pinned to the value in the TX Freq box while RX follows the other station. The setting persists between sessions.
 - **TX slot lock** (from 1.13.3) — the **Slot** menu offers **Auto**, **1st (even)** or **2nd (odd)**, for FT8, FT4 and FT2. Locked, every CQ and reply stays in that slot, and JTCAT won't call a station transmitting in your slot; clicking one offers **Unlock and call**. Hound mode ignores the lock. On **Auto**, your CQ stays in the slot you last transmitted in for 30 minutes. ECHOCAT Web has the same **Slot** button.
+- **HOUND chip** (from 1.14.2) — the chip is always shown in the JTCAT window, dimmed when Hound mode is off. One click turns Hound on or off.
 - **dB numbers are confidence scores** — JTCAT's per-decode signal figures are the decoder's own confidence score, **not** calibrated SNR. Don't expect them to match WSJT-X's dB readings.
 
 ### Send your own message

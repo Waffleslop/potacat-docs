@@ -31,6 +31,17 @@ If a station is spotted on more than one frequency, each spot stays in the table
 
 > **Tip:** The spot you've clicked to tune to is held on screen past its normal timeout, so the station you're working doesn't age out of the table mid-QSO.
 
+### Prior contacts
+
+> **New in POTACAT 1.14.2.**
+
+Right-click a spot in the table, or a call in the FT8 decode list, and choose **Prior contacts**. It shows how many times you have worked the station, when you last did, on which bands and modes, and your last five contacts. Hover over the worked check mark for a one-line summary. It reads only your own log, never QRZ.
+
+### A spot on a park and a summit
+
+From 1.14.2, an activator spotted on both POTA and SOTA shows both program pills and both references, such as `IT-0843 / I/UM-069`.
+
+
 ## Skipping and hiding spots
 
 ### Skip

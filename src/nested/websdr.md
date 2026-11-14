@@ -27,3 +27,7 @@ From POTACAT 1.13.8, the same list takes an **rtl_tcp** server: an RTL-SDR runni
 - If the same SDR is your band scope (**Settings > My Rigs** > edit the radio > **Band scope from an SDR**), listening uses that connection and its gain and direct sampling settings.
 - Tune outside your radio's range (NOAA weather, a 2 m repeater on an HF rig) and POTACAT tunes only the SDR and won't transmit; tune back into range and the radio is back.
 - From 1.14.3, a tune from ECHOCAT does the same: when POTACAT can't move the radio (no CAT link, or the frequency is out of its range), it listens through an SDR that covers the frequency, and connects a listed SDR first if needed.
+
+## FT8 from a WebSDR
+
+From 1.14.2, JTCAT can decode from a WebSDR instead of the radio's sound card. See [Decode from a WebSDR](jtcat.md#decode-from-a-websdr).
