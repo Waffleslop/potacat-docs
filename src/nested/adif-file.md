@@ -7,7 +7,7 @@ QSOs are saved to a local ADIF file. Set the file path in Settings → Logging. 
 ## Field Notes
 
 - For POTA contacts, `STATE` records the **park's** state (not the activator's home state from QRZ), and the county (`CNTY`) is intentionally left blank — county data isn't queryable for parks. County hunters shouldn't expect a county on POTA hunts.
-- FT4 and FT2 QSOs are exported the ADIF-correct way, as `MODE=MFSK` with `SUBMODE=FT4` (or `FT2`). POTA's uploader rejects files that use a plain `MODE=FT4`, so keep this form if you ever hand-edit an export.
+- As of 1.14.3, FT4 contacts are written as `MODE=FT4` and FT2 contacts as `MODE=FT2`, with no `SUBMODE`. FT8 is written as `MODE=FT8`.
 
 ## Activation Exports
 
