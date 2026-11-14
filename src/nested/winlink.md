@@ -106,6 +106,67 @@ From 1.14.5, packet closes its link to the gateway cleanly. When a session ends,
 
 If a gateway answers a call but sends no greeting, the status says: *The gateway is still holding the last link, or its greeting did not decode here. Wait a few minutes and try again. If it keeps happening, check the receive level.* POTACAT does not retry such a call by itself.
 
+## When a Session Does Not Finish
+
+This section describes POTACAT 1.14.5. The plain sentences below arrived in 1.14.4; before that the Mail window showed a program error.
+
+Radio links drop. On HF it is normal for some sessions to end part way, more so on a long or fading path. Mail you wrote stays in the **Outbox** until a gateway has taken it, and it goes on the next try.
+
+The Mail window says what happened in a sentence, and for a radio session it shows a card with **Try again** (the same gateway) and **OK**. The phone and ECHOCAT Web show the same sentence.
+
+### What the sentences mean
+
+The gateway is shown here as KY4RY.
+
+| The Mail window says | What it means | What to do |
+|---|---|---|
+| "KY4RY did not answer." | The gateway never replied to the call. | Try again, or try another gateway or another band. |
+| "The call to KY4RY did not connect." | The call did not get through, and POTACAT cannot say why. | The same. |
+| "The link to KY4RY dropped before the mail exchange finished." | The gateway answered and mail started to move, then the radio link was lost. POTACAT tries once more by itself (see below). | Let the automatic retry run, or press **Try again**. |
+| "The link to KY4RY dropped again." then "POTACAT already tried once more by itself. Try another gateway or another band, or try again later." | The automatic retry dropped too. POTACAT does not try a third time. | Another gateway or band, or later. |
+| "...nothing got through for 120 seconds, so the modem ended the link." | ARDOP only. The number is the ARDOP link timeout in force: 120 unless you changed it. | As for a drop. A closer gateway or another band often helps; a longer ARDOP link timeout helps on a fading signal. |
+| "...KY4RY ended the link." | ARDOP only. The gateway hung up. | Try again. |
+| "...KY4RY stopped answering." | ARDOP only. The gateway went quiet at the end and never confirmed. | Try again. |
+| "The gateway is still holding the last link, or its greeting did not decode here." then "Wait a few minutes and try again. If it keeps happening, check the receive level." | Packet only. The gateway is still busy with an earlier link, or POTACAT could not hear its reply. | As it says. |
+| "POTACAT stopped the session: nothing moved for 3 minutes." | Nothing at all happened for three minutes. | Try again, or try another gateway or another band. |
+| "POTACAT stopped the session at its 30-minute limit." | Sessions have a time limit: 10 to 60 minutes, 30 unless you changed it. | Press **Send / Receive** again to carry on. |
+| "POTACAT stopped transmitting: the SWR guard tripped." | The antenna match was too poor to transmit safely. | Check the antenna and its match, then try again. |
+| "The radio did not transmit: ..." | The radio or POTACAT refused to key, for the reason given. | Put that right, then try again. |
+| "POTACAT stopped the session: the transmitter stayed keyed for 30 seconds, so POTACAT unkeyed it." | The transmit failsafe acted. | Check that the radio has gone back to receive, then try again. |
+| "The radio's sound device stopped: ..." | The radio's audio device went away. | Check the radio's USB cable and its sound device in **Settings > Radio**, then try again. |
+| "The internet connection to Winlink closed before the mail exchange finished." or "Could not reach Winlink over the internet." | Internet sessions. | Check this computer's internet connection, then try again. |
+| "You stopped the session." | You pressed **Abort** (or **Stop** on a phone). | Nothing. |
+
+A few rarer endings are each followed by "Try again. If it happens again, send a Report a Bug.": "POTACAT's modem audio stopped, so the session could not go on.", "The modem (ardopcf) stopped during the session." and "The modem (ardopcf) closed its audio connection to POTACAT, and the link to KY4RY ended before the mail exchange finished." The modem's name follows the mode. A refused password says "Winlink refused the password. Check it in Settings > Station > Winlink."
+
+### What got through
+
+The line after the first sentence says what moved, for example "So far: 1 sent, 0 received." and "2 messages are still in your Outbox and will go on the next try." When everything went, it says "Your Outbox is empty: everything you wrote was sent." POTACAT only says what it could read back from the mailbox. If it could not read a number, it leaves it out.
+
+### One automatic retry
+
+When a radio link connected and then dropped before the mail exchange finished, POTACAT tries once more by itself:
+
+1. It waits 20 seconds. The Mail window shows "Trying KY4RY again in 20 s." with **Try now** and **Cancel**.
+2. It checks that nothing is transmitting and that the channel has been clear for 10 seconds. If the channel is busy it shows "Waiting for the channel to clear before trying KY4RY again", for up to another minute. If it gives up, it says so, for example "Not retried: the channel stayed busy."
+3. It calls the same gateway on the same frequency, once.
+
+It never retries after "did not answer", "did not connect", a gateway still holding the last link, Abort, the SWR guard, the time limit or any of the rarer endings, and never for an internet session or a Guest Pass session. The **Try again** button is still there.
+
+To turn it off, untick **Try again once by itself when a link drops** in **Settings > Station > Winlink**. It is on by default.
+
+### ARDOP link timeout
+
+**ARDOP link timeout** in **Settings > Station > Winlink** is how long the modem keeps trying when nothing is getting through before it ends the link: 90 to 180 seconds, 120 by default. A longer time helps when the signal fades in and out. The gateway has its own limit and may still hang up first.
+
+### History
+
+**History** in the Mail window shows the last result for each gateway in the same words, among them "Mail exchanged (1 sent, 2 received)", "Link dropped before the mail exchange finished", "Connected, but the mail exchange did not finish" (a session you stopped), "Did not answer", "Did not connect", "Winlink refused the password", "Stopped", "Stopped: the channel was busy" and "The modem was not running".
+
+### If it keeps happening
+
+If sessions to gateways that used to work now drop often, use [Report a Bug](../community--support.md#report-a-bug) right after one. The report carries a one-line summary of each recent Winlink session (gateway, frequency, how long it ran, what moved, which side ended the link) and the modem's own log for the last three sessions, so there is nothing else to collect.
+
 ## Audio for Radio Sessions
 
 - **FlexRadio on Flex Direct, or an Icom over the network:** ARDOP needs no sound card and no DAX. VARA needs the two virtual audio cables described above.
