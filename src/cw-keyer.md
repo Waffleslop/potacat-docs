@@ -3,7 +3,7 @@
 POTACAT includes a built-in CW keyer. Plug in a MIDI paddle (e.g. HaliKey or N6ARA TinyMIDI), a keyboard-emulating adapter (VBand or Vail), or a K1EL WinKeyer, and POTACAT keys your radio — no separate keyer software required. You can also send CW without any key at all, using the text box and macro buttons.
 
 **Setup:**
-1. Enable CW Keyer in **Settings > CW Keyer**
+1. Tick **Enable CW Keyer** in **Settings > Station**, under **CW Keyer**
 2. Select your **Keyer Mode**: Iambic B, Iambic A, or Straight key
 3. Set your **Speed** (WPM)
 4. Click **Refresh** to detect MIDI devices, then select yours
@@ -20,7 +20,7 @@ The K1EL WinKeyer (WK2/WK3) is supported as a keyer type. Select it in **Setting
 
 > **Tip:** If your WinKeyer (or a virtual COM port) doesn't appear in the dropdown, type the port name manually (e.g. `COM5`). The **WinKeyer Port** and **CW Key Port** fields both accept typed port names in addition to the auto-detected list.
 
-> **Note:** Some left-handed operators report that POTACAT sets the WinKeyer to its normal (non-swapped) paddle mode, and there is currently no in-app paddle-swap setting. If you rely on reversed paddles, check this before an activation.
+> **Note:** For reversed paddles, tick **Swap paddles** in **Settings > Station**, under **CW Keyer**. It applies to the MIDI paddle and the K1EL WinKeyer.
 
 ## How POTACAT Keys Your Radio
 
@@ -29,12 +29,12 @@ POTACAT picks a keying route based on your rig and connection. The first key eve
 | Route | How it works | Extra hardware |
 |---|---|---|
 | **CAT text CW** | Sends the message as text over the CAT connection — `KY` on Kenwood/Elecraft/QMX, CI-V `0x17` on Icom. Used by the CW text box and macro buttons. | None |
-| **CAT real-time keying** | Keys each dit and dah over CAT — CI-V `0x1C 0x01` (CW key line) on Icom, or `TX1;`/`TX0;` on Yaesu rigs that support it. | None |
+| **Control-line keying on the CAT port** | Keys each dit and dah by switching a control line (RTS or DTR) on the radio's own USB port. This is how an Icom is keyed: CI-V has no command for keying each element. | None |
 | **DTR pin keying** | Toggles the DTR line of a serial port that is wired or routed to the rig's key input. | A rig with a second USB serial port that accepts DTR keying (e.g. QMX, FTDX101, FT-710 CAT-2), or an external USB-serial adapter — see below |
 
 ## CW Key Port
 
-The **CW Key Port** setting in **Settings > CW Keyer** selects a *dedicated* serial port whose DTR pin keys the radio. Leave it **(none)** unless you actually have one — for most rigs on a direct serial/CI-V connection, POTACAT keys the radio through the normal CAT link with no extra hardware.
+The **CW Key Port** setting is in **Settings > ECHOCAT**, under **Remote CW Keyer** (the field reads **CW Key Port — optional (DTR/RTS keying):**). It selects a *dedicated* serial port whose DTR pin keys the radio. Leave it **(none)** unless you actually have one — for most rigs on a direct serial/CI-V connection, POTACAT keys the radio through the normal CAT link with no extra hardware.
 
 You need a CW Key Port when:
 
@@ -58,9 +58,12 @@ To use a paddle, either connect the rig via **direct serial / CI-V** instead of 
 
 ## Linux: DTR Keying Limitation
 
-On Linux, the kernel's `cdc_acm` driver (used by USB-CDC rigs like the QMX, QDX, and IC-7300 family connected directly) doesn't support the serial-pin control POTACAT needs for DTR keying. The symptom in the log is `DTR keying not supported on this port` or `setCwKeyDtr error: Operation not supported`.
+On Linux, the kernel's `cdc_acm` driver (used by USB-CDC rigs like the QMX, QDX, and IC-7300 family connected directly) can refuse the serial-pin control POTACAT needs for keying. What happens depends on which port is doing the keying:
 
-Your options:
+- **Keying on the main CAT port** (an IC-7300 on Linux, for example): if the driver refuses, POTACAT turns the phone's paddle off and says so in the log. Typed and macro CW still work.
+- **Keying on a CW Key Port** whose driver refuses the same way (a QMX's or a Yaesu's second USB port, for example): on Linux and macOS, POTACAT switches to a helper that uses Python's pyserial, and the paddle keeps working. It needs `python3` and pyserial: `python3-serial` on Debian and Ubuntu, `python3-pyserial` on Fedora, or `pip3 install pyserial`. The log names the package if it is missing.
+
+If the paddle is turned off on the main CAT port, your options are:
 
 1. **External FTDI/CH340/CP2102 USB-serial adapter** as the CW Key Port — these use a different kernel driver that handles DTR correctly. This is the reliable path.
 2. **CW text macros** — they work over the main CAT port without DTR.
@@ -68,7 +71,7 @@ Your options:
 
 ## CW Macros
 
-Five macro buttons send canned CW messages. Both the **label and the text** of each button are editable in **Settings** (search for "CW Macros"), and the buttons also appear in the VFO View and in ECHOCAT.
+Macro buttons send canned CW messages. You can have up to 25. Both the **label and the text** of each button are editable in **Settings** (search for "CW Macros"), and the buttons also appear in the VFO View and in ECHOCAT.
 
 These variables expand when the macro is sent:
 
@@ -77,6 +80,8 @@ These variables expand when the macro is sent:
 | `{call}` | The callsign of the spot you're working |
 | `{MYCALL}` | Your callsign |
 | `{op_firstname}` | The operator's first name from QRZ lookup (falls back to `OM` if QRZ has no name) |
+| `{state}` | The state |
+| `{greeting}` | GM, GA or GE, by their local time |
 
 For example, `{call} DE {MYCALL} GM {op_firstname} TU 73` might go out as `W1AW DE K3ABC GM BOB TU 73`.
 
