@@ -28,7 +28,8 @@ Then click **Connect**. The status bar shows the shack's name, its radio, the co
 
 - Tuning from spots and the map, and the **VFO window**
 - Mode and filter
-- The rig controls: NB, ATU, preamp and attenuator, DSP, power, split, VFO A/B and lock
+- The rig controls: NB, preamp and attenuator, DSP, power, split, VFO A/B and lock
+- **ATU** tune: the press is sent to the shack. The button shows only if the shack's radio has a tuner. (Tuner memories are a different thing; see below.)
 - [Rig profiles](../radio-setup.md#rig-profiles) and custom CAT buttons
 - Switching between the shack's radios — click the **RMT** pill in the status bar
 - Switching the shack's radio on and off (from 1.14.2). The CAT chip's popover shows whether the radio is on, and has **Power On** and **Power Off** buttons. **Power Off** asks once more, and is refused while the radio is transmitting. **Power On** tells you if the shack can't reach the radio's port. This needs a radio POTACAT can already switch on and off
@@ -50,7 +51,7 @@ Then click **Connect**. The status bar shows the shack's name, its radio, the co
 
 - Typed CW, CW macros and live typing go to the shack.
 - A paddle plugged into this computer keys the shack's radio.
-- The shack must have **Settings > ECHOCAT > Remote CW Keyer** turned on. See [Remote CW Keying](remote-cw.md).
+- The shack must have **Enable Remote CW Keyer** ticked, in **Settings > ECHOCAT** under **Remote CW Keyer**. See [Remote CW Keying](remote-cw.md).
 
 ### JS8
 
@@ -66,10 +67,6 @@ The JS8 window runs the shack's JS8: conversations, band activity, heartbeat, me
 
 The buttons are the shack's recorded macros, played into the shack's radio.
 
-### Band scope
-
-The shack's band scope, from an FT-710 or a separate SDR.
-
 ### Activating
 
 Start an activation on this computer as usual. The shack learns the park, so FT8 contacts are logged with it.
@@ -78,13 +75,25 @@ Start an activation on this computer as usual. The shack learns the park, so FT8
 
 Spots, the map, the logbook, cloud sync, LoTW and QRZ uploads, and DXCC tracking all run natively on this computer.
 
+### Where contacts are logged
+
+Contacts you make from the second computer go into **this computer's** logbook, not the shack's.
+
 ## What Doesn't Work from the Second Computer
 
-- **Station Setup** — run it on the shack PC.
-- **Mercury**
-- **Idle Mode** (idle receive) — it is the shack's own setting, so set it on the shack PC.
+As of 1.14.3, two things do not work through a remote shack yet:
 
-Each of these is greyed out with a one-line reason while you are connected to a shack.
+- **Winlink** — run Winlink on the shack PC itself.
+- **Band scope** — the shack's band scope is not shown on the second computer.
+
+These are greyed out with a one-line reason while you are connected to a shack:
+
+- **Station Setup** — run it on the shack PC.
+- **WSJT-X Mode**
+- **ATU memories** (**Tuner Memories**, FlexRadio only). Tuning with the **ATU** button still works.
+- **Mercury**
+
+**Idle Mode** (idle receive) is not greyed out, but it does nothing on the second computer. The shack's own Idle Mode setting is the one that applies, so set it on the shack PC.
 
 ## More Than One Device at a Time
 
