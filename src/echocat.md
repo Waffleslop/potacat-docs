@@ -21,13 +21,19 @@ Both work at the same time — pairing the app doesn't disable browser access.
 
 ## Quick Start
 
-### 1. Enable ECHOCAT on the Desktop
+### 1. Find Your ECHOCAT Address
 
-Open POTACAT and click the **gear icon** in the top bar to open Quick Settings. Toggle **ECHOCAT** on. You'll see:
+ECHOCAT is on from install, so there is nothing to switch on. Who can reach it is set by **Access** in **Settings > ECHOCAT**: **Local network and Cloud** (the default), **Cloud only** or **Off**. See [Who can reach this computer](#who-can-reach-this-computer).
 
-- A URL (e.g., `https://192.168.1.50:7300`)
+The address is on the **ECHOCAT** card, at the top of **Settings > ECHOCAT** and on **Settings > Summary**, under **Open in a browser**. Each address has a **Copy** button:
 
-If you have Tailscale installed, the Tailscale address is shown with a green label — use that green `https://` URL for remote access (the hostname, not the `100.x.x.x` IP).
+- **On your WiFi (home)**: an address such as `https://192.168.1.50:7300`. With no Tailscale and no Cloud it is the only address and has no label.
+- **Away from home (Tailscale)**: shown when Tailscale is present.
+- **Anywhere (POTACAT Cloud)**: shown when the Cloud Tunnel has an address. It also has an **Open** button.
+
+The address must start with `https://`. Accept the browser's warning the first time.
+
+If you have Tailscale installed, use the address in the **Away from home (Tailscale)** row for remote access. See [Connection Paths](#connection-paths).
 
 You can also configure ECHOCAT from **Settings > ECHOCAT**, where you can change the port (default 7300), set a password (see [Password-protect your rig](#password-protect-your-rig)), set the PTT safety timeout, and select audio devices.
 
@@ -35,11 +41,14 @@ You can also configure ECHOCAT from **Settings > ECHOCAT**, where you can change
 
 Pairing links the app to your desktop with a QR code — no typing IP addresses.
 
-1. In POTACAT, open **Settings > ECHOCAT** and click **Open pairing QR** (requires desktop v1.9.2 or later)
-2. In the ECHOCAT app, scan the QR code — or scan it with your phone's camera app and open the link
-3. A pairing-approval popup appears front and center on the desktop — click **Approve**
+1. In POTACAT, open **Settings > ECHOCAT** (or **Summary**). On the **ECHOCAT** card, click **Pair my device…**. A dialog opens with a QR code and a link you can copy.
+2. In the ECHOCAT app, scan the QR code — or scan it with your phone's camera app and open the link.
 
-On the same network, the app can also discover your desktop automatically ("tap to pair") — tap the discovered rig and approve the request on the desktop.
+Pairing by QR code or link needs no approval on the desktop. The code works once.
+
+**Tap to pair.** On the same network, the app can also discover your desktop automatically. Tap the discovered rig, and an Approve/Deny window opens on the desktop: click **Approve**. This is the setting **Allow tap-to-pair from the local network** in **Settings > ECHOCAT**, on by default.
+
+Tap-to-pair works only from your home network or your tailnet. While the station is reachable through the POTACAT Cloud Tunnel, a tap-to-pair from anywhere else is refused, and the phone is told to scan the pairing QR instead.
 
 > **Tip:** If the in-app scanner won't cooperate, generate the pairing URL on the desktop and open it directly in your phone's browser. For anything else that goes wrong, see the [Connectivity & Pairing guide](nested/echocat-connectivity.md).
 
@@ -139,7 +148,7 @@ ECHOCAT includes a full CW keyer that lets you send CW from your phone's touchsc
 
 ### Enable CW
 
-1. In POTACAT desktop Settings > ECHOCAT, check **Enable CW Keyer**
+1. In POTACAT on the desktop, open **Settings > ECHOCAT** and, under **Remote CW Keyer**, tick **Enable Remote CW Keyer**. (**Enable CW Keyer**, under **Settings > Station**, is a different setting: the desktop's own keyer.)
 2. On your phone, the CW panel appears when you're in CW mode
 
 ### CW Panel Controls
@@ -147,7 +156,7 @@ ECHOCAT includes a full CW keyer that lets you send CW from your phone's touchsc
 - **WPM** — adjust sending speed (5–50 WPM)
 - **Keyer mode** — Iambic B, Iambic A, or Straight Key
 - **Sidetone** — adjustable frequency (400–900 Hz) and volume
-- **5 macro buttons** — programmable CW messages (default: CQ, 599, 73, AGN, TU). Customize the labels and text in POTACAT's desktop settings.
+- **Macro buttons** — programmable CW messages, up to 25. Customize the labels and text in POTACAT's desktop settings.
 - **Free text field** — type any text and send it as CW
 
 ### CW Keying Methods
@@ -222,23 +231,6 @@ The mobile app's **ACT** tab doesn't need POTACAT Desktop. Out in the field with
 - **The automatic re-spot when you log a QSO** needs the desktop.
 - **Logging for another operator** ("Log as") needs the desktop.
 
-## Club Station Mode
-
-For multi-operator club stations, ECHOCAT supports authenticated access with license privilege enforcement.
-
-### Setup
-
-1. In POTACAT Settings > ECHOCAT, enable **Club Station Mode**
-2. Point it to a `club_users.csv` file with columns for callsign, password, license class, and rig access
-3. Each member logs in with their callsign and password
-
-### How It Works
-
-- Members can only tune frequencies within their license class privileges (e.g., a US Technician can't tune 80m SSB)
-- Rig access can be restricted per member
-- The OPERATOR field in logged QSOs is set to the individual member's callsign
-- All actions (logins, tunes, PTT, rig switches) are written to an audit log
-
 ## Connection Paths
 
 There are three ways for your phone to reach POTACAT. The app checks all of them at connect time and uses the fastest — walk into the house mid-QSO and it hands off from Cloud or Tailscale to LAN automatically. The indicator at the top of the app shows the active path (**LAN**, **TAIL**, or **CLOUD**) and the latency.
@@ -289,7 +281,7 @@ With POTACAT Cloud you can grant another operator timed access to your radio —
 - With split on, a guest's transmission is checked against the frequency the radio will actually transmit on, not the dial
 - From 1.14.0, **a guest is told why a transmission was refused**, in plain words, in their FT8 window, VFO window and log. When the refusal is because your radio isn't reporting its power, **you get a notice too**, *Guest Pass: your radio is not reporting its power, so the guest cannot transmit*, and the log says what to check: that **Settings > My Rigs** names the radio's exact model (and CI-V address on an Icom). On an Icom, see [CI-V pacing](nested/rig-ic-7300.md#ci-v-pacing-mode-or-power-never-reported)
 - From 1.14.0, right after setting the radio to the pass's power cap, POTACAT asks the radio to report it, so the first transmission doesn't wait. A cap above the radio's [full power](nested/my-rigs.md#full-power-w) gives the radio's full power
-- The guest needs a **free POTACAT Cloud account** — this provides the audit trail of who operated your station
+- Normally the guest signs in with a **free POTACAT Cloud account**. That is how POTACAT knows the callsign to put on the air, and it provides the audit trail of who operated your station. In **Share my rig…**, under **Sign-in requirement**, you can tick **Allow without a POTACAT Cloud sign-in**. A guest with no sign-in has no verified callsign, so they can listen and log but not transmit
 - Rig sharing requires the Cloud tunnel; Tailscale covers your own devices, but sharing means Cloud (or adding the guest to your Tailnet yourself)
 
 > **Note:** The remote guest is the control operator and operates under **their own callsign**, per the usual remote-operation rules. Check the regulations that apply in your country.
@@ -334,12 +326,11 @@ Older app versions call this password the *access token*.
 
 | Setting | Default | Description |
 |---------|---------|-------------|
-| Enable ECHOCAT | Off | Start the ECHOCAT server |
 | Who can reach this computer | Local network and Cloud | **Local network and Cloud**, **Cloud only** or **Off** (1.13.10+). See [above](#who-can-reach-this-computer) |
 | Port | 7300 | HTTPS/WebSocket server port |
 | Password-protect your rig | Off | Require a password to reach the ECHOCAT address. The web page asks for it; the app gets it when pairing |
 | PTT Safety Timeout | 180s | Auto-drop PTT after this many seconds |
-| Enable CW Keyer | Off | Allow CW keying from phone |
+| Enable Remote CW Keyer | Off | Allow CW keying from phone |
 | CW Key Port | None | COM port for hardware DTR keying |
 | Audio Input | None | RX audio device (radio → phone) |
 | Audio Output | None | TX audio device (phone → radio) |

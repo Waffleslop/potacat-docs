@@ -18,7 +18,7 @@ You don't have to choose forever, either — the app tries all available paths a
 
 ## Path 1: Same Wi-Fi (LAN)
 
-Nothing to configure. Enable ECHOCAT on the desktop, pair the app (or open the URL in a browser), and go. This is the fastest, lowest-latency path.
+Nothing to configure. ECHOCAT is on from install: pair the app (or open the URL in a browser), and go. This is the fastest, lowest-latency path.
 
 The only common snag is on iPhone — iOS blocks local-network access until you allow it. See [iOS: QR scans but nothing happens](#ios-qr-scans-but-nothing-happens).
 
