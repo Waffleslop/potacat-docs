@@ -6,7 +6,7 @@ This page summarizes major POTACAT and ECHOCAT releases — it is not an exhaust
 
 Winlink Mail gets Archive, a Deleted folder you can restore from, and Reply all, and every sent message says how it went out. Packet closes its link cleanly, Winlink gets its own TX level, and a Mac says plainly when macOS is keeping POTACAT from hearing the radio.
 
-- **Where Winlink works today.** Internet mail works on Windows, Linux and Mac. ARDOP and packet over the radio run on Windows and Linux. No packet transfer has yet been confirmed on the air. See [Winlink Email](nested/winlink.md).
+- **Where Winlink works today.** Internet mail works on Windows, Linux and Mac. ARDOP and packet over the radio are built in on all three; packet mail has gone through on the air (thanks NA4DQ), and on the Mac neither has been confirmed with a gateway yet. See [Winlink Email](nested/winlink.md).
 - **Winlink mail:** Archive; a Deleted folder with Restore and Delete for good, emptied after 7, 30 or 90 days, or Never; Reply all; and a line on each sent message saying when and how it went out. ECHOCAT Web's Mail tab has the same actions; the ECHOCAT app does not yet. Thanks NJ2DX.
 - **Packet closes its link cleanly**, so the gateway no longer turns away calls for up to 15 minutes, and a gateway still holding the last link is not called again. Thanks NA4DQ and N5XHI.
 - **Winlink has its own TX level** slider next to Power (modulation, not RF power), and the session summary shows the audio levels.

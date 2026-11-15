@@ -36,7 +36,7 @@ From 1.13.2, the Winlink Mail window and ECHOCAT Web's **Mail** tab also open wi
 
 Messages you write wait in the **Outbox** until the next **Send / Receive**. Choose how they go in **Send via**.
 
-> **Where Winlink works, as of 1.14.5.** Internet mail works on Windows, Linux and Mac. ARDOP and packet over the radio are built in on Windows, Linux and Mac; on a Mac they have not yet been confirmed with a gateway. No packet transfer has yet been confirmed on the air on any system. VARA HF and VARA FM are your own copy of VARA.
+> **Where Winlink works, as of 1.14.5.** Internet mail works on Windows, Linux and Mac. ARDOP and packet over the radio are built in on all three; packet mail has gone through on the air, and on the Mac neither has been confirmed with a gateway yet. VARA HF and VARA FM are your own copy of VARA.
 
 ### Over the internet
 
@@ -94,7 +94,7 @@ A session you stop stays stopped, and a new session waits for the last one to ha
 
 ### Also listed, not recommended yet
 
-**Send via** also lists **Packet (VHF/UHF radio)**, which uses the Dire Wolf modem built into POTACAT. As of 1.14.5, no packet transfer has yet been confirmed on the air. Use ARDOP or Internet.
+**Send via** also lists **Packet (VHF/UHF radio)**, which uses the Dire Wolf modem built into POTACAT. As of 1.14.5, packet mail has gone through on the air. On a Mac it has not yet been confirmed with a gateway.
 
 From 1.14.4, Mercury is no longer offered for Winlink: no Winlink gateway runs Mercury. The Mercury HF Data chat window under **More** is unchanged.
 

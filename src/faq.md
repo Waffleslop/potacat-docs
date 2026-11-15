@@ -40,7 +40,7 @@ Windows 10 and later, macOS 12 (Monterey) and later, and Linux (including arm64)
 
 #### Can POTACAT send Winlink email?
 
-Yes, from 1.13.1. Open **More ▾ > Winlink Mail**. It works over the internet on Windows, Linux and Mac, and over the radio with ARDOP on Windows and Linux, with nothing else to install. See [Winlink Email](nested/winlink.md).
+Yes, from 1.13.1. Open **More ▾ > Winlink Mail**. It works over the internet on Windows, Linux and Mac, and over the radio with ARDOP and packet, with nothing else to install. As of 1.14.5, on a Mac neither has been confirmed with a gateway yet. See [Winlink Email](nested/winlink.md).
 
 #### Can N1MM+ control my radio through POTACAT?
 
