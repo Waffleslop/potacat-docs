@@ -76,7 +76,7 @@ With **CAT RTS = ENABLE**, leave **Disable DTR/RTS on connect** *unchecked* in P
 - Like the FT-710, change the radio's **DATA MODE** from `PSK` to `OTHERS` if you use SSB-over-DATA, or TX lands off frequency.
 - **Sharing the radio with Win4Yaesu:** Win4Yaesu holds the physical CAT port, so give POTACAT a virtual port with rig type **Serial CAT (Kenwood / Yaesu)**. See [Sharing Your Radio with Other Programs](sharing-your-radio.md). Note that com0com does not work inside a Windows VM; VSP Manager (free for hams) is an alternative there.
 
-> **Note:** The FT-991A's `KY` command has no free-text form. Before 1.14.6, CW text macros keyed the transmitter but produced no RF. From 1.14.6, with no **CW Key Port** set, CW text plays through the radio's keyer memory 5, as on the FT-891. POTACAT writes the text into memory 5, so anything you stored there is replaced, and memory 5 must be a text memory. This came from the CAT manual and has not yet been confirmed on a radio. For a paddle or straight key from afar, use a DTR keying adapter on the key jack.
+> **Note:** The FT-991A's `KY` command has no free-text form. Before 1.14.6, CW text macros keyed the transmitter but produced no RF. From 1.14.6, with no **CW Key Port** set, CW text plays through the radio's keyer memory 5, as on the FT-891. POTACAT writes the text into memory 5, so anything you stored there is replaced, and memory 5 must be a text memory: menu **022 CW MEMORY 5** set to `TEXT`, the factory setting. This came from the CAT manual and has not yet been confirmed on a radio. For a paddle or straight key from afar, use a DTR keying adapter on the key jack.
 
 ## Known quirks
 

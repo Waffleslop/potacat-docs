@@ -10,7 +10,7 @@ Full remote setup guide (Hamlib at 19200, Digirig audio, the voice-SSB cable det
 - Connect as **Other Rig (Hamlib)** at `19200`. If the G90 profile won't read the frequency, some users have success selecting the **X5105** (or IC-718) model instead.
 - **ATU**: the G90's CAT protocol has no working remote-tune command — use the front-panel tuner button. This is a radio limitation, not a POTACAT one.
 - The TX power slider is a **percentage of maximum power, not watts** — `50` on a 20&nbsp;W radio means 10&nbsp;W. (True for every rig, but most noticeable on QRP radios.)
-- **ECHOCAT audio**: the G90 only passes USB audio in **U-D (data) mode**, but in data mode ECHOCAT hides the SSB PTT button (PTT is shown for SSB/FreeDV only; from 1.14.6, pressing PTT in a FreeDV mode is refused with a message, because FreeDV transmit is not built yet) and you can't switch modes back from the phone. Plan your mode before you walk away from the radio. Audio interfaces in community use: Xiegu CE-19, DE-19, and xggcomms units.
+- **ECHOCAT audio**: the G90 only passes USB audio in **U-D (data) mode**, but in data mode ECHOCAT hides the SSB PTT button (PTT is shown for SSB; in FreeDV modes, from 1.14.6, pressing PTT is refused with a message, because FreeDV transmit comes later) and you can't switch modes back from the phone. Plan your mode before you walk away from the radio. Audio interfaces in community use: Xiegu CE-19, DE-19, and xggcomms units.
 
 ## Xiegu X6100 / X6200
 

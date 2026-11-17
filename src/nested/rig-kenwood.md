@@ -25,7 +25,7 @@ POTACAT keys the rear input for digital modes and remote audio. From 1.14.6 you 
 
 ### ECHOCAT
 
-With the radio in DATA mode, the PTT button disappears from ECHOCAT — that's by design (PTT is shown for SSB/FreeDV only; from 1.14.6, pressing PTT in a FreeDV mode is refused with a message, because FreeDV transmit is not built yet). Take the radio out of data mode to get it back.
+With the radio in DATA mode, the PTT button disappears from ECHOCAT — that's by design (PTT is shown for SSB; in FreeDV modes, from 1.14.6, pressing PTT is refused with a message, because FreeDV transmit comes later). Take the radio out of data mode to get it back.
 
 ### Antenna tuner
 
