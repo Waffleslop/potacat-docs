@@ -9,7 +9,7 @@ POTACAT can connect to a Yaesu **FTDX10**, **FT-710** or **FTDX101D/MP** over th
 - **Works:** CAT control (frequency, mode, spot clicks, the VFO window and meters) and **receive audio** over the network, for FT8 decoding, SSTV, the waterfalls, the VFO window's speaker and listening from ECHOCAT.
 - **Band scope:** the radio's scope comes over the LAN too, in the Band Scope window, the FT8 window's scope strip and ECHOCAT, with the span read from the radio. On the FTDX10 and FTDX101, the span codes are taken from the FT-710's, so the span shown may be off.
 - **Transmit audio over the network, from 1.14.6.** With **Audio source** set to Yaesu LAN audio, voice, voice macros, JTCAT FT8 and FT4, Tune, SSTV and CW text go over the network, and JTCAT keeps hearing after the first transmission. Before 1.14.6 POTACAT would not key the radio while its audio came over the network.
-- **Doesn't work: Winlink over LAN audio.** For Winlink, set **Audio source** to the radio's own USB sound card on this computer.
+- **Doesn't work: Winlink over LAN audio.** Winlink needs a sound card on this computer: set **Audio source** to the radio's own USB audio or an interface, not the LAN audio.
 - **Mute the radio's speaker, from 1.14.6.** Tick **Mute the radio's speaker monitor and CW sidetone while POTACAT has the radio** in the rig's settings (FT-710 and FTDX10). POTACAT sets the radio's monitor off and its level to 0 in each mode you use, and puts every mode back when it disconnects or quits.
 
 ## Before you start

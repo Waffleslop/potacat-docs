@@ -39,7 +39,9 @@ The settings below are the community reference setup for the FT-891 with a Digir
 
 ## CW keying
 
-The FT-891's `KY` CAT command has no free-text form. Before 1.14.6, CW text macros keyed the transmitter but produced no RF on this radio. From 1.14.6, CW text plays through the radio's keyer memory 5, as on the FT-991A. This came from the CAT manual and has not yet been confirmed on a radio.
+The FT-891's `KY` CAT command has no free-text form. Before 1.14.6, CW text macros keyed the transmitter but produced no RF on this radio. From 1.14.6, with no **CW Key Port** set, CW text plays through the radio's keyer memory 5, as on the FT-991A. This came from the CAT manual and has not yet been confirmed on a radio.
+
+> **Warning:** POTACAT writes the text into keyer memory 5, so anything you stored in memory 5 is replaced. Memory 5 must be a text memory: menu **04-11 CW MEMORY 5** set to `TEXT`, the factory setting.
 
 For a paddle or straight key from afar, key the radio's DTR line instead of CAT:
 
@@ -57,7 +59,7 @@ For a paddle or straight key from afar, key the radio's DTR line instead of CAT:
 
 CAT-level facts about this radio (useful with **Rig → Custom Command**):
 
-- From 1.14.6, POTACAT's RF gain control covers the radio's whole range.
+- The FT-891 takes RF gain as `000`–`030` over CAT. From 1.14.6, POTACAT's RF gain control maps its whole range onto that, closed to fully open.
 - TX power range is 5–100 W; the rig clamps at 5 W minimum.
 - ATU: send `AC002;` alone to start a tune cycle (`AC001; AC002;` together fails); `AC000;` turns the tuner off.
 - Filter width is `SH01xx;` — `SH0xx;` is IF shift, a different control.
