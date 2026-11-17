@@ -1,6 +1,6 @@
 # Yaesu SCU-LAN10 (Experimental)
 
-> **Experimental, new in POTACAT 1.14.0.** It was built from the published protocol description and hasn't been tested on hardware yet. If you try it, please send a report from **🐞 Report a Bug** in the Settings sidebar: see [Report a Bug](../community--support.md#report-a-bug).
+> **Experimental, new in POTACAT 1.14.0.** It was built from the published protocol description. From 1.14.6, transmit audio over the network has been tested on an FT-710. If you try it, please send a report from **🐞 Report a Bug** in the Settings sidebar: see [Report a Bug](../community--support.md#report-a-bug).
 
 POTACAT can connect to a Yaesu **FTDX10**, **FT-710** or **FTDX101D/MP** over the network through Yaesu's **SCU-LAN10** unit, with no USB cable to the computer.
 
@@ -8,7 +8,9 @@ POTACAT can connect to a Yaesu **FTDX10**, **FT-710** or **FTDX101D/MP** over th
 
 - **Works:** CAT control (frequency, mode, spot clicks, the VFO window and meters) and **receive audio** over the network, for FT8 decoding, SSTV, the waterfalls, the VFO window's speaker and listening from ECHOCAT.
 - **Band scope:** the radio's scope comes over the LAN too, in the Band Scope window, the FT8 window's scope strip and ECHOCAT, with the span read from the radio. On the FTDX10 and FTDX101, the span codes are taken from the FT-710's, so the span shown may be off.
-- **Doesn't work: transmit audio over the LAN.** POTACAT won't key the radio while its audio comes over the network, because the carrier would be silent. To transmit from POTACAT (FT8, SSTV or voice), set **Audio source** to the radio's own USB sound card on this computer.
+- **Transmit audio over the network, from 1.14.6.** With **Audio source** set to Yaesu LAN audio, voice, voice macros, JTCAT FT8 and FT4, Tune, SSTV and CW text go over the network, and JTCAT keeps hearing after the first transmission. Before 1.14.6 POTACAT would not key the radio while its audio came over the network.
+- **Doesn't work: Winlink over LAN audio.** For Winlink, set **Audio source** to the radio's own USB sound card on this computer.
+- **Mute the radio's speaker, from 1.14.6.** Tick **Mute the radio's speaker monitor and CW sidetone while POTACAT has the radio** in the rig's settings (FT-710 and FTDX10). POTACAT sets the radio's monitor off and its level to 0 in each mode you use, and puts every mode back when it disconnects or quits.
 
 ## Before you start
 
@@ -40,7 +42,7 @@ POTACAT can connect to a Yaesu **FTDX10**, **FT-710** or **FTDX101D/MP** over th
 4. **Base port:** `50000`, unless you changed it on the unit. It's the first of four UDP ports; CAT, audio and scope follow it.
 5. **User** and **Password:** the ones you set on the unit. Leave both blank for the factory login.
 6. Click **Test Connection**. It should log in, name your radio and show its frequency.
-7. For receive audio over the network, set **Audio source** to the Yaesu LAN audio option (receive only), then **Save**.
+7. For audio over the network, set **Audio source** to the Yaesu LAN audio option, then **Save**.
 
 ## If it doesn't connect
 

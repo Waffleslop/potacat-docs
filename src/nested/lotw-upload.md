@@ -10,6 +10,8 @@ POTACAT signs and uploads your log to ARRL's Logbook of the World (LoTW) with yo
 
 POTACAT finds TQSL on its own. If it can't, Settings says "TQSL was not found"; install TQSL, then reopen Settings.
 
+From 1.14.6, if TQSL is installed somewhere else, choose it in **TQSL program:** in **Settings > Logging**, with **Browse**. On Linux, POTACAT also finds TQSL installed as a Flatpak.
+
 ## Uploading
 
 1. Open **Settings > Logging** and tick **Upload to ARRL Logbook of the World (via TQSL)**.

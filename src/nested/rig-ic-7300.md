@@ -141,6 +141,7 @@ Click **Test Connection**. For JTCAT and SSTV over the network, set **Audio sour
 ## IC-7610
 
 - CI-V address is **`98h`**.
+- **Band scope:** the scope needs 115200 baud over USB. On the radio, set **MENU > SET > Connectors > CI-V > CI-V USB Port** to `Unlink from [REMOTE]` (the factory setting), then **CI-V USB Baud Rate** to `115200`, and set the baud rate in POTACAT to 115200 as well. While the USB port is linked to [REMOTE] it follows the plain **CI-V Baud Rate**, which stops at 19200, and POTACAT at 115200 cannot reach the radio. POTACAT shows this as a setup note from 1.14.6.
 - The USB 3.0 socket, **[USB 2]**, is the I/Q port. POTACAT does not use it; see [IC-7610: the I/Q Port and HDSDR](rig-ic-7610-iq.md).
 - **No TX audio from ECHOCAT/digital modes**: set **MENU > SET > Connectors > MOD INPUT > SSB MOD** to `USB1` (or `USB2`, whichever port your cable is on), and set **SSB-D MOD** to the same.
 - If **Test Connection** passes but the radio never QSYs, type the bare COM port name (e.g. `COM7`) into the manual COM field instead of accepting the auto-detected "Silicon Labs CP210x" dropdown entry.

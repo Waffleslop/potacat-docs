@@ -29,8 +29,11 @@ If CW spot clicks land you in a wide filter, two rig-side settings are responsib
 
 > **Tip:** Set your preferred per-mode filter widths in **Settings > Tuning** and they'll persist across spot clicks and band changes.
 
+From 1.14.6, the **ATU** button starts the K3's tuner. Before, it did nothing.
+
 ## KX2 / KX3
 
 - Both work out of the box over **Serial CAT (Kenwood)** at `38400` baud.
+- From 1.14.6, the **ATU** button starts the tuner. Before, it did nothing.
 - **FT8/JTCAT**: the KX-series per-band memory recall can override DATA A when you change bands. Set the Radio Model to **KX2/KX3** so POTACAT re-sends the mode after each QSY.
 - The K3 filter-width advice above applies here too: set per-mode widths in **Settings > Tuning**.

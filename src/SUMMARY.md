@@ -30,6 +30,7 @@
     - [Serial CAT (Kenwood)](nested/serial-cat-kenwood.md)
     - [Other Rig (Hamlib)](nested/other-rig-hamlib.md)
     - [rigctld Network](nested/rigctld-network.md)
+    - [Zeus and Thetis (TCI)](nested/zeus-thetis-tci.md)
     - [My Rigs](nested/my-rigs.md)
     - [VFO Window](nested/vfo-window.md)
     - [Sharing Your Radio with Other Programs](nested/sharing-your-radio.md)

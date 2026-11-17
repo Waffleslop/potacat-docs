@@ -35,11 +35,13 @@ The settings below are the community reference setup for the FT-891 with a Digir
 | **16-03** | HF PWR | `40` W |
 | **16-14** | DATA GAIN | `50` |
 
+> **Note:** Menu **08-12 DATA BFO** is `LSB` from the factory. The FT-891 takes the data mode's sideband from this menu, so FT8 and Winlink go out on LSB until it is set to `USB`. From 1.14.6, POTACAT shows this as a setup note, *Set DATA BFO to USB*.
+
 ## CW keying
 
-> **Warning:** The FT-891's `KY` CAT command has no free-text form, so **CW text macros key the transmitter but produce zero RF** on this radio (same limitation as the FT-991A). This is a known open limitation.
+The FT-891's `KY` CAT command has no free-text form. Before 1.14.6, CW text macros keyed the transmitter but produced no RF on this radio. From 1.14.6, CW text plays through the radio's keyer memory 5, as on the FT-991A. This came from the CAT manual and has not yet been confirmed on a radio.
 
-For working remote CW, key the radio's DTR line instead of CAT:
+For a paddle or straight key from afar, key the radio's DTR line instead of CAT:
 
 - Wire a cheap FTDI/CH340 USB-serial adapter to the radio's **KEY** jack and select it as the **CW Key Port** in POTACAT Settings.
 - Make sure break-in (**BK-IN**) is enabled on the radio, or it will sidetone without transmitting.
@@ -55,7 +57,7 @@ For working remote CW, key the radio's DTR line instead of CAT:
 
 CAT-level facts about this radio (useful with **Rig → Custom Command**):
 
-- RF gain over CAT spans `000`–`030`, not 0–255 as the CAT manual states — POTACAT's rig profile accounts for this.
+- From 1.14.6, POTACAT's RF gain control covers the radio's whole range.
 - TX power range is 5–100 W; the rig clamps at 5 W minimum.
 - ATU: send `AC002;` alone to start a tune cycle (`AC001; AC002;` together fails); `AC000;` turns the tuner off.
 - Filter width is `SH01xx;` — `SH0xx;` is IF shift, a different control.

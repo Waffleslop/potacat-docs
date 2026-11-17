@@ -1,5 +1,7 @@
 # TCI Panadapter Spots
 
+This page is about spot markers on the panadapter. To tune, hear and transmit through Zeus or Thetis, see [Zeus and Thetis (TCI)](zeus-thetis-tci.md), from 1.14.6.
+
 For Thetis (ANAN/Hermes-Lite 2), ExpertSDR3 (SunSDR), and other TCI-compatible SDR software: enable **Push to Thetis/TCI panadapter** in Settings → Display.
 
 POTACAT connects via WebSocket and sends color-coded spot markers to your panadapter with black text labels for readability. Configure:

@@ -19,13 +19,17 @@ The 590 family selects its TX audio source with the keying command itself:
 | `TX;` | Front **mic** input |
 | `TX1;` | **Rear/USB** audio input |
 
-POTACAT keys the rear input for digital modes and remote audio. If your radio keys up but transmits silence on FT8, SSTV, or ECHOCAT voice, you're seeing the front-mic behavior — send `TX1;` as a custom CAT command to confirm: with `TX1;` the radio transmits the USB audio correctly.
+POTACAT keys the rear input for digital modes and remote audio. From 1.14.6 you choose the socket yourself: see [Transmit Audio Input](my-rigs.md#transmit-audio-input-kenwood). If your radio keys up but transmits silence on FT8, SSTV, or ECHOCAT voice, you're seeing the front-mic behavior — send `TX1;` as a custom CAT command to confirm: with `TX1;` the radio transmits the USB audio correctly.
 
 > **Note:** The radio may still beep on each keying command — that's normal.
 
 ### ECHOCAT
 
-With the radio in DATA mode, the PTT button disappears from ECHOCAT — that's by design (PTT is shown for SSB/FreeDV only). Take the radio out of data mode to get it back.
+With the radio in DATA mode, the PTT button disappears from ECHOCAT — that's by design (PTT is shown for SSB only; from 1.14.6 PTT is off in FreeDV modes). Take the radio out of data mode to get it back.
+
+### Antenna tuner
+
+From 1.14.6, the tune button starts the TS-590S/SG's tuner, including a remote tuner.
 
 ## TS-890S
 
@@ -45,7 +49,9 @@ If you operate with the radio's own mic in hand, uncheck **SSB-over-DATA** in Se
 
 If the S-meter and power readings look far too low and SWR shows blank in ECHOCAT, update POTACAT — early builds converted TS-480 meter values with FlexRadio scaling by mistake.
 
-From 1.14.5, POTACAT keys the TS-480 with data send, as it already did for the TS-590, TS-890 and TS-990, whether the radio is on a Kenwood serial link or through Hamlib. Before, it used the command for the front microphone, so FT8 over the ACC cable went out silent while the mic was live. This has not yet been tried on a TS-480.
+From 1.14.5, POTACAT keys the TS-480 with data send, as it already did for the TS-590, TS-890 and TS-990, whether the radio is on a Kenwood serial link or through Hamlib. Before, it used the command for the front microphone, so FT8 over the ACC cable went out silent while the mic was live. 
+
+That change left a TS-480 with an interface on the front microphone jack sending no audio. From 1.14.6, **Transmit audio input:** in **Settings > My Rigs** chooses **Rear (data / ACC2 socket)** or **Front (microphone jack)**, and a TS-480 asks you on its first transmit. See [Transmit Audio Input](my-rigs.md#transmit-audio-input-kenwood).
 
 ## Transmit power through Hamlib
 

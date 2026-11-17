@@ -134,6 +134,8 @@ In the native app, these rig controls (including custom CAT commands) live behin
 
 If your radio supports power control over CAT, you can power it on and off from your phone. In the app, the power controls are in the **VFO** tab.
 
+From 1.14.6, **Power Off** is hidden for a radio POTACAT cannot switch back on, which is most radios on a USB cable. See [Power Off](nested/my-rigs.md#power-off).
+
 > **Tip:** On Icom rigs, if power-*off* works but power-*on* doesn't, set the radio's **CI-V Baud Rate** to `AUTO` — CAT power-on requires a wake-up preamble that's sensitive to the baud setting.
 
 To go fully remote, the **POTACAT Launcher** — a small companion daemon on port `7301` — lets the app start or restart POTACAT Desktop itself. It runs in the system tray and requires the installed POTACAT (not a source build).
@@ -284,6 +286,14 @@ With POTACAT Cloud you can grant another operator timed access to your radio —
 - Normally the guest signs in with a **free POTACAT Cloud account**. That is how POTACAT knows the callsign to put on the air, and it provides the audit trail of who operated your station. In **Share my rig…**, under **Sign-in requirement**, you can tick **Allow without a POTACAT Cloud sign-in**. A guest with no sign-in has no verified callsign, so they can listen and log but not transmit
 - From 1.14.5, **a valid pass is never shown as cancelled.** A guest using POTACAT as a remote is told what is happening, that the pass is still good, and POTACAT keeps trying: *Waiting: the owner is using the radio*, *standing by* when the guest's own phone has the radio, or *Couldn't check your pass just now. Trying again.* Only a pass that has ended or that you cancelled ends it, and leaving a session no longer uses up the pass. ECHOCAT Web shows the same, including when you pause the guest's session
 - From 1.14.5, a pass that cannot be used says why in a sentence: a pass that belongs to another account, your own pass, or a pass made for another callsign
+- From 1.14.6, **the Share Your Rig window shows who has the radio**, with three controls for you:
+    - **Take the radio:** **Now** or **In 5 minutes**, with an optional message to the guest of up to 140 characters. A pending take can be called off with **Let** *call* **keep it**
+    - **Give it back** hands the radio back to the guest
+    - **Cancel pass** ends the pass once you confirm with **Yes, cancel the pass**. **Keep the pass** leaves it running
+- From 1.14.6, when you have held the radio for 5 minutes with no transmitting, keying, tuning or mode change, the guest is told the radio is free and may press **Take the radio**. Nothing switches by itself. The old automatic 2-minute hand-back is gone
+- From 1.14.6, a guest is told in plain words whether they are on the air, waiting and why, reconnecting, or the pass is over. A short Cloud hiccup no longer ends a pass. With two devices on one pass, **Use it here instead** moves it without dialling again
+- From 1.14.6, a guest can use the station's own SDRs, switching between and tuning the ones you set up. Adding a new SDR is refused. A guest never receives SDR passwords saved inside an SDR address, or your full settings
+- From 1.14.6, a contact a guest makes on your station goes on to the guest's own external logger, such as MacLoggerDX, through the guest's POTACAT
 - Rig sharing requires the Cloud tunnel; Tailscale covers your own devices, but sharing means Cloud (or adding the guest to your Tailnet yourself)
 
 > **Note:** The remote guest is the control operator and operates under **their own callsign**, per the usual remote-operation rules. Check the regulations that apply in your country.

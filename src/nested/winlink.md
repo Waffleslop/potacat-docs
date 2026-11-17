@@ -36,7 +36,7 @@ From 1.13.2, the Winlink Mail window and ECHOCAT Web's **Mail** tab also open wi
 
 Messages you write wait in the **Outbox** until the next **Send / Receive**. Choose how they go in **Send via**.
 
-> **Where Winlink works, as of 1.14.5.** Internet mail works on Windows, Linux and Mac. ARDOP and packet over the radio are built in on all three; packet mail has gone through on the air, and on the Mac neither has been confirmed with a gateway yet. VARA HF and VARA FM are your own copy of VARA.
+> **Where Winlink works, as of 1.14.6.** Internet mail works on Windows, Linux and Mac. ARDOP and packet over the radio are built in on all three; packet mail has gone through on the air, and on the Mac neither has been confirmed with a gateway yet. VARA HF and VARA FM are your own copy of VARA.
 
 ### Over the internet
 
@@ -58,6 +58,9 @@ POTACAT handles the radio for the whole session:
 - **Power**, **PWR** and **SWR** sit on the session line while you transmit.
 - From 1.14.5, a **TX level** slider sits next to **Power**. It sets how loud the modem's audio goes into the radio's sound card for ARDOP and packet. It is modulation, not RF power. Until 1.14.5 that level was JTCAT's Drive slider; it starts at the level Winlink already used, and then the two are separate. On Flex Direct and Icom Network it is greyed out, because the radio's power sets the level there.
 - From 1.14.5, the session summary shows the audio levels: what the modem heard from the radio, and what reached the radio at your TX level. When the audio reached full scale on a sound card, it says to turn **TX level** down to about 50% and watch the radio's ALC.
+- From 1.14.6, the modem's input level shows next to **Busy** / **Clear**, for example *Input -18 dBFS*. At -3 dBFS or above it says *Input too high*: turn down the radio's USB or data audio, or the sound device's input, so the modem can hear when the channel is clear.
+- From 1.14.6, when no radio audio reaches POTACAT, the waterfall says so and why, instead of staying black.
+- From 1.14.6, a session keeps the radio in its data mode even when JTCAT's **Switch radio to DATA mode** box is off.
 - The SWR guard stops a session that is transmitting into a bad match.
 - A session ends after the time limit you set (**End a radio session after … minutes** in Settings). A stuck session also ends after 3 minutes with no progress, and the transmitter is released if it stays keyed for 30 seconds.
 

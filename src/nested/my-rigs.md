@@ -30,3 +30,37 @@ For such a radio, open **Settings > My Rigs**, edit it, and fill in **Full power
 
 - **Leave it blank** where power already reads right. Blank keeps the model's own power.
 - **With a Guest Pass**, a power cap above the radio's full power gives the radio's full power: a 5 W radio under a 25 W pass shows and logs 5 W.
+
+## Amplifier Drive Limit
+
+> **New in POTACAT 1.14.6.** Not yet tried on a radio.
+
+For an amplifier that needs little drive, open **Settings > My Rigs**, edit the radio, tick **An amplifier is connected: limit the drive power** and fill in **Never drive above (W):**.
+
+- POTACAT never sets this radio's power above that: not from a power slider, FT8, WSPR, Winlink, Tune, a guest or ECHOCAT. Every power slider stops there.
+- If the radio reports more, from its own knob or another program, POTACAT turns it back down.
+- Commands you type yourself in the rig panel's Commands tab are sent as written.
+- It is off unless you set it.
+
+## Power Off
+
+From 1.14.6, **Power Off** is hidden for a radio POTACAT cannot switch back on, which is most radios on a USB cable. A radio on a Yaesu SCU-LAN10 keeps it. To show it anyway, edit the radio in **Settings > My Rigs** and tick **Allow Power Off for a radio POTACAT cannot turn back on**.
+
+## Transmit Audio Input (Kenwood)
+
+> **New in POTACAT 1.14.6.**
+
+For the TS-480, TS-590S/SG, TS-890S and TS-990S, **Transmit audio input:** in **Settings > My Rigs** names the socket your sound card interface is plugged into:
+
+- **Rear (data / ACC2 socket)**
+- **Front (microphone jack)**
+- **Ask on first transmit**
+
+POTACAT tells the radio which one to send each time it transmits. The wrong one puts a carrier on the air with no audio. A TS-480 asks you on its first transmit.
+
+## A Band-Scope SDR on the Radio's IF Output
+
+From 1.14.6, under **Band scope from an SDR**, **The SDR is connected to:** has two choices:
+
+- **An antenna, or the radio's RX OUT (moves with the dial)**
+- **The radio's IF output (stays on one frequency)**, with **IF frequency (Hz):** from the radio's manual. The picture then holds still as you tune.

@@ -18,6 +18,7 @@ While it runs, JTCAT:
 - **One button for band and mode.** The toolbar has one button, for example **20m FT8**. Click it for a picker: mode chips (FT8, FT4, FT2 and the other modes) over a grid of the bands your radio has.
 - **The buttons are the actions.** Two rows: **Call CQ**, **Hunt** with its target, **HALT**, **Tune**, **ATU**, **Logbook** and **Options**. What CQ will send is shown beside it. **Tune** sends a steady carrier; **ATU** runs the radio's antenna tuner.
 - **Double-click a station** to answer it, as before.
+- From 1.14.6, **Band Activity** has a **Stream** / **Stations** switch. **Stations** shows one line per station heard, kept up to date and sortable, with **Need** (a new country, state, grid or call) and **Park** columns. A double-click answers. **Stations list keeps a station for** 2, 5 or 10 minutes, 5 by default.
 - If a voice or CW spot, or **Stop** on your phone, stopped the engine, the window says so and restarts it, instead of showing a band with nothing running.
 
 ### Hunt
