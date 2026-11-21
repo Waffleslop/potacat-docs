@@ -10,6 +10,7 @@
     - [Split View](nested/split-view.md)
     - [Pop-out Windows](nested/pop-out-windows.md)
     - [Directory](nested/directory.md)
+    - [Tune Links](nested/tune-links.md)
 - [Activator Mode](activator-mode.md)
     - [Starting an Activation](nested/starting-an-activation.md)
     - [Logging Contacts](nested/logging-contacts.md)
@@ -57,6 +58,7 @@
 - [JTCAT - FT8 & Digital Modes](nested/jtcat.md)
 - [SSTV](nested/sstv.md)
 - [Winlink Email](nested/winlink.md)
+- [APRS](nested/aprs.md)
 # Filters
 - [Band & Mode](nested/band--mode.md)
 - [Region](nested/region.md)

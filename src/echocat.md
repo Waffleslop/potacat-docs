@@ -298,6 +298,10 @@ With POTACAT Cloud you can grant another operator timed access to your radio —
 
 > **Note:** The remote guest is the control operator and operates under **their own callsign**, per the usual remote-operation rules. Check the regulations that apply in your country.
 
+## APRS in ECHOCAT Web
+
+From 1.14.7, ECHOCAT Web has an **APRS** tab: the station list and map, listening on your radio, the iGate switch and an internet beacon. It cannot send messages or beacon on the radio. See [APRS](nested/aprs.md#in-a-browser-echocat-web).
+
 ## More Than One of Your Devices (Beta)
 
 By default, the newest device to connect takes over the shack: connecting your laptop disconnects your phone, and the phone is told another device took over.
