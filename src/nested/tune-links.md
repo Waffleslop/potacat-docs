@@ -39,7 +39,7 @@ The same as clicking a spot in POTACAT:
 
 A tune link moves the radio and does not transmit.
 
-> **Warning:** There is one exception. With **Auto-tune ATU on band change** ticked in **Settings > Tuning**, a link that changes band starts the radio's tuner, exactly as a spot click on another band does. Most tuners send a short carrier to tune.
+From 1.14.7 a tune link never starts the automatic ATU tune, even with **Auto-tune ATU on band change** ticked in **Settings > Tuning**. Before 1.14.7, with that box ticked, a link that changed band could start the radio's tuner, and most tuners send a short carrier to tune.
 
 ## A Link Stops Automatic Transmitting First
 
