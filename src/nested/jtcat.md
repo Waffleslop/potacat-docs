@@ -193,9 +193,38 @@ From 1.13.3, the WSPR map in the JTCAT window has a legend for its colours: **gr
 
 ## Auto-Logging
 
-JTCAT logs each QSO automatically and forwards it to any logbooks you've configured — see [Logbook Forwarding](logbook-forwarding.md). There's nothing to click.
+JTCAT logs each QSO automatically and forwards it to any logbooks you've configured — see [Logbook Forwarding](logbook-forwarding.md). There's nothing to click. The exception is a contact that stops before any 73; see below.
 
-From 1.14.7, a QSO is logged when your RR73, RRR or 73 is sent, or when the other station's is received. A QSO that runs out of retries is no longer logged. JTCAT then shows *Not logged: call never sent RR73. Press Send 73 to log it.* with a **Send 73** button. Before 1.14.7, a QSO was logged when the report exchange completed.
+### When a contact is logged
+
+> **Changed in POTACAT 1.14.7.** This is the rule for everyone; it is not a setting.
+
+JTCAT logs a contact when your RR73, RRR or 73 to that station starts going out, or when theirs to you is received, whichever comes first. It is logged once. A contact that stops before any 73 is not logged.
+
+- It applies to contacts made from the JTCAT window, ECHOCAT Web and the ECHOCAT phone app, and to Hunt, Run, a Spot Target and a click on a decode alike.
+- POTACAT logs when your 73 starts going out, not after it finishes, so a missed last cycle does not lose the contact.
+- A signal report must have gone at least one way. A 73 with no report exchanged logs nothing.
+- If you click a new station before your RR73 or 73 has gone out, and the other station's RR73, RRR or 73 has not been received, the earlier contact is not logged. Once your 73 has started going out, it is already in the log.
+- On the CQ side, pressing **Skip** before their R-report comes sends your RR73, and that logs the contact when it goes out.
+
+Before 1.14.7, JTCAT logged as soon as the reports had been exchanged, and at the tries limit it logged the contact and sent a 73 by itself.
+
+### Not logged: the other station never sent RR73
+
+If you exchanged reports but their RR73 never came, JTCAT stops transmitting after the tries limit (**Stop repeating a message after … tries**, in **Options**). It does not log the contact and does not send a 73.
+
+- **JTCAT window:** a red notice reads *Not logged: W1ABC never sent RR73. Press Send 73 to log it.*, with the station's call, and a **Send 73** button. The notice stays for one minute.
+- **Send 73** sends your 73, and the contact is logged as the 73 starts going out. It works for 5 minutes after the stop, and only if no other contact has started since. Hunt may start a new contact quickly, so press it promptly.
+- **ECHOCAT Web** shows the same notice and button.
+- **The ECHOCAT phone app** has no notice and no **Send 73** button yet. The contact is simply not logged. To finish it, use ECHOCAT Web or the JTCAT window within the 5 minutes.
+- **In Run,** there is no **Send 73**. JTCAT drops the contact without logging it and calls CQ again, with the notice *Not logged: W1ABC never sent RR73. Calling CQ again.*
+
+A stuck contact where reports did not go both ways ends as before: unlogged, with no **Send 73**.
+
+### Field Day
+
+- **You call CQ FD:** the contact is logged as soon as the other station's class and section are received. This is unchanged from 1.14.6, and it is an exception to the rule above.
+- **You answer a CQ FD:** the rule above applies. It logs when your RR73 starts going out. A plain 73 does not log a Field Day contact.
 
 From 1.13.10, JTCAT's records carry the QSO's real start and end times, CQ and ITU zones, continent and, for contacts in your own country, the city. If a JTCAT log fails, it says so on screen.
 
@@ -209,13 +238,13 @@ To check each contact before it's written, open the FT8 window's **Options** and
 - If several contacts finish while one is open, they wait their turn.
 - The heard grid, Field Day exchange and parks are kept.
 
+From 1.14.7 the window opens when your 73 starts going out or theirs is received. Contacts run from a phone or ECHOCAT Web are logged without the window.
+
 ### The "JTCAT FT8" comment
 
 By default, JTCAT puts `JTCAT FT8` in the comment of each FT8/FT4 contact. To leave the comment empty, untick **"JTCAT FT8" in the comment of FT8/FT4 contacts** in **Settings > Logging** (1.13.10 and later).
 
 From 1.13.3, a contact made with no frequency from the radio (CAT not connected) is logged on the band's FT8 dial frequency, so Wavelog and other logbooks don't refuse it as 0 kHz.
-
-That includes interrupted endings: if you click a new station while the previous QSO is still in its 73/courtesy phase, the completed QSO is logged **before** the new one replaces it.
 
 > **Note:** Some users report a logging bug where a QSO is logged immediately after the report is sent, with the sent RST recorded as both sent *and* received. If your logged reports look mirrored, check and correct the entry in the logbook.
 
