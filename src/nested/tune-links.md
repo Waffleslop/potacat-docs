@@ -2,7 +2,10 @@
 
 A web page can carry a link that tunes your radio in POTACAT. Click it and POTACAT moves your radio to that frequency and mode, just as if you had clicked the spot in POTACAT's own spot table. Your browser may ask whether to open POTACAT the first time; allow it.
 
-Anyone can put such a link on their own page.
+## Where Links Come From
+
+- **POTACAT Cloud's on-air pages** show a **Tune** button beside a report that is live, meaning heard in the last 15 minutes, with the note *Needs POTACAT on this computer.* The button is hidden on phones and tablets. It has been there since 20 November 2026.
+- Anyone can put such a link on their own page.
 
 ## The Form
 
