@@ -4,7 +4,7 @@ ECHOCAT turns your phone or tablet into a wireless remote for your POTACAT-conne
 
 ECHOCAT comes in two flavors:
 
-- **ECHOCAT for iOS and Android** — native apps, available on the App Store and Google Play for a one-time `$9.99` purchase. The apps add features a browser can't do: keep listening with the screen locked, QR-code pairing, automatic switching between connection paths, and Bluetooth accessories like BLE PTT buttons.
+- **ECHOCAT for iOS and Android** — native apps, available on the App Store and Google Play for a one-time `$9.99` purchase. The apps add features a browser can't do: keep listening with the screen locked, QR-code pairing, automatic switching between connection paths, and Bluetooth MIDI paddles. See [The ECHOCAT App: What It Has Today](nested/echocat-app.md).
 - **ECHOCAT Web** — free, built into POTACAT, and runs in any modern mobile browser. Nothing to install.
 
 Both work at the same time — pairing the app doesn't disable browser access.
@@ -177,7 +177,7 @@ ECHOCAT supports three keying methods that can work simultaneously:
 
 ECHOCAT integrates with POTACAT's JTCAT feature for remote FT8/FT4 operation.
 
-Tap the **FT8** tab on your phone to access:
+Tap the **Digi** tab on your phone to access:
 
 - **Band selection** (80m–6m) with one-tap band changes
 - **Mode selector** (FT8, FT4, FT2)
@@ -186,7 +186,7 @@ Tap the **FT8** tab on your phone to access:
 - **Waterfall** — live spectrum display streamed from the desktop
 - **Auto QSO sequencing** — JTCAT handles the exchange sequence; you just pick who to call
 
-**Hunt filters** (POTACAT 1.14.0): ECHOCAT Web has the same **Filters** sheet and the same status line under Hunt as the desktop FT8 window. See [Hunt filters](nested/jtcat.md#hunt-filters). ECHOCAT Web shows the saved Custom list even with Hunt off. A Guest Pass gets no Filters button. The phone app gets the Filters sheet and status line with its next update; there, you long-press a decode for **Never answer**.
+**Hunt filters** (POTACAT 1.14.0): ECHOCAT Web has the same **Filters** sheet and the same status line under Hunt as the desktop FT8 window. See [Hunt filters](nested/jtcat.md#hunt-filters). ECHOCAT Web shows the saved Custom list even with Hunt off. A Guest Pass gets no Filters button. The phone app has the Filters sheet and status line too; there, you long-press a decode for **Never answer**.
 
 ## Activator Mode
 
@@ -194,7 +194,7 @@ ECHOCAT supports running full POTA/SOTA activations from your phone.
 
 ### Start an Activation
 
-1. Tap the **Activate** tab
+1. Tap the **Act** tab
 2. Select your activation type (POTA, SOTA, or Other)
 3. Enter your park/summit reference (autocomplete helps you find it)
 4. Tap **Start Activation**

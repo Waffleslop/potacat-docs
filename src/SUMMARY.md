@@ -53,6 +53,7 @@
     - [WebSDR, KiwiSDR & RTL-SDR Receive](nested/websdr.md)
 - [ECHOCAT - Remote Radio](echocat.md)
     - [Connectivity & Pairing](nested/echocat-connectivity.md)
+    - [The ECHOCAT App: What It Has Today](nested/echocat-app.md)
     - [Run Your Shack from Another POTACAT](nested/remote-desktop.md)
     - [Running Headless (Draft)](nested/headless.md)
 - [JTCAT - FT8 & Digital Modes](nested/jtcat.md)
