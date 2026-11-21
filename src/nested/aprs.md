@@ -230,6 +230,7 @@ As of 1.14.7:
 
 - **30 m on a FlexRadio:** listening, the iGate passing a packet to APRS-IS, and one radio beacon have each been confirmed, on one radio. The 30 m beacon has not been tried on any other radio.
 - **2 m:** neither listening nor the radio beacon has been confirmed on the air yet.
+- **Messages:** not yet tried on the air.
 - **Mac and Linux:** listening has been tried on Windows only.
 
 If you try any of these, please send a report from [Report a Bug](../community--support.md#report-a-bug).

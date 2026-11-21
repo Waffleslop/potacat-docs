@@ -52,7 +52,7 @@ For a paddle or straight key from afar, key the radio's DTR line instead of CAT:
 
 - The DATA menu settings above (08-01 through 08-12) route digital-mode TX audio through the rear port — required for JTCAT/FT8 through the Digirig.
 - **11-06 SSB OUT LEVEL** directly sets how loud ECHOCAT's RX audio is.
-- **The radio keys in and out while you talk (DR-891 cable):** the Digirig DR-891 cable has its own VOX circuit, which keys the radio from the audio on one channel. During voice it can make the radio cycle in and out of transmit. Mute the **right** audio channel, so only the left channel carries audio: in Windows, open the Digirig's playback device > **Properties** > **Levels** > **Balance**, and set the right channel to 0.
+- **The radio keys in and out while you talk (DR-891 cable):** the Digirig DR-891 cable has its own VOX circuit, which keys the radio from the audio on one channel. During voice it can make the radio cycle in and out of transmit. Mute the **right** audio channel, so only the left channel carries audio: in Windows, open the Digirig's playback device > **Properties** > **Levels** > **Balance**, and set the right channel to 0. From 1.14.7, POTACAT can do this for FT8, Tune and Winlink: in **Settings > Radio**, edit the rig and set **Transmit on** to **Left channel only**. The default is **Both channels**.
 - **11-05 SSB MIC SELECT** picks the SSB TX audio source: if it's set to `MIC`, the hand mic — not your remote audio — is what transmits when ECHOCAT keys the radio.
 
 ## Known quirks

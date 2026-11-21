@@ -294,6 +294,7 @@ With POTACAT Cloud you can grant another operator timed access to your radio —
 - From 1.14.6, a guest is told in plain words whether they are on the air, waiting and why, reconnecting, or the pass is over. A short Cloud hiccup no longer ends a pass. With two devices on one pass, **Use it here instead** moves it without dialling again
 - From 1.14.6, a guest can use the station's own SDRs, switching between and tuning the ones you set up. Adding a new SDR is refused. A guest never receives SDR passwords saved inside an SDR address, or your full settings
 - From 1.14.6, a contact a guest makes on your station goes on to the guest's own external logger, such as MacLoggerDX, through the guest's POTACAT
+- From 1.14.7, a contact made on a lent station records the lending station's grid square, state and county, not the guest's home, and an activation contact takes the park's location. Such contacts go to LoTW in their own batch with that location
 - Rig sharing requires the Cloud tunnel; Tailscale covers your own devices, but sharing means Cloud (or adding the guest to your Tailnet yourself)
 
 > **Note:** The remote guest is the control operator and operates under **their own callsign**, per the usual remote-operation rules. Check the regulations that apply in your country.
