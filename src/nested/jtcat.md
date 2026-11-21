@@ -246,7 +246,7 @@ By default, JTCAT puts `JTCAT FT8` in the comment of each FT8/FT4 contact. To le
 
 From 1.13.3, a contact made with no frequency from the radio (CAT not connected) is logged on the band's FT8 dial frequency, so Wavelog and other logbooks don't refuse it as 0 kHz.
 
-> **Note:** Some users report a logging bug where a QSO is logged immediately after the report is sent, with the sent RST recorded as both sent *and* received. If your logged reports look mirrored, check and correct the entry in the logbook.
+The log records the report you sent and the report you received separately. If you press Skip to send RR73 before the other station's report has arrived, the contact is logged with the received report left blank; you can fill it in from the logbook.
 
 ## Troubleshooting
 
