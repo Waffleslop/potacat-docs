@@ -14,6 +14,10 @@ Select **K4** explicitly as the Radio Model. The K4 uses Elecraft's `DT` data su
 - Port `9204` (TLS-PSK) is **not** supported — use `9205`.
 - POTACAT performs the K4's authenticated handshake and keeps the session alive with a heartbeat. A wrong password shows up in the log as `socket closed before session established`.
 
+### Panadapter in the Band Scope
+
+From 1.14.4, a K4 connected as **K4 Remote (network)** shows its panadapter in **More > Band Scope**, with click to tune. POTACAT changes nothing on the radio. This has not yet been tried by a K4 owner; a log from one is welcome.
+
 ### SWR bar stays empty
 
 The K4 rejects the K3-era `RM1;` SWR query, so POTACAT doesn't poll SWR on the K4. An empty SWR bar is normal on this radio.

@@ -8,7 +8,7 @@ POTACAT can run a radio through **Zeus** or **Thetis** over TCI, with no sound c
 
 1. Start Zeus or Thetis and connect it to your radio.
 2. Enable TCI in that program. Use host `127.0.0.1` when it runs on this computer.
-3. In POTACAT, open **Settings > My Rigs**, add a rig and choose **Zeus or Thetis (TCI server)**.
+3. In POTACAT, open **Settings > Radio**, add a rig and choose **Zeus or Thetis (TCI server)**.
 4. Fill in **Program:**, **Host:** and **TCI port:**. The port is `40001` for Zeus and `50001` for Thetis.
 5. Leave **Start the receiver when POTACAT connects** ticked if POTACAT should start the receiver.
 6. Press **Test connection**.

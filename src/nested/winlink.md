@@ -75,6 +75,14 @@ A form is a web page written by someone else, and a received form came from whoe
 
 Forms need Pat 1.0.1 or newer, which POTACAT's own Pat is. With an older Pat set under **Settings > Station > Winlink > Advanced**, the Forms panel says *Winlink forms need Pat 1.0.1 or newer.* and names the version it found.
 
+## Favorites, Templates and the Address Book
+
+From 1.14.4, in the Winlink Mail window on the desktop. These are not in ECHOCAT Web.
+
+- **Favorite gateways.** The star beside the gateway list saves the gateway you picked. Favorites keep their place in the propagation order, marked with a star, and one missing from the list shows at the end. A call to a favorite or a [History](#history) gateway uses the bandwidth that gateway offers (2000 Hz on ARDOP), not 500 Hz. The radio's dial shows in the top bar, with **Retune** when it is off the gateway.
+- **Templates.** **Templates** lists Position report, POTA spot and your own. **+ Add new template** makes one, and **Save as template** saves the message you are writing.
+- **Address book.** To and Cc suggest saved contacts, groups and people from your mail as you type. The book button beside To opens the **Address book**, which holds contacts and groups. A message from someone not saved has **Add to address book**.
+
 ## Sending and Receiving
 
 Messages you write wait in the **Outbox** until the next **Send / Receive**. Choose how they go in **Send via**.

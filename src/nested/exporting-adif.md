@@ -12,4 +12,4 @@ The activator toolbar also has buttons for:
 
 ---
 
-
+From 1.14.7, the frequency is kept to the hertz, from the spot to the Logbook and every export.

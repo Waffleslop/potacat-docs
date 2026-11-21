@@ -24,7 +24,7 @@ Win4Yaesu holds the radio's real CAT port and can give each extra program its ow
 **POTACAT doesn't use OmniRig, and doesn't need to.** If your other programs reach the radio through OmniRig, leave OmniRig set up exactly as it is. You don't need to change anything in OmniRig for POTACAT.
 
 1. **In Win4Yaesu,** set up one more virtual COM port for a third-party program. Note the number of the end the other program opens, which is the one POTACAT will use. (Win4Yaesu's own help covers its third-party ports.)
-2. **In POTACAT,** open **Settings > My Rigs**, edit the rig (or add one), and choose **Serial CAT (Kenwood / Yaesu)**.
+2. **In POTACAT,** open **Settings > Radio**, edit the rig (or add one), and choose **Serial CAT (Kenwood / Yaesu)**.
 3. Set **Radio Model** to your radio, for example **FTDX10**.
 4. Under **Serial Port**, pick the virtual port. **Virtual ports often aren't in the list**, so type its name, such as `COM11`.
 5. Set the **baud rate** to the one Win4Yaesu shows for that virtual port, then **Save**.

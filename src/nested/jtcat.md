@@ -185,7 +185,7 @@ JTTY (the WSJT-X 3.2 keyboard mode: 4-GFSK, 127 Hz wide, no timed sequences) has
 
 ## WSPR
 
-From 1.14.0, idle WSPR listens only on the bands your radio is used on (the ones ticked in **Settings > My Rigs**), and offers 2 m, tuning 144.489 MHz. If the saved band isn't one of them, it uses the first that is, and the log says so.
+From 1.14.0, idle WSPR listens only on the bands your radio is used on (the ones ticked in **Settings > Radio**), and offers 2 m, tuning 144.489 MHz. If the saved band isn't one of them, it uses the first that is, and the log says so.
 
 ## WSPR Map
 

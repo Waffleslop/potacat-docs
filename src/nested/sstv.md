@@ -33,7 +33,7 @@ From 1.14.0, pictures from MMSSTV decode in all the common modes:
 
 ## Audio and Drive
 
-- SSTV uses the radio's audio devices from **Settings > My Rigs**, the same ones as JTCAT. To use different devices for SSTV only, choose them under ⚙ > **Audio** > **Receive** and **Transmit**. If SSTV misbehaves and JTCAT doesn't, check these first: an old device chosen here overrides the radio's.
+- SSTV uses the radio's audio devices from **Settings > Radio**, the same ones as JTCAT. To use different devices for SSTV only, choose them under ⚙ > **Audio** > **Receive** and **Transmit**. If SSTV misbehaves and JTCAT doesn't, check these first: an old device chosen here overrides the radio's.
 - **Drive**, in the SSTV window's top bar, is the audio level SSTV sends to the radio. It is **separate from JTCAT's Drive** and starts at 50%. The **PWR** and **SWR** meters beside it show the radio's output live while transmitting.
 
 ## No power out on SSTV, but FT8 works

@@ -36,7 +36,7 @@ POTACAT can connect to a Yaesu **FTDX10**, **FT-710** or **FTDX101D/MP** over th
 
 ## Set it up
 
-1. Open **Settings > My Rigs** and edit your radio (or add one).
+1. Open **Settings > Radio** and edit your radio (or add one).
 2. Pick the radio in **Radio Model**, then choose **Yaesu LAN (SCU-LAN10), experimental**.
 3. **Address:** the unit's IP address. From the factory it's `192.168.49.1`.
 4. **Base port:** `50000`, unless you changed it on the unit. It's the first of four UDP ports; CAT, audio and scope follow it.

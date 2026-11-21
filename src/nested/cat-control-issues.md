@@ -84,7 +84,7 @@ Three of POTACAT's connection methods are easy to mix up:
 |--------|--------------|-------------|
 | **Other Rig (Hamlib)** | POTACAT spawns its own bundled `rigctld` process and translates to your radio's native protocol | Most serial-connected radios — see [Other Rig (Hamlib)](other-rig-hamlib.md) |
 | **rigctld Network** | POTACAT connects to a `rigctld` that is *already running* — one you started yourself or one managed by other software | Sharing one radio between apps, or when software like deskHPSDR runs its own rigctld — letting POTACAT spawn a second one causes conflicts |
-| **IP Radio (TCP CAT)** | Direct TCP connection to a radio or server that speaks Kenwood-style CAT over the network | FlexRadio slices, Elecraft K4, Thetis, and similar network radios |
+| **IP Radio (TCP CAT)** | Direct TCP connection to a radio or server that speaks Kenwood-style CAT over the network | FlexRadio slices, Thetis, and similar network radios. An Elecraft K4 uses **K4 Remote (network)** instead |
 
 ### rigctld port conflicts
 

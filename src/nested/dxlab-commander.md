@@ -12,7 +12,7 @@ Through Commander, POTACAT handles **frequency, mode, split, PTT and CW text**. 
 
 1. Start **Commander**. It must be running whenever POTACAT is.
 2. In Commander's **Net Serv** window, note the **Base Port** (52000 by default).
-3. In POTACAT, open **Settings > My Rigs**, add or edit the rig, and choose **DXLab Commander**.
+3. In POTACAT, open **Settings > Radio**, add or edit the rig, and choose **DXLab Commander**.
 4. Set **Radio Model** to your radio, so POTACAT knows its bands and power limits.
 5. **Host:** `127.0.0.1` if Commander runs on this PC.
 6. **Port:** Commander's Base Port **plus 2**. With the default Base Port, that's `52002`.

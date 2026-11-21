@@ -1,5 +1,7 @@
 # My Rigs
 
+The rig list is in **Settings > Radio**: **+ Add Rig** adds a radio, and each rig has an **Edit** button. The settings on this page are in that rig editor.
+
 POTACAT supports multiple saved rig profiles. Each profile stores a name and connection settings. Switch between rigs by clicking the CAT status pill in the status bar and selecting from the rig list.
 
 ## Your Radio's Bands
@@ -8,7 +10,7 @@ POTACAT supports multiple saved rig profiles. Each profile stores a name and con
 
 POTACAT offers only the bands the active radio can use: in spots, the band buttons, the VFO window, FT8, SSTV, JS8, Winlink's gateway list and ECHOCAT Web. A radio POTACAT knows uses its model's band list. An unknown model shows every band.
 
-To change the list, open **Settings > My Rigs**, edit the radio, and use **Check all bands you can use with this radio**:
+To change the list, open **Settings > Radio**, edit the radio, and use **Check all bands you can use with this radio**:
 
 - **Tick a band** the model doesn't list, such as 4 m on a European IC-7300 or FT-710, or 2 m behind a transverter. It comes back everywhere.
 - **Untick a band** you never use, to hide it.
@@ -26,7 +28,7 @@ Once you have changed the ticks, your list wins over the model's.
 
 Some radios present themselves as a different, bigger radio. A 5 W Hermes Lite 2 run through deskHPSDR, piHPSDR or Thetis shows up as a 100 W TS-2000, so POTACAT's power slider, meter and log are wrong.
 
-For such a radio, open **Settings > My Rigs**, edit it, and fill in **Full power (W)**, under **Radio Model**, with what the radio makes at full drive (for example `5`). The **TX Pwr** slider, the meter and the log then show real watts, through Hamlib too.
+For such a radio, open **Settings > Radio**, edit it, and fill in **Full power (W)**, under **Radio Model**, with what the radio makes at full drive (for example `5`). The **TX Pwr** slider, the meter and the log then show real watts, through Hamlib too.
 
 - **Leave it blank** where power already reads right. Blank keeps the model's own power.
 - **With a Guest Pass**, a power cap above the radio's full power gives the radio's full power: a 5 W radio under a 25 W pass shows and logs 5 W.
@@ -35,7 +37,7 @@ For such a radio, open **Settings > My Rigs**, edit it, and fill in **Full power
 
 > **New in POTACAT 1.14.6.** Not yet tried on a radio.
 
-For an amplifier that needs little drive, open **Settings > My Rigs**, edit the radio, tick **An amplifier is connected: limit the drive power** and fill in **Never drive above (W):**.
+For an amplifier that needs little drive, open **Settings > Radio**, edit the radio, tick **An amplifier is connected: limit the drive power** and fill in **Never drive above (W):**.
 
 - POTACAT never sets this radio's power above that: not from a power slider, FT8, WSPR, Winlink, Tune, a guest or ECHOCAT. Every power slider stops there.
 - If the radio reports more, from its own knob or another program, POTACAT turns it back down.
@@ -61,13 +63,19 @@ In 1.14.6 the box was named **Allow Power Off for a radio POTACAT cannot turn ba
 
 > **New in POTACAT 1.14.6.**
 
-For the TS-480, TS-590S/SG, TS-890S and TS-990S, **Transmit audio input:** in **Settings > My Rigs** names the socket your sound card interface is plugged into:
+For the TS-480, TS-590S/SG, TS-890S and TS-990S, **Transmit audio input:** in **Settings > Radio** names the socket your sound card interface is plugged into:
 
 - **Rear (data / ACC2 socket)**
 - **Front (microphone jack)**
 - **Ask on first transmit**
 
 POTACAT tells the radio which one to send each time it transmits. The wrong one puts a carrier on the air with no audio. A TS-480 asks you on its first transmit.
+
+## Transmit On (One Audio Channel)
+
+From 1.14.7. Some interfaces key their own VOX from the right audio channel, such as the Digirig DR-891 on an FT-891. For these, transmit audio can go out on the left channel only.
+
+Open **Settings > Radio**, click **Edit** beside the rig, and under **Audio Devices** set **Transmit on:** to **Left channel only**. The default is **Both channels (left and right)**. It applies to FT8, Tune and Winlink (ARDOP and packet).
 
 ## A Band-Scope SDR on the Radio's IF Output
 

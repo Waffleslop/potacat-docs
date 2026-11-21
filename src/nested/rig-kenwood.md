@@ -37,12 +37,16 @@ When you PTT from your phone, the radio flips **USB → USB-D**. That's the **SS
 
 If you operate with the radio's own mic in hand, uncheck **SSB-over-DATA** in Settings (search for "SSB over Data") — otherwise the mode switch disables the very mic you're speaking into.
 
+### Band scope
+
+From 1.14.4, a TS-890S on its own USB or COM port at 115200 baud shows its band scope in **More > Band Scope**. POTACAT puts the radio's settings back when the scope closes. Below 115200 baud, POTACAT says which Baud Rate menu item to change. The scope does not work through Hamlib, and it has not yet been tried by an owner.
+
 ## TS-2000
 
 - **Direct serial needs RTS/CTS** (POTACAT 1.13.2 and later sets it): like the TS-590, the TS-2000 only replies on a direct serial connection with RTS/CTS handshake. On older versions it connected but never answered.
 - **No SWR over CAT**: the TS-2000 doesn't expose an SWR reading via CAT, so POTACAT's SWR bar stays dashed out. That's normal, not a fault.
 - **Set the Radio Model to `TS-2000`**: with a generic or empty model selected, POTACAT polls commands the radio doesn't support, each one triggers the radio's `?;` error response — and the radio **beeps continuously**. Older Kenwoods (e.g. TS-850S) beep for the same reason; always pick the closest model.
-- **SignaLink (or another interface) on ACC2:** when POTACAT keys a TS-2000 over CAT, the radio transmits its **front microphone**, not the audio on ACC2. Let the interface key the radio instead: in **Settings > My Rigs**, edit the rig and set **Transmit (PTT)** to **The audio interface keys it (SignaLink, the radio's VOX)**. CAT still tunes and changes mode. From 1.14.0 the same choice is on the **FLRig (a shared radio)** and **rigctld Network** connections. If you run the TS-2000 through flrig, there's no ALC reading.
+- **SignaLink (or another interface) on ACC2:** when POTACAT keys a TS-2000 over CAT, the radio transmits its **front microphone**, not the audio on ACC2. Let the interface key the radio instead: in **Settings > Radio**, edit the rig and set **Transmit (PTT)** to **The audio interface keys it (SignaLink, the radio's VOX)**. CAT still tunes and changes mode. From 1.14.0 the same choice is on the **FLRig (a shared radio)** and **rigctld Network** connections. If you run the TS-2000 through flrig, there's no ALC reading.
 - **Radio jumping into split when tuning?** Check POTACAT's **Enable Split Mode** setting first — when it's on, POTACAT deliberately sets up split on every QSY. This applies to all Kenwood-protocol rigs.
 
 ## TS-480
@@ -51,7 +55,7 @@ If the S-meter and power readings look far too low and SWR shows blank in ECHOCA
 
 From 1.14.5, POTACAT keys the TS-480 with data send, as it already did for the TS-590, TS-890 and TS-990, whether the radio is on a Kenwood serial link or through Hamlib. Before, it used the command for the front microphone, so FT8 over the ACC cable went out silent while the mic was live. 
 
-That change left a TS-480 with an interface on the front microphone jack sending no audio. From 1.14.6, **Transmit audio input:** in **Settings > My Rigs** chooses **Rear (data / ACC2 socket)** or **Front (microphone jack)**, and a TS-480 asks you on its first transmit. See [Transmit Audio Input](my-rigs.md#transmit-audio-input-kenwood).
+That change left a TS-480 with an interface on the front microphone jack sending no audio. From 1.14.6, **Transmit audio input:** in **Settings > Radio** chooses **Rear (data / ACC2 socket)** or **Front (microphone jack)**, and a TS-480 asks you on its first transmit. See [Transmit Audio Input](my-rigs.md#transmit-audio-input-kenwood).
 
 ## Transmit power through Hamlib
 

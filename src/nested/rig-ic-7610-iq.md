@@ -44,7 +44,7 @@ If no sound comes out, choose **Options > Output Channel Mode for RX > AF to Bot
 
 ## Using it with POTACAT
 
-Leave POTACAT on **[USB 1]** exactly as before: **Settings > My Rigs**, Radio Model IC-7610, CI-V address `98h`.
+Leave POTACAT on **[USB 1]** exactly as before: **Settings > Radio**, Radio Model IC-7610, CI-V address `98h`.
 
 | Sync Mode in HDSDR | When POTACAT moves the radio |
 |---|---|

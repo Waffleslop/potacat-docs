@@ -52,7 +52,7 @@ Log out and back in after the last line.
 
 Plug in a monitor, or connect with remote desktop (VNC or Raspberry Pi Connect), for the first run. In POTACAT, with its window showing:
 
-1. Enter your callsign and set up your radio (**Settings > My Rigs**), including its audio devices.
+1. Enter your callsign and set up your radio (**Settings > Radio**), including its audio devices.
 2. Turn on ECHOCAT.
 3. Pair your phone, or another POTACAT.
 
@@ -99,7 +99,7 @@ ECHOCAT covers what you need to operate (tuning, mode, power, audio, FT8, CW, lo
 
 ## Audio
 
-- Choose the radio's sound card for the rig's audio input and output in **Settings > My Rigs**. On Linux it often shows under its chip name, such as **PCM2901** or **PCM2903B**, rather than **USB Audio CODEC**.
+- Choose the radio's sound card for the rig's audio input and output in **Settings > Radio**. On Linux it often shows under its chip name, such as **PCM2901** or **PCM2903B**, rather than **USB Audio CODEC**.
 - If the radio keys but puts out little or no power, raise the device's output level in the Pi's sound settings.
 - **Digirig DR-891 with an FT-891 keying up again and again on its own:** one user stopped it by muting the interface's right audio channel in the Pi's sound settings, so the radio's VOX no longer heard it.
 

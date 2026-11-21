@@ -89,7 +89,7 @@ POTACAT starts every Icom exactly as before. If the radio answers the frequency 
 
 That's normal, and the mode and power come back. It's checked again at each connect.
 
-To set it yourself: **Settings > My Rigs**, edit the rig, **Advanced > CI-V pacing**:
+To set it yourself: **Settings > Radio**, edit the rig, **Advanced > CI-V pacing**:
 
 | Choice | What it does |
 |---|---|
@@ -122,7 +122,7 @@ Users have reported the Mk II working over Icom Network. It has had fewer report
 
 **Set DATA MOD to LAN:** MENU → SET → Connectors → MOD Input → DATA MOD → LAN. Without it, the Mk II keys with 0 W on the Icom Network connection.
 
-**In POTACAT:** add or edit the rig in **Settings > My Rigs** and choose:
+**In POTACAT:** add or edit the rig in **Settings > Radio** and choose:
 
 | Field | Value |
 |---|---|

@@ -9,7 +9,7 @@
 | [Xiegu G90](https://potacat.com/remote/xiegu-g90/) | Other Rig (Hamlib) | 19200 | Only with Digirig | CI-V protocol; try X5105 or IC-718 backend as fallback |
 | Kenwood [TS-480](https://potacat.com/remote/ts-480/)/[590](https://potacat.com/remote/ts-590sg/)/2000 | Serial CAT (Kenwood) | 9600 | No | Also works with Hamlib |
 | Elecraft [KX2](https://potacat.com/remote/kx2/)/[KX3](https://potacat.com/remote/kx3/)/K3 | Serial CAT (Kenwood) | 38400 | No | |
-| Elecraft K4 | IP Radio (TCP CAT) | — | — | Ethernet TCP CAT |
+| Elecraft K4 | K4 Remote (network) | — | — | Network, port 9205. See [Elecraft Rigs](rig-elecraft.md) |
 
 If your rig isn't listed, try **Serial CAT (Kenwood)** first — many radios support FA/MD commands — then fall back to **Hamlib**.
 

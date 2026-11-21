@@ -55,7 +55,7 @@ Forwarding relies on N3FJP's TCP API. In N3FJP, open **Settings → Application 
 - A ClubLog, LoTW, eQSL or QRZ confirmation from N3FJP is recorded as that service, not as a paper card, and confirmations that arrive later reach contacts already brought in.
 - The whole N3FJP log is re-read once a day. That never removes a confirmation (one from **Update from LoTW**, or one you ticked in the Logbook), and never brings back a contact you deleted.
 
-POTACAT writes the park number and name into N3FJP's comments field.
+POTACAT writes the park number and name into N3FJP's comments field. From 1.14.7, a contact with two or more parks names every park in its comment and park fields, for ACLog and other loggers. QRZ Logbook gets every park in the park list and the first park in its single-park field.
 
 ### Log4OM 2
 

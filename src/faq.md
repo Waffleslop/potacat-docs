@@ -164,7 +164,7 @@ Logging is always on, and there is no setting to enable it. The **Log** button a
 
 #### A band I use has disappeared since 1.13.3. Where did it go?
 
-From 1.13.3, POTACAT shows only the bands your radio's model covers. If you reach a band the standard model doesn't list (4 m on a European radio, or a transverter band), tick it in **Settings > My Rigs** under **Check all bands you can use with this radio**. See [Your Radio's Bands](nested/my-rigs.md#your-radios-bands).
+From 1.13.3, POTACAT shows only the bands your radio's model covers. If you reach a band the standard model doesn't list (4 m on a European radio, or a transverter band), tick it in **Settings > Radio** under **Check all bands you can use with this radio**. See [Your Radio's Bands](nested/my-rigs.md#your-radios-bands).
 
 #### Some old contacts were logged at a frequency like 14.074 kHz. Can POTACAT fix them?
 

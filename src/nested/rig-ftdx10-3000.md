@@ -44,6 +44,8 @@ With **CAT RTS = ENABLE**, leave **Disable DTR/RTS on connect** *unchecked* in P
 
 ### FTDX101D / FTDX101MP
 
+From 1.14.7 these are two **Radio Model** choices: **FTDX101D** at 100 W and **FTDX101MP** at 200 W. A rig saved earlier as FTDX101D/MP becomes FTDX101D, so if yours is an MP, open **Settings > Radio**, click **Edit**, and pick **FTDX101MP** once.
+
 | Menu | Set to | Why |
 |------|--------|-----|
 | **MODE SSB → SSB MOD SOURCE** | `REAR` | Options are `MIC`/`REAR` on the 101 family — there is no `AUTO` |
