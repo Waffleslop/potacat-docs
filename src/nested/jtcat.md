@@ -193,7 +193,9 @@ From 1.13.3, the WSPR map in the JTCAT window has a legend for its colours: **gr
 
 ## Auto-Logging
 
-JTCAT logs each QSO automatically when the report exchange completes and forwards it to any logbooks you've configured — see [Logbook Forwarding](logbook-forwarding.md). There's nothing to click.
+JTCAT logs each QSO automatically and forwards it to any logbooks you've configured — see [Logbook Forwarding](logbook-forwarding.md). There's nothing to click.
+
+From 1.14.7, a QSO is logged only once the other station has sent RR73. If it never does, the QSO is not logged, and JTCAT shows *Not logged: call never sent RR73. Press Send 73 to log it.* with a **Send 73** button. Before 1.14.7, a QSO was logged when the report exchange completed.
 
 From 1.13.10, JTCAT's records carry the QSO's real start and end times, CQ and ITU zones, continent and, for contacts in your own country, the city. If a JTCAT log fails, it says so on screen.
 

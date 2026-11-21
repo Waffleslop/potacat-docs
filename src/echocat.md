@@ -134,7 +134,7 @@ In the native app, these rig controls (including custom CAT commands) live behin
 
 If your radio supports power control over CAT, you can power it on and off from your phone. In the app, the power controls are in the **VFO** tab.
 
-From 1.14.6, **Power Off** is hidden for a radio POTACAT cannot switch back on, which is most radios on a USB cable. See [Power Off](nested/my-rigs.md#power-off).
+From 1.14.7, **Power Off** is shown for a radio on a direct serial port or a Yaesu SCU-LAN10 and hidden for other connections, unless you choose otherwise. See [Power Off](nested/my-rigs.md#power-off).
 
 > **Tip:** On Icom rigs, if power-*off* works but power-*on* doesn't, set the radio's **CI-V Baud Rate** to `AUTO` — CAT power-on requires a wake-up preamble that's sensitive to the baud setting.
 

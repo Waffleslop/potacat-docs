@@ -44,7 +44,18 @@ For an amplifier that needs little drive, open **Settings > My Rigs**, edit the 
 
 ## Power Off
 
-From 1.14.6, **Power Off** is hidden for a radio POTACAT cannot switch back on, which is most radios on a USB cable. A radio on a Yaesu SCU-LAN10 keeps it. To show it anyway, edit the radio in **Settings > My Rigs** and tick **Allow Power Off for a radio POTACAT cannot turn back on**.
+This section describes POTACAT 1.14.7.
+
+Whether **Power Off** is shown depends on how the radio is connected, unless you choose yourself:
+
+- **Shown** for a radio on a direct serial port (Yaesu, Kenwood, Elecraft, Icom CI-V) and for a radio on a Yaesu SCU-LAN10.
+- **Hidden** for a radio reached through Hamlib or rigctld, and for every other connection: TCP CAT, the Elecraft K4 over the network, Icom CI-V over TCP and Icom Network. It is also hidden for the Yaesu FTX-1, which cannot be switched on over CAT.
+
+To choose yourself, open **Settings > Radio**, click **Edit** beside the rig, and tick or untick **Show Power Off for this radio**. Your choice wins either way and is kept. A line under the box says whether POTACAT can turn that radio back on, for example *POTACAT can turn this radio back on over its serial connection.* or *POTACAT cannot turn this radio back on through Hamlib. You will need the radio's own power button.*
+
+**Power On** only works if the radio keeps its computer connection alive while it is off. If yours does not, untick the box or keep the radio's power button within reach.
+
+In 1.14.6 the box was named **Allow Power Off for a radio POTACAT cannot turn back on**, and Power Off was hidden for most radios on a USB cable. A rig where that box was ticked keeps Power Off.
 
 ## Transmit Audio Input (Kenwood)
 

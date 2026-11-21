@@ -32,6 +32,49 @@ From 1.13.2, the Winlink Mail window and ECHOCAT Web's **Mail** tab also open wi
 - **Reply all.** A **Reply all** button sits next to **Reply** when a message went to anyone besides you and the sender. The sender goes in To, and everyone else in Cc, without your own address and without anyone twice.
 - **How a message went out.** A message in Sent, Archive or Deleted shows one line under its header, for example *Sent 13 Nov 2026 at 14:32 UTC via W5ABC on 7.102 MHz (ARDOP).* or *Sent 13 Nov 2026 at 14:32 UTC over the internet.* Only messages sent from 1.14.5 on have it.
 
+## Winlink Forms
+
+> **New in POTACAT 1.14.7.** Forms are not yet in the ECHOCAT app or ECHOCAT Web.
+
+The Winlink Standard Forms are the forms Winlink Express uses: the Winlink Check-in for nets such as Winlink Wednesday, the ICS-213 General Message, and about 150 more (ICS, Red Cross, radiogram and state forms). A form message is an ordinary Winlink message plus an attachment that Winlink Express and Pat show as the filled form.
+
+### Get the forms
+
+POTACAT does not ship the forms, and never downloads them by itself.
+
+1. In Winlink Mail, press **Forms**. The first time it says *No forms on this computer yet. Pat gets the Winlink Standard Forms (about 3 MB) from getpat.io.*
+2. Press **Get the standard forms**. Pat downloads them once onto this computer. This one step needs the internet.
+
+Afterwards the panel shows the count and the version, for example *153 forms, Winlink Standard Forms version 1.1.22.0.*, and the button reads **Check for newer forms**. If getpat.io cannot be reached, it says *Pat could not reach getpat.io, where it gets the Winlink Standard Forms. Check this computer's internet connection and try again.*
+
+### Fill in and send a form
+
+1. In the **Winlink forms** panel, pick a form. **Favorites** come first (Winlink Check-in and ICS213 General Message), then **All forms** by folder. Type in the **Find a form** box to search names and folders.
+2. The form opens in its own window, titled *Winlink form:* and its name. It looks exactly as it does in Winlink Express. It is Winlink's own page, so it does not follow POTACAT's theme.
+3. Fill it in and press the form's own **Submit** button. Most forms then show a box saying to click OK and close the window. Click **OK**; the window closes by itself.
+4. The message is now in Winlink Mail's compose pane, with To and Subject filled in by the form. Press **Put in Outbox**. It goes out on the next **Send / Receive**, like any message.
+
+A note above the text names the form and says Pat adds the form's data as an attachment. Some forms, the check-in among them, do not allow the text to be changed: the note then says *This form's message may not be changed; fill the form in again to change it.* and the text is greyed. To, Cc and Subject can always be changed.
+
+Two things differ from Winlink Express:
+
+- **Small question boxes are answered for you.** Where a form asks a question in a small box (the check-in's *Message Subject:*, every *Click to Add Date/Time*), POTACAT takes the form's suggestion at once: the current date and time, and the subject the form builds. You can type over the date field, and change the subject in the compose pane.
+- **Your location is the centre of your grid square.** A form that asks for your location is given the centre of the grid square in **Settings > Station**, never the computer's own location. That is only as exact as the grid: a 4-character grid can be about 100 km off, a 6-character one about 5 km. It goes out in the sent form, so type your exact position into the form when it matters. With no grid set, the fields start at 0.0000.
+
+### A form you received
+
+A message that carries a form has a **View form** button above it. It opens the form as the sender filled it in, in a window titled *Received form:* and its name. If the forms are not on this computer yet, POTACAT says so; the form's text is still in the message itself.
+
+Some forms name a reply form; the ICS-213 does. On such a message in the Inbox or the Archive, a **Reply with form** button appears. It opens the reply form already filled in with the original's details. Submit it, and it comes back to the compose pane addressed to the sender.
+
+### Links and safety
+
+If a form tries to open a web page (the check-in links what3words, for example), POTACAT asks *This form wants to open a web page.* with **Open in my browser** and **Cancel**. The page opens in your own browser, never inside POTACAT.
+
+A form is a web page written by someone else, and a received form came from whoever sent it. POTACAT shows it in a closed window: it cannot reach the internet, your files, or the parts of Pat that connect, send or delete mail, and it cannot use your camera or microphone.
+
+Forms need Pat 1.0.1 or newer, which POTACAT's own Pat is. With an older Pat set under **Settings > Station > Winlink > Advanced**, the Forms panel says *Winlink forms need Pat 1.0.1 or newer.* and names the version it found.
+
 ## Sending and Receiving
 
 Messages you write wait in the **Outbox** until the next **Send / Receive**. Choose how they go in **Send via**.

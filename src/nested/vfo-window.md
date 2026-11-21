@@ -42,6 +42,6 @@ Under **CAT buttons** in VFO settings, choose which of the radio's controls to s
 - **PTT.** From 1.14.2, the window shows a notice when the microphone it opened is the radio's own receive audio, is blocked, or is silent. Every PTT press logs the microphone, the output and the level.
 - **WebSDR.** In a new Large VFO the WebSDR block sits under the knob. See [WebSDR, KiwiSDR and RTL-SDR Receive](websdr.md).
 - **Favorites.** The Landmarks and Channels you starred in [Directory](directory.md#favorites).
-- **Radio.** At the bottom, **Power On** and **Power Off** for a radio that can be switched over CAT. **Power Off** asks for a second press. From 1.14.6, **Power Off** is hidden for a radio POTACAT cannot switch back on; see [Power Off](my-rigs.md#power-off). From 1.14.5 the Yaesu FTX-1 shows **Power Off** only, because it cannot be switched on over CAT.
+- **Radio.** At the bottom, **Power On** and **Power Off** for a radio that can be switched over CAT. **Power Off** asks for a second press. From 1.14.7, whether **Power Off** is shown depends on how the radio is connected, and **Show Power Off for this radio** overrides it; see [Power Off](my-rigs.md#power-off). From 1.14.5 the Yaesu FTX-1 shows **Power Off** only, because it cannot be switched on over CAT.
 
 The same window drives the radio at home when this POTACAT is [paired with a remote shack](remote-desktop.md).
