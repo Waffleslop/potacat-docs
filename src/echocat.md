@@ -103,18 +103,17 @@ Tap the **Audio** button to start streaming. Your phone will ask for microphone 
 
 ### Scanning
 
-Tap the **Scan** button in the status bar to auto-tune through your filtered spot list. The radio dwells on each spot for a configurable time (default 7 seconds, adjustable in the settings overlay). Tap Scan again or tap any spot to stop.
+Tap the **Scan** button in the status bar to auto-tune through your filtered spot list. The radio dwells on each spot for a configurable time (default 7 seconds; choose 3, 5, 7, 10 or 15 seconds in **Settings > Finding stations > Scan**, or **Settings > Operating > Scan** in app 1.5.x; it sets the desktop's scan dwell). Tap Scan again or tap any spot to stop.
 
 ### Filters
 
-Tap the **gear icon** on the phone to open the settings overlay where you can filter by:
+The filters are a row of pills across the top of the **Spots** tab, not in Settings:
 
-- **Bands** (160m through 6m)
-- **Modes** (SSB, CW, FT8, FM, etc.)
-- **Regions** (NA, EU, AS, etc.)
-- **Spot sources** (POTA, SOTA, WWFF, LLOTA, DX Cluster)
-- **Max age** — hide spots older than a set time
-- **New parks only** — show only parks you haven't worked
+- **Band**, **Mode** and **Region**. Mode includes **Digital (all)**.
+- **Spots** — the spot sources, plus **NEW parks only** and **Hide worked**.
+- **Sort** and refresh, which change on each tap.
+- **Age** — tap to pick the oldest spot to show, or **Live**.
+- **Hidden**, with a count of the spots you have hidden.
 - **Hide worked** — hide callsigns you've already logged
 
 ### Radio Controls
