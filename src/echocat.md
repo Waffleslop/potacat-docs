@@ -4,7 +4,7 @@ ECHOCAT turns your phone or tablet into a wireless remote for your POTACAT-conne
 
 ECHOCAT comes in two flavors:
 
-- **ECHOCAT for iOS and Android** — native apps, available on the App Store and Google Play for a one-time `$9.99` purchase. The apps add features a browser can't do: keep listening with the screen locked, QR-code pairing, automatic switching between connection paths, and Bluetooth MIDI paddles. See [The ECHOCAT App: What It Has Today](nested/echocat-app.md).
+- **ECHOCAT for iOS and Android** — native apps, available on the App Store and Google Play for a one-time `$9.99` purchase. The apps add features a browser can't do: keep listening with the screen locked, QR-code pairing, automatic switching between connection paths, Bluetooth MIDI paddles and, from app 1.6.0, a Bluetooth PTT button. See [The ECHOCAT App: What It Has Today](nested/echocat-app.md).
 - **ECHOCAT Web** — free, built into POTACAT, and runs in any modern mobile browser. Nothing to install.
 
 Both work at the same time — pairing the app doesn't disable browser access.
@@ -298,7 +298,9 @@ With POTACAT Cloud you can grant another operator timed access to your radio —
 
 > **Note:** The remote guest is the control operator and operates under **their own callsign**, per the usual remote-operation rules. Check the regulations that apply in your country.
 
-## APRS in ECHOCAT Web
+## APRS in the App and ECHOCAT Web
+
+From app 1.6.0, with POTACAT 1.14.7, the ECHOCAT app has an **APRS** tab: the map and list, listening on your radio, the iGate switch and an internet beacon. See [The ECHOCAT App](nested/echocat-app.md#aprs-tab).
 
 From 1.14.7, ECHOCAT Web has an **APRS** tab: the station list and map, listening on your radio, the iGate switch and an internet beacon. It cannot send messages or beacon on the radio. See [APRS](nested/aprs.md#in-a-browser-echocat-web).
 

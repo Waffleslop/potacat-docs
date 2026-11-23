@@ -109,7 +109,7 @@ Any real VPN solves this by putting both devices on one virtual network. Tailsca
 - **The newest app needs the newest desktop.** New app features generally ship with a matching POTACAT Desktop release — always update the desktop first.
 - **QR pairing requires desktop v1.9.2 or later.** Older desktops can't pair with current app builds.
 - **App updates arrive over-the-air**: in the app, go to **Settings > Help > About > Check for updates**, then fully close and reopen the app. The build number won't change after an OTA update — that's normal.
-- **OTA updates reach 1.5.0 and later.** If your App Store / Google Play version is older, update from the store.
+- **OTA updates reach 1.6.0.** On an older App Store / Google Play version, update from the store.
 
 ### iOS: QR scans but nothing happens
 

@@ -214,6 +214,10 @@ ECHOCAT Web has an **APRS** tab: the station list and map, **Listen on my radio*
 - A guest on a Guest Pass may watch and listen, but not beacon or change the iGate, because beacons and the iGate go out under the owner's callsign.
 - The APRS feed keeps running for a connected device with the desktop window closed.
 
+## On Your Phone (the ECHOCAT App)
+
+From app 1.6.0, with POTACAT 1.14.7, the ECHOCAT app has an **APRS** tab with the map and list, **Listen**, the band and iGate settings and an internet beacon. It cannot beacon on the radio or send messages. See [The ECHOCAT App](echocat-app.md#aprs-tab).
+
 ## Idle Mode
 
 In **Settings > Station**, **Idle Mode** has an **APRS** choice: the radio listens on the APRS frequency, 2 m if it has 2 m, else 30 m. It is receive only, and it runs with the APRS window closed. The iGate setting applies to it.
