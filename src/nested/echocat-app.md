@@ -120,6 +120,7 @@ The tab is labelled **Digi**. It opens on your last band and mode, with **Start*
 - **Wanted states.** State badges on decodes are off to start. Turn them on in **Display > Wanted states**.
 - **The shack's clock is off?** A banner has **Use this phone's time**. The desktop then corrects its FT8 timing from the phone and measures again every 10 minutes. Needs POTACAT 1.13.4.
 - An FT8 transmit refused because the radio is on another band offers **Follow the radio**. Needs POTACAT 1.13.9.
+- **Drive and ALC (1.6.0).** On FT8, FT4 and FT2, a strip above **TX CQ**, **Tune** and **HALT** shows while you transmit or tune. **DRIVE** is a slider with its percentage, the same transmit power control as ECHOCAT Web. **ALC** is a bar with its percentage, shown when your radio reports ALC to POTACAT. To keep the strip open, turn on **Display > TX drive and ALC**. Needs POTACAT 1.14.7. Not shown on FlexRadio direct, and not yet tried on a radio.
 - **Not on the phone:** the *Not logged* notice and **Send 73** button for a contact that ended before any 73. Use ECHOCAT Web or the JTCAT window. See [When a contact is logged](jtcat.md#when-a-contact-is-logged).
 
 **Settings > Modes > Digital modes** (in 1.5.x, **Settings > Operating > JTCAT (FT8/FT4)**) has two more:
@@ -161,6 +162,7 @@ In app 1.6.0. A tab labelled **APRS**, after Map. It needs POTACAT 1.14.7 and sh
 - **A radio with no CAT,** keyed by its sound card, gets the PTT button, and the *Radio offline* banner is hidden for it.
 - **PTT release** ends with a 150 ms tail before the radio unkeys, so a radio that switches to DATA mode on key-down no longer clips. Safety releases are still immediate.
 - A tune from Spots, Dir, Map, Pan, the VFO keypad or Act while an SSTV picture is being received asks before taking the radio.
+- **XIT (1.6.0).** In CW, the CW bar at the bottom of the screen has an **XIT** chip beside the speed box. Tap it to turn XIT on or off; when on, it shows the offset, for example *+150*. Press and hold for a sheet where **−** and **+** step 10 Hz, from -999 to +999 Hz, with **Off**. POTACAT uses the offset the next time it tunes to a CW spot, not on the frequency you are already on. Needs POTACAT 1.14.7. Hidden on FlexRadio direct and Local Rig, and not yet tried on a radio.
 - A MIDI keyer with no saved mapping, plugged in or on Bluetooth, keys on its own device preset. A mapping you taught the app still wins.
 
 ### Bluetooth PTT Button
