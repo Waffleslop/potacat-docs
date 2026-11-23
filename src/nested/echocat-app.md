@@ -1,6 +1,6 @@
 # The ECHOCAT App: What It Has Today
 
-This page describes the ECHOCAT phone app as released on 21 November 2026: version 1.5.x on iPhone and Android, with the over-the-air updates through 20 November 2026. The latest POTACAT desktop on that date is 1.14.7.
+This page describes the ECHOCAT phone app as released on 21 November 2026: version 1.5.x on iPhone and Android, with the over-the-air updates through 20 November 2026. Settings paths are given for version 1.6.0 as well; the rest of 1.6.0 is not covered here yet. The latest POTACAT desktop on that date is 1.14.7.
 
 Most of the app is a remote view of POTACAT on your shack computer. Where a feature needs a certain POTACAT version, the line says so; on an older desktop the feature is hidden or shows nothing.
 
@@ -13,9 +13,46 @@ For pairing and connection paths, see [ECHOCAT](../echocat.md) and [Connectivity
 - A new store version gets a one-time card on Spots.
 - **Settings > Help > About** has **Check for updates**, and shows the version line with the update's id. Tap the line to copy it.
 
+## Settings
+
+In app version 1.6.0, Settings is in six groups. Nothing was removed; some options are one level deeper. Version 1.5.x has the older groups (Hardware, Operating, Account, App, Help). **Settings > Help > About** shows your version. This guide gives the 1.6.0 path first and the 1.5.x path after it.
+
+In 1.6.0:
+
+- **Search settings**, at the top, finds any option. The old row names work as search words, so typing an old name still finds it.
+- The callsign card under it shows your callsign, grid, connection, radio and shack computer. Tap it to open **Operator**.
+- **Station:** Connection, Rig, Paired desktops, Audio, Bluetooth PTT button, Idle Mode.
+- **Finding stations:** Spots, Watchlist, Scan, SDR receivers.
+- **Modes:** Voice macros, CW, Digital modes, SSTV, Winlink.
+- **Look & feel:** Appearance, Layout.
+- **Account:** POTACAT Cloud, Guest Pass, Redeem a pass, Privacy & data.
+- **Help:** Diagnostics, Send feedback, About.
+
+Some rows show only when they apply: Idle Mode shows when the desktop takes it from the phone, and Winlink shows with the Mail tab.
+
+Where the common ones went:
+
+| In 1.5.x | In 1.6.0 |
+|---|---|
+| Hardware > CW keyer, Operating > CW | **Modes > CW** |
+| Operating > JTCAT (FT8/FT4) | **Modes > Digital modes** |
+| Operating > Audio levels (TX Drive, RX Boost, RX Level, EQ, compressor) | **Station > Audio** |
+| Hardware > Audio bridge | **Station > Audio** |
+| Hardware > Rig, Paired desktops | **Station** |
+| Hardware > SDR Receivers | **Finding stations > SDR receivers** |
+| Operating > Spots, Watchlist, Scan | **Finding stations** |
+| Operating > Watchlist groups | **Finding stations > Watchlist > Watchlist groups** |
+| Operating > SSTV, Winlink; Hardware > Voice macros | **Modes** |
+| Operating > Distance | **Look & feel > Appearance > Distance** |
+| App > Appearance, Layout | **Look & feel** |
+| Account > Manage Account, Last Sync, API keys | **Account > POTACAT Cloud** |
+| Account > Shared rigs | **Account > Guest Pass > Shared rigs** |
+| Help > Rate ECHOCAT | **Help > About > Rate ECHOCAT** |
+| Operating as (card at the bottom) | The callsign card at the top |
+
 ## Appearance
 
-**Settings > App > Appearance.** Choose the mode first (**System**, **Light** or **Dark**), then a theme for that mode. A new install starts on System.
+**Settings > Look & feel > Appearance** (in 1.5.x, **Settings > App > Appearance**). Choose the mode first (**System**, **Light** or **Dark**), then a theme for that mode. A new install starts on System. In 1.6.0, **Distance** (miles or kilometers) is on the same screen; in 1.5.x it is **Settings > Operating > Distance**.
 
 - Dark themes: **POTACAT Dark** (the default), **Midnight**, **Acid Burn**, **Miami Nights**. Acid Burn sets all text in a monospaced font.
 - Light themes: **POTACAT Light**, **She's On Frequency**.
@@ -54,7 +91,7 @@ The tab is labelled **Digi**. It opens on your last band and mode, with **Start*
 - An FT8 transmit refused because the radio is on another band offers **Follow the radio**. Needs POTACAT 1.13.9.
 - **Not on the phone:** the *Not logged* notice and **Send 73** button for a contact that ended before any 73. Use ECHOCAT Web or the JTCAT window. See [When a contact is logged](jtcat.md#when-a-contact-is-logged).
 
-**Settings > Operating > JTCAT (FT8/FT4)** has two more:
+**Settings > Modes > Digital modes** (in 1.5.x, **Settings > Operating > JTCAT (FT8/FT4)**) has two more:
 
 - **Keep screen on:** **Never**, **Scanning or decoding** or **Whenever connected**. Scanning or decoding covers Scan, FT8, FT4, FT2, WSPR, PSK, JTTY and JS8. The phone sleeps as usual once it loses the shack.
 - **JTTY alerts:** **Off**, **My call** (the default) or **Any message**. You get a toast in the app, or a notification when you are on another tab or in another app. On an iPhone, alerts in the background need Audio on.
@@ -119,7 +156,7 @@ See [SSTV](sstv.md).
 
 A **Mail** tab with the folders **In**, **Out**, **Sent** and **Archive**. Needs POTACAT 1.13.1. See [Winlink Email](winlink.md#from-your-phone-or-a-browser).
 
-- Account setup is in **Settings > Operating > Winlink**. With no password saved, the Mail tab opens on *Set up your Winlink account*.
+- Account setup is in **Settings > Modes > Winlink** (in 1.5.x, **Settings > Operating > Winlink**). With no password saved, the Mail tab opens on *Set up your Winlink account*.
 - The composer queues with **Put in Outbox**. **Send / Receive** on the Mail tab is what transmits.
 - The send sheet has **Send via**, **FAVORITES** (starred gateways, kept per frequency), **RADIO DIAL**, **Refresh** and **History**. Favorites and History need POTACAT 1.14.4.
 - When the channel is busy, a card shows the shack's wait and has **Call anyway**, with the line *Call anyway only if you have listened and it is clear.*
@@ -144,8 +181,8 @@ When POTACAT announces a special event, a one-time popup headed *POTACAT EVENT* 
 
 ## Account and Privacy
 
-- **Settings > Account > Manage Account.** The sign-in field is *EMAIL OR CALLSIGN*. Every account shows a *Desktop sign-in:* line with your callsign.
-- **Settings > Account > API keys.** Create and revoke POTACAT Cloud API keys.
+- **Settings > Account > POTACAT Cloud** (in 1.5.x, **Settings > Account > Manage Account**). The sign-in field is *EMAIL OR CALLSIGN*. Every account shows a *Desktop sign-in:* line with your callsign.
+- **Settings > Account > POTACAT Cloud > API keys** (in 1.5.x, **Settings > Account > API keys**). Create and revoke POTACAT Cloud API keys. The row shows only when you are signed in to Cloud.
 - **Settings > Account > Privacy & data > Share anonymous usage and crash reports.** Off stops crash reports at once. The app masks addresses, tokens and your own callsign in crash data.
 
 ## Not on the Phone Yet
