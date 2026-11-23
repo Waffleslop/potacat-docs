@@ -18,7 +18,7 @@ You don't need to visit winlink.org. If your callsign has no Winlink account, PO
 
 **Already have an account?** Type its password into **Winlink password** and save.
 
-**On your phone:** the ECHOCAT app has its own account setup under **Settings > Modes > Winlink**, so you can check or create the account from the phone instead.
+**On your phone:** the ECHOCAT app has its own account setup under **Settings > Winlink**, so you can check or create the account from the phone instead.
 
 From 1.13.2, the Winlink Mail window and ECHOCAT Web's **Mail** tab also open with **Set up your Winlink account** when no password is saved, and the password rule tells you what Winlink accepts before you send it.
 

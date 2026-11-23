@@ -39,7 +39,7 @@ You don't need a paddle at all to work CW remotely: the CW text box and the macr
 
 ## On-Screen Straight Key
 
-No hardware handy? The ECHOCAT app has an on-screen straight key: in ECHOCAT open **Settings > Modes > CW**, and under **On-screen key** turn on **On-screen straight key**. A **Key** button then replaces PTT in CW mode. Hold it down to key — it's your fist, rough edges and all, rather than a stored message.
+No hardware handy? The ECHOCAT app has an on-screen straight key: in ECHOCAT open **Settings > Hardware > CW keyer** (**Settings > Operating > CW** opens the same screen), and under **On-screen key** turn on **On-screen straight key**. A **Key** button then replaces PTT in CW mode. Hold it down to key — it's your fist, rough edges and all, rather than a stored message.
 
 ## Latency Expectations
 
